@@ -20,12 +20,10 @@ $page_title = "Dashboard";
 //Note: all css files are inside css/ folder
 $page_css[] = "your_style.css";
 include("inc/header.php");
-
 //include left panel (navigation)
 //follow the tree in inc/config.ui.php
-$page_nav["dashboard"]["active"] = true;
+$page_nav["dashboard"]["active"] = true; 
 include("inc/nav.php");
-
 ?>
 <!-- ==========================CONTENT STARTS HERE ========================== -->
 <!-- MAIN PANEL -->
