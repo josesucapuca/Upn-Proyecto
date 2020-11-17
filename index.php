@@ -24,8 +24,9 @@
                 <span class="login-box-options"><input type="checkbox" name="1" value="1"> Recuerdame <a href="#" style="margin-left:30px;">Olvidaste Contraseña</a></span>
                 <br />
                 <br />
-                <a href="#"><img src="images/login-btn.png" width="103" height="42" style="margin-left:90px;" /></a>
+                <a onclick="Validar()"><img src="images/login-btn.png" width="103" height="42" style="margin-left:90px;" /></a>
             </div>
         </div>
     </body>
+    <script src="js/Logueo/Validacion.js"></script>
 </html>
