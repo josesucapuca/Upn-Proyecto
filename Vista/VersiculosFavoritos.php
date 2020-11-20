@@ -11,7 +11,6 @@
                 border: 1px solid #1f8c46;
                 color: #fff;
             }
-
         </style>
     </head>
 
@@ -59,7 +58,7 @@
             * 'fixed-page-footer' - Fixes footer
             * 'container'         - boxed layout mode (non-responsive: will not work with fixed-navigation & fixed-ribbon)
     -->
-    <body class="">
+    <body class="bodiver" style="background: #007788;height: 97vh;">
 
         <!-- MAIN PANEL -->
         <div >
@@ -71,12 +70,12 @@
                     <div class="row">
                         <div class="row">
                             <!-- widget div-->
-                            <article class="col-sm-6 col-md-6 col-lg-6" style="text-align: center">
+                            <article class="col-sm-12 col-md-12 col-lg-12" style="text-align: center">
                                 <h1>Versiculos Favoritos</h1>
                             </article>
 
-                            <article class="col-sm-6 col-md-6 col-lg-6">
-                                <div class="form-group col-lg-6">
+                            <article class="col-sm-12 col-md-12 col-lg-12">
+                                <div class="form-group col-lg-12">
                                     <div class="panel-group smart-accordion-default" id="accordion-2">
                                         <div class="panel panel-default">
                                             <div class="panel-heading">
@@ -89,16 +88,8 @@
                                                         <small id="Comen">Sin Comentario</small>
                                                         <textarea class="form-control" id="txtcomen" style="display: none;"></textarea>
                                                     </blockquote>
-                                                    <button href="javascript:void(0);" class="btn btn-labeled btn-warning" style="    align-items: center;
-                                                            justify-content: center;
-                                                            height: 20px;
-                                                            padding-top: 0px;
-                                                            "> Desmarcar</button>
-                                                            <button onclick="$('#Comen').css('display','none');$('#txtcomen').css('display','block');" class="btn btn-labeled btn-primary" style="    align-items: center;
-                                                            justify-content: center;
-                                                            height: 20px;
-                                                            padding-top: 0px;
-                                                            "> Comentario</button>
+                                                    <button href="javascript:void(0);" class="btn btn-labeled btn-warning" style="align-items: center;justify-content: center;height: 20px;padding-top: 0px;"> Desmarcar</button>
+                                                    <button onclick="$('#Comen').css('display', 'none');$('#txtcomen').css('display', 'block');" class="btn btn-labeled btn-primary" style="align-items: center;justify-content: center;height: 20px;padding-top: 0px;"> Comentario</button>
                                                 </div>
                                             </div>
                                         </div>
@@ -190,16 +181,16 @@
         <!-- Link to Google CDN's jQuery + jQueryUI; fall back to local -->
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
         <script>
-            if (!window.jQuery) {
-                document.write('<script src="js/libs/jquery-2.1.1.min.js"><\/script>');
-            }
+                                                        if (!window.jQuery) {
+                                                            document.write('<script src="js/libs/jquery-2.1.1.min.js"><\/script>');
+                                                        }
         </script>
 
         <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
         <script>
-            if (!window.jQuery.ui) {
-                document.write('<script src="js/libs/jquery-ui-1.10.3.min.js"><\/script>');
-            }
+                                                        if (!window.jQuery.ui) {
+                                                            document.write('<script src="js/libs/jquery-ui-1.10.3.min.js"><\/script>');
+                                                        }
         </script>
 
         <!-- IMPORTANT: APP CONFIG -->
@@ -278,28 +269,28 @@
         <script src="js/plugin/typeahead/typeaheadjs.min.js"></script>
         <script type="text/javascript">
 
-            // DO NOT REMOVE : GLOBAL FUNCTIONS!
+                                                        // DO NOT REMOVE : GLOBAL FUNCTIONS!
 
-            $(document).ready(function () {
+                                                        $(document).ready(function () {
 
-                pageSetUp();
+                                                            pageSetUp();
 
-                // PAGE RELATED SCRIPTS
+                                                            // PAGE RELATED SCRIPTS
 
-                $('.tree > ul').attr('role', 'tree').find('ul').attr('role', 'group');
-                $('.tree').find('li:has(ul)').addClass('parent_li').attr('role', 'treeitem').find(' > span').attr('title', 'Collapse this branch').on('click', function (e) {
-                    var children = $(this).parent('li.parent_li').find(' > ul > li');
-                    if (children.is(':visible')) {
-                        children.hide('fast');
-                        $(this).attr('title', 'Expand this branch').find(' > i').removeClass().addClass('fa fa-lg fa-plus-circle');
-                    } else {
-                        children.show('fast');
-                        $(this).attr('title', 'Collapse this branch').find(' > i').removeClass().addClass('fa fa-lg fa-minus-circle');
-                    }
-                    e.stopPropagation();
-                });
+                                                            $('.tree > ul').attr('role', 'tree').find('ul').attr('role', 'group');
+                                                            $('.tree').find('li:has(ul)').addClass('parent_li').attr('role', 'treeitem').find(' > span').attr('title', 'Collapse this branch').on('click', function (e) {
+                                                                var children = $(this).parent('li.parent_li').find(' > ul > li');
+                                                                if (children.is(':visible')) {
+                                                                    children.hide('fast');
+                                                                    $(this).attr('title', 'Expand this branch').find(' > i').removeClass().addClass('fa fa-lg fa-plus-circle');
+                                                                } else {
+                                                                    children.show('fast');
+                                                                    $(this).attr('title', 'Collapse this branch').find(' > i').removeClass().addClass('fa fa-lg fa-minus-circle');
+                                                                }
+                                                                e.stopPropagation();
+                                                            });
 
-            });
+                                                        });
 
         </script>
 

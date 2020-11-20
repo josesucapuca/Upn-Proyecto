@@ -268,7 +268,7 @@
                                         <div class="panel-body no-padding text-align-center">
                                             <div class="the-price">
                                                 <h1>
-                                                    $999<span class="subscript">/ mo</span></h1>
+                                                    <span class="subscript"><strong>Contenido</strong></span></h1>
                                             </div>
                                             <div class="price-features">
                                                 <ul class="list-unstyled text-left">

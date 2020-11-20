@@ -10,7 +10,11 @@
                 border: 1px solid #1f8c46;
                 color: #fff;
             }
-            
+            .select2-container .select2-choice {
+             
+                background-color: #c1ad88;
+            }
+
         </style>
     </head>
 
@@ -58,7 +62,7 @@
             * 'fixed-page-footer' - Fixes footer
             * 'container'         - boxed layout mode (non-responsive: will not work with fixed-navigation & fixed-ribbon)
     -->
-    <body class="">
+    <body class="" style="background: #604d2b91">
 
         <!-- MAIN PANEL -->
         <div >
@@ -177,14 +181,14 @@
                                                             <ul>
                                                                 <li>
                                                                     <a href="javascript:void(0);">Y la tierra estaba desordenada y vacía, y las tinieblas estaban sobre la faz del abismo, y el Espíritu de Dios se movía sobre la faz de las aguas.</a><button href="javascript:void(0);" class="btn btn-labeled btn-danger" style="align-items: center;
-                                                                                                                                                                justify-content: center;
-                                                                                                                                                                height: 20px;
-                                                                                                                                                                padding-top: 0px;
-                                                                                                                                                                "> Desmarcar</button>  <button href="javascript:void(0);" class="btn btn-labeled btn-primary" style="    align-items: center;
-                                                                                                                                                                justify-content: center;
-                                                                                                                                                                height: 20px;
-                                                                                                                                                                padding-top: 0px;
-                                                                                                                                                                "> Comentar</button>
+                                                                                                                                                                                                        justify-content: center;
+                                                                                                                                                                                                        height: 20px;
+                                                                                                                                                                                                        padding-top: 0px;
+                                                                                                                                                                                                        "> Desmarcar</button>  <button href="javascript:void(0);" class="btn btn-labeled btn-primary" style="    align-items: center;
+                                                                                                                                                                                                        justify-content: center;
+                                                                                                                                                                                                        height: 20px;
+                                                                                                                                                                                                        padding-top: 0px;
+                                                                                                                                                                                                        "> Comentar</button>
                                                                 </li>
                                                             </ul>
                                                         </li>
@@ -193,14 +197,14 @@
                                                             <ul>
                                                                 <li>
                                                                     <a href="javascript:void(0);">Fixed bug caused by...</a><button href="javascript:void(0);" class="btn btn-labeled btn-warning" style="    align-items: center;
-                                                                                                                                                                justify-content: center;
-                                                                                                                                                                height: 20px;
-                                                                                                                                                                padding-top: 0px;
-                                                                                                                                                                "> Marcar</button>  <button href="javascript:void(0);" class="btn btn-labeled btn-primary" style="    align-items: center;
-                                                                                                                                                                justify-content: center;
-                                                                                                                                                                height: 20px;
-                                                                                                                                                                padding-top: 0px;
-                                                                                                                                                                "> Comentar</button>
+                                                                                                                                    justify-content: center;
+                                                                                                                                    height: 20px;
+                                                                                                                                    padding-top: 0px;
+                                                                                                                                    "> Marcar</button>  <button href="javascript:void(0);" class="btn btn-labeled btn-primary" style="    align-items: center;
+                                                                                                                                    justify-content: center;
+                                                                                                                                    height: 20px;
+                                                                                                                                    padding-top: 0px;
+                                                                                                                                    "> Comentar</button>
                                                                 </li>
                                                             </ul>
                                                         </li>
@@ -209,14 +213,14 @@
                                                             <ul>
                                                                 <li>
                                                                     <a href="javascript:void(0);">Create component that...</a><button href="javascript:void(0);" class="btn btn-labeled btn-warning" style="    align-items: center;
-                                                                                                                                                                justify-content: center;
-                                                                                                                                                                height: 20px;
-                                                                                                                                                                padding-top: 0px;
-                                                                                                                                                                "> Marcar</button>  <button href="javascript:void(0);" class="btn btn-labeled btn-primary" style="    align-items: center;
-                                                                                                                                                                justify-content: center;
-                                                                                                                                                                height: 20px;
-                                                                                                                                                                padding-top: 0px;
-                                                                                                                                                                "> Comentar</button>
+                                                                                                                                      justify-content: center;
+                                                                                                                                      height: 20px;
+                                                                                                                                      padding-top: 0px;
+                                                                                                                                      "> Marcar</button>  <button href="javascript:void(0);" class="btn btn-labeled btn-primary" style="    align-items: center;
+                                                                                                                                      justify-content: center;
+                                                                                                                                      height: 20px;
+                                                                                                                                      padding-top: 0px;
+                                                                                                                                      "> Comentar</button>
                                                                 </li>
                                                             </ul>
                                                         </li>
@@ -225,14 +229,14 @@
                                                             <ul>
                                                                 <li>
                                                                     <a href="javascript:void(0);">Create component that...</a><button href="javascript:void(0);" class="btn btn-labeled btn-warning" style="    align-items: center;
-                                                                                                                                                                justify-content: center;
-                                                                                                                                                                height: 20px;
-                                                                                                                                                                padding-top: 0px;
-                                                                                                                                                                "> Marcar</button>  <button href="javascript:void(0);" class="btn btn-labeled btn-primary" style="    align-items: center;
-                                                                                                                                                                justify-content: center;
-                                                                                                                                                                height: 20px;
-                                                                                                                                                                padding-top: 0px;
-                                                                                                                                                                "> Comentar</button>
+                                                                                                                                      justify-content: center;
+                                                                                                                                      height: 20px;
+                                                                                                                                      padding-top: 0px;
+                                                                                                                                      "> Marcar</button>  <button href="javascript:void(0);" class="btn btn-labeled btn-primary" style="    align-items: center;
+                                                                                                                                      justify-content: center;
+                                                                                                                                      height: 20px;
+                                                                                                                                      padding-top: 0px;
+                                                                                                                                      "> Comentar</button>
                                                                 </li>
                                                             </ul>
                                                         </li>
@@ -241,14 +245,14 @@
                                                             <ul>
                                                                 <li>
                                                                     <a href="javascript:void(0);">Create component that...</a><button href="javascript:void(0);" class="btn btn-labeled btn-warning" style="    align-items: center;
-                                                                                                                                                                justify-content: center;
-                                                                                                                                                                height: 20px;
-                                                                                                                                                                padding-top: 0px;
-                                                                                                                                                                "> Marcar</button>  <button href="javascript:void(0);" class="btn btn-labeled btn-primary" style="    align-items: center;
-                                                                                                                                                                justify-content: center;
-                                                                                                                                                                height: 20px;
-                                                                                                                                                                padding-top: 0px;
-                                                                                                                                                                "> Comentar</button>
+                                                                                                                                      justify-content: center;
+                                                                                                                                      height: 20px;
+                                                                                                                                      padding-top: 0px;
+                                                                                                                                      "> Marcar</button>  <button href="javascript:void(0);" class="btn btn-labeled btn-primary" style="    align-items: center;
+                                                                                                                                      justify-content: center;
+                                                                                                                                      height: 20px;
+                                                                                                                                      padding-top: 0px;
+                                                                                                                                      "> Comentar</button>
                                                                 </li>
                                                             </ul>
                                                         </li>

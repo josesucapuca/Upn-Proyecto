@@ -7,6 +7,16 @@
 
         <title> SmartAdmin </title>
         <?php include_once './inc2/Estilos.php'; ?>
+        <style>
+            @media(max-width:767px){
+                .sortable-grid{
+                    height: auto;
+                }
+                #frameVer{
+                    height: 50vh !important;
+                }
+            }
+        </style>
     </head>
 
     <!--
@@ -53,7 +63,7 @@
             * 'fixed-page-footer' - Fixes footer
             * 'container'         - boxed layout mode (non-responsive: will not work with fixed-navigation & fixed-ribbon)
     -->
-    <body class="">
+    <body class="" >
 
         <!-- HEADER -->
         <header id="header">
@@ -207,26 +217,13 @@
                     <div class="row">
 
                         <!-- NEW WIDGET START -->
-                        <article class="col-xs-12 col-sm-5 col-md-5 col-lg-5" style="margin-bottom: 30px">
+                        <article class="col-xs-12 col-sm-6 col-md-5 col-lg-5" style="margin-bottom: 30px">
 
                             <!-- Widget ID (each widget will need unique ID)-->
-                            <div class="jarviswidget" id="wid-id-11" data-widget-editbutton="true">
-                                <!-- widget options:
-                                usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
-
-                                data-widget-colorbutton="false"
-                                data-widget-editbutton="false"
-                                data-widget-togglebutton="false"
-                                data-widget-deletebutton="false"
-                                data-widget-fullscreenbutton="false"
-                                data-widget-custombutton="false"
-                                data-widget-collapsed="true"
-                                data-widget-sortable="false"
-
-                                -->
+                            <div class="jarviswidget jarviswidget-color-greenLight" id="wid-id-11" data-widget-editbutton="true" >
                                 <header>
                                     <span class="widget-icon"> <i class="fa fa-book"></i> </span>
-                                    <h2>Versiculos Favoritos e Comentarios</h2>
+                                    <h2>Versiculos Favoritos</h2>
 
                                 </header>
 
@@ -241,8 +238,8 @@
                                     <!-- end widget edit box -->
 
                                     <!-- widget content -->
-                                    <div class="widget-body no-padding">
-                                        <iframe src="VersiculosFavoritos.php" width="100%" style="height: 50vh"></iframe>
+                                    <div class="widget-body no-padding ver">
+                                        <iframe id="frameVer" src="VersiculosFavoritos.php" width="100%" style="height: 100vh;border: 0px;"></iframe>
                                     </div>
                                     <!-- end widget content -->
 
@@ -253,10 +250,10 @@
 
                         </article>
                         <!-- WIDGET END -->
-                        <article class="col-xs-12 col-sm-7 col-md-7 col-lg-7" style="margin-bottom: 30px">
+                        <article class="col-xs-12 col-sm-6 col-md-7 col-lg-7" style="margin-bottom: 30px">
 
                             <!-- Widget ID (each widget will need unique ID)-->
-                            <div class="jarviswidget" id="wid-id-11" data-widget-editbutton="true">
+                            <div class="jarviswidget jarviswidget-color-teal" id="wid-id-11" data-widget-editbutton="true" data-widget-attstyle="jarviswidget-color-teal">
                                 <!-- widget options:
                                 usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
 
@@ -287,8 +284,8 @@
                                     <!-- end widget edit box -->
 
                                     <!-- widget content -->
-                                    <div class="widget-body no-padding">
-                                        <iframe src="Biblia.php" width="100%" style="height: 100vh"></iframe>
+                                    <div class="widget-body no-padding ">
+                                        <iframe src="Biblia.php" width="100%" style="height: 100vh;border: 0px;"></iframe>
                                     </div>
                                     <!-- end widget content -->
 

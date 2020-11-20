@@ -172,7 +172,7 @@
 
                 <!-- breadcrumb -->
                 <ol class="breadcrumb">
-                    <li>Jose Sucapuca</li><li>Devociones Matutinas</li>
+                    Campaña Evangelistica Dirigido por Jose Sucapuca
                 </ol>
                 <!-- end breadcrumb -->
 
@@ -195,7 +195,7 @@
 
                 <div class="row">
                     <div class="col-xs-12 col-sm-7 col-md-7 col-lg-4">
-                        <h1 class="page-title txt-color-blueDark"><i class="fa fa-book"></i> Devoción Matutina</h1>
+                        <h1 class="page-title txt-color-blueDark"><i class="fa fa-book"></i> Campaña Evangelistica</h1>
                     </div>
                     <div class="col-xs-12 col-sm-5 col-md-5 col-lg-8">
 
@@ -207,7 +207,51 @@
 
                     <!-- row -->
                     <div class="row">
+                        <article class="col-xs-12 col-sm-7 col-md-7 col-lg-7" style="margin-bottom: 30px">
 
+                            <!-- Widget ID (each widget will need unique ID)-->
+                            <div class="jarviswidget" id="wid-id-2" data-widget-editbutton="true">
+                                <!-- widget options:
+                                usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
+
+                                data-widget-colorbutton="false"
+                                data-widget-editbutton="false"
+                                data-widget-togglebutton="false"
+                                data-widget-deletebutton="false"
+                                data-widget-fullscreenbutton="false"
+                                data-widget-custombutton="false"
+                                data-widget-collapsed="true"
+                                data-widget-sortable="false"
+
+                                -->
+                                <header>
+                                    <span class="widget-icon"> <i class="fa fa-book"></i> </span>
+                                    <h2>Video Conferencia
+                                    </h2>
+
+                                </header>
+
+                                <!-- widget div-->
+                                <div>
+
+                                    <!-- widget edit box -->
+                                    <div class="jarviswidget-editbox">
+                                        <!-- This area used as dropdown edit box -->
+
+                                    </div>
+                                    <!-- end widget edit box -->
+
+                                    <!-- widget content -->
+                                    <div class="widget-body no-padding">
+                                        <iframe src="https://drive.google.com/file/d/1jPvuEy7UOLT-EWcrVJ7MgknYfJt2lITI/preview" width="100%" style="height: 100vh"></iframe>
+                                    </div>
+                                    <!-- end widget content -->
+
+                                </div>
+                            </div>
+                            <!-- end widget -->
+
+                        </article>
                         <!-- NEW WIDGET START -->
                         <article class="col-xs-12 col-sm-5 col-md-5 col-lg-5" style="margin-bottom: 30px">
 
@@ -339,50 +383,7 @@
 
                         </article>
                         <!-- WIDGET END -->
-                        <article class="col-xs-12 col-sm-7 col-md-7 col-lg-7" style="margin-bottom: 30px">
 
-                            <!-- Widget ID (each widget will need unique ID)-->
-                            <div class="jarviswidget" id="wid-id-2" data-widget-editbutton="true">
-                                <!-- widget options:
-                                usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
-
-                                data-widget-colorbutton="false"
-                                data-widget-editbutton="false"
-                                data-widget-togglebutton="false"
-                                data-widget-deletebutton="false"
-                                data-widget-fullscreenbutton="false"
-                                data-widget-custombutton="false"
-                                data-widget-collapsed="true"
-                                data-widget-sortable="false"
-
-                                -->
-                                <header>
-                                    <span class="widget-icon"> <i class="fa fa-book"></i> </span>
-                                    <h2>Biblia</h2>
-
-                                </header>
-
-                                <!-- widget div-->
-                                <div>
-
-                                    <!-- widget edit box -->
-                                    <div class="jarviswidget-editbox">
-                                        <!-- This area used as dropdown edit box -->
-
-                                    </div>
-                                    <!-- end widget edit box -->
-
-                                    <!-- widget content -->
-                                    <div class="widget-body no-padding">
-                                        <iframe src="https://devocionmatutina.com/wp-content/uploads/2019/12/ADULTOS-2-2020-320x180.jpg" width="100%" style="height: 100vh"></iframe>
-                                    </div>
-                                    <!-- end widget content -->
-
-                                </div>
-                            </div>
-                            <!-- end widget -->
-
-                        </article>
                         <!-- WIDGET END -->
                     </div>
 
