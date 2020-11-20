@@ -11,7 +11,7 @@ require_once("inc/config.ui.php");
 YOU CAN SET CONFIGURATION VARIABLES HERE BEFORE IT GOES TO NAV, RIBBON, ETC.
 E.G. $page_title = "Custom Title" */
 
-$page_title = "Dashboard";
+//$page_title = "Dashboard";
 
 /* ---------------- END PHP Custom Scripts ------------- */
 
@@ -20,12 +20,10 @@ $page_title = "Dashboard";
 //Note: all css files are inside css/ folder
 $page_css[] = "your_style.css";
 include("inc/header.php");
-
 //include left panel (navigation)
 //follow the tree in inc/config.ui.php
-$page_nav["dashboard"]["active"] = true;
+$page_nav["dashboard"]["active"] = false; 
 include("inc/nav.php");
-
 ?>
 <!-- ==========================CONTENT STARTS HERE ========================== -->
 <!-- MAIN PANEL -->

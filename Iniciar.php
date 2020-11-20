@@ -17,7 +17,7 @@
                             <div class="col-md-3">
                                 <div id="fh5co-logo"><a href="index.php"><img src="images/logo.png" width="60" height="60" ><span></span></a></div>
                             </div>
-                            <div class="col-md-8">
+                            <div class="col-md-9">
                                 <br>
                                 <h3>Iniciar Sesión</h3>
                             </div>

@@ -68,4 +68,5 @@ and open the template in the editor.
             </div>
         </footer>
     </body>
+    <script src="js/Logueo/Validacion.js"></script>
 </html>
