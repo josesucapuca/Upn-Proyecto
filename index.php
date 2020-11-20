@@ -1,32 +1,72 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-        <title>Login Box HTML Code - www.PSDGraphics.com</title>
-
-        <link href="login-box.css" rel="stylesheet" type="text/css" />
+        <meta charset="UTF-8">
+        <title></title>
+        <meta name="keywords" content="">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="style.css">   
+        <link rel="stylesheet" href="css/responsive.css">
+        <link href="css/style.css" rel="stylesheet" type="text/css"/>
     </head>
-
-    <body style="background: url('images/RA-web-Julio-nuestra-mirada-2-750x400.jpg');background-size: 100%;">
-
-
-        <div style="padding: 100px 0 0 250px;float: right">
-
-
-            <div id="login-box">
-
-                <H2>Inisia Sesion</H2>
-                <br />
-                <br />
-                <div id="login-box-name" style="margin-top:20px;">Usuario:</div><div id="login-box-field" style="margin-top:20px;"><input name="q" class="form-login" title="Username" value="" size="30" maxlength="2048" /></div>
-                <div id="login-box-name">Contraseña:</div><div id="login-box-field"><input name="q" type="password" class="form-login" title="Password" value="" size="30" maxlength="2048" /></div>
-                <br />
-                <span class="login-box-options"><input type="checkbox" name="1" value="1"> Recuerdame <a href="#" style="margin-left:30px;">Olvidaste Contraseña</a></span>
-                <br />
-                <br />
-                <a onclick="Validar()"><img src="images/login-btn.png" width="103" height="42" style="margin-left:90px;" /></a>
+    <body>
+        <div class="cuerpo">
+            <br><br><br>
+            <div class="container">
+                <div class="texto" ALIGN="CENTER">Centro de Evangelismo Online</div>
+                <div class="texto" ALIGN="CENTER">CEO - v1.0</div>
             </div>
-        </div>
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-3"></div>
+                    <div class="col-xs-12 col-sm-4"> <a href="Iniciar.php"><button type="button" class="btn btn-outline-light btn-lg boton">Iniciar Sesión</button></a></div>
+                    <div class="col-xs-12 col-sm-4"> <a href="Registrarse.php"><button type="button" class="btn btn-outline-light btn-lg boton">Registrarse</button></a></div>
+                </div>
+            </div> 
+            <br><br><br><br>
+        </div> 
+
+        <footer id="fh5co-footer" >
+            <div class="container">
+                <div class="row row-pb-md">                         
+                    <div class="col-md-3">
+                        <div id="fh5co-logo"><a><img src="images/logo.png" width="140" height="140" ><span></span></a></div>
+                    </div>
+                    
+                    <div class="col-md-3 col-sm-6 col-xs-6 col-md-push-1 fh5co-widget">
+                        <h1 style="color: white"> DIVISIONES </h1>
+                        <!--<h7 style="color: #F9F9F9"> DIVISIÓN SUDAMERICANA </h7>-->
+                        <ul class="fh5co-footer-links">
+                            <!--<h1 style="color: white">UNIONES</h1>-->
+                            <li><a href="#"> División Sudamericana </a></li>
+                            <!--<li><a href="#"> Unión Peruana del Sur </a></li>-->
+                        </ul>
+                    </div>
+                    <div class="col-md-3 col-sm-6 col-xs-6 col-md-push-1 fh5co-widget">                       
+                        <ul class="fh5co-footer-links">
+                            <h1 style="color: white">UNIONES</h1>
+                            <li><a href="#"> Unión Peruana del Norte </a></li>
+                            <li><a href="#"> Unión Peruana del Sur </a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1 fh5co-widget">
+                        <h1 style="color: white"> MISIÓN</h1>
+                        <ul class="fh5co-footer-links">
+                            <li><a href="#"> APCE </a></li>
+                            <li><a href="#"> MICOP </a></li>
+                        </ul>
+                    </div>                   
+                </div>
+            </div>
+        </footer>
     </body>
     <script src="js/Logueo/Validacion.js"></script>
 </html>
