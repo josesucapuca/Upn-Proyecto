@@ -46,7 +46,7 @@
         <!-- iOS web-app metas : hides Safari UI Components and Changes Status Bar Appearance -->
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-status-bar-style" content="black">
-
+<link rel="stylesheet" type="text/css" media="screen" href="css/fontAdventSans.css">
         <!-- Startup image for web apps -->
         <link rel="apple-touch-startup-image" href="img/splash/ipad-landscape.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape)">
         <link rel="apple-touch-startup-image" href="img/splash/ipad-portrait.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait)">

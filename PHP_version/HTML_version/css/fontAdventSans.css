@@ -1,0 +1,7 @@
+@font-face{
+    font-family: fontAdventSans;
+    src:url(AdventSans-Logo.otf);
+}
+h1,h2,h3,p{
+    font-family: "fontAdventSans" !important;
+}

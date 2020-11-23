@@ -1,10 +1,14 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="es">
     <head>
 
         <!--<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">-->
         <title> Inicio </title>
-        <?php include_once './inc2/Estilos.php';?>
+        <?php include_once './inc2/Estilos.php'; ?>
+        <link rel="stylesheet" type="text/css" media="screen" href="css/fontAdventSans.css">
     </head>
 
     <!-- #BODY -->
@@ -28,62 +32,14 @@
             <div id="logo-group">
 
                 <!-- PLACE YOUR LOGO HERE -->
-                <span id="logo"> <img src="img/logo.png" alt="SmartAdmin"> </span>
+                <span id="logo"> <img src="../images/iglesia.jpg" alt="SmartAdmin" style="height: 30px;width: 30px"> </span>
                 <!-- END LOGO PLACEHOLDER -->
 
                 <!-- Note: The activity badge color changes when clicked and resets the number to 0
                 Suggestion: You may want to set a flag when this happens to tick off all checked messages / notifications -->
-                <span id="activity" class="activity-dropdown"><img src="img/avatars/2.png" style="    width: 20px;margin: 0px 0px;padding: 2px 2px;height: 20px;display: flex;"> <!-- <i class="fa fa-user"></i> --><b class="badge"> 21 </b> </span>
-
-                <!-- AJAX-DROPDOWN : control this dropdown height, look and feel from the LESS variable file -->
-                <div class="ajax-dropdown">
-
-                    <!-- the ID links are fetched via AJAX to the ajax container "ajax-notifications" -->
-                    <div class="btn-group btn-group-justified" data-toggle="buttons">
-                        <label class="btn btn-default">
-                            <input type="radio" name="activity" id="ajax/notify/mail.html">
-                            Msgs (14) </label>
-                        <label class="btn btn-default">
-                            <input type="radio" name="activity" id="ajax/notify/notifications.html">
-                            notify (3) </label>
-                        <label class="btn btn-default">
-                            <input type="radio" name="activity" id="ajax/notify/tasks.html">
-                            Tasks (4) </label>
-                    </div>
-
-                    <!-- notification content -->
-                    <div class="ajax-notifications custom-scroll">
-
-                        <div class="alert alert-transparent">
-                            <h4>Click a button to show messages here</h4>
-                            This blank page message helps protect your privacy, or you can show the first message here automatically.
-                        </div>
-
-                        <i class="fa fa-lock fa-4x fa-border"></i>
-
-                    </div>
-                    <!-- end notification content -->
-
-                    <!-- footer: refresh area -->
-                    <span> Last updated on: 12/12/2013 9:43AM
-                        <button type="button" data-loading-text="<i class='fa fa-refresh fa-spin'></i> Loading..." class="btn btn-xs btn-default pull-right">
-                            <i class="fa fa-refresh"></i>
-                        </button> </span>
-                    <!-- end footer -->
-
-                </div>
-                <!-- END AJAX-DROPDOWN -->
             </div>
-
-
-            <!-- pulled right: nav area -->
             <div class="pull-right">
 
-                <!-- collapse menu button -->
-
-                <!-- end collapse menu -->
-
-                <!-- #MOBILE -->
                 <!-- Top menu profile link : this shows only when top menu is active -->
                 <ul id="mobile-profile-img" class="header-dropdown-list hidden-xs padding-5">
                     <li class="">
@@ -99,9 +55,7 @@
                                 <a href="profile.html" class="padding-10 padding-top-0 padding-bottom-0"> <i class="fa fa-user"></i> <u>P</u>rofile</a>
                             </li>
                             <li class="divider"></li>
-                            <li>
-                                <a href="javascript:void(0);" class="padding-10 padding-top-0 padding-bottom-0" data-action="toggleShortcut"><i class="fa fa-arrow-down"></i> <u>S</u>hortcut</a>
-                            </li>
+
                             <li class="divider"></li>
                             <li>
                                 <a href="javascript:void(0);" class="padding-10 padding-top-0 padding-bottom-0" data-action="launchFullscreen"><i class="fa fa-arrows-alt"></i> Full <u>S</u>creen</a>
@@ -118,24 +72,13 @@
                 <div id="logout" class="btn-header transparent pull-right">
                     <span> <a href="login.html" title="Sign Out" data-action="userLogout" data-logout-msg="You can improve your security further after logging out by closing this opened browser"><i class="fa fa-sign-out"></i></a> </span>
                 </div>
-                <!-- end logout button -->
-
-                <!-- search mobile button (this is hidden till mobile view port) -->
-                <div id="search-mobile" class="btn-header transparent pull-right">
-                    <span> <a href="javascript:void(0)" title="Search"><i class="fa fa-search"></i></a> </span>
-                </div>
-                <!-- end search mobile button -->
-
                 <!-- fullscreen button -->
                 <div id="fullscreen" class="btn-header transparent pull-right">
                     <span> <a href="javascript:void(0);" data-action="launchFullscreen" title="Full Screen"><i class="fa fa-arrows-alt"></i></a> </span>
                 </div>
-
-                <!-- end voice command -->
-
             </div>
-            <!-- end pulled right: nav area -->
 
+            <!-- pulled right: nav area -->
         </header>
         <!-- END HEADER -->
 
@@ -143,17 +86,25 @@
 
             <!-- RIBBON -->
             <div id="ribbon">
+                <div class="col-xs-6 col-sm-6 col-md-6">
+                    <span class="ribbon-button-alignment"> 
+                        <span id="refresh" class="btn btn-ribbon" data-action="resetWidgets" data-title="refresh"  rel="tooltip" data-placement="bottom" data-original-title="<i class='text-warning fa fa-warning'></i> Warning! This will reset all your widget settings." data-html="true">
+                            <i class="fa fa-refresh"></i>
+                        </span> 
+                    </span>
 
-                <span class="ribbon-button-alignment"> 
-                    <span id="refresh" class="btn btn-ribbon" data-action="resetWidgets" data-title="refresh"  rel="tooltip" data-placement="bottom" data-original-title="<i class='text-warning fa fa-warning'></i> Warning! This will reset all your widget settings." data-html="true">
-                        <i class="fa fa-refresh"></i>
-                    </span> 
-                </span>
+                    <!-- breadcrumb -->
+                    <ol class="breadcrumb">
+                        <?php echo $_SESSION["persona"]; ?>Jose Sucapuca <li style="text-align: right">/ MENÚ</li>
+                    </ol>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-6" style="text-align: right">
+                    <!-- breadcrumb -->
+                    <ol class="breadcrumb">
+                        <?php echo $_SESSION["Nombre_Iglesia"]; ?>
+                    </ol>
+                </div>
 
-                <!-- breadcrumb -->
-                <ol class="breadcrumb">
-                    Jose Sucapuca Zenteno<li style="text-align: right">/ MENÚ</li>
-                </ol>
                 <!-- end breadcrumb -->
 
                 <!-- You can also add more buttons to the
@@ -197,10 +148,10 @@
                                             </div>
                                             <div class="price-features" >
                                                 <ul class="list-unstyled text-left">
-                                                    <li><i class="fa fa-check text-success"></i> <a href="#"><strong>Biblia </strong></a></li>
+                                                    <li><i class="fa fa-check text-success"></i> <a href="BibliaPersonal.php"><strong>Biblia </strong></a></li>
                                                     <li><i class="fa fa-check text-success"></i> <a href="#"><strong>Reavivados por su palabra</strong></a></li>
-                                                    <li><i class="fa fa-check text-success"></i> <a href="#"><strong>Devocion Matutina</strong></a></li>
-                                                    <li><i class="fa fa-check text-success"></i> <a href="#"><strong>Himinario</strong></a></li>
+                                                    <li><i class="fa fa-check text-success"></i> <a href="Devocion_Matutina.php"><strong>Devocion Matutina</strong></a></li>
+                                                    <li><i class="fa fa-check text-success"></i> <a href="Himinario.php"><strong>Himinario</strong></a></li>
                                                     <li><i class="fa fa-check text-success"></i> <a href="#"><strong>Videos</strong></a></li>
                                                     <li><i class="fa fa-check text-success"></i> <a href="#"><strong>Musica</strong></a></li>
                                                 </ul>
@@ -222,7 +173,6 @@
                                                 <h1>
                                                     <strong>Opciones</strong>
                                                 </h1>
-
                                             </div>
                                             <div class="price-features">
                                                 <ul class="list-unstyled text-left">
@@ -250,7 +200,7 @@
                                             </div>
                                             <div class="price-features">
                                                 <ul class="list-unstyled text-left">
-                                                    <li><i class="fa fa-check text-success"></i> <a href="#"><strong>NINGUNO</strong></a><li>
+                                                    <li><i class="fa fa-check text-success"></i> <a href="Campana_Evangelistica.php"><strong>Campaña 1</strong></a><li>
 
                                                 </ul>
                                             </div>
@@ -268,7 +218,8 @@
                                         <div class="panel-body no-padding text-align-center">
                                             <div class="the-price">
                                                 <h1>
-                                                    <span class="subscript"><strong>Contenido</strong></span></h1>
+                                                    <strong>Opciones</strong>
+                                                </h1>
                                             </div>
                                             <div class="price-features">
                                                 <ul class="list-unstyled text-left">
@@ -385,19 +336,7 @@
         <!--================================================== -->
 
         <!-- PACE LOADER - turn this on if you want ajax loading to show (caution: uses lots of memory on iDevices)-->
-        <?php include_once './inc2/scripts.php';?>
-        <script type="text/javascript">
-            $(document).ready(function () {
-
-                var idioma = "hispano";
-                function ponerIdioma(cual) {
-                    document.getElementById(idioma).style.display = "none";
-                    idioma = cual;
-                    document.getElementById(idioma).style.display = "block";
-                }
-
-            });
-        </script>
+        <?php include_once './inc2/scripts.php'; ?>
 
     </body>
 
