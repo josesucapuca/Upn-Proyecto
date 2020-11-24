@@ -1,4 +1,4 @@
-<?php require_once("inc/init.php"); ?>
+
 <h2 class="email-open-header">
 	Re: Timelogs of last client <span class="label txt-color-white">inbox</span>
 	<a href="javascript:void(0);" rel="tooltip" data-placement="left" data-original-title="Print" class="txt-color-darken pull-right"><i class="fa fa-print"></i></a>	
@@ -7,7 +7,7 @@
 <div class="inbox-info-bar">
 	<div class="row">
 		<div class="col-sm-9">
-			<img src="<?php echo ASSETS_URL; ?>/img/avatars/5.png" alt="me" class="away">
+			<img src="img/avatars/5.png" alt="me" class="away">
 			<strong>Sadi Orlaf</strong>
 			<span class="hidden-mobile">&lt;sadi.orlaf@smartadmin.com&gt;to <strong>me</strong> on <i>12:10AM, 12 March 2013</i></span> 
 		</div>
@@ -70,7 +70,7 @@
 
 	</small>
 	<br>	
-	<img src="<?php echo ASSETS_URL; ?>/img/logo-blacknwhite.png" height="20" width="auto" style="margin-top:7px; padding-right:9px; border-right:1px dotted #9B9B9B;" />
+	<img src="img/logo-blacknwhite.png" height="20" width="auto" style="margin-top:7px; padding-right:9px; border-right:1px dotted #9B9B9B;" />
 </div>
 
 <div class="inbox-download">
@@ -80,7 +80,7 @@
 		<li>
 			<div class="well well-sm">
 				<span>
-					<img src="<?php echo ASSETS_URL; ?>/img/demo/sample.jpg">
+					<img src="img/demo/sample.jpg">
 				</span>
 				<br>
 				<strong>rocketlaunch.jpg</strong> 
@@ -140,9 +140,9 @@
 	</div>	
 
 	<ul class="list-inline">
-		<li><img src="<?php echo ASSETS_URL; ?>/img/avatars/5.png" alt="me" width="30px"></li>
-		<li><img src="<?php echo ASSETS_URL; ?>/img/avatars/3.png" alt="me" width="30px"></li>
-		<li><img src="<?php echo ASSETS_URL; ?>/img/avatars/sunny.png" alt="me" width="30px"></li>
+		<li><img src="img/avatars/5.png" alt="me" width="30px"></li>
+		<li><img src="img/avatars/3.png" alt="me" width="30px"></li>
+		<li><img src="img/avatars/sunny.png" alt="me" width="30px"></li>
 		<li><a href="javascript:void(0);">1 more</a></li>
 	</ul>
 
@@ -158,7 +158,7 @@
 	$(".table-wrap [rel=tooltip]").tooltip();
 
 	$(".replythis").click(function(){
-		loadURL("ajax/email-reply.php", $('#inbox-content > .table-wrap'));
+		loadURL("ajax/email-reply.html", $('#inbox-content > .table-wrap'));
 	})
 	
 </script>

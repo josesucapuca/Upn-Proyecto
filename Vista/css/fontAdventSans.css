@@ -2,6 +2,6 @@
     font-family: fontAdventSans;
     src:url(AdventSans-Logo.otf);
 }
-h1,h2,h3,p,a,ol,li,div,span{
+h1,h2,h3,p,ol,li{
     font-family: "fontAdventSans" !important;
 }
