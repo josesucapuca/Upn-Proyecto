@@ -5,7 +5,7 @@
         <title> SmartAdmin </title>
         <meta name="description" content="">
         <meta name="author" content="">
-<link rel="stylesheet" type="text/css" media="screen" href="css/fontAdventSans.css">
+        <link rel="stylesheet" type="text/css" media="screen" href="css/fontAdventSans.css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
         <!-- #CSS Links -->
@@ -143,7 +143,13 @@
 
                                 <div class="row">
                                     <div class="col-md-4">
-                                        <iframe width="100%" height="315" src="https://www.youtube.com/embed/QztOkV_sguk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                        <iframe width="100%" height="315" src="https://drive.google.com/file/d/1nXsHFxd_5h-8wghxBhkZ0BQCrfuJNlwc/preview" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                        <video src="https://drive.google.com/file/d/1nXsHFxd_5h-8wghxBhkZ0BQCrfuJNlwc/preview" width=320  height=240 controls poster="https://drive.google.com/file/d/1nXsHFxd_5h-8wghxBhkZ0BQCrfuJNlwc/preview">
+                                            Lo sentimos. Este vídeo no puede ser reproducido en tu navegador.<br>
+                                            La versión descargable está disponible en <a href="URL">Enlace</a>. 
+                                        </video>
+                                                                            <iframe src="https://drive.google.com/file/d/0BzYulys_oiIoQ3VVeE9WZEJKb28/preview" width="640" height="480"></iframe>
+
                                         <ul class="list-inline padding-10">
                                         </ul>
                                     </div>
@@ -160,7 +166,8 @@
 
                                 <div class="row">
                                     <div class="col-md-4">
-                                        <iframe width="100%" height="315" src="https://www.youtube.com/embed/OSOpEBR_5FA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><ul class="list-inline padding-10">
+                                        <iframe width="100%" height="315" src="https://www.youtube.com/embed/OSOpEBR_5FA?rel=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><ul class="list-inline padding-10">
+                                            <iframe src="//www.youtube.com/embed/-SkemRsMVYs?rel=0"></iframe>
                                     </div>
                                     <div  class="col-md-8 padding-left-0">
                                         <h3 class="margin-top-0"><a href="javascript:void(0);">Cantad Alegres N°1</a><br></h3>

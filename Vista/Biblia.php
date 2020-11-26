@@ -12,7 +12,7 @@
                 color: #fff;
             }
             .select2-container .select2-choice {
-             
+
                 background-color: #c1ad88;
             }
 
@@ -63,7 +63,7 @@
             * 'fixed-page-footer' - Fixes footer
             * 'container'         - boxed layout mode (non-responsive: will not work with fixed-navigation & fixed-ribbon)
     -->
-    <body class="" style="background: #604d2b91">
+    <body class="container" style="background: #604d2b91">
 
         <!-- MAIN PANEL -->
         <div >
@@ -72,52 +72,35 @@
                 <!-- widget grid -->
                 <section id="widget-grid" class="">
 
-                    <div class="row">
-                        <div class="row">
-                            <article class="col-sm-6 col-md-6 col-lg-6">
+                    <div class="row" >
+                        <div class="row" >
+                            <article class="col-sm-6 col-md-6 col-lg-6" style="    justify-content: center;
+                                     display: flex;">
                                 <div class="form-group col-lg-6">
                                     <label>Libros</label>
-                                    <select style="width:100%" class="select2">
-                                        <optgroup label="Antiguo testamento">
-                                            <option value="AK">Genesis</option>
-                                            <option value="HI">Exodo</option>
-                                            <option value="HI">Levitico</option>
-                                            <option value="HI">Deutoronomio</option>
-                                            <option value="HI">Josue</option>
-                                            <option value="HI">Jueces</option>
+                                    <select id="seLibro" style="width:100%" class="select2" placeholder="Libros">
+                                        <option value=""> SELECCIONAR</option>
+                                        <optgroup id="AntTes" label="Antiguo testamento">
                                         </optgroup>
-                                        <optgroup label="Nuevo Testamento">
-                                            <option value="CA">California</option>
-                                            <option value="NV">Nevada</option>
-                                            <option value="OR">Oregon</option>
-                                            <option value="WA">Washington</option>
+                                        <optgroup id="NueTes" label="Nuevo Testamento">
                                         </optgroup>
-
                                     </select>
 
                                 </div>
                             </article>
-                            <article class="col-sm-6 col-md-6 col-lg-6">
+                            <article class="col-sm-6 col-md-6 col-lg-6" style="    justify-content: center;
+                                     display: flex;">
                                 <div class="form-group col-lg-6">
                                     <label>CAPITULO</label>
-                                    <select style="width:100%" class="select2">
-                                        <optgroup label="Antiguo testaamento">
-                                            <option value="AK">1</option>
-                                            <option value="HI">2</option>
-                                        </optgroup>
-                                        <optgroup label="Nuevo Testamento">
-                                            <option value="CA">3</option>
-                                            <option value="NV">4</option>
-                                            <option value="OR">5</option>
-                                            <option value="WA">6</option>
-                                        </optgroup>
+                                    <select id="seCapitulo" style="width:100%" class="select2">
+                                            <option value=""> SELECCIONAR</option>
                                     </select>
                                 </div>
                             </article>
                         </div>
 
                         <!-- NEW COL START -->
-                        <article class="col-sm-12 col-md-12 col-lg-6" style="margin-bottom: 10px">
+                        <article class="col-sm-12 col-md-12 col-lg-12" style="margin-bottom: 10px">
 
                             <!-- Widget ID (each widget will need unique ID)-->
                             <div class="jarviswidget" id="wid-id-4" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-custombutton="false">
@@ -152,11 +135,11 @@
 
                                     <!-- widget content -->
                                     <div class="widget-body">
-                                        <p class="alert alert-info text-align-center">
+                                        <p id="cabecera" class="alert alert-info text-align-center">
                                             <strong>Libro Capitulo Xx</strong>
                                         </p>
 
-                                        <div class="tree">
+                                        <div id="Cuerpo" class="tree">
                                             <ul>
                                                 <li>
                                                     <span><i class="fa fa-lg fa-book"></i> Libro Capitulo X</span>
@@ -404,6 +387,7 @@
         <script src="js/plugin/x-editable/x-editable.min.js"></script>
         <script src="js/plugin/typeahead/typeahead.min.js"></script>
         <script src="js/plugin/typeahead/typeaheadjs.min.js"></script>
+        <script src="../js/Biblia/Biblia.js"></script>
         <script type="text/javascript">
 
             // DO NOT REMOVE : GLOBAL FUNCTIONS!

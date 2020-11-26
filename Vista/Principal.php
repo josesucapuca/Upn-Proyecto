@@ -3,7 +3,7 @@ session_start();
 if ($_SESSION["Usuario"] !== null||$_SESSION["Usuario"] !== "") {
     ?>
     <!DOCTYPE html>
-    <html lang="es">
+    <html lang="es" style="background-image: url('img/pattern/tileable_wood_texture.png');">
         <head>
 
             <!--<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">-->
@@ -26,7 +26,7 @@ if ($_SESSION["Usuario"] !== null||$_SESSION["Usuario"] !== "") {
                 * 'fixed-page-footer' - Fixes footer
                 * 'container'         - boxed layout mode (non-responsive: will not work with fixed-navigation & fixed-ribbon)
         -->
-        <body >
+        <body class="container">
 
             <!-- HEADER -->
             <header id="header">
@@ -241,6 +241,33 @@ if ($_SESSION["Usuario"] !== null||$_SESSION["Usuario"] !== "") {
                                             </div>
                                         </div>
                                     </div>		    	
+                                    <div class="col-xs-12 col-sm-6 col-md-3">
+                                        <div class="panel panel-red  pricing-big">
+
+                                            <div class="panel-heading">
+                                                <h3 class="panel-title">
+                                                    Devocional Diario</h3>
+                                            </div>
+                                            <div class="panel-body no-padding text-align-center">
+                                                <div class="the-price">
+                                                    <h1>
+                                                        <strong>Opciones</strong>
+                                                    </h1>
+                                                </div>
+                                                <div class="price-features">
+                                                    <ul class="list-unstyled text-left">
+                                                        <li><i class="fa fa-check text-success"></i> Lifetime access <strong> to all storage locations</strong></li>
+                                                        <li><i class="fa fa-check text-success"></i> <strong>Unlimited</strong> storage</li>
+                                                        <li><i class="fa fa-check text-success"></i> Superbig <strong> download quota</strong></li>
+                                                        <li><i class="fa fa-check text-success"></i> <strong>Cash on Delivery</strong></li>
+                                                        <li><i class="fa fa-check text-success"></i> All time <strong> updates</strong></li>
+                                                        <li><i class="fa fa-check text-success"></i> <strong>Unlimited</strong> access to all files</li>
+                                                        <li><i class="fa fa-check text-success"></i> <strong>Allowed</strong> to be exclusing per sale</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>		    	
                                 </div>
 
                             </div>
@@ -260,86 +287,17 @@ if ($_SESSION["Usuario"] !== null||$_SESSION["Usuario"] !== "") {
             <div class="page-footer" style="    padding-left: 0px;">
                 <div class="row">
                     <div class="col-xs-12 col-sm-6">
-                        <span class="txt-color-white"> <span class="hidden-xs">Aplicación Web Diseñado por  </span>Nexo-Consultores  con plantilla Smart-Admin</span>
+                        <span class="txt-color-white"> <span class="hidden-xs">Aplicación Web Diseñado por  </span>Nexo-Consultores </span>
                     </div>
 
                     <div class="col-xs-6 col-sm-6 text-right hidden-xs">
                         <div class="txt-color-white inline-block">
-                            <i class="txt-color-blueLight hidden-mobile">Last account activity <i class="fa fa-clock-o"></i> <strong>52 mins ago &nbsp;</strong> </i>
-                            <div class="btn-group dropup">
-                                <button class="btn btn-xs dropdown-toggle bg-color-blue txt-color-white" data-toggle="dropdown">
-                                    <i class="fa fa-link"></i> <span class="caret"></span>
-                                </button>
-                                <ul class="dropdown-menu pull-right text-left">
-                                    <li>
-                                        <div class="padding-5">
-                                            <p class="txt-color-darken font-sm no-margin">Download Progress</p>
-                                            <div class="progress progress-micro no-margin">
-                                                <div class="progress-bar progress-bar-success" style="width: 50%;"></div>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="divider"></li>
-                                    <li>
-                                        <div class="padding-5">
-                                            <p class="txt-color-darken font-sm no-margin">Server Load</p>
-                                            <div class="progress progress-micro no-margin">
-                                                <div class="progress-bar progress-bar-success" style="width: 20%;"></div>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="divider"></li>
-                                    <li>
-                                        <div class="padding-5">
-                                            <p class="txt-color-darken font-sm no-margin">Memory Load <span class="text-danger">*critical*</span></p>
-                                            <div class="progress progress-micro no-margin">
-                                                <div class="progress-bar progress-bar-danger" style="width: 70%;"></div>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="divider"></li>
-                                    <li>
-                                        <div class="padding-5">
-                                            <button class="btn btn-block btn-default">refresh</button>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
+                            <i class="txt-color-blueLight hidden-mobile">Iglesia Adventista del Septimo Dia  </i>
                         </div>
                     </div>
                 </div>
             </div>
             <!-- END PAGE FOOTER -->
-
-            <!-- SHORTCUT AREA : With large tiles (activated via clicking user name tag)
-            Note: These tiles are completely responsive,
-            you can add as many as you like
-            -->
-            <div id="shortcut">
-                <ul>
-                    <li>
-                        <a href="inbox.html" class="jarvismetro-tile big-cubes bg-color-blue"> <span class="iconbox"> <i class="fa fa-envelope fa-4x"></i> <span>Mail <span class="label pull-right bg-color-darken">14</span></span> </span> </a>
-                    </li>
-                    <li>
-                        <a href="calendar.html" class="jarvismetro-tile big-cubes bg-color-orangeDark"> <span class="iconbox"> <i class="fa fa-calendar fa-4x"></i> <span>Calendar</span> </span> </a>
-                    </li>
-                    <li>
-                        <a href="gmap-xml.html" class="jarvismetro-tile big-cubes bg-color-purple"> <span class="iconbox"> <i class="fa fa-map-marker fa-4x"></i> <span>Maps</span> </span> </a>
-                    </li>
-                    <li>
-                        <a href="invoice.html" class="jarvismetro-tile big-cubes bg-color-blueDark"> <span class="iconbox"> <i class="fa fa-book fa-4x"></i> <span>Invoice <span class="label pull-right bg-color-darken">99</span></span> </span> </a>
-                    </li>
-                    <li>
-                        <a href="gallery.html" class="jarvismetro-tile big-cubes bg-color-greenLight"> <span class="iconbox"> <i class="fa fa-picture-o fa-4x"></i> <span>Gallery </span> </span> </a>
-                    </li>
-                    <li>
-                        <a href="profile.html" class="jarvismetro-tile big-cubes selected bg-color-pinkDark"> <span class="iconbox"> <i class="fa fa-user fa-4x"></i> <span>My Profile </span> </span> </a>
-                    </li>
-                </ul>
-            </div>
-            <!-- END SHORTCUT AREA -->
-
-            <!--================================================== -->
 
             <!-- PACE LOADER - turn this on if you want ajax loading to show (caution: uses lots of memory on iDevices)-->
     <?php include_once './inc2/scripts.php'; ?>

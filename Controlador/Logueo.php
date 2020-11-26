@@ -41,4 +41,5 @@ if ($opcion === "SalirSesion") {
     session_start();
     session_destroy();
 }
+mysqli_close($conexion);
 ?>
