@@ -32,8 +32,8 @@ function CrearUsaurio(U, P) {
             if (response) {
 
             } else {
-                alert("No se Pudo Desactivar");
-                location.href = "CRUD_Local.php";
+                alert("No se Pudo Ingresar");
+//                location.href = "index.php";
             }
         }
     });
