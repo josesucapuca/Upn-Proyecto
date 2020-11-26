@@ -6,6 +6,7 @@
 
         <title> SmartAdmin </title>
         <?php include_once './inc2/Estilos.php'; ?>
+        <link rel="stylesheet" type="text/css" media="screen" href="css/fontAdventSans.css">
     </head>
 
     <!--
@@ -56,56 +57,15 @@
 
         <!-- HEADER -->
         <header id="header">
-            <div id="logo-group">
+         <div id="logo-group">
 
                 <!-- PLACE YOUR LOGO HERE -->
-                <span id="logo"> <img src="img/logo.png" alt="SmartAdmin"> </span>
+                <span id="logo"> <img src="../images/iglesia.jpg" alt="SmartAdmin" style="height: 30px;width: 30px"> </span>
                 <!-- END LOGO PLACEHOLDER -->
 
                 <!-- Note: The activity badge color changes when clicked and resets the number to 0
                 Suggestion: You may want to set a flag when this happens to tick off all checked messages / notifications -->
-                <span id="activity" class="activity-dropdown"> <i class="fa fa-user"></i> <b class="badge"> 21 </b> </span>
-
-                <!-- AJAX-DROPDOWN : control this dropdown height, look and feel from the LESS variable file -->
-                <div class="ajax-dropdown">
-
-                    <!-- the ID links are fetched via AJAX to the ajax container "ajax-notifications" -->
-                    <div class="btn-group btn-group-justified" data-toggle="buttons">
-                        <label class="btn btn-default">
-                            <input type="radio" name="activity" id="ajax/notify/mail.html">
-                            Msgs (14) </label>
-                        <label class="btn btn-default">
-                            <input type="radio" name="activity" id="ajax/notify/notifications.html">
-                            notify (3) </label>
-                        <label class="btn btn-default">
-                            <input type="radio" name="activity" id="ajax/notify/tasks.html">
-                            Tasks (4) </label>
-                    </div>
-
-                    <!-- notification content -->
-                    <div class="ajax-notifications custom-scroll">
-
-                        <div class="alert alert-transparent">
-                            <h4>Click a button to show messages here</h4>
-                            This blank page message helps protect your privacy, or you can show the first message here automatically.
-                        </div>
-
-                        <i class="fa fa-lock fa-4x fa-border"></i>
-
-                    </div>
-                    <!-- end notification content -->
-
-                    <!-- footer: refresh area -->
-                    <span> Last updated on: 12/12/2013 9:43AM
-                        <button type="button" data-loading-text="<i class='fa fa-refresh fa-spin'></i> Loading..." class="btn btn-xs btn-default pull-right">
-                            <i class="fa fa-refresh"></i>
-                        </button> </span>
-                    <!-- end footer -->
-
-                </div>
-                <!-- END AJAX-DROPDOWN -->
             </div>
-
             <!-- pulled right: nav area -->
             <div class="pull-right">
 
@@ -243,7 +203,7 @@
 
                                     <!-- widget content -->
                                     <div class="widget-body no-padding">
-                                        <iframe src="https://drive.google.com/file/d/1jPvuEy7UOLT-EWcrVJ7MgknYfJt2lITI/preview" width="100%" style="height: 100vh"></iframe>
+                                        <iframe src="https://www.jspuzzles.com/indexes.php" width="100%" style="height: 100vh"></iframe>
                                     </div>
                                     <!-- end widget content -->
 
@@ -255,91 +215,6 @@
                         <!-- NEW WIDGET START -->
                         <article class="col-xs-12 col-sm-5 col-md-5 col-lg-5" style="margin-bottom: 30px">
 
-                            <!-- Widget ID (each widget will need unique ID)-->
-                            <div class="jarviswidget jarviswidget-color-blueLight" id="wid-id-10" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-togglebutton="false" data-widget-deletebutton="false" data-widget-fullscreenbutton="false" data-widget-custombutton="false" data-widget-sortable="false">
-                                <!-- widget options:
-                                usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
-
-                                data-widget-colorbutton="false"
-                                data-widget-editbutton="false"
-                                data-widget-togglebutton="false"
-                                data-widget-deletebutton="false"
-                                data-widget-fullscreenbutton="false"
-                                data-widget-custombutton="false"
-                                data-widget-collapsed="true"
-                                data-widget-sortable="false"
-
-                                -->
-                                <header>
-                                    <span class="widget-icon"> <i class="fa fa-book"></i> </span>
-                                    <h2>Devociones Matutinas </h2>
-
-                                </header>
-
-                                <!-- widget div-->
-                                <div>
-
-                                    <!-- widget edit box -->
-                                    <div class="jarviswidget-editbox">
-                                        <!-- This area used as dropdown edit box -->
-
-                                    </div>
-                                    <!-- end widget edit box -->
-
-                                    <!-- widget content -->
-                                    <div class="widget-body no-padding">
-
-                                        <div class="panel-group smart-accordion-default" id="accordion-2">
-                                            <div class="panel panel-default">
-                                                <div class="panel-heading">
-                                                    <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion-2" href="#collapseOne-1"> <i class="fa fa-fw fa-plus-circle txt-color-green"></i> <i class="fa fa-fw fa-minus-circle txt-color-red"></i>Devocion Matutina Para Adultos </a></h4>
-                                                </div>
-                                                <div id="collapseOne-1" class="panel-collapse collapse in">
-                                                    <div class="panel-body">
-                                                        <a href="https://drive.google.com/file/d/1jPvuEy7UOLT-EWcrVJ7MgknYfJt2lITI/view?usp=sharing" target="_blank">Devocion Matutina Para Adultos (12/12/12) <i class="fa fa-file"></i></a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="panel panel-default">
-                                                <div class="panel-heading">
-                                                    <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion-2" href="#collapseTwo-1" class="collapsed"> <i class="fa fa-fw fa-plus-circle txt-color-green"></i> <i class="fa fa-fw fa-minus-circle txt-color-red"></i> Devocion Matutina Para Jovenes </a></h4>
-                                                </div>
-                                                <div id="collapseTwo-1" class="panel-collapse collapse">
-                                                    <div class="panel-body">
-                                                        <a href="#">Devocion Matutina Para Adultos (12/12/12) <i class="fa fa-file"></i></a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="panel panel-default">
-                                                <div class="panel-heading">
-                                                    <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion-2" href="#collapseThree-1" class="collapsed"> <i class="fa fa-fw fa-plus-circle txt-color-green"></i> <i class="fa fa-fw fa-minus-circle txt-color-red"></i> Devocion Matutina Para Damas </a></h4>
-                                                </div>
-                                                <div id="collapseThree-1" class="panel-collapse collapse">
-                                                    <div class="panel-body">
-                                                        <a href="#">Devocion Matutina Para Adultos (12/12/12) <i class="fa fa-file"></i></a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="panel panel-default">
-                                                <div class="panel-heading">
-                                                    <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion-2" href="#collapseFor-1" class="collapsed"> <i class="fa fa-fw fa-plus-circle txt-color-green"></i> <i class="fa fa-fw fa-minus-circle txt-color-red"></i> Devocion Matutina Para Niños </a></h4>
-                                                </div>
-                                                <div id="collapseFor-1" class="panel-collapse collapse">
-                                                    <div class="panel-body">
-                                                        <a href="#">Devocion Matutina Para Adultos (12/12/12) <i class="fa fa-file"></i></a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                    <!-- end widget content -->
-
-                                </div>
-                                <!-- end widget div -->
-
-                            </div>
-                            <!-- end widget -->
                             <!-- Widget ID (each widget will need unique ID)-->
                             <div class="jarviswidget" id="wid-id-1" data-widget-editbutton="true">
                                 <!-- widget options:
@@ -380,7 +255,46 @@
                                 </div>
                             </div>
                             <!-- end widget -->
+ <!-- Widget ID (each widget will need unique ID)-->
+                            <div class="jarviswidget" id="wid-id-1" data-widget-editbutton="true">
+                                <!-- widget options:
+                                usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
 
+                                data-widget-colorbutton="false"
+                                data-widget-editbutton="false"
+                                data-widget-togglebutton="false"
+                                data-widget-deletebutton="false"
+                                data-widget-fullscreenbutton="false"
+                                data-widget-custombutton="false"
+                                data-widget-collapsed="true"
+                                data-widget-sortable="false"
+
+                                -->
+                                <header>
+                                    <span class="widget-icon"> <i class="fa fa-book"></i> </span>
+                                    <h2>Himinario</h2>
+
+                                </header>
+
+                                <!-- widget div-->
+                                <div>
+
+                                    <!-- widget edit box -->
+                                    <div class="jarviswidget-editbox">
+                                        <!-- This area used as dropdown edit box -->
+
+                                    </div>
+                                    <!-- end widget edit box -->
+
+                                    <!-- widget content -->
+                                    <div class="widget-body no-padding">
+                                        <iframe src="Himinario.php" width="100%" height="450px"></iframe>
+                                    </div>
+                                    <!-- end widget content -->
+
+                                </div>
+                            </div>
+                            <!-- end widget -->
                         </article>
                         <!-- WIDGET END -->
 

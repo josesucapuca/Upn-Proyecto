@@ -5,6 +5,7 @@
         <!--<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">-->
         <title> Inicio </title>
         <?php include_once './inc2/Estilos.php'; ?>
+        <link rel="stylesheet" type="text/css" media="screen" href="css/fontAdventSans.css">
     </head>
 
     <!-- #BODY -->
