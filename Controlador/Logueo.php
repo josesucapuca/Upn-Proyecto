@@ -2,11 +2,11 @@
 
 include_once '../Factory/ConexionOperacion.php';
 $opc = $_POST["opc"];
-if ($opc === "ValidarUsuario") {
+if ($opc === "IniciarSesion") {
     $usuario = $_POST["a"];
     $password = $_POST["b"];
     //echo $Categoria.$Estado_Categoria.$Usuariocreacion;
-    $consultda = " call ValidarUsaurio('$usuario','$password')";
+    $consultda = "call IniciarSesion('$usuario','$password')";
     $var = mysqli_query($conexion, $consultda);
     echo json_encode($var);
 }

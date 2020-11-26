@@ -13,9 +13,15 @@
     font-family:Verdana;
 }
 .boton{
+    font-family: 'Numans', sans-serif;
     border:double;
     background:#1A2A4D;
     color: white;
+    border-radius: 50px;
+    font-weight: 300;
+    font-size: 25px;
+    padding-left: 30px;
+    padding-right: 30px;
 }
 .footerfondo {
     background:#1A2A4D;
@@ -38,6 +44,7 @@
     overflow: hidden; 
     padding: 5px; 
 }
+
 
 
 
