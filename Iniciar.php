@@ -95,14 +95,14 @@ if ($_SESSION["Usuario"] !== null) {
                 <div class="container">
                     <br><br>
                     <div class="row">
-                        <div class="col-md-3 col-sm-6">
+                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
                             <div class="footer-pad">
                                 <div class="col-md-3">
                                     <div id="fh5co-logo"><a><img src="images/logo.png" width="140" height="140" ><span></span></a></div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-2 col-sm-6">
+                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
                             <div class="footer-pad">
                                 <h4>UNIONES</h4>
                                 <ul class="list-unstyled">
@@ -110,7 +110,7 @@ if ($_SESSION["Usuario"] !== null) {
                                 </ul>
                             </div>
                         </div>
-                        <div class="col-md-4 col-sm-6">
+                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
                             <div class="footer-pad">
                                 <h4>MISIONES</h4>
                                 <ul class="list-unstyled">
@@ -125,7 +125,7 @@ if ($_SESSION["Usuario"] !== null) {
                                 </ul>
                             </div>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
                             <h4>Redes Sociales</h4>
                             <ul class="social-network social-circle">
                                 <li><a href="https://www.facebook.com/adventistas.upn/" class="icoFacebook" title="Facebook" target="_blank"><i class="fab fa-facebook-f"></i></a></li>

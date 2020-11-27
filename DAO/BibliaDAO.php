@@ -3,27 +3,28 @@
 include_once '../Factory/ConexionOperacion.php';
 
 class BibliaDAO {
-
-    public function ListarBibliasDAO() {
-        $consulta = "call ListarBiblia();";
-        $var = mysqli_query($conexion, $consulta);
-        return $var;
+    private function sql($sql) {
+        $conex = new Conexion();
+        $c=$conex->Conectar();
+        return mysqli_query($c, $sql);
     }
-    public function ListarLibroDAO($id_Biblia) {
+    public function ListarLibro() {
         $consulta = "call ListaLibroByBiblia(1);";
-        $var = mysqli_query($conexion, $consulta);
-        return $var;
+        return $this->sql($consulta);
     }
-    public function ListarCapituloDAO($id_Libro) {
-        $consulta = "call ListaCapituloByLibro($id_Libro)";
-        $var = mysqli_query($conexion, $consulta);
-        return $var;
+    public function ListarCapitulo($id_Libro) {
+        $consulta = "call ListaCapituloByLibro($id_Libro);";
+        return $this->sql($consulta);
     }
-    public function ListarVersiculo($id_Capitulo) {
-        $consulta = "call ListaVersiculosByCapitulo($id_Capitulo)";
-        $var = mysqli_query($conexion, $consulta);
-        return $var;
+    public function ListarVersiculo($id_Capitulo,$id_Persona) {
+        $consulta = "call ListaVersiculosByCapitulo($id_Capitulo,$id_Persona);";
+        return $this->sql($consulta);
     }
+    public function LibroxCapitulo($id_Capitulo) {
+        $consulta = "call LibroxCapitulo($id_Capitulo);";
+        return $this->sql($consulta);
+    }
+    
 }
-mysqli_close($conexion);
+
 ?>

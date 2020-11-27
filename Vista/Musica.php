@@ -1,4 +1,7 @@
-<?php ?>
+<?php
+session_start();
+if ($_SESSION["Usuario"] !== null) {
+    ?>
 <!DOCTYPE html>
 <html lang="en-us">
     <head>
@@ -459,4 +462,4 @@
 
     </body>
 
-</html>
+</html><?php } else { include_once './inc2/Redireccionar.php';} ?>

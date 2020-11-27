@@ -1,5 +1,8 @@
+<?php
+session_start();
+if ($_SESSION["Usuario"] !== null) {
+    ?>
 <!DOCTYPE html>
-<?php session_start(); ?>
 <html lang="es">
     <head>
 
@@ -25,8 +28,8 @@
             #Licap{
                 cursor: pointer;
                 padding: 7px;
-                    background: #6c5c3e;
-    color: white;
+                background: #6c5c3e;
+                color: white;
             }
             #Licap:hover {
                 background-color: #1f8c46;
@@ -154,7 +157,7 @@
 
                                     <!-- widget content -->
                                     <div class="widget-body" style="min-height: 80vh;">
-                                        <p id="cabecera" class="alert alert-info text-align-center">
+                                        <p id="cabecera" class="alert alert-success text-align-center">
                                             <strong>SELECCIONAR LIBRO Y CAPITULO ...</strong>
                                         </p>
 
@@ -355,5 +358,5 @@
         </script>
 
     </body>
-
 </html>
+    <?php } else {include_once './inc2/Redireccionar.php';} ?>

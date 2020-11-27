@@ -1,12 +1,12 @@
 <?php
 
-include_once '../Factory/ConexionOperacion.php';
+include_once '../DAO/UsuarioDAO.php';
 $opc = $_POST["opc"];
 if ($opc === "ValidarUsuario") {
     $usuario = $_POST["a"];
     $password = $_POST["b"];
-    $consultda = " call ValidarUsuario('$usuario','$password')";
-    $var = mysqli_query($conexion, $consultda);
+    $objs= new UsuarioDAO();
+    $var=$objs->ValidarUsuario($usuario,$password);
     $arr = array();
     if (mysqli_num_rows($var) != 0) {
         while ($row = mysqli_fetch_assoc($var)) {
@@ -19,8 +19,8 @@ if ($opc === "CrearSesion") {
     $usuario = $_POST["a"];
     $password = $_POST["b"];
     //echo $Categoria.$Estado_Categoria.$Usuariocreacion;
-    $consultda = "call CrearSesion('$usuario','$password')";
-    $var = mysqli_query($conexion, $consultda);
+    $objs= new UsuarioDAO();
+    $var=$objs->CrearSesion($usuario,$password);
     $data = $var->fetch_object();
     session_start();
     $_SESSION["id_Usuario"] = $data->id_Usuario;

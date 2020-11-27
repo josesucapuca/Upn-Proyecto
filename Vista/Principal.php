@@ -305,8 +305,4 @@ if ($_SESSION["Usuario"] !== null) {
         </body>
 
     </html>
-<?php } else { ?>
-    <script type="text/javascript">
-        location.href = "../Iniciar.php";
-    </script>
-<?php } ?>
+<?php } else { include_once './inc2/Redireccionar.php'; } ?>

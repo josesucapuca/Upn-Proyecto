@@ -4,7 +4,7 @@ $("#seLibro").change(function () {
     if ($("#seLibro").val() !== "" && $("#seLibro").val() !== "") {
         ListaCapitulos($("#seLibro").val());
     } else {
-        html1 = '<li><span class="label label-info"><i class="fa fa-lg fa-plus-circle"></i> SELECCIONAR LIBRO Y CAPITULO...</span></li>';
+        html1 = '<li><span class="label label-info" style="text-transform: uppercase;"><i class="fa fa-lg fa-plus-circle"></i> SELECCIONAR LIBRO Y CAPITULO...</span></li>';
         html2 = '<strong>SELECCIONAR LIBRO Y CAPITULO ...</strong>';
         $("#versiculos").empty();
         $("#versiculos").append(html1);

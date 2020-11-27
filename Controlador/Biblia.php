@@ -1,10 +1,10 @@
 <?php
 
-include_once '../Factory/ConexionOperacion.php';
+include '../DAO/BibliaDAO.php';
 $opc = $_POST["opc"];
 if ($opc === "ListarLibro") {
-    $consulta = "call ListaLibroByBiblia(1);";
-    $var = mysqli_query($conexion, $consulta);
+    $objs= new BibliaDAO();
+    $var=$objs->ListarLibro();
     $arr = array();
     if (mysqli_num_rows($var) != 0) {
         while ($row = mysqli_fetch_assoc($var)) {
@@ -15,8 +15,8 @@ if ($opc === "ListarLibro") {
 }
 if ($opc === "ListarCapitulo") {
     $id_Libro = $_POST["idL"];
-    $consulta = "call ListaCapituloByLibro($id_Libro);";
-    $var = mysqli_query($conexion, $consulta);
+    $objs= new BibliaDAO();
+    $var=$objs->ListarCapitulo($id_Libro);
     $arr = array();
     if (mysqli_num_rows($var) != 0) {
         while ($row = mysqli_fetch_assoc($var)) {
@@ -28,8 +28,8 @@ if ($opc === "ListarCapitulo") {
 if ($opc === "ListarVersiculo") {
     $id_Capitulo = $_POST["idC"];
     $id_Persona = $_POST["idP"];
-    $consulta = "call ListaVersiculosByCapitulo($id_Capitulo,$id_Persona);";
-    $var = mysqli_query($conexion, $consulta);
+    $objs= new BibliaDAO();
+    $var=$objs->ListarVersiculo($id_Capitulo,$id_Persona);
     $arr = array();
     if (mysqli_num_rows($var) != 0) {
         while ($row = mysqli_fetch_assoc($var)) {
@@ -40,8 +40,8 @@ if ($opc === "ListarVersiculo") {
 }
 if ($opc === "LibroxCapitulo") {
     $id_Capitulo = $_POST["idC"];
-    $consulta = "call LibroxCapitulo($id_Capitulo);";
-    $var = mysqli_query($conexion, $consulta);
+    $objs= new BibliaDAO();
+    $var=$objs->LibroxCapitulo($id_Capitulo);
     $arr = array();
     if (mysqli_num_rows($var) != 0) {
         while ($row = mysqli_fetch_assoc($var)) {
