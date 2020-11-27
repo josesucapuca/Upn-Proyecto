@@ -27,7 +27,20 @@ if ($opc === "ListarCapitulo") {
 }
 if ($opc === "ListarVersiculo") {
     $id_Capitulo = $_POST["idC"];
-    $consulta = "call ListaVersiculosByCapitulo($id_Capitulo);";
+    $id_Persona = $_POST["idP"];
+    $consulta = "call ListaVersiculosByCapitulo($id_Capitulo,$id_Persona);";
+    $var = mysqli_query($conexion, $consulta);
+    $arr = array();
+    if (mysqli_num_rows($var) != 0) {
+        while ($row = mysqli_fetch_assoc($var)) {
+            $arr[] = $row;
+        }
+    }
+    echo json_encode($arr);
+}
+if ($opc === "LibroxCapitulo") {
+    $id_Capitulo = $_POST["idC"];
+    $consulta = "call LibroxCapitulo($id_Capitulo);";
     $var = mysqli_query($conexion, $consulta);
     $arr = array();
     if (mysqli_num_rows($var) != 0) {

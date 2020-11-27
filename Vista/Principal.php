@@ -1,6 +1,6 @@
 <?php
 session_start();
-if ($_SESSION["Usuario"] !== null||$_SESSION["Usuario"] !== "") {
+if ($_SESSION["Usuario"] !== null) {
     ?>
     <!DOCTYPE html>
     <html lang="es" style="background-image: url('img/pattern/tileable_wood_texture.png');">
@@ -63,7 +63,7 @@ if ($_SESSION["Usuario"] !== null||$_SESSION["Usuario"] !== "") {
                                 </li>
                                 <li class="divider"></li>
                                 <li>
-                                    <a href="login.html" class="padding-10 padding-top-5 padding-bottom-5" data-action="userLogout"><i class="fa fa-sign-out fa-lg"></i> <strong><u>L</u>ogout</strong></a>
+                                    <a href="../CerrarSesion.php" class="padding-10 padding-top-5 padding-bottom-5" data-action="userLogout"><i class="fa fa-sign-out fa-lg"></i> <strong><u>L</u>ogout</strong></a>
                                 </li>
                             </ul>
                         </li>
@@ -71,7 +71,7 @@ if ($_SESSION["Usuario"] !== null||$_SESSION["Usuario"] !== "") {
 
                     <!-- logout button -->
                     <div id="logout" class="btn-header transparent pull-right">
-                        <span> <a href="login.html" title="Sign Out" data-action="userLogout" data-logout-msg="You can improve your security further after logging out by closing this opened browser"><i class="fa fa-sign-out"></i></a> </span>
+                        <span> <a href="../CerrarSesion.php" id="logoi"  title="Sign Out" data-action="userLogout" data-logout-msg="Estas Seguro de Salir de Sesion"><i class="fa fa-sign-out"></i></a> </span>
                     </div>
                     <!-- fullscreen button -->
                     <div id="fullscreen" class="btn-header transparent pull-right">
@@ -307,7 +307,6 @@ if ($_SESSION["Usuario"] !== null||$_SESSION["Usuario"] !== "") {
     </html>
 <?php } else { ?>
     <script type="text/javascript">
-        alert("<?php echo $_SESSION["Usuario"];?>")
-        location.href = "../Iniciar_1.php";
+        location.href = "../Iniciar.php";
     </script>
 <?php } ?>

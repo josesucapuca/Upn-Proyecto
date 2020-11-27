@@ -1,9 +1,11 @@
 $(document).ready(function (){
         $('#login').click(function (){
 //            alert("entrooo c:");
+
             var Usuario = $('#Usuario').val();
             var Password = $('#Password').val();           
             if($.trim(Usuario).length > 0 && $.trim(Password).length > 0){
+                alert();
 //                alert(Usuario);
 //                alert(Password);
                 $.ajax({                   

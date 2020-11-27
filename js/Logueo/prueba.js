@@ -1,9 +1,9 @@
-$("#IngresarUsuario").click(function () {
+$("#login").click(function () {
     validar();
 });
 function validar() {
-    var Usuario = $("#usuario").val();
-    var Password = $("#password").val();
+    var Usuario = $("#Usuario").val();
+    var Password = $("#Password").val();
     if (Usuario !== "" && Password !== "") {
         $.ajax({
             type: "POST",
@@ -12,8 +12,8 @@ function validar() {
             success: function (response)
             {
                 var jsonData = JSON.parse(response);
-                
-                if (jsonData[0].nro ==="1") {
+
+                if (jsonData[0].nro === "1") {
                     CrearUsaurio(Usuario, Password);
                 } else {
                     alert("Usuario o Password Incorrecto");
@@ -23,7 +23,6 @@ function validar() {
     } else {
         alert("Usuario o Password Incorrecto");
     }
-
 }
 function CrearUsaurio(U, P) {
     $.ajax({
@@ -36,3 +35,4 @@ function CrearUsaurio(U, P) {
         }
     });
 }
+

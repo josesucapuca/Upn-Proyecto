@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<?php session_start(); ?>
 <html lang="es">
     <head>
 
@@ -15,7 +16,23 @@
 
                 background-color: #c1ad88;
             }
-
+            .stbut{
+                align-items: center;
+                justify-content: center;
+                height: 20px;
+                padding-top: 0px;
+            }
+            #Licap{
+                cursor: pointer;
+                padding: 7px;
+                    background: #6c5c3e;
+    color: white;
+            }
+            #Licap:hover {
+                background-color: #1f8c46;
+                border: 1px solid #1f8c46;
+                color: #fff;
+            }
         </style>
     </head>
 
@@ -63,20 +80,21 @@
             * 'fixed-page-footer' - Fixes footer
             * 'container'         - boxed layout mode (non-responsive: will not work with fixed-navigation & fixed-ribbon)
     -->
-    <body class="container" style="background: #604d2b91">
+    <body class="container" style="background: #604d2b91;padding-bottom: 0px">
 
         <!-- MAIN PANEL -->
         <div >
 
-            <div id="content" style="    margin-bottom: 20px;">
+            <div id="content" style="margin-bottom: 20px;">
                 <!-- widget grid -->
                 <section id="widget-grid" class="">
 
                     <div class="row" >
+                        <div class="row" ><h1 style="text-align: center;font-family: monospace!important"><strong>BIBLIA</strong></h1></div>
                         <div class="row" >
-                            <article class="col-sm-6 col-md-6 col-lg-6" style="    justify-content: center;
+                            <article class="col-xs-12 col-sm-12 col-md-6 col-lg-6" style="    justify-content: center;
                                      display: flex;">
-                                <div class="form-group col-lg-6">
+                                <div class="form-group col-xs-12 col-sm-8 col-md-8 col-lg-8">
                                     <label>Libros</label>
                                     <select id="seLibro" style="width:100%" class="select2" placeholder="Libros">
                                         <option value=""> SELECCIONAR</option>
@@ -88,14 +106,15 @@
 
                                 </div>
                             </article>
-                            <article class="col-sm-6 col-md-6 col-lg-6" style="    justify-content: center;
+                            <article class="col-xs-12 col-sm-12 col-md-6 col-lg-6" style="    justify-content: center;
                                      display: flex;">
-                                <div class="form-group col-lg-6">
+                                <div class="form-group col-xs-12 col-sm-8 col-md-8  col-lg-8">
                                     <label>CAPITULO</label>
                                     <select id="seCapitulo" style="width:100%" class="select2">
-                                            <option value=""> SELECCIONAR</option>
+                                        <option value=""> SELECCIONAR</option>
                                     </select>
                                 </div>
+                                <input type="hidden" id="id_P" value="<?php echo $_SESSION["id_Persona"] ?>">
                             </article>
                         </div>
 
@@ -134,111 +153,18 @@
                                     <!-- end widget edit box -->
 
                                     <!-- widget content -->
-                                    <div class="widget-body">
+                                    <div class="widget-body" style="min-height: 80vh;">
                                         <p id="cabecera" class="alert alert-info text-align-center">
-                                            <strong>Libro Capitulo Xx</strong>
+                                            <strong>SELECCIONAR LIBRO Y CAPITULO ...</strong>
                                         </p>
 
                                         <div id="Cuerpo" class="tree">
                                             <ul>
-                                                <li>
-                                                    <span><i class="fa fa-lg fa-book"></i> Libro Capitulo X</span>
-                                                    <ul>
+                                                <li id="licab">
+                                                    <span id="Licap"><i class="fa fa-lg fa-book" id="iccab"></i> SELECCIONAR LIBRO Y CAPITULO...</span>
+                                                    <ul id="versiculos">
                                                         <li>
-                                                            <span class="label label-info"><i class="fa fa-lg fa-plus-circle"></i> Versiculo 1</span>
-                                                            <ul>
-                                                                <li>
-                                                                    <a href="javascript:void(0);">En el principio creó Dios los cielos y la tierra. </a><button href="javascript:void(0);" class="btn btn-labeled btn-warning" style="    align-items: center;
-                                                                                                                                                                justify-content: center;
-                                                                                                                                                                height: 20px;
-                                                                                                                                                                padding-top: 0px;
-                                                                                                                                                                "> Marcar</button>  <button href="javascript:void(0);" class="btn btn-labeled btn-primary" style="    align-items: center;
-                                                                                                                                                                justify-content: center;
-                                                                                                                                                                height: 20px;
-                                                                                                                                                                padding-top: 0px;
-                                                                                                                                                                "> Comentar</button> 
-                                                                </li>
-                                                            </ul>
-                                                        </li>
-                                                        <li>
-                                                            <span class="label label-warning"><i class="fa fa-lg fa-minus-circle"></i> Versiculo 2</span>
-                                                            <ul>
-                                                                <li>
-                                                                    <a href="javascript:void(0);">Y la tierra estaba desordenada y vacía, y las tinieblas estaban sobre la faz del abismo, y el Espíritu de Dios se movía sobre la faz de las aguas.</a><button href="javascript:void(0);" class="btn btn-labeled btn-danger" style="align-items: center;
-                                                                                                                                                                                                        justify-content: center;
-                                                                                                                                                                                                        height: 20px;
-                                                                                                                                                                                                        padding-top: 0px;
-                                                                                                                                                                                                        "> Desmarcar</button>  <button href="javascript:void(0);" class="btn btn-labeled btn-primary" style="    align-items: center;
-                                                                                                                                                                                                        justify-content: center;
-                                                                                                                                                                                                        height: 20px;
-                                                                                                                                                                                                        padding-top: 0px;
-                                                                                                                                                                                                        "> Comentar</button>
-                                                                </li>
-                                                            </ul>
-                                                        </li>
-                                                        <li>
-                                                            <span class="label label-info"><i class="fa fa-lg fa-minus-circle"></i> Versiculo 3</span>
-                                                            <ul>
-                                                                <li>
-                                                                    <a href="javascript:void(0);">Fixed bug caused by...</a><button href="javascript:void(0);" class="btn btn-labeled btn-warning" style="    align-items: center;
-                                                                                                                                    justify-content: center;
-                                                                                                                                    height: 20px;
-                                                                                                                                    padding-top: 0px;
-                                                                                                                                    "> Marcar</button>  <button href="javascript:void(0);" class="btn btn-labeled btn-primary" style="    align-items: center;
-                                                                                                                                    justify-content: center;
-                                                                                                                                    height: 20px;
-                                                                                                                                    padding-top: 0px;
-                                                                                                                                    "> Comentar</button>
-                                                                </li>
-                                                            </ul>
-                                                        </li>
-                                                        <li>
-                                                            <span class="label label-info"><i class="fa fa-lg fa-minus-circle"></i> Versiculo 4</span>
-                                                            <ul>
-                                                                <li>
-                                                                    <a href="javascript:void(0);">Create component that...</a><button href="javascript:void(0);" class="btn btn-labeled btn-warning" style="    align-items: center;
-                                                                                                                                      justify-content: center;
-                                                                                                                                      height: 20px;
-                                                                                                                                      padding-top: 0px;
-                                                                                                                                      "> Marcar</button>  <button href="javascript:void(0);" class="btn btn-labeled btn-primary" style="    align-items: center;
-                                                                                                                                      justify-content: center;
-                                                                                                                                      height: 20px;
-                                                                                                                                      padding-top: 0px;
-                                                                                                                                      "> Comentar</button>
-                                                                </li>
-                                                            </ul>
-                                                        </li>
-                                                        <li>
-                                                            <span class="label label-info"><i class="fa fa-lg fa-minus-circle"></i> Versiculo 4</span>
-                                                            <ul>
-                                                                <li>
-                                                                    <a href="javascript:void(0);">Create component that...</a><button href="javascript:void(0);" class="btn btn-labeled btn-warning" style="    align-items: center;
-                                                                                                                                      justify-content: center;
-                                                                                                                                      height: 20px;
-                                                                                                                                      padding-top: 0px;
-                                                                                                                                      "> Marcar</button>  <button href="javascript:void(0);" class="btn btn-labeled btn-primary" style="    align-items: center;
-                                                                                                                                      justify-content: center;
-                                                                                                                                      height: 20px;
-                                                                                                                                      padding-top: 0px;
-                                                                                                                                      "> Comentar</button>
-                                                                </li>
-                                                            </ul>
-                                                        </li>
-                                                        <li>
-                                                            <span class="label label-info"><i class="fa fa-lg fa-minus-circle"></i> Versiculo 4</span>
-                                                            <ul>
-                                                                <li>
-                                                                    <a href="javascript:void(0);">Create component that...</a><button href="javascript:void(0);" class="btn btn-labeled btn-warning" style="    align-items: center;
-                                                                                                                                      justify-content: center;
-                                                                                                                                      height: 20px;
-                                                                                                                                      padding-top: 0px;
-                                                                                                                                      "> Marcar</button>  <button href="javascript:void(0);" class="btn btn-labeled btn-primary" style="    align-items: center;
-                                                                                                                                      justify-content: center;
-                                                                                                                                      height: 20px;
-                                                                                                                                      padding-top: 0px;
-                                                                                                                                      "> Comentar</button>
-                                                                </li>
-                                                            </ul>
+                                                            <span class="label label-info"><i class="fa fa-lg fa-plus-circle"></i> SELECCIONAR LIBRO Y CAPITULO...</span>
                                                         </li>
                                                     </ul>
                                                 </li>
@@ -393,11 +319,10 @@
             // DO NOT REMOVE : GLOBAL FUNCTIONS!
 
             $(document).ready(function () {
-
                 pageSetUp();
-
                 // PAGE RELATED SCRIPTS
-
+            });
+            function ARBOL() {
                 $('.tree > ul').attr('role', 'tree').find('ul').attr('role', 'group');
                 $('.tree').find('li:has(ul)').addClass('parent_li').attr('role', 'treeitem').find(' > span').attr('title', 'Collapse this branch').on('click', function (e) {
                     var children = $(this).parent('li.parent_li').find(' > ul > li');
@@ -408,11 +333,8 @@
                         children.show('fast');
                         $(this).attr('title', 'Collapse this branch').find(' > i').removeClass().addClass('fa fa-lg fa-minus-circle');
                     }
-                    e.stopPropagation();
                 });
-
-            });
-
+            }
         </script>
 
         <!-- Your GOOGLE ANALYTICS CODE Below -->

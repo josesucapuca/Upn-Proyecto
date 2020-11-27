@@ -1,9 +1,13 @@
 
 <?php
 session_start();
-if (isset($_SESSION['Usuario'])) {
-    header("location:welcome.php");
-}
+if ($_SESSION["Usuario"] !== null) {
+    ?>
+    <script type="text/javascript">
+        location.href = "Vista/Principal.php";
+    </script>
+    <?php
+} else {
 ?>
 
 <html>
@@ -36,7 +40,7 @@ if (isset($_SESSION['Usuario'])) {
                     </div>
                     <div class="card-body">
                         <!--<form method="post" onsubmit=" return Iniciar()">-->
-                        <form method="post">
+                        <form>
                             <div class="row"> 
                                 <div class="col-md-1" ></div>
                                 <div class="col-md-10">
@@ -142,6 +146,6 @@ if (isset($_SESSION['Usuario'])) {
         </footer>
     </body>
     <script src="js/jquery-1.12.3.min.js" type="text/javascript"></script>
-    <script src="js/Logueo/Iniciar.js" type="text/javascript"></script>
+    <script src="js/Logueo/prueba.js" type="text/javascript"></script>
 </html>
-
+<?php }?>
