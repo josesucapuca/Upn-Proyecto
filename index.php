@@ -39,6 +39,17 @@ and open the template in the editor.
                 .mi{
                     text-align: center !important;
                 }
+                .fm{
+                    text-align: left;
+                }
+                
+            }
+            @media (max-width: 576px)
+            {
+                .asi{
+                    display: flex;
+                    justify-content: center;
+                }
             }
         </style>
     </head>
@@ -75,23 +86,20 @@ and open the template in the editor.
                         <div class="row col-xs-12 col-sm-12 col-md-4 col-lg-4" style="padding-bottom: 20px">
                             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 imgf">
                                 <div class="footer-pad" >
-                                    <div class="col-md-3">
-                                        <div id="fh5co-logo"><a><img src="images/logo.png" width="140" height="140" ><span></span></a></div>
+                                    <div class="col-md-3 asi" >
+                                        <div id="fh5co-logo " style=""><a><img src="images/logo.png" width="140" height="140" ><span></span></a></div>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 imgf" >
-                                <div class="footer-pad ">
-                                    <h4 id="titU" >UNIONES</h4>
-                                    <ul class="list-unstyled">
-                                        <li><a href="#">Unión Peruana del Norte</a></li>
-                                    </ul>
+                                <div class="footer-pad " style="text-align: center" >
+                                    <h3>Unión Peruana del Norte</h3>
                                 </div>
                             </div> 
                         </div>
                         <div class="row col-xs-12 col-sm-12 col-md-8 col-lg-8 al" style="padding-bottom: 20px">
                             <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 mi" >
-                                <div class="footer-pad">
+                                <div class="footer-pad fm" style="text-align: left;">
                                     <h4>MISIONES</h4>
                                     <ul class="list-unstyled" >
                                         <li><a href="#">APCE - Asociación Peruana Central Este</a></li>
@@ -105,7 +113,7 @@ and open the template in the editor.
                                     </ul>
                                 </div>
                             </div>
-                            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 ali" style="text-align: right">
+                            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 ali" style="text-align: left">
                                 <h4>Redes Sociales</h4>
                                 <ul class="social-network social-circle">
                                     <li><a href="https://www.facebook.com/adventistas.upn/" class="icoFacebook" title="Facebook" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
