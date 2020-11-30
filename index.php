@@ -111,8 +111,9 @@ and open the template in the editor.
                                             <a href="#"></a>
                                         </li>
                                     </ul>
+                                    
                                 </div>
-                            </div>
+                            </div> 
                             <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 ali" style="text-align: left">
                                 <h4>Redes Sociales</h4>
                                 <ul class="social-network social-circle">
