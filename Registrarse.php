@@ -3,8 +3,10 @@
         <title></title>     
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <!--<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>-->
+
         <link href="css/footer.css" rel="stylesheet" type="text/css"/>
+
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">  
         <link href="css/registrarse.css" rel="stylesheet" type="text/css"/>
         <link href="style.css" rel="stylesheet" type="text/css"/>
@@ -26,14 +28,22 @@
                         </div>
                     </div>
                     <div class="card-body">                       
-                        <form>
+                        <form method="post" action="index.php">
                             <div class="row"> 
-                                <div class="col-md-6">
+                                <div class="col-md-3">
                                     <div class="input-group form-group">
                                         <div class="input-group-prepend">
                                             <span class="input-group-text"><i class="fas fa-user"></i></span>
                                         </div>
-                                        <input type="text" class="form-control" placeholder="Nombre y Apellidos">
+                                        <input type="text" class="form-control" placeholder="Nombres">
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="input-group form-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                        </div>
+                                        <input type="text" class="form-control" placeholder="Apellidos">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
@@ -78,7 +88,7 @@
                                 </div>
                             </div>
                             <div class="row"> 
-                                <div class="col-md-4">
+                                <div class="col-md-2">
                                     <div class="input-group form-group">
                                         <div class="input-group-prepend">
                                             <span class="input-group-text"><i class="fas fa-calendar-alt"></i></span>
@@ -99,16 +109,13 @@
                                         </select>
                                     </div>
                                 </div>
-                                <div class="col-md-4">
+                                <div class="col-md-6">
                                     <div class="input-group form-group">
                                         <div class="input-group-prepend">
                                             <span class="input-group-text"><i class="fas fa-map"></i></span>
                                         </div>
-                                        <select class="form-control" name="asunto">
-                                            <option selected>Distrito Misionero</option>
-                                            <option>Iglesia 1</option>
-                                            <option>Iglesia 2</option>
-                                            <option>Iglesia 3</option>
+                                        <select class="form-control" name="state" id="sel_mision">
+                                            <option value="0">Escoga su Misión</option>                                                                                                                          
                                         </select>
                                     </div>
                                 </div>
@@ -119,11 +126,8 @@
                                         <div class="input-group-prepend">
                                             <span class="input-group-text"><i class="fas fa-people-carry"></i></span>
                                         </div>
-                                        <select class="form-control" name="asunto">
-                                            <option selected>Misión</option>
-                                            <option>Iglesia 1</option>
-                                            <option>Iglesia 2</option>
-                                            <option>Iglesia 3</option>
+                                        <select class="form-control" name="state" id="sel_distrito">
+                                            <option value="0">Distrito Misionero</option>
                                         </select>
                                     </div>
                                 </div>
@@ -132,11 +136,8 @@
                                         <div class="input-group-prepend">
                                             <span class="input-group-text"><i class="fas fa-place-of-worship"></i></span>
                                         </div>
-                                        <select class="form-control" name="asunto">
-                                            <option selected>Iglesia</option>
-                                            <option>Iglesia 1</option>
-                                            <option>Iglesia 2</option>
-                                            <option>Iglesia 3</option>
+                                        <select class="form-control" name="state" id="sel_iglesia">
+                                            <option value="0">Iglesia</option>
                                         </select>
                                     </div>
                                 </div>
@@ -193,29 +194,28 @@
                                     </div>
                                 </div>
                                 <div class="row"> 
-                                    
+
                                 </div>
                             </div>
-                    <!--</div>-->
-                    <div class="card-header">
-                         <div class="row"> 
-                                <div class="col-md-3">                              
-                                </div>
-                                <div class="col-md-4">
-                                    <a href="index.php"><input type="submit" value="Cancelar" class="btn btn-outline-light btn-lg boton"></a>
-                                </div>
-                             <div class="col-md-5">
-                                    <input type="submit" value="Registrarse" class="btn btn-outline-light btn-lg boton ">
+                            <!--</div>-->
+                            <div class="card-header">
+                                <div class="row"> 
+                                    <div class="col-md-3">                              
+                                    </div>
+                                    <div class="col-md-4">
+                                        <a href="#"><input type="submit" value="Cancelar" class="btn btn-outline-light btn-lg boton"></a>
+                                    </div>
+                                    <div class="col-md-5">
+                                        <input type="submit" value="Registrarse" class="btn btn-outline-light btn-lg boton ">
+                                    </div>
                                 </div>
                             </div>
+                        </form>
                     </div>
-                    
-                    </form>
-                        </div>
                 </div>
             </div>
         </div>
-        
+
         <footer class="mainfooter" role="contentinfo">
             <div class="footer-middle">
                 <div class="container">
@@ -270,5 +270,10 @@
                 </div>
             </div>
         </footer>
-</body>
+    </body>
+    <script src="js/jquery-3.4.1.min.js" type="text/javascript"></script>
+    <!--<script src="js/Logueo/Combo.js" type="text/javascript"></script>-->
+    <!--<script src="js/Logueo/Iniciar.js" type="text/javascript"></script>-->
+    <script src="js/Logueo/RegistrarUsuario.js" type="text/javascript"></script>
+    <!--<script src="js/jquery-1.12.3.min.js" type="text/javascript"></script>-->
 </html>

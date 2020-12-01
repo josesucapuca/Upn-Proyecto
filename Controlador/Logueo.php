@@ -25,7 +25,7 @@ if ($opc === "CrearSesion") {
     session_start();
     $_SESSION["id_Usuario"] = $data->id_Usuario;
     $_SESSION["Usuario"] = $data->Usuario;
-    $_SESSION["Ti_Usuario"] = $data->Ti_Usuario;
+//    $_SESSION["Ti_Usuario"] = $data->Ti_Usuario;
     $_SESSION["id_Persona"] = $data->id_Persona;
     $_SESSION["Persona"] = $data->Persona;
     $_SESSION["Edad_Persona"] = $data->Edad_Persona;
@@ -41,5 +41,5 @@ if ($opcion === "SalirSesion") {
     session_start();
     session_destroy();
 }
-mysqli_close($conexion);
+//mysqli_close($conexion);
 ?>

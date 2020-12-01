@@ -21,7 +21,7 @@ if ($_SESSION["Usuario"] !== null) {
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
         <link href="css/iniciar.css" rel="stylesheet" type="text/css"/>       
         <link href="css/botones.css" rel="stylesheet" type="text/css"/>
-        <link href="css/style.css" rel="stylesheet" type="text/css"/>
+        <!--<link href="css/style.css" rel="stylesheet" type="text/css"/>-->
     </head>
     <body>
         <div class="container">
@@ -48,7 +48,7 @@ if ($_SESSION["Usuario"] !== null) {
                                         <div class="input-group-prepend">
                                             <span class="input-group-text"><i class="fas fa-user"></i></span>
                                         </div>
-                                        <input type="text" name="Usuario" id="Usuario" class="form-control" placeholder="Usuario" >
+                                        <input type="text" name="Usuario" id="Usuario" class="form-control" placeholder="Usuario" required="">
 
                                     </div>
                                 </div>
@@ -145,7 +145,8 @@ if ($_SESSION["Usuario"] !== null) {
             </div>
         </footer>
     </body>
+    <!--<script src="js/jquery-3.4.1.min.js" type="text/javascript"></script>-->
     <script src="js/jquery-1.12.3.min.js" type="text/javascript"></script>
-    <script src="js/Logueo/prueba.js" type="text/javascript"></script>
+    <script src="js/Logueo/Validacion.js" type="text/javascript"></script>
 </html>
 <?php }?>
