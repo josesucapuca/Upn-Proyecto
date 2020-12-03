@@ -77,20 +77,18 @@ class UsuarioDAO {
 //           // $consulta1 = ("insert into usuario (id_Persona, Usuario, Password, Es_Usuario) values ('$id_persona',nico','123','1');");                  
 //        }
 
-        public function RegistrarUsuario($No_Persona, $AP_Persona, $Edad_Persona, $Se_Persona, $Es_Civil_Persona, $Ti_Persona, $dire_Persona, $tele_Persona, $correo_Persona, $id_Iglesia, $Usuario, $Password) {
-        $link = new Conexion();
-        $conectar = $link->Conectar();
-            $consulta = "call InsertarPersona('$No_Persona','$AP_Persona','$Edad_Persona','$Se_Persona','$Es_Civil_Persona','$Ti_Persona','$dire_Persona','$tele_Persona','$correo_Persona','$id_Iglesia')";
-        $retorno = mysqli_query($conectar, $consulta);
+    public function RegistrarUsuario($No_Persona, $AP_Persona, $Edad_Persona, $Se_Persona, $Es_Civil_Persona, $Ti_Persona, $dire_Persona, $tele_Persona, $correo_Persona, $id_Iglesia, $Usuario, $Password) {
+       $link = new Conexion();
+            $conectar = $link->Conectar();
+        $consulta = "call RegistrarUsuario('$No_Persona','$AP_Persona','$Edad_Persona','$Se_Persona','$Es_Civil_Persona','$Ti_Persona','$dire_Persona','$tele_Persona','$correo_Persona','$id_Iglesia','$Usuario','$Password');";
+         $retorno = mysqli_query($conectar, $consulta);
         if($retorno){
-            $consulta = "call InsertarUsuario('$Usuario','$Password',last_insert_id()"; 
-            $retorno = mysqli_query($conectar, $consulta);
-            echo "ok";
+            return 1;
         }else{
-            echo 'no';
+            return 0;
         }
-        
     }
+
 }
 
 ?>

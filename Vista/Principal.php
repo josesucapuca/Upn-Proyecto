@@ -209,8 +209,8 @@ if ($_SESSION["Usuario"] !== null) {
                                                     <ul class="list-unstyled text-left">
                                                         <li><i class="fa fa-check text-success"></i> <strong>Encargado de:</strong>
                                                             <ul id="Encargado">
-                                                                <li class="list-unstyled"><i class="fa fa-check text-success"></i> <a href="Campana_Evangelistica.php">Encargado de:</a></li>
-                                                                <li class="list-unstyled"><i class="fa fa-check text-success"></i> <a href="Campana_Evangelistica.php">Encargado de:</a></li>
+                                                                <li class="list-unstyled"><i class="fa fa-check text-success"></i> <a href="Campana_Evangelistica.php">Semana de Oracion:</a></li>
+                                                                <li class="list-unstyled"><i class="fa fa-check text-success"></i> <a href="Campana_Evangelistica.php">Semana de Oracion:</a></li>
                                                             </ul>
                                                         <li>
                                                         <li><i class="fa fa-check text-success"></i> <strong>Participando en:</strong>
