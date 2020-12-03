@@ -19,7 +19,7 @@ function validar() {
                 } else {
 //                    alert("Usuario o Password Incorrecto");
                     $("#result").html("<div class='alert .alert-dismissable alert-danger'><button type='button'\n\
-                                               class='close' data-dismiss='alert'>&times;</button><strong>¡usuario y contraseña!</strong>\n\
+                                               class='close' data-dismiss='alert'>&times;</button><strong>¡usuario y/o contraseña!</strong>\n\
                                             incorrecto</div>");
                 }
             }
@@ -28,7 +28,7 @@ function validar() {
 //        alert("Ingrese Usuario y Contraseña");
         $("#result").html("<div class='alert .alert-dismissable alert-danger'><button type='button'\n\
                                                class='close' data-dismiss='alert'>&times;</button><strong>¡Ingrese!</strong>el \n\
-                                               usuario y contraseña</div>");
+                                               usuario y/o contraseña</div>");
     }
 }
 function CrearUsaurio(U, P) {

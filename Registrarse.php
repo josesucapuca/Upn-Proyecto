@@ -28,14 +28,14 @@
                         </div>
                     </div>
                     <div class="card-body">                       
-                        <form method="post" action="index.php">
+                        <form method="post">
                             <div class="row"> 
                                 <div class="col-md-3">
                                     <div class="input-group form-group">
                                         <div class="input-group-prepend">
                                             <span class="input-group-text"><i class="fas fa-user"></i></span>
                                         </div>
-                                        <input type="text" class="form-control" placeholder="Nombres">
+                                        <input type="text" class="form-control" id="txtnombre" placeholder="Nombres">
                                     </div>
                                 </div>
                                 <div class="col-md-3">
@@ -43,7 +43,7 @@
                                         <div class="input-group-prepend">
                                             <span class="input-group-text"><i class="fas fa-user"></i></span>
                                         </div>
-                                        <input type="text" class="form-control" placeholder="Apellidos">
+                                        <input type="text" class="form-control" id="txtapellido" placeholder="Apellidos">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
@@ -51,7 +51,7 @@
                                         <div class="input-group-prepend">
                                             <span class="input-group-text"><i class="fas fa-map-marker-alt"></i></span>
                                         </div>
-                                        <input type="text" class="form-control" placeholder="Dirección">
+                                        <input type="text" class="form-control" id="txtdireccion" placeholder="Dirección">
                                     </div>
                                 </div>
                             </div>
@@ -61,7 +61,7 @@
                                         <div class="input-group-prepend">
                                             <span class="input-group-text"><i class="fas fa-mobile-alt"></i></span>
                                         </div>
-                                        <input type="text" class="form-control" placeholder="Telefono">
+                                        <input type="text" class="form-control" id="txttelefono" placeholder="Telefono">
                                     </div>
                                 </div>
                                 <div class="col-md-5">
@@ -69,7 +69,7 @@
                                         <div class="input-group-prepend">
                                             <span class="input-group-text"><i class="fas fa-envelope-open-text"></i></span>
                                         </div>
-                                        <input type="text" class="form-control" placeholder="Correo">
+                                        <input type="text" class="form-control" id="txtcorreo" placeholder="Correo">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
@@ -78,11 +78,12 @@
                                             <span class="input-group-text"><i class="fas fa-paperclip"></i></span>
                                         </div>
     <!--                                    <input type="text" class="form-control" placeholder="Estado civil">-->
-                                        <select class="form-control" name="asunto">
+                                        <select class="form-control" id="cbocivil" name="asunto">
                                             <option selected>Estado Civil</option>
                                             <option>Soltero</option>
                                             <option>Casado</option>
                                             <option>Viudo</option>
+                                            <option>Divorciado</option>
                                         </select>
                                     </div>
                                 </div>
@@ -93,7 +94,7 @@
                                         <div class="input-group-prepend">
                                             <span class="input-group-text"><i class="fas fa-calendar-alt"></i></span>
                                         </div>
-                                        <input type="text" class="form-control" placeholder="Edad">
+                                        <input type="text" class="form-control" id="txtedad" placeholder="Edad">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
@@ -101,11 +102,12 @@
                                         <div class="input-group-prepend">
                                             <span class="input-group-text"><i class="fas fa-users"></i></span>
                                         </div>
-                                        <select class="form-control" name="asunto">
+                                        <select class="form-control" id="cbotipo" name="asunto">
                                             <option selected>Tipo de Usuario</option>
                                             <option>Lider</option>
                                             <option>Estudiante</option>
                                             <option>Miembro</option>
+                                            <option>Pastor</option>
                                         </select>
                                     </div>
                                 </div>
@@ -143,29 +145,32 @@
                                 </div>
                                 <div class="col-md-4">
                                     <div class="input-group form-group">
-                                        <div class="input-group-prepend">
-                                            <!--<span class="input-group-text"><i class="fas fa-user"></i></span>-->
-                                            <!--<legend class="col-form-label  pt-0">Sexo</legend>-->
+                                        <div class="input-group form-group">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fas fa-users"></i></span>
+                                            </div>
+                                            <select class="form-control" id="cbosexo" name="asunto">
+                                                <option selected>Genero</option>
+                                                <option>Masculino</option>
+                                                <option>Femenino</option>
+                                            </select>
                                         </div>
 
- <!--<input type="text" class="form-control" placeholder="Distrito Misionero"><legend class="col-form-label col-sm-2 pt-0">Radios</legend>-->
-                                        <div class="col-sm-10">
-
-                                            <div class="form-check">
-
-                                                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
-                                                <label class="form-check-label letracolor" for="gridRadios1">
-                                                    Femenino
-                                                </label>
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
-                                                <label class="form-check-label letracolor" for="gridRadios2">
-                                                    Masculino
-                                                </label>
-                                            </div>
-                                        </div>
-                                    </div>
+                                        <!--                                            <div class="form-check">
+                                        
+                                                                                        <input class="form-check-input" type="radio" name="gridRadios" id="sexoF" value="option1" checked >
+                                                                                        <label class="form-check-label letracolor" for="gridRadios1">
+                                                                                            Femenino
+                                                                                        </label>
+                                                                                    </div>
+                                                                                    <div class="form-check">
+                                                                                        <input class="form-check-input" type="radio" name="gridRadios" id="sexoM" value="option2">
+                                                                                        <label class="form-check-label letracolor" for="gridRadios2">
+                                                                                            Masculino
+                                                                                        </label>
+                                                                                    </div>-->
+                                    </div>                                                                         
+                                    <input type="hidden" class="form-control" id="txtidpersona">                                                                         
                                 </div>
                             </div>
                             <div class="row"> 
@@ -174,7 +179,7 @@
                                         <div class="input-group-prepend">
                                             <span class="input-group-text"><i class="far fa-user-circle"></i></span>
                                         </div>
-                                        <input type="text" class="form-control" placeholder="Usuario">
+                                        <input type="text" class="form-control" id="txtusuario" placeholder="Usuario">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
@@ -182,7 +187,7 @@
                                         <div class="input-group-prepend">
                                             <span class="input-group-text"><i class="fas fa-key"></i></span>
                                         </div>
-                                        <input type="password" class="form-control" placeholder="Contraseña">
+                                        <input type="password" class="form-control" id="txtcontraseña" placeholder="Contraseña">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
@@ -190,7 +195,7 @@
                                         <div class="input-group-prepend">
                                             <span class="input-group-text"><i class="fas fa-key"></i></span>
                                         </div>
-                                        <input type="password" class="form-control" placeholder="Confirmar Contraseña">
+                                        <input type="password" class="form-control" id="txtconfirmarcontra" placeholder="Confirmar Contraseña">
                                     </div>
                                 </div>
                                 <div class="row"> 
@@ -203,11 +208,16 @@
                                     <div class="col-md-3">                              
                                     </div>
                                     <div class="col-md-4">
-                                        <a href="#"><input type="submit" value="Cancelar" class="btn btn-outline-light btn-lg boton"></a>
+                                        <a href="index.php"><input type="button" value="Cancelar" class="btn btn-outline-light btn-lg boton"></a>
                                     </div>
                                     <div class="col-md-5">
-                                        <input type="submit" value="Registrarse" class="btn btn-outline-light btn-lg boton ">
+                                        <input type="button" value="Registrarse" onclick="resgitarusuario()" class="btn btn-outline-light btn-lg boton ">
                                     </div>
+                                </div>                                                             
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">                                          
+                                    <span id="result"></span>                                        
                                 </div>
                             </div>
                         </form>
@@ -272,8 +282,6 @@
         </footer>
     </body>
     <script src="js/jquery-3.4.1.min.js" type="text/javascript"></script>
-    <!--<script src="js/Logueo/Combo.js" type="text/javascript"></script>-->
-    <!--<script src="js/Logueo/Iniciar.js" type="text/javascript"></script>-->
     <script src="js/Logueo/RegistrarUsuario.js" type="text/javascript"></script>
     <!--<script src="js/jquery-1.12.3.min.js" type="text/javascript"></script>-->
 </html>
