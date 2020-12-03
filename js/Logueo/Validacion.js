@@ -11,7 +11,7 @@ function validar() {
             data: {opc: "ValidarUsuario", a: Usuario, b: Password},
             success: function (response)
             {
-//                alert(response);
+                alert(response);
                 var jsonData = JSON.parse(response);
 
                 if (jsonData[0].nro === "1") {

@@ -30,10 +30,10 @@ if ($opc === "RegistrarUsuario") {
     $correo_Persona = strtoupper($_POST['correo_Persona']);
     $id_Iglesia = strtoupper($_POST['id_Iglesia']);
     $Usuario = strtoupper($_POST['Usuario']);
-    $Password = strtoupper($_POST['Password']);
+    $Contra = strtoupper($_POST['Contra']);
 //    $id_Persona = strtoupper($_POST['id_Persona']);
     $objs= new UsuarioDAO();
-    $var=$objs->RegistrarUsuario($No_Persona, $AP_Persona, $Edad_Persona, $Se_Persona, $Es_Civil_Persona, $Ti_Persona, $dire_Persona, $tele_Persona, $correo_Persona, $id_Iglesia, $Usuario, $Password);
+    $var=$objs->RegistrarUsuario($No_Persona, $AP_Persona, $Edad_Persona, $Se_Persona, $Es_Civil_Persona, $Ti_Persona, $dire_Persona, $tele_Persona, $correo_Persona, $id_Iglesia, $Usuario, $Contra);
     echo $var;
 }
 ?>
