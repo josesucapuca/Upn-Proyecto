@@ -2,7 +2,7 @@
 session_start();
 if ($_SESSION["Usuario"] !== null) {
     ?><!DOCTYPE html>
-<html lang="en-us">
+<html lang="es" style="background-image: url('img/pattern/tileable_wood_texture.png');">
     <head>
         <meta charset="utf-8">
         <title> SmartAdmin </title>
@@ -100,7 +100,7 @@ if ($_SESSION["Usuario"] !== null) {
             * 'fixed-page-footer' - Fixes footer
             * 'container'         - boxed layout mode (non-responsive: will not work with fixed-navigation & fixed-ribbon)
     -->
-    <body class="">
+    <body class="container">
 
         <div >
 
@@ -112,32 +112,20 @@ if ($_SESSION["Usuario"] !== null) {
             <div id="content">
                 <!-- end row -->
                 <div class="row">
-                    <div class="row">
-                        <article class="col-sm-12 col-md-12 col-lg-12" style="justify-content: center;align-items: center;display: flex">
-                            <div class="form-group col-lg-12">
-                                <label>Himno:</label>
-                                <select style="width:100%" class="select2">
-                                    <optgroup label="Antiguo testamento">
-                                        <option value="AK">Himno 1</option>
-                                        <option value="HI">Himno 2</option>
-                                        <option value="HI">Himno 3</option>
-                                        <option value="HI">Himno 4</option>
-                                        <option value="HI">Himno 5</option>
-                                        <option value="HI">Himno 6</option>
-                                    </optgroup>
-                                    <optgroup label="Nuevo Testamento">
-                                        <option value="CA">Himno 1</option>
-                                        <option value="NV">Himno 1</option>
-                                        <option value="OR">Himno 1</option>
-                                        <option value="WA">Himno 1</option>
-                                    </optgroup>
-
-                                </select>
-
-                            </div>
-                        </article>
-
-                    </div>
+                    <div class="row" >
+                            <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="justify-content: center;
+                                     display: flex;">
+                                <div class="form-group col-xs-12 col-sm-8 col-md-8 col-lg-8">
+                                    <select id="seLibro" style="width:100%" class="select2" placeholder="Buscar">
+                                        <option value=""> Buscar</option>
+                                        <optgroup id="AntTes" label="Antiguo testamento">
+                                        </optgroup>
+                                        <optgroup id="NueTes" label="Nuevo Testamento">
+                                        </optgroup>
+                                    </select>
+                                </div>
+                            </article>
+                        </div>
                     <div class="row">
 
                         <div class="col-sm-12">

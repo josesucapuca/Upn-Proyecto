@@ -3,7 +3,7 @@ session_start();
 if ($_SESSION["Usuario"] !== null) {
     ?>
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="es" style="background-image: url('img/pattern/tileable_wood_texture.png');">
     <head>
         <meta charset="utf-8">
         <title> SmartAdmin </title>
@@ -101,7 +101,7 @@ if ($_SESSION["Usuario"] !== null) {
             * 'fixed-page-footer' - Fixes footer
             * 'container'         - boxed layout mode (non-responsive: will not work with fixed-navigation & fixed-ribbon)
     -->
-    <body class="">
+    <body class="container">
 
         <div >
 
