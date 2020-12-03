@@ -98,47 +98,59 @@ function resgitarusuario() {
     var correo_Persona = $("#txtcorreo").val();
     var id_Iglesia = $("#sel_iglesia").val();
     var Usuario = $("#txtusuario").val();
-    var Password = $("#txtcontraseña").val();
+    var Contra = $("#txtcontraseña").val();
     var repass = $("#txtconfirmarcontra").val();
 //    alert(No_Persona);
-    if (No_Persona.length > 0 & AP_Persona.length > 0 & Edad_Persona.length > 0 & 
-            Se_Persona.length > 0 & Es_Civil_Persona.length > 0 & Ti_Persona.length > 0 & 
-            dire_Persona.length > 0 & tele_Persona.length > 0 & correo_Persona.length > 0 & 
-            id_Iglesia.length > 0 & Usuario.length > 0 & Password.length > 0 & repass.length===Password.length) {
+    if (No_Persona.length > 0 & AP_Persona.length > 0 & Edad_Persona.length > 0 &
+            Se_Persona.length > 0 & Es_Civil_Persona.length > 0 & Ti_Persona.length > 0 &
+            dire_Persona.length > 0 & tele_Persona.length > 0 & correo_Persona.length > 0 &
+            id_Iglesia.length > 0 & Usuario.length > 0 & Contra.length > 0) {
 //        alert("['repass']");
-        $.ajax({
-            type: "POST",
-            url: 'Controlador/Controller_RegistrarUsuario.php',
-            data: {
-                opc: "RegistrarUsuario",
-                No_Persona: No_Persona,
-                AP_Persona: AP_Persona,
-                Edad_Persona: Edad_Persona,
-                Se_Persona: Se_Persona,
-                Es_Civil_Persona: Es_Civil_Persona,
-                Ti_Persona: Ti_Persona,
-                dire_Persona: dire_Persona,
-                tele_Persona: tele_Persona,
-                correo_Persona: correo_Persona,
-                id_Iglesia: id_Iglesia,
-                Usuario: Usuario,
-                Password: Password               
-            },
-            success: function (response)
-            {
-                alert(response);
-                if (response) {
-//                   alert("se registro"); 
-//                    $("#result").html("<div class='alert alert-success' role='alert'> listo, <strong>Bienvenido!</strong></div>");
-                    location.href = "Iniciar.php";
-                } else {
-                    alert("No se pudo completar la operación");
+        if (repass.length === Contra.length) {
+//            alert(Contra);
+//            alert(repass);
+            $.ajax({
+                type: "POST",
+                url: 'Controlador/Controller_RegistrarUsuario.php',
+                data: {
+                    opc: "RegistrarUsuario",
+                    No_Persona: No_Persona,
+                    AP_Persona: AP_Persona,
+                    Edad_Persona: Edad_Persona,
+                    Se_Persona: Se_Persona,
+                    Es_Civil_Persona: Es_Civil_Persona,
+                    Ti_Persona: Ti_Persona,
+                    dire_Persona: dire_Persona,
+                    tele_Persona: tele_Persona,
+                    correo_Persona: correo_Persona,
+                    id_Iglesia: id_Iglesia,
+                    Usuario: Usuario,
+                    Contra: Contra
+                },
+                success: function (response)
+                {
+//                alert(response);
+                    if (response) {
+                            Swal.fire({
+                                type: 'success',
+                                title: '¡Bienvenido!',
+                                showConfirmButton: false,
+                                timer: 2000
+                                }).then(function() {
+                                    window.location = "Iniciar.php";
+                            });
+                    } else {
+                        alert("No se pudo completar la operación");
+                    }
                 }
-            }
-        });
-
-    } else {
-        $("#result").html("<div class='alert alert-danger' role='alert'> Ingrese <strong>todos los campos </strong> por favor </div>");
+            });
+        } else {
+            $("#result").html("<div class='alert alert-warning' role='alert'> Ingrese <strong>la misma contraseña </strong> por favor </div>");
+        }
+    } else {      
+        $("#result").html("<div class='alert .alert-dismissable alert-danger'><button type='button'\n\
+                                               class='close' data-dismiss='alert'>&times;</button><strong>¡Ingrese! </strong> todos \n\
+                                               los campos por favor</div>");
     }
 }
 

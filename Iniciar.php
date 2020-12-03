@@ -95,48 +95,51 @@ if ($_SESSION["Usuario"] !== null) {
                 <div class="container">
                     <br><br>
                     <div class="row">
-                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                            <div class="footer-pad">
-                                <div class="col-md-3">
-                                    <div id="fh5co-logo"><a><img src="images/logo.png" width="140" height="140" ><span></span></a></div>
+                        <div class="row col-xs-12 col-sm-12 col-md-4 col-lg-4" style="padding-bottom: 20px">
+                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 imgf">
+                                <div class="footer-pad" >
+                                    <div class="col-md-3 asi" >
+                                        <div id="fh5co-logo " style=""><a><img src="images/logo.png" width="140" height="140" ><span></span></a></div>
+                                    </div>
                                 </div>
                             </div>
+                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 imgf" >
+                                <div class="footer-pad " style="text-align: center" >
+                                    <h3>Unión Peruana del Norte</h3>
+                                </div>
+                            </div> 
                         </div>
-                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                            <div class="footer-pad">
-                                <h4>UNIONES</h4>
-                                <ul class="list-unstyled">
-                                    <li><a href="#">Unión Peruana del Norte</a></li>
-                                </ul>
+                        <div class="row col-xs-12 col-sm-12 col-md-8 col-lg-8 al" style="padding-bottom: 20px">
+                            <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 mi" >
+                                <div class="footer-pad fm" style="text-align: left;">
+                                    <h4>MISIONES</h4>
+                                    <ul class="list-unstyled" >
+                                        <li><a href="#">APCE - Asociación Peruana Central Este</a></li>
+                                        <li><a href="#">MICOP - Misión Centro Oeste del Perú</a></li>
+                                        <li><a href="#">MNO - Misión Norte Oriental </a></li>
+                                        <li><a href="#">MPN - Misión Peruana del Norte</a></li>
+                                        <li><a href="#">ANOP - Asociacioni Norte Pacífico del Perú</a></li>
+                                        <li>
+                                            <a href="#"></a>
+                                        </li>
+                                    </ul>
+                                    
+                                </div>
+                            </div> 
+                            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 ali" style="text-align: left">
+                                <h4>Redes Sociales</h4>
+                                <ul class="social-network social-circle">
+                                    <li><a href="https://www.facebook.com/adventistas.upn/" class="icoFacebook" title="Facebook" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                                    <li><a href="https://www.instagram.com/adventistasupn/" class="icoInstagram" title="Instagram" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                                    <li><a href="https://www.youtube.com/adventistasupn" class="icoYoutube" title="Youtube" target="_blank"><i class="fab fa-youtube"></i></a></li>
+                                    <li><a href="https://twitter.com/AdventistasUPN" class="icoTwitter" title="Twitter" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                                </ul>				
                             </div>
                         </div>
-                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                            <div class="footer-pad">
-                                <h4>MISIONES</h4>
-                                <ul class="list-unstyled">
-                                    <li><a href="#">APCE - Asociación Peruana Central Este</a></li>
-                                    <li><a href="#">MICOP - Misión Centro Oeste del Perú</a></li>
-                                    <li><a href="#">MNO - Misión Norte Oriental </a></li>
-                                    <li><a href="#">MPN - Misión Peruana del Norte</a></li>
-                                    <li><a href="#">ANOP - Asociacioni Norte Pacífico del Perú</a></li>
-                                    <li>
-                                        <a href="#"></a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                            <h4>Redes Sociales</h4>
-                            <ul class="social-network social-circle">
-                                <li><a href="https://www.facebook.com/adventistas.upn/" class="icoFacebook" title="Facebook" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
-                                <li><a href="https://www.instagram.com/adventistasupn/" class="icoInstagram" title="Instagram" target="_blank"><i class="fab fa-instagram"></i></a></li>
-                                <li><a href="https://www.youtube.com/adventistasupn" class="icoYoutube" title="Youtube" target="_blank"><i class="fab fa-youtube"></i></a></li>
-                                <li><a href="https://twitter.com/AdventistasUPN" class="icoTwitter" title="Twitter" target="_blank"><i class="fab fa-twitter"></i></a></li>
-                            </ul>				
-                        </div>
+
                     </div>
                     <div class="row">
-                        <div class="col-md-12 copy">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 copy">
                             <p class="text-center">&copy; 2020 - v1.0 - Derechos reservados por Unión Peruana del Norte.</p>
                             <p class="text-center">Diseñado por <a href="https://www.nexo-consultores.com/" target="_blank"> Nexo Consultores IT SAC</a></p>
                         </div>
