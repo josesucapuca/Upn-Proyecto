@@ -97,17 +97,19 @@ if ($_SESSION["Usuario"] !== null) {
                         <!-- breadcrumb -->
                         <ol class="breadcrumb">
                             <input type="hidden" id="PersonaUsuario" value="<?php echo $_SESSION["Persona"]; ?>">
-                            <?php echo $_SESSION["Persona"]; ?> <li style="text-align: right">/ MENÚ</li>
+                            <?php echo $_SESSION["Persona"]; ?> <li style="text-align: right">/ Menú</li>
                         </ol>
                     </div>
                     <div class="col-xs-6 col-sm-6 col-md-6" style="text-align: right">
                         <!-- breadcrumb -->
                         <ol class="breadcrumb">
-                            <?php if ($_SESSION["Ti_Iglesia"] === "I") {
+                            <?php
+                            if ($_SESSION["Ti_Iglesia"] === "I") {
                                 echo "Iglesia :";
                             } else if ($_SESSION["Ti_Iglesia"] === "C") {
-                                echo "Congregacíon:";
-                            } ?> <?php echo $_SESSION["Nombre_Iglesia"]; ?>
+                                echo "Iglesia:";
+                            }
+                            ?> <?php echo $_SESSION["Nombre_Iglesia"]; ?>
                         </ol>
                     </div>
 
@@ -136,10 +138,9 @@ if ($_SESSION["Usuario"] !== null) {
 
                             <div class="well well-light">
 
-                                <h1>Estudio <small></small></h1>
                                 <div class="row">
 
-                                    <div class="col-xs-12 col-sm-6 col-md-3">
+                                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
                                         <div class="panel panel-green  pricing-big">
 
                                             <div class="panel-heading">
@@ -154,12 +155,12 @@ if ($_SESSION["Usuario"] !== null) {
                                                 </div>
                                                 <div class="price-features" >
                                                     <ul class="list-unstyled text-left">
-                                                        <li><i class="fa fa-check text-success"></i> <a href="BibliaPersonal.php"><strong>Biblia </strong></a></li>
-                                                        <li><i class="fa fa-check text-success"></i> <a href="#"><strong>Reavivados por su palabra</strong></a></li>
+                                                        <li><i class="fa fa-check text-success"></i> <a href="BibliaPersonal.php"><strong>Biblia Personal</strong></a></li>
+                                                        <li><i class="fa fa-check text-success"></i> <a href="Reavivados.php"><strong>Reavivados por su palabra</strong></a></li>
                                                         <li><i class="fa fa-check text-success"></i> <a href="Devocion_Matutina.php"><strong>Devocion Matutina</strong></a></li>
                                                         <li><i class="fa fa-check text-success"></i> <a href="Himinario.php"><strong>Himinario</strong></a></li>
-                                                        <li><i class="fa fa-check text-success"></i> <a href="#"><strong>Videos</strong></a></li>
-                                                        <li><i class="fa fa-check text-success"></i> <a href="#"><strong>Musica</strong></a></li>
+                                                        <li><i class="fa fa-check text-success"></i> <a href="Musica.php"><strong>Musica</strong></a></li>
+                                                        <li><i class="fa fa-check text-success"></i> <a href="Videos.php"><strong>Videos</strong></a></li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -167,7 +168,7 @@ if ($_SESSION["Usuario"] !== null) {
                                         </div>
                                     </div>
 
-                                    <div class="col-xs-12 col-sm-6 col-md-3">
+                                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
                                         <div class="panel panel-red pricing-big">
 
                                             <div class="panel-heading">
@@ -182,8 +183,8 @@ if ($_SESSION["Usuario"] !== null) {
                                                 </div>
                                                 <div class="price-features">
                                                     <ul class="list-unstyled text-left">
-                                                        <li><i class="fa fa-check text-success"></i><a href="#"><strong> Cursos Bíblicos Adultos y Jóvenes</strong></a></li>
-                                                        <li><i class="fa fa-check text-success"></i><a href="#"><strong> Cursos Bíblicos Adolescentes y Niños</strong></a></li>
+                                                        <li><i class="fa fa-check text-success"></i><a href="EstudiosBiblicos.php?Ti=1"><strong> Cursos Bíblicos Adultos y Jóvenes</strong></a></li>
+                                                        <li><i class="fa fa-check text-success"></i><a href="EstudiosBiblicos.php?Ti=2"><strong> Cursos Bíblicos Adolescentes y Niños</strong></a></li>
 
                                                     </ul>
                                                 </div>
@@ -191,12 +192,12 @@ if ($_SESSION["Usuario"] !== null) {
                                         </div>
                                     </div>
 
-                                    <div class="col-xs-12 col-sm-6 col-md-3">
+                                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
                                         <div class="panel panel-blueDark pricing-big">
 
                                             <div class="panel-heading">
                                                 <h3 class="panel-title">
-                                                    Campaña Evangelistica</h3>
+                                                    Campañas Evangelisticas</h3>
                                             </div>
                                             <div class="panel-body no-padding text-align-center">
                                                 <div class="the-price">
@@ -206,7 +207,19 @@ if ($_SESSION["Usuario"] !== null) {
                                                 </div>
                                                 <div class="price-features">
                                                     <ul class="list-unstyled text-left">
-                                                        <li><i class="fa fa-check text-success"></i> <a href="Campana_Evangelistica.php"><strong>Campaña 1</strong></a><li>
+                                                        <li><i class="fa fa-check text-success"></i> <strong>Encargado de:</strong>
+                                                            <ul id="Encargado">
+                                                                <li class="list-unstyled"><i class="fa fa-check text-success"></i> <a href="Campana_Evangelistica.php">Encargado de:</a></li>
+                                                                <li class="list-unstyled"><i class="fa fa-check text-success"></i> <a href="Campana_Evangelistica.php">Encargado de:</a></li>
+                                                            </ul>
+                                                        <li>
+                                                        <li><i class="fa fa-check text-success"></i> <strong>Participando en:</strong>
+                                                            <ul id="Participando">
+                                                                <li class="list-unstyled"><i class="fa fa-check text-success"></i> <a href="Campana_Evangelistica.php">Encargado de:</a></li>
+                                                                <li class="list-unstyled"><i class="fa fa-check text-success"></i> <a href="Campana_Evangelistica.php">Encargado de:</a></li>
+                                                            </ul>
+                                                        <li>
+                                                        <li><i class="fa fa-plus-circle text-success"></i> <a href="AgregarCapana.php"><strong>Agregar Campaña Evangelistica</strong></a><li>
 
                                                     </ul>
                                                 </div>
@@ -214,7 +227,7 @@ if ($_SESSION["Usuario"] !== null) {
                                         </div>
                                     </div>
 
-                                    <div class="col-xs-12 col-sm-6 col-md-3">
+                                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
                                         <div class="panel panel-orange  pricing-big">
 
                                             <div class="panel-heading">
@@ -229,40 +242,9 @@ if ($_SESSION["Usuario"] !== null) {
                                                 </div>
                                                 <div class="price-features">
                                                     <ul class="list-unstyled text-left">
-                                                        <li><i class="fa fa-check text-success"></i> Lifetime access <strong> to all storage locations</strong></li>
-                                                        <li><i class="fa fa-check text-success"></i> <strong>Unlimited</strong> storage</li>
-                                                        <li><i class="fa fa-check text-success"></i> Superbig <strong> download quota</strong></li>
-                                                        <li><i class="fa fa-check text-success"></i> <strong>Cash on Delivery</strong></li>
-                                                        <li><i class="fa fa-check text-success"></i> All time <strong> updates</strong></li>
-                                                        <li><i class="fa fa-check text-success"></i> <strong>Unlimited</strong> access to all files</li>
-                                                        <li><i class="fa fa-check text-success"></i> <strong>Allowed</strong> to be exclusing per sale</li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>		    	
-                                    <div class="col-xs-12 col-sm-6 col-md-3">
-                                        <div class="panel panel-red  pricing-big">
-
-                                            <div class="panel-heading">
-                                                <h3 class="panel-title">
-                                                    Devocional Diario</h3>
-                                            </div>
-                                            <div class="panel-body no-padding text-align-center">
-                                                <div class="the-price">
-                                                    <h1>
-                                                        <strong>Opciones</strong>
-                                                    </h1>
-                                                </div>
-                                                <div class="price-features">
-                                                    <ul class="list-unstyled text-left">
-                                                        <li><i class="fa fa-check text-success"></i> Lifetime access <strong> to all storage locations</strong></li>
-                                                        <li><i class="fa fa-check text-success"></i> <strong>Unlimited</strong> storage</li>
-                                                        <li><i class="fa fa-check text-success"></i> Superbig <strong> download quota</strong></li>
-                                                        <li><i class="fa fa-check text-success"></i> <strong>Cash on Delivery</strong></li>
-                                                        <li><i class="fa fa-check text-success"></i> All time <strong> updates</strong></li>
-                                                        <li><i class="fa fa-check text-success"></i> <strong>Unlimited</strong> access to all files</li>
-                                                        <li><i class="fa fa-check text-success"></i> <strong>Allowed</strong> to be exclusing per sale</li>
+                                                        <li><i class="fa fa-check text-success"></i> <a href="Campana_Evangelistica.php"><strong>Repaso de la Leccion</strong></a><li>
+                                                                                                                <li><i class="fa fa-check text-success"></i> <a href="Campana_Evangelistica.php"><strong>Comentario Biblico</strong></a><li>
+                                                        <li><i class="fa fa-check text-success"></i> <a href="Campana_Evangelistica.php"><strong>Diario Devocional</strong></a><li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -305,4 +287,6 @@ if ($_SESSION["Usuario"] !== null) {
         </body>
 
     </html>
-<?php } else { include_once './inc2/Redireccionar.php'; } ?>
+<?php } else {
+    include_once './inc2/Redireccionar.php';
+} ?>

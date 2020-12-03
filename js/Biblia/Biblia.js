@@ -41,9 +41,9 @@ function LLenarLibro() {
             html1 = "";
             html2 = "";
             for (var i = 0; i < jsonData.length; i++) {
-                if (jsonData[i].Testamento === "1") {
+                if (jsonData[i].Testamento === "A") {
                     html1 += '<option value="' + jsonData[i].id_Libro + '">' + jsonData[i].No_Libro + '</option>';
-                } else if (jsonData[i].Testamento === "2") {
+                } else if (jsonData[i].Testamento === "N") {
                     html2 += '<option value="' + jsonData[i].id_Libro + '">' + jsonData[i].No_Libro + '</option>';
                 }
             }
@@ -86,12 +86,10 @@ function ListaVersiculos(idCapitulo, id_p) {
             for (var i = 0; i < jsonData.length; i++) {
 
                 html1 += '<li class="VM"><span class="label label-info"><i class="fa fa-lg fa-plus-circle">\n\
-</i> Versiculo ' + jsonData[i].No_Versiculo + '</span><ul><li><a> ' + jsonData[i].Con_Versiculo + '</a>';
+</i> Versiculo ' + jsonData[i].No_Versiculo + '</span><ul><li><a> ' + jsonData[i].Con_Versiculo + '</a><BR>';
                 if (jsonData[i].id_persona === null) {
                     html1 += ' <button href="javascript:void(0);" class="btn btn-labeled btn-success stbut"> Marcar</button>';
-                } else {
-                    html1 += ' <button href="javascript:void(0);" class="btn btn-labeled btn-danger stbut"> Desmarcar</button>';
-                }
+                } 
                 if (jsonData[i].Anotacion === null) {
                     html1 += ' <button href="javascript:void(0);" class="btn btn-labeled btn-warning stbut" > Agregar Anotacion</button>';
                 } else {
