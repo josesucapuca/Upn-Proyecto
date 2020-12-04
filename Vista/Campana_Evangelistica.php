@@ -2,7 +2,7 @@
 session_start();
 if ($_SESSION["Usuario"] !== null) {
     ?><!DOCTYPE html>
-    <html lang="es">
+    <html lang="es" style="background-image: url('img/pattern/tileable_wood_texture.png');">
         <head>
 
             <!--<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">-->

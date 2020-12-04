@@ -109,60 +109,51 @@ if ($_SESSION["Usuario"] !== null) {
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
                                 &times;
                             </button>
-                            <h4 class="modal-title" id="myModalLabel">Article Post</h4>
+                            <h4 class="modal-title" id="myModalLabel">Musica</h4>
                         </div>
                         <div class="modal-body">
 
                             <div class="row">
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Title" required />
-                                    </div>
-                                    <div class="form-group">
-                                        <textarea class="form-control" placeholder="Content" rows="5" required></textarea>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="category"> Category</label>
-                                        <select class="form-control" id="category">
-                                            <option>Articles</option>
-                                            <option>Tutorials</option>
-                                            <option>Freebies</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="tags"> Tags</label>
-                                        <input type="text" class="form-control" id="tags" placeholder="Tags" />
-                                    </div>
-                                </div>
+                                <iframe src="https://www.youtube.com/embed/wfCVew-1_lI" width="100%"></iframe>
                             </div>
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="well well-sm well-primary">
-                                        <form class="form form-inline " role="form">
-                                            <div class="form-group">
-                                                <input type="text" class="form-control" value="" placeholder="Date" required />
-                                            </div>
-                                            <div class="form-group">
-                                                <select class="form-control">
-                                                    <option>Draft</option>
-                                                    <option>Published</option>
-                                                </select>
-                                            </div>
-                                            <div class="form-group">
-                                                <button type="submit" class="btn btn-success btn-sm">
-                                                    <span class="glyphicon glyphicon-floppy-disk"></span> Save
-                                                </button>
-                                                <button type="button" class="btn btn-default btn-sm">
-                                                    <span class="glyphicon glyphicon-eye-open"></span> Preview
-                                                </button>
-                                            </div>
-                                        </form>
+                                       
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">
+                                Cancel
+                            </button>
+                            <button type="button" class="btn btn-primary">
+                                Post Article
+                            </button>
+                        </div>
+                    </div><!-- /.modal-content -->
+                </div><!-- /.modal-dialog -->
+            </div>
+            <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                                &times;
+                            </button>
+                            <h4 class="modal-title" id="myModalLabel">Musica</h4>
+                        </div>
+                        <div class="modal-body">
+
+                            <div class="row">
+                                <iframe src="https://www.youtube.com/embed/wfCVew-1_lI" width="100%"></iframe>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="well well-sm well-primary">
+                                       
                                     </div>
                                 </div>
                             </div>
@@ -214,7 +205,7 @@ if ($_SESSION["Usuario"] !== null) {
                                             <td><a><strong>Himno N°1 Cantad Alegres</strong></a> </td>
                                             <td>Mar  d sd sd s d sd s d s d sd s d sk</td>
                                             <td><button class="btn btn-outline btn-success" data-toggle="modal" data-target="#myModal"><i class="fa fa-music"></i> Audio</button></td>
-                                            <td><button class="btn btn-outline btn-success" data-toggle="modal" data-target="#myModal"><i class="fa fa-film"></i> Video</button></td>
+                                            <td><button class="btn btn-outline btn-success" data-toggle="modal" data-target="#myModal2"><i class="fa fa-film"></i> Video</button></td>
                                         </tr>
                                         <tr>
                                             <td>2</td>
