@@ -114,6 +114,7 @@ class UsuarioDAO {
             echo 0;
         }
     }
+
 }
 
 ?>
