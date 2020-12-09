@@ -145,6 +145,9 @@
     background-color: #3276b1;
     border-color: #2c699d;
 }
+.titp{
+    font-size: 80px;text-align: center;color: white;font-weight: 600;
+}
 @media only screen and (max-width: 679px) and (min-width: 0){
     .btn-primary1 {
         color: #fff;
@@ -200,5 +203,10 @@
     }
     .bod{
         height: 100%;
+    }
+}
+@media only screen and (max-width: 411px)  and (min-width: 0){
+    .titp{
+        font-size:60px !important;
     }
 }
