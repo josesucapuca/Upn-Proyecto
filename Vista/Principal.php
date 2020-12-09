@@ -39,7 +39,7 @@ if ($_SESSION["Usuario"] !== null) {
                         <div id="logo-group">
 
                             <!-- PLACE YOUR LOGO HERE -->
-                            <span id="logo"> <img src="../images/img_logo/adventist-es--ming.png" alt="SmartAdmin" style="height: 80px;width: auto"> </span>
+                            <span id="logo"> <img class="imglog" src="../images/img_logo/adventist-es--ming.png" alt="SmartAdmin" > </span>
                             <!-- END LOGO PLACEHOLDER -->
 
                             <!-- Note: The activity badge color changes when clicked and resets the number to 0
@@ -50,7 +50,7 @@ if ($_SESSION["Usuario"] !== null) {
                             <!-- Top menu profile link : this shows only when top menu is active -->
                             <ul id="mobile-profile-img" class="header-dropdown-list padding-5">
                                 <li class="LiReporte" style="display: none">
-                                    <a id="Reporte" href="#" class="btn btn-primary" style="font-size: 13px;text-align: center;align-items: center;"> 
+                                    <a id="Reporte" href="Trabajando.php" class="btn btn-primary" style="font-size: 13px;text-align: center;align-items: center;"> 
                                         <i class="fa fa-bar-chart-o"></i>
                                     </a>
                                 </li>
@@ -84,7 +84,7 @@ if ($_SESSION["Usuario"] !== null) {
                             <div id="" class="transparent pull-right">
                                 <ul id="" class="header-dropdown-list ">
                                     <li class="LiReporte2" style="display: none">
-                                        <a id="Reporte2" href="#" class="btn1 btn-primary1" style="font-size: 13px;text-align: center;align-items: center;"> 
+                                        <a id="Reporte2" href="Trabajando.php" class="btn1 btn-primary1" style="font-size: 13px;text-align: center;align-items: center;"> 
                                             <i class="fa fa-bar-chart-o"></i>
                                         </a>
                                     </li>
@@ -94,7 +94,7 @@ if ($_SESSION["Usuario"] !== null) {
                                         </a>
                                         <ul class="dropdown-menu pull-right">
                                             <li>
-                                                <a href="javascript:void(0);" class="padding-10 padding-top-0 padding-bottom-0"><i class="fa fa-cog"></i> <u>C</u>onfiguración</a>
+                                                <a href="Configuracion.php" class="padding-10 padding-top-0 padding-bottom-0"><i class="fa fa-cog"></i> <u>C</u>onfiguración</a>
                                             </li>
                                             <li class="divider"></li>
                                             <li>
@@ -131,10 +131,10 @@ if ($_SESSION["Usuario"] !== null) {
 
                                     <div class="row">
 
-                                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="padding-bottom: 10%;"> 
+                                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="padding-bottom: 8%;"> 
                                             <h1 class="titp" style="">CEO Adventistas</h1>
                                         </div>
-                                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
+                                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3">
                                             <div class="panel panel-green  pricing-big panelm panEs">
 
                                                 <div class="panel-heading panehead panelm-black" id="panHeadEsp" style="border-radius: 10px 10px 10px 10px ;">
@@ -155,22 +155,22 @@ if ($_SESSION["Usuario"] !== null) {
                                                             <li class="liespe"><i class="fa fa-plus text-success icEsp"></i> <strong style="color: #74a7ca;">Estudio Personal:  </strong>
                                                                 <ul id="EsPersonal" style="display: none;">
                                                                     <li class="list-unstyled lipri"><i class="fa fa-check text-success"></i> <a href="BibliaPersonal.php"><strong>Biblia Personal</strong></a></li>
-                                                                    <li class="list-unstyled lipri"><i class="fa fa-check text-success"></i> <a href="Reavivados.php"><strong>Reavivados por su palabra</strong></a></li>
+                                                                    <li class="list-unstyled lipri"><i class="fa fa-check text-success"></i> <a href="Trabajando.php"><strong>Reavivados por su palabra</strong></a></li>
                                                                     <li class="list-unstyled lipri"><i class="fa fa-check text-success"></i> <a href="Devocion_Matutina.php"><strong>Devocion Matutina</strong></a></li>
                                                                 </ul>
                                                             <li>
 
                                                             <li class="limu"><i class="fa fa-plus text-success ismu"></i> <strong style="color: #74a7ca;">Musica:</strong>
                                                                 <ul id="MusicaPe" style="display: none;">
-                                                                    <li class="list-unstyled lipri"><i class="fa fa-check text-success"></i> <a href="Himinario.php"><strong>Himinario</strong></a></li>
-                                                                    <li class="list-unstyled lipri"><i class="fa fa-check text-success"></i> <a href="Campana_Evangelistica.php">Buscar Musica</a></li>
-                                                                    <li class="list-unstyled lipri"><i class="fa fa-check text-success"></i> <a href="Campana_Evangelistica.php">Subir Musica</a></li>
+                                                                    <li class="list-unstyled lipri"><i class="fa fa-check text-success"></i> <a href="Trabajando.php"><strong>Himinario</strong></a></li>
+                                                                    <li class="list-unstyled lipri"><i class="fa fa-check text-success"></i> <a href="Trabajando.php">Buscar Musica</a></li>
+                                                                    <li class="list-unstyled lipri"><i class="fa fa-check text-success"></i> <a href="Trabajando.php">Subir Musica</a></li>
                                                                 </ul>
                                                             <li>
                                                             <li class="livi"><i class="fa fa-plus text-success icvi"></i> <strong style="color: #74a7ca;">Videos:</strong>
                                                                 <ul id="VideoPe" style="display: none;">
-                                                                    <li class="list-unstyled lipri"><i class="fa fa-check text-success"></i> <a href="Campana_Evangelistica.php">Buscar Videos</a></li>
-                                                                    <li class="list-unstyled lipri"><i class="fa fa-check text-success"></i> <a href="Campana_Evangelistica.php">Subir Video</a></li>
+                                                                    <li class="list-unstyled lipri"><i class="fa fa-check text-success"></i> <a href="Trabajando.php">Buscar Videos</a></li>
+                                                                    <li class="list-unstyled lipri"><i class="fa fa-check text-success"></i> <a href="Trabajando.php">Subir Video</a></li>
                                                                 </ul>
                                                             <li>
                                                         </ul>
@@ -180,7 +180,7 @@ if ($_SESSION["Usuario"] !== null) {
                                             </div>
                                         </div>
 
-                                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
+                                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3">
                                             <div class="panel panel-red pricing-big panelm panEs">
 
                                                 <div class="panel-heading panehead panelm-black " id="panHeadEsBi" style="border-radius: 10px 10px 10px 10px ;">
@@ -198,8 +198,8 @@ if ($_SESSION["Usuario"] !== null) {
                                                     </div>
                                                     <div class="price-features">
                                                         <ul class="list-unstyled text-left">
-                                                            <li class="lipri"><i class="fa fa-check text-success"></i><a href="EstudiosBiblicos.php?Ti=1"><strong> Cursos Bíblicos Adultos y Jóvenes</strong></a></li>
-                                                            <li class="lipri"><i class="fa fa-check text-success"></i><a href="EstudiosBiblicos.php?Ti=2"><strong> Cursos Bíblicos Adolescentes y Niños</strong></a></li>
+                                                            <li class="lipri"><i class="fa fa-check text-success"></i><a href="Trabajando.php?Ti=1"><strong> Cursos Bíblicos Adultos y Jóvenes</strong></a></li>
+                                                            <li class="lipri"><i class="fa fa-check text-success"></i><a href="Trabajando.php?Ti=2"><strong> Cursos Bíblicos Adolescentes y Niños</strong></a></li>
 
                                                         </ul>
                                                     </div>
@@ -207,7 +207,7 @@ if ($_SESSION["Usuario"] !== null) {
                                             </div>
                                         </div>
 
-                                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
+                                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3">
                                             <div class="panel panel-blueDark pricing-big panelm panEs">
 
 
@@ -235,10 +235,10 @@ if ($_SESSION["Usuario"] !== null) {
                                                             <li><i class="fa fa-plus text-success icPart"></i> <strong style="color: #74a7ca;">Participando en:</strong>
                                                                 <ul id="Participando" style="display: none">
                                                                     <li class="list-unstyled lipri"><i class="fa fa-check text-success"></i> <a href="Campana_Evangelistica.php">Encargado de:</a></li>
-                                                                    <li class="list-unstyled lipri"><i class="fa fa-check text-success"></i> <a href="Campana_Evangelistica.php">Encargado de:</a></li>
+                                                                    <li class="list-unstyled lipri"><i class="fa fa-check text-success"></i> <a href="Trabajando.php">Encargado de:</a></li>
                                                                 </ul>
                                                             <li>
-                                                            <li><i class="fa fa-plus-circle text-success"></i> <a href="AgregarCapana.php"><strong>Agregar Campaña Evangelistica</strong></a><li>
+                                                            <li><i class="fa fa-plus-circle text-success"></i> <a href="Trabajando.php"><strong>Agregar Campaña Evangelistica</strong></a><li>
 
                                                         </ul>
                                                     </div>
@@ -246,7 +246,7 @@ if ($_SESSION["Usuario"] !== null) {
                                             </div>
                                         </div>
 
-                                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
+                                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3">
                                             <div class="panel panel-orange  pricing-big panelm panEs" style="margin-bottom: 0px;">
 
                                                 <div class="panel-heading panehead panelm-black " id="panHeadEsSab" style="border-radius: 10px 10px 10px 10px ;">
@@ -264,9 +264,9 @@ if ($_SESSION["Usuario"] !== null) {
                                                     </div>
                                                     <div class="price-features">
                                                         <ul class="list-unstyled text-left">
-                                                            <li class="lipri"><i class="fa fa-check text-success"></i> <a href="Campana_Evangelistica.php"><strong>Repaso de la Leccion</strong></a><li>
-                                                            <li class="lipri"><i class="fa fa-check text-success"></i> <a href="Campana_Evangelistica.php"><strong>Comentario Biblico</strong></a><li>
-                                                            <li class="lipri"><i class="fa fa-check text-success"></i> <a href="Campana_Evangelistica.php"><strong>Diario Devocional</strong></a><li>
+                                                            <li class="lipri"><i class="fa fa-check text-success"></i> <a href="Trabajando.php"><strong>Repaso de la Leccion</strong></a><li>
+                                                            <li class="lipri"><i class="fa fa-check text-success"></i> <a href="Trabajando.php"><strong>Comentario Biblico</strong></a><li>
+                                                            <li class="lipri"><i class="fa fa-check text-success"></i> <a href="Trabajando.php"><strong>Diario Devocional</strong></a><li>
                                                         </ul>
                                                     </div>
                                                 </div>
