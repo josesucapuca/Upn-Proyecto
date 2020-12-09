@@ -1,20 +1,54 @@
 <html>
     <head>
         <title></title>     
-        <!--<link rel="stylesheet" href="css/bootstrap.min.css">-->
-        <!--<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>-->
-        <!--<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>-->
 
         <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> 
-        <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <!--<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>-->
         <link href="plugins/sweetAlert2/sweetalert2.min.css" rel="stylesheet" type="text/css"/>
-        <link href="plugins/animate.css/animate.css" rel="stylesheet" type="text/css"/>
-        <!--<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">-->         
-        <link href="css/registrarse.css" rel="stylesheet" type="text/css"/>        
-        <link href="style.css" rel="stylesheet" type="text/css"/>
+        <link href="plugins/animate.css/animate.css" rel="stylesheet" type="text/css"/>       
+        <link href="css/registrarse.css" rel="stylesheet" type="text/css"/>   
+        
+        <link rel="stylesheet" href="css/bootstrap.min.css">
         <link href="css/footer.css" rel="stylesheet" type="text/css"/>
+        <link href="style.css" rel="stylesheet" type="text/css"/>
+        <link rel="stylesheet" href="css/responsive.css">       
         <link href="css/botones.css" rel="stylesheet" type="text/css"/>
+        <style>
+            .mi{
+                text-align: left
+            }
+            @media (min-width: 576px)
+            {
+                .imgf{
+                    display: flex;
+                    justify-content: center !important;
+                }
+                #titU{
+                    text-align: center !important;
+                }
+                .al{
+                    text-align: center !important;
+                }
+                .ali{
+                    text-align: center !important;
+                }
+                .mi{
+                    text-align: center !important;
+                }
+                .fm{
+                    text-align: left;
+                }
+                
+            }
+            @media (max-width: 576px)
+            {
+                .asi{
+                    display: flex;
+                    justify-content: center;
+                }
+            }
+        </style>
     </head>
     <body>
         <div class="container">
@@ -26,11 +60,19 @@
                                 <div id="fh5co-logo"><a href="index.php"><img src="images/logo.png" width="140" height="140" ><span></span></a></div>
                             </div>
                             <div class="col-md-8">
-                                <br><br><br>
-                                <h3>Registro del Misionero Digital</h3>
+                                <div class="row">
+                                    .
+                                </div>
+                                <div class="row">
+                                    <h2 style="color: white">Registro del Misionero Digital</h2> 
+                                </div>
+                                <div class="row">                                    
+                                </div>                                                                
                             </div>
                         </div>
                     </div>
+                        
+                    
                     <div class="card-body">                       
                         <form method="post" class="formulario" id="formulario">
                             <div class="row"> 
@@ -87,7 +129,7 @@
                                     <p class="formulario__input-error" style="color: white">El correo solo puede contener letras, numeros, puntos, guiones y guion bajo.</p>
                                 </div>
                                 <div class="col-md-4">
-                                    <div class="input-group form-group">
+                                    <div class=" input-group form-group">
                                         <div class="input-group-prepend">
                                             <span class="input-group-text"><i class="fas fa-paperclip"></i></span>
                                         </div>
@@ -230,6 +272,7 @@
                             </div>
                         </form>
                     </div>
+                        
                 </div>
             </div>
         </div>
@@ -267,7 +310,7 @@
                                             <a href="#"></a>
                                         </li>
                                     </ul>
-
+                                    
                                 </div>
                             </div> 
                             <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 ali" style="text-align: left">

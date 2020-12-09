@@ -20,7 +20,7 @@ html,body{
     height: auto;
     margin-top: auto;
     margin-bottom: auto;
-    width: auto;
+    width: 100rem;
     background-color: rgba(0,0,0,0.5) !important;
 }
 

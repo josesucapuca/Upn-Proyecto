@@ -12,9 +12,9 @@ and open the template in the editor.
         <meta name="description" content="">
         <meta name="author" content="">
         <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link href="css/footer.css" rel="stylesheet" type="text/css"/>
         <link href="style.css" rel="stylesheet" type="text/css"/>
         <link rel="stylesheet" href="css/responsive.css">       
-        <link href="css/footer.css" rel="stylesheet" type="text/css"/>
         <link href="css/botones.css" rel="stylesheet" type="text/css"/>
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
         <style>
