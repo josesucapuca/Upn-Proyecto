@@ -132,7 +132,7 @@ if ($_SESSION["Usuario"] !== null) {
                                     <div class="row">
 
                                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="padding-bottom: 10%;"> 
-                                            <h1 style="font-size: 80px;text-align: center;color: white;font-weight: 600;">CEO Adventistas</h1>
+                                            <h1 class="titp" style="">CEO Adventistas</h1>
                                         </div>
                                         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
                                             <div class="panel panel-green  pricing-big panelm panEs">
