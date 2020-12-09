@@ -5,22 +5,22 @@ $opc = $_POST["opc"];
 if ($opc === "ValidarUsuario") {
     $usuario = $_POST["a"];
     $password = $_POST["b"];
-    $objs= new UsuarioDAO();
-    $var=$objs->ValidarUsuario($usuario,$password);
+    $objs = new UsuarioDAO();
+    $var = $objs->ValidarUsuario($usuario, $password);
     $arr = array();
     if (mysqli_num_rows($var) != 0) {
-        while ($row = mysqli_fetch_assoc($var)) {
-            $arr[] = $row;
+            while ($row = mysqli_fetch_assoc($var)) {
+                $arr[] = $row;
+            }
         }
-    }
-    echo json_encode($arr);
+        echo json_encode($arr);
 }
 if ($opc === "CrearSesion") {
     $usuario = $_POST["a"];
     $password = $_POST["b"];
     //echo $Categoria.$Estado_Categoria.$Usuariocreacion;
-    $objs= new UsuarioDAO();
-    $var=$objs->CrearSesion($usuario,$password);
+    $objs = new UsuarioDAO();
+    $var = $objs->CrearSesion($usuario, $password);
     $data = $var->fetch_object();
     session_start();
     $_SESSION["id_Usuario"] = $data->id_Usuario;

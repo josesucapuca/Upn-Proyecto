@@ -2,26 +2,67 @@
 <?php
 session_start();
 if ($_SESSION["Usuario"] !== null) {
-    ?>
+           ?>
     <script type="text/javascript">
         location.href = "Vista/Principal.php";
     </script>
-    <?php
+    <?php 
+        
+    
 } else {
 ?>
 
 <html>
     <head>
         <title></title>     
-        <link rel="stylesheet" href="css/bootstrap.min.css">
-
+        <!--<link rel="stylesheet" href="css/bootstrap.min.css">-->
         <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
         <!--<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>-->
-        <link href="css/footer.css" rel="stylesheet" type="text/css"/>
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
         <link href="css/iniciar.css" rel="stylesheet" type="text/css"/>       
+        <!--<link href="css/botones.css" rel="stylesheet" type="text/css"/>-->
+        
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link href="css/footer.css" rel="stylesheet" type="text/css"/>
+        <link href="style.css" rel="stylesheet" type="text/css"/>
+        <link rel="stylesheet" href="css/responsive.css">       
         <link href="css/botones.css" rel="stylesheet" type="text/css"/>
         <!--<link href="css/style.css" rel="stylesheet" type="text/css"/>-->
+        <style>
+            .mi{
+                text-align: left
+            }
+            @media (min-width: 576px)
+            {
+                .imgf{
+                    display: flex;
+                    justify-content: center !important;
+                }
+                #titU{
+                    text-align: center !important;
+                }
+                .al{
+                    text-align: center !important;
+                }
+                .ali{
+                    text-align: center !important;
+                }
+                .mi{
+                    text-align: center !important;
+                }
+                .fm{
+                    text-align: left;
+                }
+                
+            }
+            @media (max-width: 576px)
+            {
+                .asi{
+                    display: flex;
+                    justify-content: center;
+                }
+            }
+        </style>
     </head>
     <body>
         <div class="container">
@@ -40,7 +81,7 @@ if ($_SESSION["Usuario"] !== null) {
                     </div>
                     <div class="card-body">
                         <!--<form method="post" onsubmit=" return Iniciar()">-->
-                        <form>
+                        <form id="form" action="" method="POST">
                             <div class="row"> 
                                 <div class="col-md-1" ></div>
                                 <div class="col-md-10">
@@ -68,6 +109,7 @@ if ($_SESSION["Usuario"] !== null) {
                                 <div class="col-md-1">
                                 </div>
                             </div>
+                           
                             <div class="row"> 
                                 <div class="col-md-4">                              
                                 </div>
@@ -147,9 +189,10 @@ if ($_SESSION["Usuario"] !== null) {
                 </div>
             </div>
         </footer>
-    </body>
+    </body>    
     <!--<script src="js/jquery-3.4.1.min.js" type="text/javascript"></script>-->
     <script src="js/jquery-1.12.3.min.js" type="text/javascript"></script>
     <script src="js/Logueo/Validacion.js" type="text/javascript"></script>
+    <script src='https://www.google.com/recaptcha/api.js?render=6LdOxf8ZAAAAAHuUIiRORY6ylEJd45MmLjjOwrKU'></script>
 </html>
 <?php }?>
