@@ -5,6 +5,10 @@ $opc = $_POST["opc"];
 if ($opc === "ValidarUsuario") {
     $usuario = $_POST["a"];
     $password = $_POST["b"];
+//    $captcha = $_POST['g-recaptcha-response']; //nuevo
+    
+//    $secret = '6LfUs_8ZAAAAAHyUysG-bZnyCMF1cEmbjzx9_9X1'; //nuev
+    
     $objs= new UsuarioDAO();
     $var=$objs->ValidarUsuario($usuario,$password);
     $arr = array();

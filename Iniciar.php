@@ -14,7 +14,7 @@ if ($_SESSION["Usuario"] !== null) {
     <head>
         <title></title>     
         <link rel="stylesheet" href="css/bootstrap.min.css">
-
+         <script src="https://www.google.com/recaptcha/api.js"></script>
         <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
         <!--<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>-->
         <link href="css/footer.css" rel="stylesheet" type="text/css"/>
@@ -40,7 +40,7 @@ if ($_SESSION["Usuario"] !== null) {
                     </div>
                     <div class="card-body">
                         <!--<form method="post" onsubmit=" return Iniciar()">-->
-                        <form>
+                        <form method="POST">
                             <div class="row"> 
                                 <div class="col-md-1" ></div>
                                 <div class="col-md-10">
@@ -63,6 +63,16 @@ if ($_SESSION["Usuario"] !== null) {
                                             <span class="input-group-text"><i class="fas fa-key"></i></span>
                                         </div>
                                         <input type="password" name="Password" id="Password" class="form-control" placeholder="Contraseña"  required="">
+                                    </div>
+                                </div>
+                                <div class="col-md-1">
+                                </div>
+                            </div>
+                            <div class="row"> 
+                                <div class="col-md-1" ></div>
+                                <div class="col-md-10">
+                                    <div class="input-group form-group">
+                                        <div class="g-recaptcha" data-sitekey="6LfUs_8ZAAAAANZccQSAp0Z8UKVdHp_DWayM_z8O"></div>
                                     </div>
                                 </div>
                                 <div class="col-md-1">
@@ -147,7 +157,7 @@ if ($_SESSION["Usuario"] !== null) {
                 </div>
             </div>
         </footer>
-    </body>
+    </body>    
     <!--<script src="js/jquery-3.4.1.min.js" type="text/javascript"></script>-->
     <script src="js/jquery-1.12.3.min.js" type="text/javascript"></script>
     <script src="js/Logueo/Validacion.js" type="text/javascript"></script>
