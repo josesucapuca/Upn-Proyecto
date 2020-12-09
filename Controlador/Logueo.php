@@ -34,7 +34,10 @@ if ($opc === "CrearSesion") {
     $_SESSION["Ti_Persona"] = $data->Ti_Persona;
     $_SESSION["id_Iglesia"] = $data->id_Iglesia;
     $_SESSION["Nombre_Iglesia"] = $data->Nombre_Iglesia;
-    $_SESSION["Ti_Iglesia"] = $data->Ti_Iglesia;
+    $_SESSION["id_Distrito"] = $data->id_Distrito;
+    $_SESSION["id_Mision"] = $data->id_Mision;
+    $_SESSION["id_Uniones"] = $data->id_Uniones;
+    $_SESSION["id_Division"] = $data->id_Division;
     echo "ok";
 }
 if ($opcion === "SalirSesion") {
