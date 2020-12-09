@@ -1,15 +1,16 @@
 <html>
     <head>
         <title></title>     
-        <link rel="stylesheet" href="css/bootstrap.min.css">
-        <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+        <!--<link rel="stylesheet" href="css/bootstrap.min.css">-->
+        <!--<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>-->
         <!--<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>-->
 
-        
+        <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> 
         <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
         <link href="plugins/sweetAlert2/sweetalert2.min.css" rel="stylesheet" type="text/css"/>
         <link href="plugins/animate.css/animate.css" rel="stylesheet" type="text/css"/>
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">         
+        <!--<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">-->         
         <link href="css/registrarse.css" rel="stylesheet" type="text/css"/>        
         <link href="style.css" rel="stylesheet" type="text/css"/>
         <link href="css/footer.css" rel="stylesheet" type="text/css"/>
@@ -31,49 +32,59 @@
                         </div>
                     </div>
                     <div class="card-body">                       
-                        <form method="post">
+                        <form method="post" class="formulario" id="formulario">
                             <div class="row"> 
-                                <div class="col-md-3">
-                                    <div class="input-group form-group">
+                                <div class="col-md-3 formulario__grupo" id="grupo__nombre">
+                                    <div class="input-group form-group formulario__grupo-input">
                                         <div class="input-group-prepend">
                                             <span class="input-group-text"><i class="fas fa-user"></i></span>
                                         </div>
-                                        <input type="text" class="form-control" id="txtnombre" placeholder="Nombres" required="">
+                                        <input for="nombre" type="text" class="formulario__input form-control" id="txtnombre" placeholder="Nombres" name="nombre">
+                                        <i class="formulario__validacion-estado far fa-check-circle"></i>                                       
                                     </div>
+                                    <p class="formulario__input-error" style="color: white">Colocar un nombre correcto.</p>
                                 </div>
-                                <div class="col-md-3">
-                                    <div class="input-group form-group">
+                                <div class="col-md-3 formulario__grupo" id="grupo__apellido">
+                                    <div class="input-group form-group formulario__grupo-input">
                                         <div class="input-group-prepend">
                                             <span class="input-group-text"><i class="fas fa-user"></i></span>
                                         </div>
-                                        <input type="text" class="form-control" id="txtapellido" placeholder="Apellidos" required="">
+                                        <input for="apellido" type="text" class="formulario__input form-control" id="txtapellido" placeholder="Apellidos" name="apellido">
+                                        <i class="formulario__validacion-estado far fa-check-circle"></i>                                       
                                     </div>
+                                    <p class="formulario__input-error" style="color: white">Colocar un apellido correcto.</p>
                                 </div>
-                                <div class="col-md-6">
-                                    <div class="input-group form-group">
+                                <div class="col-md-6 formulario__grupo" id="grupo__direccion">
+                                    <div class="input-group form-group formulario__grupo-input">
                                         <div class="input-group-prepend">
                                             <span class="input-group-text"><i class="fas fa-map-marker-alt"></i></span>
                                         </div>
-                                        <input type="text" class="form-control" id="txtdireccion" placeholder="Dirección" required="">
+                                        <input for="direccion" type="text" class="formulario__input form-control" id="txtdireccion" placeholder="Direccion" name="direccion">
+                                        <i class="formulario__validacion-estado far fa-check-circle"></i>                                       
                                     </div>
+                                    <p class="formulario__input-error" style="color: white">Colocar tu direccion actual.</p>
                                 </div>
                             </div>
                             <div class="row"> 
-                                <div class="col-md-3">
-                                    <div class="input-group form-group">
+                                <div class="col-md-3 formulario__grupo" id="grupo__telefono">
+                                    <div class="formulario__grupo-input input-group form-group">
                                         <div class="input-group-prepend">
                                             <span class="input-group-text"><i class="fas fa-mobile-alt"></i></span>
                                         </div>
-                                        <input type="text" class="form-control" id="txttelefono" placeholder="Telefono" required="">
+                                        <input for="telefono" type="text" class="form-control formulario__input" id="txttelefono" placeholder="Telefono" name="telefono">
+                                        <i class="formulario__validacion-estado far fa-check-circle"></i>
                                     </div>
+                                    <p class="formulario__input-error" style="color: white">El número de telefono debe ser de 7 a 9 dígitos.</p>
                                 </div>
-                                <div class="col-md-5">
-                                    <div class="input-group form-group">
+                                <div class="col-md-5 formulario__grupo" id="grupo__correo">
+                                    <div class="formulario__grupo-input input-group form-group">
                                         <div class="input-group-prepend">
                                             <span class="input-group-text"><i class="fas fa-envelope-open-text"></i></span>
                                         </div>
-                                        <input type="text" class="form-control" id="txtcorreo" placeholder="Correo" required="">
+                                        <input type="email" for="correo" class="form-control formulario__input" id="txtcorreo" placeholder="Correo" name="correo">
+                                        <i class="formulario__validacion-estado far fa-check-circle"></i>
                                     </div>
+                                    <p class="formulario__input-error" style="color: white">El correo solo puede contener letras, numeros, puntos, guiones y guion bajo.</p>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="input-group form-group">
@@ -92,15 +103,17 @@
                                 </div>
                             </div>
                             <div class="row"> 
-                                <div class="col-md-2">
-                                    <div class="input-group form-group">
+                                <div class="col-md-3 formulario__grupo" id="grupo__edad">
+                                    <div class="formulario__grupo-input input-group form-group">
                                         <div class="input-group-prepend">
                                             <span class="input-group-text"><i class="fas fa-calendar-alt"></i></span>
                                         </div>
-                                        <input type="text" class="form-control" id="txtedad" placeholder="Edad" required="">
+                                        <input for="edad" type="text" class="form-control formulario__input" id="txtedad" placeholder="Edad" name="edad">
+                                        <i class="formulario__validacion-estado far fa-check-circle"></i>
                                     </div>
+                                    <p class="formulario__input-error" style="color: white">Ingrese una edad valida.</p>
                                 </div>
-                                <div class="col-md-4">
+                                <div class="col-md-3">
                                     <div class="input-group form-group">
                                         <div class="input-group-prepend">
                                             <span class="input-group-text"><i class="fas fa-users"></i></span>
@@ -162,29 +175,36 @@
                                 </div>
                             </div>
                             <div class="row"> 
-                                <div class="col-md-4">
-                                    <div class="input-group form-group">
+                                <div class="col-md-4 formulario__grupo" id="grupo__usuario">
+                                    <div class=" input-group form-group formulario__grupo-input" > 
                                         <div class="input-group-prepend">
                                             <span class="input-group-text"><i class="far fa-user-circle"></i></span>
                                         </div>
-                                        <input type="text" class="form-control" id="txtusuario" placeholder="Usuario" required="">
+                                        <input for="usuario" type="text" class="form-control formulario__input" id="txtusuario" name="usuario" placeholder="Usuario">
+                                        <i class="formulario__validacion-estado far fa-check-circle"></i>
                                     </div>
+                                    <p class="formulario__input-error" style="color: white">El usuario tiene que ser de 4 a 16 dígitos y solo puede contener numeros, letras y guion bajo.</p>
                                 </div>
-                                <div class="col-md-4">
-                                    <div class="input-group form-group">
+                                <div class="col-md-4 formulario__grupo" id="grupo__password">
+                                    <div class="formulario__grupo-input input-group form-group">
                                         <div class="input-group-prepend">
                                             <span class="input-group-text"><i class="fas fa-key"></i></span>
                                         </div>
-                                        <input type="password" class="form-control" id="txtcontraseña" placeholder="Contraseña" required="">
+                                        <input for="password" type="password" class="form-control formulario__input" id="password" placeholder="Contraseña" name="password">
+                                        <i class="formulario__validacion-estado far fa-check-circle"></i>
                                     </div>
+                                    <p class="formulario__input-error" style="color: white">La contraseña debe tener entre 8 y 16 caracteres, al menos un dígito, al menos una minúscula y al menos una mayúscula.
+                                        NO puede tener otros símbolos.</p>
                                 </div>
-                                <div class="col-md-4">
-                                    <div class="input-group form-group">
+                                <div class="col-md-4 formulario__grupo" id="grupo__password2">
+                                    <div class="formulario__grupo-input input-group form-group">
                                         <div class="input-group-prepend">
                                             <span class="input-group-text"><i class="fas fa-key"></i></span>
                                         </div>
-                                        <input type="password" class="form-control" id="txtconfirmarcontra" placeholder="Confirmar Contraseña" required="">
+                                        <input for="password2" type="password" class="form-control formulario__input" id="password2" placeholder="Confirmar Contraseña" name="password2">
+                                        <i class="formulario__validacion-estado far fa-check-circle"></i>
                                     </div>
+                                    <p class="formulario__input-error" style="color: white">Ambas contraseñas deben ser iguales.</p>
                                 </div>
                                 <div class="row"> 
 
@@ -198,9 +218,8 @@
                                     <div class="col-md-4">
                                         <a href="index.php"><input  type="button" value="Cancelar" class="btn btn-outline-light btn-lg boton"></a>
                                     </div>
-                                    <div class="col-md-5">
-                                        
-                                        <input id="btn4" type="button" value="Registrarse" onclick="resgitarusuario()" class="btn btn-outline-light btn-lg boton">
+                                    <div class="col-md-5 formulario__grupo formulario__grupo-btn-enviar">
+                                        <input  type="submit" value="Registrarse" onclick="resgitarusuario()" class="btn btn-outline-light btn-lg boton">
                                     </div>
                                 </div>                                                             
                             </div>
@@ -248,7 +267,7 @@
                                             <a href="#"></a>
                                         </li>
                                     </ul>
-                                    
+
                                 </div>
                             </div> 
                             <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 ali" style="text-align: left">
@@ -280,4 +299,7 @@
     <script src="plugins/sweetAlert2/sweetalert2.all.min.js" type="text/javascript"></script>
     <script src="js/Logueo/RegistrarUsuario.js" type="text/javascript"></script>
     <!--<script src="js/jquery-1.12.3.min.js" type="text/javascript"></script>-->
+    <!--NUEOVS LINKS--> 
+    <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+    <!--<script src="js/Logueo/validarcampos.js" type="text/javascript"></script>-->
 </html>

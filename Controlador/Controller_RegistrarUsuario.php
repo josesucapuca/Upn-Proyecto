@@ -36,6 +36,18 @@ if ($opc === "RegistrarUsuario") {
     $var=$objs->RegistrarUsuario($No_Persona, $AP_Persona, $Edad_Persona, $Se_Persona, $Es_Civil_Persona, $Ti_Persona, $dire_Persona, $tele_Persona, $correo_Persona, $id_Iglesia, $Usuario, $Contra);
     echo $var;
 }
+if($opc === "ValidarUsuarioR"){
+    $Usuario = strtoupper($_POST['Usuario']);
+    $objs= new UsuarioDAO();
+    $var=$objs->ValidarUsuarioR($Usuario);
+    echo $var;
+}
+if($opc === "ValidarCorreoR"){
+    $correo_Persona = strtoupper($_POST['correo_Persona']);
+    $objs= new UsuarioDAO();
+    $var=$objs->ValidarCorreoR($correo_Persona);
+    echo $var;
+}
 ?>
 
 
