@@ -7,11 +7,15 @@ if ($opc === "ListarLibro") {
     $var=$objs->ListarLibro();
     $arr = array();
     if (mysqli_num_rows($var) != 0) {
-        while ($row = mysqli_fetch_assoc($var)) {
-            $arr[] = $row;
+        $i=0;
+        while ($row = $var->fetch_object()) {
+            $arr[$i]["id_Libro"] = $row->id_Libro;
+            $arr[$i]["No_Libro"] = $row->No_Libro;
+            $arr[$i]["id_Biblia"] = $row->id_Biblia;
+            $arr[$i]["Testamento"] = $row->Testamento;
         }
     }
-    echo json_encode($arr);
+    echo json_encode($arr,JSON_UNESCAPED_UNICODE);
 }
 if ($opc === "ListarCapitulo") {
     $id_Libro = $_POST["idL"];
