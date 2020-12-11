@@ -3,7 +3,6 @@
 include_once '../Factory/ConexionOperacion.php';
 
 class UsuarioDAO {
-
     private function sql($sql) {
         $conex = new Conexion();
         $c = $conex->Conectar();
@@ -23,18 +22,22 @@ class UsuarioDAO {
 
 //LLENAR COMBOS
     public function ComboMision() {
-       $consulta = "call ListaMision()";
-        return $this->sql($consulta);
+        $sql = "select id_Mision, No_Mision from mision order by No_Mision asc;";
+        $arreglo = array();
+        if ($consula = $this->sql($sql)) {
+            while ($consulta_VU = mysqli_fetch_array($consula)) {
+                $arreglo[] = $consulta_VU;
     }
+        }
+        return $arreglo;
+    }
+
     public function ComboDistrito($id_Mision) {
         $sql = "select id_Distrito, No_Distrito from distrito where id_Mision = '$id_Mision'";
         $arreglo = array();
-        $i=0;
         if ($consula = $this->sql($sql)) {
-            while ($consulta_VU = $consula->fetch_object()) {
-                $arreglo[$i]["id_Distrito"] = $row->id_Distrito;
-                $arreglo[$i]["No_Distrito"] = utf8_encode($row->No_Distrito);
-                $i++;
+            while ($consulta_VU = mysqli_fetch_array($consula)) {
+                $arreglo[] = $consulta_VU;
             }
         }
         return $arreglo;

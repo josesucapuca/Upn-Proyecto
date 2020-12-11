@@ -49,15 +49,12 @@ if ($opc === "ListarMision") {
     $objs = new UsuarioDAO();
 
     $var = $objs->ComboMision();
-    $result = array();
-    //looping through all the records fetched
-    $i=0;
-    while($row = $var->fetch_object()){
-        $result[$i]["id_Mision"]=$row->id_Mision;
-        $result[$i]["No_Mision"]=utf8_encode($row->No_Mision);
-        $i++;
-    }
-    echo json_encode($result,JSON_UNESCAPED_UNICODE);
+     if (mysqli_num_rows($var) != 0) {
+            while ($row = mysqli_fetch_assoc($var)) {
+                $arr[] = $row;
+            }
+        }
+    echo json_encode($arr);
 }
 if ($opc === "ListarDistrito") {
     $objs = new UsuarioDAO();
@@ -69,7 +66,7 @@ if ($opc === "ListarIglesia") {
     $objs = new UsuarioDAO();
     $id_Distrito = $_POST["id_Distrito"];
     $var = $objs->ComboIglesia($id_Distrito);
-    echo json_encode($var);
+    echo json_encode($var,JSON_UNESCAPED_UNICODE);
 }
 if ($opc === "RegistrarUsuario") {
     $No_Persona = strtoupper($_POST['No_Persona']);

@@ -20,8 +20,9 @@ function Mision() {
         data: {opc: "ListarMision"},
         success: function (response)
         {
+//            alert(response);
             var data = JSON.parse(response);
-            var cadena = "";
+            var cadena = "<option value=''>SELECCIONAR MISIÓN</option>";
             if (data.length > 0) {
                 for (var i = 0; i < data.length; i++) {
                     cadena += "<option value='" + data[i][0] + "'>" + data[i][1] + "</option>";
@@ -40,11 +41,12 @@ function Distrito(id_Mision) {
     $.ajax({
         type: "POST",
         url: 'Controlador/Controller_RegistrarUsuario.php',
-        data: {opc: "ListarDistrito", id_Mision: id_Mision},
+        data: {opc: "ListarDistrito",id_Mision:id_Mision},
         success: function (response)
         {
+//            alert(response);
             var data = JSON.parse(response);
-            var cadena = "";
+            var cadena = "<option value=''>SELECCIONE UN DISTRITO</option>";
             if (data.length > 0) {
                 for (var i = 0; i < data.length; i++) {
                     cadena += "<option value='" + data[i][0] + "'>" + data[i][1] + "</option>";
@@ -63,7 +65,7 @@ function Iglesia(id_Distrito) {
     $.ajax({
         type: "POST",
         url: 'Controlador/Controller_RegistrarUsuario.php',
-        data: {opc: "ListarIglesia", id_Distrito: id_Distrito},
+        data: {opc: "ListarIglesia", id_Distrito:id_Distrito},
         success: function (response)
         {
             var data = JSON.parse(response);
@@ -102,7 +104,7 @@ function resgitarusuario() {
         if (campos.usuario && campos.nombre && campos.apellido && campos.direccion && campos.edad && campos.password && campos.correo && campos.telefono) {
             $.ajax({
                 type: "POST",
-                url: 'Controlador/Controller_RegistrarUsuario.php',
+                url: 'Controlador/Logueo.php',
                 data: {
                     opc: "RegistrarUsuario",
                     No_Persona: No_Persona,
@@ -153,7 +155,7 @@ function validarUsuarioR() {
     var Usuario = $("#txtusuario").val();
     $.ajax({
         type: "POST",
-        url: 'Controlador/Controller_RegistrarUsuario.php',
+        url: 'Controlador/Logueo.php',
         data: {opc: "ValidarUsuarioR", Usuario: Usuario},
         success: function (response)
         {
@@ -174,7 +176,7 @@ function validarCorreoR() {
     var correo_Persona = $("#txtcorreo").val();
     $.ajax({
         type: "POST",
-        url: 'Controlador/Controller_RegistrarUsuario.php',
+        url: 'Controlador/Logueo.php',
         data: {opc: "ValidarCorreoR", correo_Persona: correo_Persona},
         success: function (response)
         {
