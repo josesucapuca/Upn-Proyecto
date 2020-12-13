@@ -66,6 +66,12 @@ if ($opc === "ListarMision") {
         $i++;
     }
     echo json_encode($result, JSON_UNESCAPED_UNICODE);
+    if (mysqli_num_rows($var) != 0) {
+        while ($row = mysqli_fetch_assoc($var)) {
+            $arr[] = $row;
+        }
+    }
+    echo json_encode($arr);
 }
 if ($opc === "ListarDistrito") {
     $objs = new UsuarioDAO();
@@ -77,7 +83,7 @@ if ($opc === "ListarIglesia") {
     $objs = new UsuarioDAO();
     $id_Distrito = $_POST["id_Distrito"];
     $var = $objs->ComboIglesia($id_Distrito);
-    echo json_encode($var);
+    echo json_encode($var, JSON_UNESCAPED_UNICODE);
 }
 if ($opc === "RegistrarUsuario") {
     $No_Persona = strtoupper($_POST['No_Persona']);
@@ -143,11 +149,12 @@ if ($opc === "RecuperarContra") {
             $mail->addAddress($correo_Persona);     // Add a recipient
             // Content
             $mail->isHTML(true);                                  // Set email format to HTML
-            $mail->Subject = 'Restablecer Contraseña';
+            $subject = "Nueva contraseña";
+            $subject = "=?UTF-8?B?" . base64_encode($subject) . "=?=";
+            $mail->Subject = $subject;
             $mail->Body = 'Hola que tal, tu contraseña se restablecio <br> su contraseña es: <b>' . $contraactual . '</b> '
                     . '<br>Se le recomienda cambiar la nueva contraseña brindada por motivos de seguridad, dirigirse ah: <br>'
                     . '- configuraciones <br> - cambiar contraseña <br> - ingresar la nueva contraseña';
-
             $mail->send();
             echo '1 ENVIOOO';
         } catch (Exception $e) {
