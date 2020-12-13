@@ -4,7 +4,12 @@
     min-height: 60px !important;
 }
 .lipri{
-    font-size: 16px;
+    font-size: 14px;
+}
+.row {
+     margin-left: 0px; 
+     margin-right: 0px; 
+     width: 100%; 
 }
 #ribbon .breadcrumb {
     padding: 11px 10px 11px 0!important;
@@ -148,6 +153,20 @@
 .titp{
     font-size: 80px;text-align: center;color: white;font-weight: 600;
 }
+.imglog{
+    height: 80px !important;width: auto !important;
+}
+.price-features li+li {
+    margin-top: 7px;
+}
+@media only screen and (min-width: 980px) and (max-width: 1600px){
+    .conta {
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        height: 100%;
+    }
+}
 @media only screen and (max-width: 679px) and (min-width: 0){
     .btn-primary1 {
         color: #fff;
@@ -155,8 +174,6 @@
         border-color: #2c699d;
         -webkit-box-shadow: inset 0 -2px 0 rgba(0,0,0,.05);
     }
-
-
 
     .btn-primary1:hover{
         color: #fff !important;
@@ -197,6 +214,13 @@
         height: 100%;
     }
 }
+ol, ul {
+    margin-top: 0;
+    margin-bottom: 0px;
+}
+a{
+    font-size: 14px;
+}
 @media only screen and (max-width: 1200px)  and (min-width: 0){
     .asidelat{
         height: 100% !important;
@@ -205,8 +229,28 @@
         height: 100%;
     }
 }
-@media only screen and (max-width: 411px)  and (min-width: 0){
+@media only screen and (max-width: 414px)  and (min-width: 0){
     .titp{
         font-size:60px !important;
+    }
+    .imglog{
+        height: 60px !important;width: auto !important;
+    }
+}
+@media only screen and (max-width: 280px)  and (min-width: 0){
+    .titp{
+        font-size:40px !important;
+    }
+    .imglog{
+        height: 60px !important;width: auto !important;
+    }
+}
+@media (width: 1024px )  and (height: 1366px){
+    .bod{
+        height: 100vh;
+    }
+    .imglog {
+        height: 100px !important;
+        width: auto !important;
     }
 }

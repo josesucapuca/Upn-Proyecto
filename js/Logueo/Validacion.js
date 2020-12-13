@@ -41,5 +41,35 @@ function CrearUsaurio(U, P) {
 }
 
 
+function Restablecer_Contra(){
+    var correo_Persona = $("#Correor").val();
+    if(correo_Persona.length==0){
+        return Swal.fire("Llene el campo correo", "para poder recuperar la contraseña", "warning");
+    }
+    var caracteres ="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ23456789";
+    var Contra ="";
+    for(var i=0;i<8;i++){
+        Contra+=caracteres.charAt(Math.floor(Math.random()*caracteres.length));
+    }
+//    alert(Contra);
+    $.ajax({
+        type: "POST",
+        url: 'Controlador/Logueo.php',
+        data: {opc: "RecuperarContra", correo_Persona:correo_Persona, Contra: Contra},
+        success: function (response)
+        {
+            Swal.fire({
+                            type: 'success',
+                            title: '¡Se envio tu nueva contraseña, revisa tu correo!',
+                            showConfirmButton: false,
+                            timer: 3000
+                        }).then(function () {
+                            window.location = "Iniciar.php";
+                        });
+        }        
+    });
+}
+
+
 
 

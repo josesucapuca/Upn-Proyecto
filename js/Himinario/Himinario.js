@@ -5,9 +5,14 @@ $("#cadena").keypress(function (e) {
     }
 });
 function RemoverFilas() {
-    var t = $('#tablaHiminario').DataTable();
-    alert(t.row().count());
-    t.row(':eq(0)').remove().draw();
+    var t = $("#dt_basic").DataTable();
+    var a = t.rows().data();
+    var e = a.rows().count();
+    var i = 0;
+    while (i < e) {
+        t.row(':eq(0)').remove().draw(false);
+        i++;
+    }
 }
 
 function ListarHiminario() {

@@ -9,6 +9,7 @@ if ($_SESSION["Usuario"] !== null) {
         <title> SmartAdmin </title>
         <?php include_once './inc2/Estilos.php'; ?>
         <link rel="stylesheet" type="text/css" media="screen" href="css/fontAdventSans.css">
+            <link rel="stylesheet" type="text/css" media="screen" href="css/header.css">
         <style>
             .tree li.parent_li>span:hover {
                 background-color: #1f8c46;

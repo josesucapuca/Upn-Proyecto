@@ -1,4 +1,3 @@
-
 <?php
 session_start();
 if ($_SESSION["Usuario"] !== null) {
@@ -6,7 +5,7 @@ if ($_SESSION["Usuario"] !== null) {
     <script type="text/javascript">
         location.href = "Vista/Principal.php";
     </script>
-    <?php
+    <?php 
 } else {
     ?>
 
@@ -160,7 +159,7 @@ if ($_SESSION["Usuario"] !== null) {
                                                     <div class="col-md-4">                              
                                                     </div>
                                                     <div class="col-md-8">
-                                                        <input type="button" value="Enviar" class="btn float-left login_btn" name="enviarr" id="enviarr">
+                                                        <input type="button" value="Enviar" class="btn float-left login_btn" name="enviarr" id="enviarr" onclick="Restablecer_Contra()">
                                                     </div>
                                                 </div>
                                                 <span id="result"></span>
@@ -238,8 +237,8 @@ if ($_SESSION["Usuario"] !== null) {
                 </div>
             </footer>
         </body>    
-        <!--<script src="js/jquery-3.4.1.min.js" type="text/javascript"></script>-->
-        <script src="js/jquery-1.12.3.min.js" type="text/javascript"></script>
+        <script src="js/jquery-3.4.1.min.js" type="text/javascript"></script>
+        <!--<script src="js/jquery-1.12.3.min.js" type="text/javascript"></script>-->
         <script src="js/popper.min.js" type=script>"text/javascript" ></script>
         <script src="js/bootstrap.min.js" type="text/javascript"></script>
         <script src="plugins/sweetAlert2/sweetalert2.all.min.js" type="text/javascript"></script>

@@ -5,7 +5,7 @@ function ValidarLider(id){
         data: {opc: "ValidarLider",id:id},
         success: function (response)
         {
-            var jsonData = JSON.parse(response);
+            /*var jsonData = JSON.parse(response);
             if(jsonData[0].tipo==="distrito"){
                 $(".LiReporte2").show();
                 $("#Reporte2").attr("href","ReporteDistrito.php?id="+jsonData[0].id);
@@ -30,7 +30,7 @@ function ValidarLider(id){
             }else if(jsonData[0].tipo==="SN"){
                 $(".LiReporte").hide();
                 $(".LiReporte2").hide();
-            }
+            }*/
         }
     });
 }
