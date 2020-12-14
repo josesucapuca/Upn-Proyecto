@@ -139,7 +139,7 @@ if ($opc === "RecuperarContra") {
             $mail->Host = 'smtp.gmail.com';                    // Set the SMTP server to send through
             $mail->SMTPAuth = true;                                   // Enable SMTP authentication
             $mail->Username = 'estefannygarcia@upeu.edu.pe';                     // SMTP username
-            $mail->Password = 'Youaremysempiterno1998';                               // SMTP password
+            $mail->Password = 'contra';                               // SMTP password
 //           $mail->SMTPSecure = 'tls';
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
             $mail->Port = 587;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above

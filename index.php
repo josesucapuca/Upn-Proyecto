@@ -55,26 +55,25 @@ and open the template in the editor.
     </head>
     <body>
         <div class="cuerpo" style="background-position: 50% center ">
-            <div style="background: #2c3233a1">
-                <br><br><br>
-                <div class="container">
-                    <div class="texto" ALIGN="CENTER" style="color: white;font-weight: 900"><h1 style="font-size: 80px;">Centro de Evangelismo Online</h1><hr style="border-top: 0px solid rgba(0,0,0,.1)"><h1 style="font-size: 80px;">CEO</h1></div> 
-                </div>
-                <div class=" container col-xs-12 col-sm-12 col-md-12  col-lg-12" style="justify-content: center;display: flex;align-items: center;padding-bottom: 20px" >
+            <div style="background: #2c3233a1" class="fondocentro">
+                <div class="container">                   
+                    <div class="texto" ALIGN="CENTER" style="color: white;font-weight: 900"><h1 style="font-size: 80px;">Centro de Evangelismo Online</h1><hr style="border-top: 0px solid rgba(0,0,0,.1)"><h1 style="font-size: 80px;">CEO</h1></div>                
+               </div> 
+                    <div class="container col-xs-12 col-sm-12 col-md-12  col-lg-12" style="justify-content: center;display: flex;align-items: center;padding-bottom: 20px" >
                     <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4" style="justify-content: center;
                          display: flex;
                          align-items: center;" >
-                        <img src="images/img_logo/adventist-es--white.png"  style="    width: 120%;">
+                        <img src="images/img_logo/adventist-es--white.png"  style="width: 120%;">
                     </div>
                 </div>
-                <div class="container" style="justify-content: center;display: flex;align-items: center;">
+                <div  style="justify-content: center;display: flex;align-items: center;">
                     <div class="row">
-                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style=""> <a href="Iniciar.php" class="btn btn-outline-light btn-lg boton">Ingresar</a>
-                            <a href="Registrarse.php" class="btn btn-outline-light btn-lg boton">Registrarse</a>
-                        </div>
+                        <!--<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="">--> 
+                            <a href="Iniciar.php" class="btn btn-outline-light btn-lg boton">Ingresar</a>
+                            <a href="Registrarse.php" class="btn btn-outline-light btn-lg boton ">Registrarse</a>
+                        <!--</div>-->
                     </div>
                 </div> 
-                <br><br><br><br>
             </div>
         </div> 
 
