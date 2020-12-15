@@ -109,8 +109,7 @@ and open the template in the editor.
                                         <li>
                                             <a href="#"></a>
                                         </li>
-                                    </ul>
-                                    
+                                    </ul>                                   
                                 </div>
                             </div> 
                             <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 ali" style="text-align: left">

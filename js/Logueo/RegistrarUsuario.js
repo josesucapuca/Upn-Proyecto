@@ -102,6 +102,7 @@ function resgitarusuario() {
             dire_Persona.length > 0 & tele_Persona.length > 0 & correo_Persona.length > 0 &
             id_Iglesia.length > 0 & Usuario.length > 0 & Contra.length > 0) {
         if (campos.usuario && campos.nombre && campos.apellido && campos.direccion && campos.edad && campos.password && campos.correo && campos.telefono) {
+            
             $.ajax({
                 type: "POST",
                 url: 'Controlador/Logueo.php',
@@ -206,6 +207,7 @@ const expresiones = {
     password: /^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$/, //8 carateres
     correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/, // con dominio
     telefono: /^\d{7,9}$/ // 7 a 9 numeros.
+    
 }
 
 const campos = {

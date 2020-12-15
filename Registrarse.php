@@ -134,8 +134,8 @@
                                             <span class="input-group-text"><i class="fas fa-paperclip"></i></span>
                                         </div>
     <!--                                    <input type="text" class="form-control" placeholder="Estado civil">-->
-                                        <select class="form-control" id="cbocivil" name="asunto">
-                                            <option selected>Estado Civil</option>
+                                        <select class="form-control" id="cbocivil" name="state" required="">
+                                            <option value="0">Estado Civil</option>
                                             <option>Soltero</option>
                                             <option>Casado</option>
                                             <option>Viudo</option>
@@ -160,8 +160,8 @@
                                         <div class="input-group-prepend">
                                             <span class="input-group-text"><i class="fas fa-users"></i></span>
                                         </div>
-                                        <select class="form-control" id="cbotipo" name="asunto">
-                                            <option selected>Tipo de Usuario</option>
+                                        <select class="form-control" id="cbotipo" name="state" required="">
+                                            <option value="0">Tipo de Usuario</option>
                                             <option>Lider</option>
                                             <option>Estudiante</option>
                                             <option>Miembro</option>
@@ -207,8 +207,8 @@
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text"><i class="fas fa-users"></i></span>
                                             </div>
-                                            <select class="form-control" id="cbosexo" name="asunto">
-                                                <option selected>Genero</option>
+                                            <select class="form-control" id="cbosexo" name="state">
+                                                <option value="0">Genero</option>
                                                 <option>Masculino</option>
                                                 <option>Femenino</option>
                                             </select>

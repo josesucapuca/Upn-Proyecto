@@ -6,7 +6,7 @@
         <link href="plugins/sweetAlert2/sweetalert2.min.css" rel="stylesheet" type="text/css"/>
         <link href="plugins/animate.css/animate.css" rel="stylesheet" type="text/css"/>       
         <link href="css/registrarse.css" rel="stylesheet" type="text/css"/>   
-        
+
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link href="css/footer.css" rel="stylesheet" type="text/css"/>
         <link href="style.css" rel="stylesheet" type="text/css"/>
@@ -37,7 +37,7 @@
                 .fm{
                     text-align: left;
                 }
-                
+
             }
             @media (max-width: 576px)
             {
@@ -69,8 +69,8 @@
                             </div>
                         </div>
                     </div>
-                        
-                    
+
+
                     <div class="card-body">                       
                         <form method="post" class="formulario" id="formulario">
                             <div class="row"> 
@@ -131,9 +131,9 @@
                                         <div class="input-group-prepend">
                                             <span class="input-group-text"><i class="fas fa-paperclip"></i></span>
                                         </div>
-    <!--                                    <input type="text" class="form-control" placeholder="Estado civil">-->
-                                        <select class="form-control" id="cbocivil" name="asunto">
-                                            <option selected>Estado Civil</option>
+                                        <!--                                    <input type="text" class="form-control" placeholder="Estado civil">-->
+                                        <select class="form-control" id="cbocivil" name="state" required="">
+                                            <option value="0">Estado Civil:c</option>
                                             <option>Soltero</option>
                                             <option>Casado</option>
                                             <option>Viudo</option>
@@ -158,8 +158,8 @@
                                         <div class="input-group-prepend">
                                             <span class="input-group-text"><i class="fas fa-users"></i></span>
                                         </div>
-                                        <select class="form-control" id="cbotipo" name="asunto">
-                                            <option selected>Tipo de Usuario</option>
+                                        <select class="form-control" id="cbotipo" name="state" required="">
+                                            <option value="0">Tipo de Usuario</option>
                                             <option>Lider</option>
                                             <option>Estudiante</option>
                                             <option>Miembro</option>
@@ -184,7 +184,7 @@
                                         <div class="input-group-prepend">
                                             <span class="input-group-text"><i class="fas fa-people-carry"></i></span>
                                         </div>
-                                        <select class="form-control" name="state" id="sel_distrito">
+                                        <select class="form-control" name="state" id="sel_distrito" required="">
                                             <option value="0">Distrito Misionero</option>
                                         </select>
                                     </div>
@@ -194,7 +194,7 @@
                                         <div class="input-group-prepend">
                                             <span class="input-group-text"><i class="fas fa-place-of-worship"></i></span>
                                         </div>
-                                        <select class="form-control" name="state" id="sel_iglesia">
+                                        <select class="form-control" name="state" id="sel_iglesia" required="">
                                             <option value="0">Iglesia</option>
                                         </select>
                                     </div>
@@ -205,7 +205,7 @@
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text"><i class="fas fa-users"></i></span>
                                             </div>
-                                            <select class="form-control" id="cbosexo" name="asunto">
+                                            <select class="form-control" id="cbosexo" name="state" required="">
                                                 <option selected>Genero</option>
                                                 <option>Masculino</option>
                                                 <option>Femenino</option>
@@ -270,7 +270,7 @@
                             </div>
                         </form>
                     </div>
-                        
+
                 </div>
             </div>
         </div>
@@ -308,7 +308,7 @@
                                             <a href="#"></a>
                                         </li>
                                     </ul>
-                                    
+
                                 </div>
                             </div> 
                             <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 ali" style="text-align: left">
