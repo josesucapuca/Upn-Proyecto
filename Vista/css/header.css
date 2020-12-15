@@ -56,6 +56,9 @@
 .panelm-black{
     background-color: #00000085 !important;
 }
+.panelm-white{
+    background-color: #59595985 !important
+}
 .panelm{
     background-color: #fff0;
 }
@@ -73,8 +76,18 @@
 }
 .imgEs{
 }
-.panEs :hover,.panEs  :focus {
-    color: grey !important;
+
+#panHeadEsp :hover,#panHeadEsp  :focus {
+    color: #356e35 !important;
+}
+#panHeadEsBi :hover,#panHeadEsBi  :focus {
+    color: #a90329 !important;
+}
+#panHeadCamEva :hover,#panHeadCamEva  :focus {
+    color: #cfcfcf !important;
+}
+#panHeadEsSab :hover,#panHeadEsSab  :focus {
+    color: #c79121 !important;
 }
 .price-features{
     background: none;
@@ -252,5 +265,10 @@ a{
     .imglog {
         height: 100px !important;
         width: auto !important;
+    }
+}
+@media only screen and (max-width: 970px)  and (min-width: 768px){
+    .titp{
+        font-size: 60px;
     }
 }

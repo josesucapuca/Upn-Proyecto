@@ -85,7 +85,7 @@ if ($_SESSION["Usuario"] !== null) {
             * 'container'         - boxed layout mode (non-responsive: will not work with fixed-navigation & fixed-ribbon)
     -->
     <body class="container" style="background: #604d2b91;padding-bottom: 0px">
-
+        <input id="PersonaUsuario" type="hidden" value="<?php echo $_SESSION["Persona"] ?>">
         <!-- MAIN PANEL -->
         <div >
 
@@ -165,10 +165,10 @@ if ($_SESSION["Usuario"] !== null) {
                                         <div id="Cuerpo" class="tree">
                                             <ul>
                                                 <li id="licab">
-                                                    <span id="Licap"><i class="fa fa-lg fa-book" id="iccab"></i> SELECCIONAR LIBRO Y CAPITULO...</span>
+                                                    <span id="Licap"><i class="fa fa-lg fa-book iconlis" id="iccab"></i> SELECCIONAR LIBRO Y CAPITULO...</span>
                                                     <ul id="versiculos">
                                                         <li>
-                                                            <span class="label label-info"><i class="fa fa-lg fa-plus-circle"></i> SELECCIONAR LIBRO Y CAPITULO...</span>
+                                                            <span class="label label-info"><i class="fa fa-lg fa-plus-circle "></i> SELECCIONAR LIBRO Y CAPITULO...</span>
                                                         </li>
                                                     </ul>
                                                 </li>

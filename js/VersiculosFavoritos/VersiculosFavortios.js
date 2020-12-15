@@ -18,9 +18,11 @@ function ListaVersiculosFavoritos() {
                             '<div class="panel-body">' +
                             '<blockquote>' +
                             '<p>' + jsonData[i].Con_Versiculo + '</p>';
-                    if (jsonData[i].Anotacion !== null) {
+                    
+                    if (jsonData[i].Anotacion !== "") {
                         html1 += '<small id="Comen">' + jsonData[i].Anotacion + '</small>';
-                    } else {
+                    }
+                    if (jsonData[i].Anotacion === "") {
                         html1 += '<small id="Comen">Sin Comentario</small>';
                     }
 

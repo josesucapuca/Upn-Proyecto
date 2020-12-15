@@ -12,6 +12,11 @@ if ($_SESSION["Usuario"] !== null) {
             <?php include_once './inc2/Estilos.php'; ?>
             <link rel="stylesheet" type="text/css" media="screen" href="css/fontAdventSans.css">
             <link rel="stylesheet" type="text/css" media="screen" href="css/header.css">
+            <link rel="apple-touch-startup-image" href="../images/iconoweb.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape)">
+            <link rel="apple-touch-startup-image" href="../images/iconoweb.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait)">
+            <link rel="apple-touch-startup-image" href="../images/iconoweb.png" media="screen and (max-device-width: 320px)">
+            <link rel="shortcut icon" href="../images/iconoweb.png" type="image/x-icon">
+            <link rel="icon" href=".../images/iconoweb.png" type="image/x-icon">
             <style>
                 @media(max-width:767px){
                     .sortable-grid{
@@ -69,8 +74,8 @@ if ($_SESSION["Usuario"] !== null) {
                 * 'container'         - boxed layout mode (non-responsive: will not work with fixed-navigation & fixed-ribbon)
         -->
         <body class="conta bod"  >
-
-       <div class="row" style=" margin-left: 0px;margin-right: 0px;height: 100%;">
+            <input id="PersonaUsuario" type="hidden" value="<?php echo $_SESSION["Persona"] ?>">
+            <div class="row" style=" margin-left: 0px;margin-right: 0px;height: 100%;">
 
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="margin-left: 0px;margin-right: 0px;padding-left: 0px;padding-right: 0px;height: 90%;">
                     <div id="header" style="background: none;">
@@ -126,6 +131,11 @@ if ($_SESSION["Usuario"] !== null) {
                                             <i class="fa fa-bar-chart-o"></i>
                                         </a>
                                     </li>
+                                    <li class="volver" >
+                                        <a id="volver" href="Principal.php" class="btn1 btn-primary1" style="font-size: 13px;text-align: center;align-items: center;"> 
+                                            <i class="fa fa-home "></i> Home
+                                        </a>
+                                    </li>
                                     <li class="">
                                         <a href="#" class="btn btn-primary"  data-toggle="dropdown" style="font-size: 15px;text-align: center;align-items: center;padding-top: 2px;"> 
                                             <i class="fa fa-sort-desc"></i>
@@ -163,256 +173,201 @@ if ($_SESSION["Usuario"] !== null) {
                         <div class="row" style="display: flex;justify-content: center;">
                             <div class="col-xs-12 col-sm-7 col-md-7 col-lg-4" style="text-align: center;">
                                 <h1 class="page-title txt-color-blueDark" style="font-weight: 600"><i class="fa fa-book"></i> Biblia Personal</h1>
-                        </div>
-                    </div>
-
-                    <!-- widget grid -->
-                    <section id="widget-grid" class="">
-
-                        <!-- row -->
-                        <div class="row">
-
-                            <!-- NEW WIDGET START -->
-                            <article class="col-xs-12 col-sm-6 col-md-5 col-lg-5" style="margin-bottom: 30px">
-
-                                <!-- Widget ID (each widget will need unique ID)-->
-                                <div class="jarviswidget jarviswidget-color-greenLight" id="wid-id-11" data-widget-editbutton="true" >
-                                    <header>
-                                        <span class="widget-icon"> <i class="fa fa-book"></i> </span>
-                                        <h2>Versiculos Favoritos</h2>
-
-                                    </header>
-
-                                    <!-- widget div-->
-                                    <div>
-
-                                        <!-- widget edit box -->
-                                        <div class="jarviswidget-editbox">
-                                            <!-- This area used as dropdown edit box -->
-
-                                        </div>
-                                        <!-- end widget edit box -->
-
-                                        <!-- widget content -->
-                                        <div class="widget-body no-padding ver">
-                                            <iframe id="frameVer" src="VersiculosFavoritos.php" width="100%" style="height: 100vh;border: 0px;"></iframe>
-                                        </div>
-                                        <!-- end widget content -->
-
-                                    </div>
-                                </div>
-                                <!-- end widget -->
-
-
-                            </article>
-                            <!-- WIDGET END -->
-                            <article class="col-xs-12 col-sm-6 col-md-7 col-lg-7" style="margin-bottom: 30px">
-
-                                <!-- Widget ID (each widget will need unique ID)-->
-                                <div class="jarviswidget jarviswidget-color-teal" id="wid-id-11" data-widget-editbutton="true" data-widget-attstyle="jarviswidget-color-teal">
-                                    <!-- widget options:
-                                    usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
-
-                                    data-widget-colorbutton="false"
-                                    data-widget-editbutton="false"
-                                    data-widget-togglebutton="false"
-                                    data-widget-deletebutton="false"
-                                    data-widget-fullscreenbutton="false"
-                                    data-widget-custombutton="false"
-                                    data-widget-collapsed="true"
-                                    data-widget-sortable="false"
-
-                                    -->
-                                    <header>
-                                        <span class="widget-icon"> <i class="fa fa-book"></i> </span>
-                                        <h2>Biblia</h2>
-
-                                    </header>
-
-                                    <!-- widget div-->
-                                    <div>
-
-                                        <!-- widget edit box -->
-                                        <div class="jarviswidget-editbox">
-                                            <!-- This area used as dropdown edit box -->
-
-                                        </div>
-                                        <!-- end widget edit box -->
-
-                                        <!-- widget content -->
-                                        <div class="widget-body no-padding ">
-                                            <iframe src="Biblia.php" width="100%" style="height: 100vh;border: 0px;"></iframe>
-                                        </div>
-                                        <!-- end widget content -->
-
-                                    </div>
-                                </div>
-                                <!-- end widget -->
-
-                            </article>
-                            <!-- WIDGET END -->
+                            </div>
                         </div>
 
-                        <!-- end row -->
+                        <!-- widget grid -->
+                        <section id="widget-grid" class="">
 
-                    </section>
+                            <!-- row -->
+                            <div class="row">
+<!-- WIDGET END -->
+                                <article class="col-xs-12 col-sm-6 col-md-8 col-lg-8" style="margin-bottom: 30px">
 
-                        <div class="row" style="display: flex;height: 100%;justify-content: center;">
+                                    <!-- Widget ID (each widget will need unique ID)-->
+                                    <div class="jarviswidget  jarviswidget-color-green" id="wid-id-11" data-widget-colorbutton="false" data-widget-fullscreenbutton="false" data-widget-editbutton="false" data-widget-sortable="false" data-widget-attstyle="jarviswidget-color-teal">
+                                        <!-- widget options:
+                                        usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
 
-                            <div class="col-sm-10" style="height: 100%;">
+                                        data-widget-colorbutton="false"
+                                        data-widget-editbutton="false"
+                                        data-widget-togglebutton="false"
+                                        data-widget-deletebutton="false"
+                                        data-widget-fullscreenbutton="false"
+                                        data-widget-custombutton="false"
+                                        data-widget-collapsed="true"
+                                        data-widget-sortable="false"
 
-                                <div class="contop" style="justify-content: center;display: flex;align-items: center;height: 100%;">
+                                        -->
+                                        <header>
+                                            <span class="widget-icon"> <i class="fa fa-book"></i> </span>
+                                            <h2>Biblia</h2>
 
-                                    <div class="row" >
+                                        </header>
 
-                                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="padding-bottom: 8%; text-align: center"> 
-                                            <h1 class="titp" style="">CEO Adventistas</h1>
-                                        </div>
-                                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3">
-                                            <div class="panel panel-green  pricing-big panelm panEs">
+                                        <!-- widget div-->
+                                        <div style="background-color: #ffffff82!important;">
 
-                                                <div class="panel-heading panehead panelm-black" id="panHeadEsp" style="border-radius: 10px 10px 10px 10px ;">
-                                                    <div style="width: 100%;text-align: center">
-                                                        <img class="imgEs" src="../images/iconos/icon-Biblia-personal.png" style="max-width: 55px">
-                                                        <h3 class="panel-title titop">
-                                                            Estudio Personal de la biblia</h3>
-                                                    </div>
-                                                </div>
-                                                <div class="panel-body no-padding text-align-center pan-bod-esPer panelm-black" style="border-radius: 0px 0px 10px 10px">
-                                                    <div class="the-price panel-heading panelm-green" style="border-radius: 0px 0px 0px 0px;height: 45px;display: flex;justify-content: center;align-items: center;">
-                                                        <h1>
-                                                            <strong>Opciones</strong>
-                                                        </h1>
-                                                    </div>
-                                                    <div class="price-features" >
-                                                        <ul class="list-unstyled text-left">
-                                                            <li class="liespe"><i class="fa fa-plus text-success icEsp"></i> <strong style="color: #74a7ca;">Estudio Personal:  </strong>
-                                                                <ul id="EsPersonal" style="display: none;">
-                                                                    <li class="list-unstyled lipri"><i class="fa fa-check text-success"></i> <a href="BibliaPersonal.php"><strong>Biblia Personal</strong></a></li>
-                                                                    <li class="list-unstyled lipri"><i class="fa fa-check text-success"></i> <a href="Trabajando.php"><strong>Reavivados por su palabra</strong></a></li>
-                                                                    <li class="list-unstyled lipri"><i class="fa fa-check text-success"></i> <a href="Devocion_Matutina.php"><strong>Devocion Matutina</strong></a></li>
-                                                                </ul>
-                                                            <li>
-
-                                                            <li class="limu"><i class="fa fa-plus text-success ismu"></i> <strong style="color: #74a7ca;">Musica:</strong>
-                                                                <ul id="MusicaPe" style="display: none;">
-                                                                    <li class="list-unstyled lipri"><i class="fa fa-check text-success"></i> <a href="Trabajando.php"><strong>Himinario</strong></a></li>
-                                                                    <li class="list-unstyled lipri"><i class="fa fa-check text-success"></i> <a href="Trabajando.php">Buscar Musica</a></li>
-                                                                    <li class="list-unstyled lipri"><i class="fa fa-check text-success"></i> <a href="Trabajando.php">Subir Musica</a></li>
-                                                                </ul>
-                                                            <li>
-                                                            <li class="livi"><i class="fa fa-plus text-success icvi"></i> <strong style="color: #74a7ca;">Videos:</strong>
-                                                                <ul id="VideoPe" style="display: none;">
-                                                                    <li class="list-unstyled lipri"><i class="fa fa-check text-success"></i> <a href="Trabajando.php">Buscar Videos</a></li>
-                                                                    <li class="list-unstyled lipri"><i class="fa fa-check text-success"></i> <a href="Trabajando.php">Subir Video</a></li>
-                                                                </ul>
-                                                            <li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
+                                            <!-- widget edit box -->
+                                            <div class="jarviswidget-editbox">
+                                                <!-- This area used as dropdown edit box -->
 
                                             </div>
-                                        </div>
+                                            <!-- end widget edit box -->
 
-                                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3">
-                                            <div class="panel panel-red pricing-big panelm panEs">
+                                            <!-- widget content -->
+                                            <div class="widget-body no-padding ">
+                                                <div >
 
-                                                <div class="panel-heading panehead panelm-black " id="panHeadEsBi" style="border-radius: 10px 10px 10px 10px ;">
-                                                    <div style="width: 100%;text-align: center">
-                                                        <img src="../images/iconos/icon-Biblia-personal.png" style="max-width: 55px">
-                                                        <h3 class="panel-title titop">
-                                                            Estudios Biblicos</h3>
-                                                    </div>
-                                                </div>
-                                                <div class="panel-body no-padding text-align-center pan-bod-esBi panelm-black" style="border-radius: 0px 0px 10px 10px">
-                                                    <div class="the-price panel-heading panelm-red" style="border-radius: 0px 0px 0px 0px;height: 45px;display: flex;justify-content: center;align-items: center;">
-                                                        <h1>
-                                                            <strong>Opciones</strong>
-                                                        </h1>
-                                                    </div>
-                                                    <div class="price-features">
-                                                        <ul class="list-unstyled text-left">
-                                                            <li class="lipri"><i class="fa fa-check text-success"></i><a href="Trabajando.php?Ti=1"><strong> Cursos Bíblicos Adultos y Jóvenes</strong></a></li>
-                                                            <li class="lipri"><i class="fa fa-check text-success"></i><a href="Trabajando.php?Ti=2"><strong> Cursos Bíblicos Adolescentes y Niños</strong></a></li>
+                                                    <div id="content" style="margin-bottom: 20px;">
+                                                        <!-- widget grid -->
+                                                        <section id="widget-grid" class="">
 
-                                                        </ul>
+                                                            <div class="row" >
+                                                                <div class="row" ><h1 style="text-align: center;font-family: monospace!important"><strong>BIBLIA</strong></h1></div>
+                                                                <div class="row" >
+                                                                    <article class="col-xs-12 col-sm-12 col-md-6 col-lg-6" style="    justify-content: center;
+                                                                             display: flex;">
+                                                                        <div class="form-group col-xs-12 col-sm-8 col-md-8 col-lg-8">
+                                                                            <label>Libros</label>
+                                                                            <select id="seLibro" style="width:100%" class="select2" placeholder="Libros">
+                                                                                <option value=""> SELECCIONAR</option>
+                                                                                <optgroup id="AntTes" label="Antiguo testamento">
+                                                                                </optgroup>
+                                                                                <optgroup id="NueTes" label="Nuevo Testamento">
+                                                                                </optgroup>
+                                                                            </select>
+
+                                                                        </div>
+                                                                    </article>
+                                                                    <article class="col-xs-12 col-sm-12 col-md-6 col-lg-6" style="    justify-content: center;
+                                                                             display: flex;">
+                                                                        <div class="form-group col-xs-12 col-sm-8 col-md-8  col-lg-8">
+                                                                            <label>CAPITULO</label>
+                                                                            <select id="seCapitulo" style="width:100%" class="select2">
+                                                                                <option value=""> SELECCIONAR</option>
+                                                                            </select>
+                                                                        </div>
+                                                                        <input type="hidden" id="id_P" value="<?php echo $_SESSION["id_Persona"] ?>">
+                                                                    </article>
+                                                                </div>
+
+                                                                <!-- NEW COL START -->
+
+                                                                    <!-- Widget ID (each widget will need unique ID)-->
+                                                                        <!-- widget options:
+                                                                        usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
+                                        
+                                                                        data-widget-colorbutton="false"
+                                                                        data-widget-editbutton="false"
+                                                                        data-widget-togglebutton="false"
+                                                                        data-widget-deletebutton="false"
+                                                                        data-widget-fullscreenbutton="false"
+                                                                        data-widget-custombutton="false"
+                                                                        data-widget-collapsed="true"
+                                                                        data-widget-sortable="false"
+                                        
+                                                                        -->
+
+                                                                        <!-- widget div-->
+                                                                        <div>
+
+                                                                            <!-- widget edit box -->
+                                                                            <div class="jarviswidget-editbox">
+                                                                                <!-- This area used as dropdown edit box -->
+
+                                                                            </div>
+                                                                            <!-- end widget edit box -->
+
+                                                                            <!-- widget content -->
+                                                                            <div class="widget-body" style="min-height: 80vh;">
+                                                                                <p id="cabecera" class="alert alert-success text-align-center">
+                                                                                    <strong>SELECCIONAR LIBRO Y CAPITULO ...</strong>
+                                                                                </p>
+
+                                                                                <div id="Cuerpo" class="tree">
+                                                                                    <ul>
+                                                                                        <li id="licab">
+                                                                                            <span id="Licap"><i class="fa fa-lg fa-book" id="iccab"></i> SELECCIONAR LIBRO Y CAPITULO...</span>
+                                                                                            <ul id="versiculos">
+                                                                                                <li>
+                                                                                                    <span class="label label-info"><i class="fa fa-lg fa-plus-circle"></i> SELECCIONAR LIBRO Y CAPITULO...</span>
+                                                                                                </li>
+                                                                                            </ul>
+                                                                                        </li>
+
+                                                                                    </ul>
+                                                                                </div>
+
+                                                                            </div>
+                                                                            <!-- end widget content -->
+
+                                                                        </div>
+                                                                        <!-- end widget div -->
+
+                                                                    <!-- end widget -->
+
+                                                                <!-- END COL -->
+
+                                                            </div>
+
+                                                            <!-- END ROW -->
+
+                                                        </section>
+                                                        <!-- end widget grid -->
+
                                                     </div>
+                                                    <!-- END MAIN CONTENT -->
+
                                                 </div>
                                             </div>
+                                            <!-- end widget content -->
+
                                         </div>
-
-                                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3">
-                                            <div class="panel panel-blueDark pricing-big panelm panEs">
-
-
-                                                <div class="panel-heading panehead panelm-black " id="panHeadCamEva" style="border-radius: 10px 10px 10px 10px ;">
-                                                    <div style="width: 100%;text-align: center">
-                                                        <img src="../images/iconos/icon-Biblia-personal.png" style="max-width: 55px">
-                                                        <h3 class="panel-title titop">
-                                                            Campañas Evangelsiticas</h3>
-                                                    </div>
-                                                </div>
-                                                <div class="panel-body no-padding text-align-center pan-bod-cam panelm-black" style="border-radius: 0px 0px 10px 10px">
-                                                    <div class="the-price panel-heading panelm-gris" style="border-radius: 0px 0px 0px 0px;height: 45px;display: flex;justify-content: center;align-items: center;">
-                                                        <h1>
-                                                            <strong>Opciones</strong>
-                                                        </h1>
-                                                    </div>
-                                                    <div class="price-features" >
-                                                        <ul class="list-unstyled text-left">
-                                                            <li><i class="fa fa-plus text-success icEnc"></i> <strong style="color: #74a7ca;">Encargado de:</strong>
-                                                                <ul id="Encargado" style="display: none">
-                                                                    <li class="list-unstyled lipri"><i class="fa fa-check text-success"></i> <a href="Campana_Evangelistica.php">Semana de Oracion:</a></li>
-                                                                    <li class="list-unstyled lipri"><i class="fa fa-check text-success"></i> <a href="Campana_Evangelistica.php">Semana de Oracion:</a></li>
-                                                                </ul>
-                                                            <li>
-                                                            <li><i class="fa fa-plus text-success icPart"></i> <strong style="color: #74a7ca;">Participando en:</strong>
-                                                                <ul id="Participando" style="display: none">
-                                                                    <li class="list-unstyled lipri"><i class="fa fa-check text-success"></i> <a href="Campana_Evangelistica.php">Encargado de:</a></li>
-                                                                    <li class="list-unstyled lipri"><i class="fa fa-check text-success"></i> <a href="Trabajando.php">Encargado de:</a></li>
-                                                                </ul>
-                                                            <li>
-                                                            <li><i class="fa fa-plus-circle text-success"></i> <a href="Trabajando.php"><strong>Agregar Campaña Evangelistica</strong></a><li>
-
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3">
-                                            <div class="panel panel-orange  pricing-big panelm panEs" style="margin-bottom: 0px;">
-
-                                                <div class="panel-heading panehead panelm-black " id="panHeadEsSab" style="border-radius: 10px 10px 10px 10px ;">
-                                                    <div style="width: 100%;text-align: center">
-                                                        <img  src="../images/iconos/icon-Biblia-personal.png" style="max-width: 55px">
-                                                        <h3 class="panel-title titop">
-                                                            Escuela Sabatica</h3>
-                                                    </div>
-                                                </div>
-                                                <div class="panel-body no-padding text-align-center pan-bod-escu panelm-black" style="border-radius: 0px 0px 10px 10px">
-                                                    <div class="the-price panel-heading panelm-warming" style="border-radius: 0px 0px 0px 0px;height: 45px;display: flex;justify-content: center;align-items: center;">
-                                                        <h1>
-                                                            <strong>Opciones</strong>
-                                                        </h1>
-                                                    </div>
-                                                    <div class="price-features">
-                                                        <ul class="list-unstyled text-left">
-                                                            <li class="lipri"><i class="fa fa-check text-success"></i> <a href="Trabajando.php"><strong>Repaso de la Leccion</strong></a><li>
-                                                            <li class="lipri"><i class="fa fa-check text-success"></i> <a href="Trabajando.php"><strong>Comentario Biblico</strong></a><li>
-                                                            <li class="lipri"><i class="fa fa-check text-success"></i> <a href="Trabajando.php"><strong>Diario Devocional</strong></a><li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>		    	
                                     </div>
+                                    <!-- end widget -->
 
-                                </div>
+                                </article>
+                                <!-- WIDGET END -->
+                                <!-- NEW WIDGET START -->
+                                <article class="col-xs-12 col-sm-6 col-md-4 col-lg-4" style="margin-bottom: 30px">
 
+                                    <!-- Widget ID (each widget will need unique ID)-->
+                                    <div class="jarviswidget jarviswidget-color-green" id="wid-id-11" data-widget-colorbutton="false" data-widget-fullscreenbutton="false" data-widget-editbutton="false" data-widget-sortable="false">
+                                        <header>
+                                            <span class="widget-icon"> <i class="fa fa-book"></i> </span>
+                                            <h2>Versiculos Favoritos</h2>
+
+                                        </header>
+
+                                        <!-- widget div-->
+                                        <div>
+
+                                            <!-- widget edit box -->
+                                            <div class="jarviswidget-editbox">
+                                                <!-- This area used as dropdown edit box -->
+
+                                            </div>
+                                            <!-- end widget edit box -->
+
+                                            <!-- widget content -->
+                                            <div class="widget-body no-padding ver">
+                                                <iframe id="frameVer" src="VersiculosFavoritos.php" width="100%" style="height: 100vh;border: 0px;"></iframe>
+                                            </div>
+                                            <!-- end widget content -->
+
+                                        </div>
+                                    </div>
+                                    <!-- end widget -->
+
+
+                                </article>
+                                
                             </div>
 
-                        </div>
+                            <!-- end row -->
+
+                        </section>
 
 
                     </div>
@@ -447,116 +402,6 @@ if ($_SESSION["Usuario"] !== null) {
             </div>
 
              END PAGE FOOTER -->
-            </div>
-            <div >
-
-                <!-- RIBBON -->
-                <!-- END RIBBON -->
-
-                <!-- MAIN CONTENT -->
-                <div id="content">
-
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-7 col-md-7 col-lg-4">
-                            <h1 class="page-title txt-color-blueDark"><i class="fa fa-book"></i> Biblia Personal</h1>
-                        </div>
-                    </div>
-
-                    <!-- widget grid -->
-                    <section id="widget-grid" class="">
-
-                        <!-- row -->
-                        <div class="row">
-
-                            <!-- NEW WIDGET START -->
-                            <article class="col-xs-12 col-sm-6 col-md-5 col-lg-5" style="margin-bottom: 30px">
-
-                                <!-- Widget ID (each widget will need unique ID)-->
-                                <div class="jarviswidget jarviswidget-color-greenLight" id="wid-id-11" data-widget-editbutton="true" >
-                                    <header>
-                                        <span class="widget-icon"> <i class="fa fa-book"></i> </span>
-                                        <h2>Versiculos Favoritos</h2>
-
-                                    </header>
-
-                                    <!-- widget div-->
-                                    <div>
-
-                                        <!-- widget edit box -->
-                                        <div class="jarviswidget-editbox">
-                                            <!-- This area used as dropdown edit box -->
-
-                                        </div>
-                                        <!-- end widget edit box -->
-
-                                        <!-- widget content -->
-                                        <div class="widget-body no-padding ver">
-                                            <iframe id="frameVer" src="VersiculosFavoritos.php" width="100%" style="height: 100vh;border: 0px;"></iframe>
-                                        </div>
-                                        <!-- end widget content -->
-
-                                    </div>
-                                </div>
-                                <!-- end widget -->
-
-
-                            </article>
-                            <!-- WIDGET END -->
-                            <article class="col-xs-12 col-sm-6 col-md-7 col-lg-7" style="margin-bottom: 30px">
-
-                                <!-- Widget ID (each widget will need unique ID)-->
-                                <div class="jarviswidget jarviswidget-color-teal" id="wid-id-11" data-widget-editbutton="true" data-widget-attstyle="jarviswidget-color-teal">
-                                    <!-- widget options:
-                                    usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
-
-                                    data-widget-colorbutton="false"
-                                    data-widget-editbutton="false"
-                                    data-widget-togglebutton="false"
-                                    data-widget-deletebutton="false"
-                                    data-widget-fullscreenbutton="false"
-                                    data-widget-custombutton="false"
-                                    data-widget-collapsed="true"
-                                    data-widget-sortable="false"
-
-                                    -->
-                                    <header>
-                                        <span class="widget-icon"> <i class="fa fa-book"></i> </span>
-                                        <h2>Biblia</h2>
-
-                                    </header>
-
-                                    <!-- widget div-->
-                                    <div>
-
-                                        <!-- widget edit box -->
-                                        <div class="jarviswidget-editbox">
-                                            <!-- This area used as dropdown edit box -->
-
-                                        </div>
-                                        <!-- end widget edit box -->
-
-                                        <!-- widget content -->
-                                        <div class="widget-body no-padding ">
-                                            <iframe src="Biblia.php" width="100%" style="height: 100vh;border: 0px;"></iframe>
-                                        </div>
-                                        <!-- end widget content -->
-
-                                    </div>
-                                </div>
-                                <!-- end widget -->
-
-                            </article>
-                            <!-- WIDGET END -->
-                        </div>
-
-                        <!-- end row -->
-
-                    </section>
-                    <!-- end widget grid -->
-
-                </div>
-                <!-- END MAIN CONTENT -->
-
             </div>
             <!-- END MAIN PANEL -->
 
@@ -644,7 +489,29 @@ if ($_SESSION["Usuario"] !== null) {
 
             <!-- Morris Chart Dependencies -->
             <script src="js/plugin/morris/raphael.min.js"></script>
-            <script src="js/plugin/morris/morris.min.js"></script>
+            <script src="js/plugin/morris/morris.min.js"></script><script src="../js/Biblia/Biblia.js"></script>
+            <script type="text/javascript">
+
+                // DO NOT REMOVE : GLOBAL FUNCTIONS!
+
+                $(document).ready(function () {
+                    pageSetUp();
+                    // PAGE RELATED SCRIPTS
+                });
+                function ARBOL() {
+                    $('.tree > ul').attr('role', 'tree').find('ul').attr('role', 'group');
+                    $('.tree').find('li:has(ul)').addClass('parent_li').attr('role', 'treeitem').find(' > span').attr('title', 'Collapse this branch').on('click', function (e) {
+                        var children = $(this).parent('li.parent_li').find(' > ul > li');
+                        if (children.is(':visible')) {
+                            children.hide('fast');
+                            $(this).attr('title', 'Expand this branch').find(' > i').removeClass().addClass('fa fa-lg fa-plus-circle');
+                        } else {
+                            children.show('fast');
+                            $(this).attr('title', 'Collapse this branch').find(' > i').removeClass().addClass('fa fa-lg fa-minus-circle');
+                        }
+                    });
+                }
+            </script>
 
             <script type="text/javascript">
                 // PAGE RELATED SCRIPTS
