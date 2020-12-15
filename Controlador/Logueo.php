@@ -1,5 +1,4 @@
 <?php
-
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
@@ -16,10 +15,10 @@ if ($opc === "ValidarUsuario") {
     $var = $objs->ValidarUsuario($usuario, $password);
     $arr = array();
     if (mysqli_num_rows($var) != 0) {
-        while ($row = mysqli_fetch_assoc($var)) {
-            $arr[] = $row;
+            while ($row = mysqli_fetch_assoc($var)) {
+                $arr[] = $row;
+            }
         }
-    }
     echo json_encode($arr);
 }
 if ($opc === "CrearSesion") {
@@ -55,23 +54,8 @@ if ($opc === "SalirSesion") {
 if ($opc === "ListarMision") {
 
     $objs = new UsuarioDAO();
-
     $var = $objs->ComboMision();
-    $result = array();
-    //looping through all the records fetched
-    $i = 0;
-    while ($row = $var->fetch_object()) {
-        $result[$i]["id_Mision"] = $row->id_Mision;
-        $result[$i]["No_Mision"] = utf8_encode($row->No_Mision);
-        $i++;
-    }
-    echo json_encode($result, JSON_UNESCAPED_UNICODE);
-    if (mysqli_num_rows($var) != 0) {
-        while ($row = mysqli_fetch_assoc($var)) {
-            $arr[] = $row;
-        }
-    }
-    echo json_encode($arr);
+    echo json_encode($var);
 }
 if ($opc === "ListarDistrito") {
     $objs = new UsuarioDAO();
@@ -83,7 +67,7 @@ if ($opc === "ListarIglesia") {
     $objs = new UsuarioDAO();
     $id_Distrito = $_POST["id_Distrito"];
     $var = $objs->ComboIglesia($id_Distrito);
-    echo json_encode($var, JSON_UNESCAPED_UNICODE);
+    echo json_encode($var);
 }
 if ($opc === "RegistrarUsuario") {
     $No_Persona = strtoupper($_POST['No_Persona']);

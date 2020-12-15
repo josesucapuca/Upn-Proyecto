@@ -237,12 +237,11 @@ if ($_SESSION["Usuario"] !== null) {
                 </div>
             </footer>
         </body>    
-        <script src="js/jquery-3.4.1.min.js" type="text/javascript"></script>
-        <!--<script src="js/jquery-1.12.3.min.js" type="text/javascript"></script>-->
+       <!-- <script src="js/jquery-3.4.1.min.js" type="text/javascript"></script>-->
+        <script src="js/jquery-1.12.3.min.js" type="text/javascript"></script>
         <script src="js/popper.min.js" type=script>"text/javascript" ></script>
         <script src="js/bootstrap.min.js" type="text/javascript"></script>
         <script src="plugins/sweetAlert2/sweetalert2.all.min.js" type="text/javascript"></script>
         <script src="js/Logueo/Validacion.js" type="text/javascript"></script>
-        <script src='https://www.google.com/recaptcha/api.js?render=6LdOxf8ZAAAAAHuUIiRORY6ylEJd45MmLjjOwrKU'></script>
     </html>
 <?php } ?>

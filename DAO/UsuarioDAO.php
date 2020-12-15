@@ -3,6 +3,7 @@
 include_once '../Factory/ConexionOperacion.php';
 
 class UsuarioDAO {
+
     private function sql($sql) {
         $conex = new Conexion();
         $c = $conex->Conectar();
@@ -22,33 +23,41 @@ class UsuarioDAO {
 
 //LLENAR COMBOS
     public function ComboMision() {
-        $sql = "select id_Mision, No_Mision from mision order by No_Mision asc;";
+       $sql = "call ListaMision()";
         $arreglo = array();
-        if ($consula = $this->sql($sql)) {
-            while ($consulta_VU = mysqli_fetch_array($consula)) {
-                $arreglo[] = $consulta_VU;
-    }
+        $i=0;
+        if ($consulta = $this->sql($sql)) {
+            while ($consulta_VU = $consulta->fetch_object()) {
+                $arreglo[$i]["id_Mision"] = $consulta_VU->id_Mision;
+                $arreglo[$i]["No_Mision"] = utf8_encode($consulta_VU->No_Mision);
+                $i++;
+            }
         }
         return $arreglo;
     }
-
     public function ComboDistrito($id_Mision) {
-        $sql = "select id_Distrito, No_Distrito from distrito where id_Mision = '$id_Mision'";
+        $sql = "select id_Distrito, No_Distrito from distrito where id_Mision = '$id_Mision' order by No_Distrito";
         $arreglo = array();
-        if ($consula = $this->sql($sql)) {
-            while ($consulta_VU = mysqli_fetch_array($consula)) {
-                $arreglo[] = $consulta_VU;
+        $i=0;
+        if ($consulta = $this->sql($sql)) {
+            while ($consulta_VU = $consulta->fetch_object()) {
+                $arreglo[$i]["id_Distrito"] = $consulta_VU->id_Distrito;
+                $arreglo[$i]["No_Distrito"] = utf8_encode($consulta_VU->No_Distrito);
+                $i++;
             }
         }
         return $arreglo;
     }
 
     public function ComboIglesia($id_Distrito) {
-        $sql = "select id_Iglesia, Nombre_Iglesia from iglesia where id_Distrito = '$id_Distrito'";
+        $sql = "select id_Iglesia, Nombre_Iglesia from iglesia where id_Distrito = '$id_Distrito' order by Nombre_Iglesia";
         $arreglo = array();
-        if ($consula = $this->sql($sql)) {
-            while ($consulta_VU = mysqli_fetch_array($consula)) {
-                $arreglo[] = $consulta_VU;
+        $i=0;
+        if ($consulta = $this->sql($sql)) {
+            while ($consulta_VU = $consulta->fetch_object()) {
+                $arreglo[$i]["id_Iglesia"] = $consulta_VU->id_Iglesia;
+                $arreglo[$i]["Nombre_Iglesia"] = utf8_encode($consulta_VU->Nombre_Iglesia);
+                $i++;
             }
         }
         return $arreglo;
@@ -113,7 +122,8 @@ class UsuarioDAO {
             echo 0;
         }
     }
-    //CONTRASEÑA NUEVA Y USUARIO
+    
+//CONTRASEÑA NUEVA Y USUARIO
     public function recuperar_contra($correo_Persona, $Contra, $Usuario){
         $sql = "call Recuperar_Contra('$correo_Persona','$Contra', '$Usuario')";
         if($consulta = $this->sql($sql)){
@@ -122,10 +132,7 @@ class UsuarioDAO {
             }
         }
     }
+
 }
-
-
-
-
 
 ?>

@@ -40,7 +40,7 @@ function CrearUsaurio(U, P) {
     });
 }
 
-
+//RECUPERAR CONTRASEÑA Y USUARIO
 function Restablecer_Contra(){
     var correo_Persona = $("#Correor").val();
     if(correo_Persona.length==0){
@@ -54,7 +54,7 @@ function Restablecer_Contra(){
         Contra+=caracteres.charAt(Math.floor(Math.random()*caracteres.length));
         Usuario+=caracteresusuario.charAt(Math.floor(Math.random()*caracteresusuario.length));
     }
-    alert(Usuario);
+   // alert(Usuario);
     $.ajax({
         type: "POST",
         url: 'Controlador/Logueo.php',
@@ -76,7 +76,6 @@ function Restablecer_Contra(){
         }        
     });
 }
-
 
 
 

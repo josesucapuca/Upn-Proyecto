@@ -134,8 +134,8 @@
                                             <span class="input-group-text"><i class="fas fa-paperclip"></i></span>
                                         </div>
     <!--                                    <input type="text" class="form-control" placeholder="Estado civil">-->
-                                        <select class="form-control" id="cbocivil" name="state" required="">
-                                            <option value="0">Estado Civil</option>
+                                        <select class="form-control" id="cbocivil" name="asunto">
+                                            <option selected>Estado Civil</option>
                                             <option>Soltero</option>
                                             <option>Casado</option>
                                             <option>Viudo</option>
@@ -207,8 +207,8 @@
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text"><i class="fas fa-users"></i></span>
                                             </div>
-                                            <select class="form-control" id="cbosexo" name="state">
-                                                <option value="0">Genero</option>
+                                            <select class="form-control" id="cbosexo" name="asunto">
+                                                <option selected>Genero</option>
                                                 <option>Masculino</option>
                                                 <option>Femenino</option>
                                             </select>
@@ -337,7 +337,7 @@
     </body>
     <script src="js/jquery-3.4.1.min.js" type="text/javascript"></script>
     <!--<script src="js/jquery-3.3.1.min.js" type="text/javascript"></script>-->
-    <script src="js/popper.min.js" type=script>"text/javascript"></script>
+    <script src="js/popper.min.js" type="text/javascript"></script>
     <script src="js/bootstrap.min.js" type="text/javascript"></script>
     <script src="plugins/sweetAlert2/sweetalert2.all.min.js" type="text/javascript"></script>
     <script src="js/Logueo/RegistrarUsuario.js" type="text/javascript"></script>
