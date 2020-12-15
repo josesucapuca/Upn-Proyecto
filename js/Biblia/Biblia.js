@@ -1,6 +1,6 @@
 LLenarLibro();
 $("#seLibro").change(function () {
-    
+
     if ($("#seLibro").val() !== "" && $("#seLibro").val() !== "") {
         ListaCapitulos($("#seLibro").val());
     } else {
@@ -24,12 +24,22 @@ $("#seCapitulo").change(function () {
     }
 });
 $("#Licap").click(function () {
+    $("#Licap").find('>i').removeClass().addClass('fa fa-lg fa-check');
     if ($(".VM").css("display") === "none") {
+        $("#Licap").find('i').removeClass().addClass('fa fa-lg fa-plus-circle');
         $(".VM").show(300);
     } else {
+        $("#Licap").find('i').removeClass().addClass('fa fa-lg fa-minus-circle');   
         $(".VM").hide(300);
     }
 });
+function cambiar(i) {
+    if (i === "1") {
+        $("#Licap").find('i').removeClass().addClass('fa fa-lg fa-plus-circle');
+    } else if (i === "2") {
+        $("#Licap").find('i').removeClass().addClass('fa fa-lg fa-minus-circle');
+    }
+}
 function LLenarLibro() {
     $.ajax({
         type: "POST",
@@ -86,14 +96,26 @@ function ListaVersiculos(idCapitulo, id_p) {
             for (var i = 0; i < jsonData.length; i++) {
 
                 html1 += '<li class="VM"><span class="label label-info"><i class="fa fa-lg fa-plus-circle">\n\
-</i> Versiculo ' + jsonData[i].No_Versiculo + '</span><ul><li><a> ' + jsonData[i].Con_Versiculo + '</a><BR>';
-                if (jsonData[i].id_persona === null) {
-                    html1 += ' <button href="javascript:void(0);" class="btn btn-labeled btn-success stbut"> Marcar</button>';
-                } 
-                if (jsonData[i].Anotacion === null) {
-                    html1 += ' <button href="javascript:void(0);" class="btn btn-labeled btn-warning stbut" > Agregar Anotacion</button>';
-                } else {
-                    html1 += ' <button href="javascript:void(0);" class="btn btn-labeled btn-primary stbut" > Modificar Anotacion</button>';
+</i> Versiculo ' + jsonData[i].No_Versiculo + '</span><ul><li >';
+                if(jsonData[i].id_Persona === ""){
+                    html1 += '<a> ' + jsonData[i].Con_Versiculo + '</a><BR>';
+                }else{
+                    html1 += '<a> <mark>' + jsonData[i].Con_Versiculo + '</mark></a><BR>';
+                }
+                
+                if (jsonData[i].id_Persona === "") {
+                    html1 += ' <button onclick="IngresarComentario(' + jsonData[i].id_Versiculo + ',' + $("#id_P").val() + ',\'\',\'i\')" class="btn btn-labeled btn-success stbut"> Marcar</button>';
+                }
+                if (jsonData[i].Anotacion === "" && jsonData[i].id_Persona === "") {
+                    html1 += ' <button onclick="LlenarComentario(' + jsonData[i].id_Versiculo + ',' + $("#id_P").val() + ',\'i\')" class="btn btn-labeled btn-warning stbut" > Agregar Anotacion</button>';
+                } else if (jsonData[i].Anotacion === "" && jsonData[i].id_Persona !== "") {
+                    html1 += ' <button onclick="LlenarComentario(' + jsonData[i].id_Versiculo + ',' + $("#id_P").val() + ',\'m\')" class="btn btn-labeled btn-warning stbut" > Agregar Anotacion</button>';
+                } else if (jsonData[i].Anotacion !== "" && jsonData[i].id_Persona !== "") {
+                    html1 += ' <button onclick="LlenarComentario(' + jsonData[i].id_Versiculo + ',' + $("#id_P").val() + ',\'m\')" class="btn btn-labeled btn-primary stbut" > Modificar Anotacion</button>';
+                } else if (jsonData[i].Anotacion === "" && jsonData[i].id_Persona === "") {
+                    html1 += ' <button onclick="LlenarComentario(' + jsonData[i].id_Versiculo + ',' + $("#id_P").val() + ',\'m\')" class="btn btn-labeled btn-warning stbut" > Agregar Anotacion</button>';
+                } else if (jsonData[i].Anotacion === "" && jsonData[i].id_Persona !== "") {
+                    html1 += ' <button onclick="LlenarComentario(' + jsonData[i].id_Versiculo + ',' + $("#id_P").val() + ',\'m\')" class="btn btn-labeled btn-warning stbut" > Agregar Anotacion</button>';
                 }
                 html1 += ' </li></ul></li>';
             }
@@ -127,5 +149,87 @@ function ListaLibroxCapitulo(idCapitulo) {
             $("#Licap").empty();
             $("#Licap").append("<i class='fa fa-lg fa-book'></i> " + jsonData[0].Busqueda + "");
         }
+    });
+}
+function LlenarComentario(id_VerFav, id_p, opci) {
+    $.ajax({
+        type: "POST",
+        url: '../Controlador/VersiculoFavortio.php',
+        data: {opc: "ListarVF", idVf: id_VerFav, id_Per: id_p},
+        success: function (response)
+        {
+            var jsonData = JSON.parse(response);
+            var operacion = "";
+            if (opci === "i") {
+                operacion = "Ingresar";
+            } else if (opci === "m") {
+                operacion = "Modificar";
+            }
+            if (jsonData[0].id_Versiculo_Favorito === "0") {
+                $.SmartMessageBox({
+                    title: operacion + " Comentario",
+                    content: "max 150 caracteres",
+                    buttons: "[Aceptar][Cancelar]",
+                    input: "textarea",
+                    inputValue: "",
+                    placeholder: "Ingresar un Comentario"
+                }, function (ButtonPress) {
+                    if (ButtonPress === "Aceptar") {
+                        IngresarComentario(id_VerFav, id_p, $("#txtarea1").val(), opci);
+                    }
+                    if (ButtonPress === "Cancelar") {
+                        return 0;
+                    }
+                });
+            } else {
+                $.SmartMessageBox({
+                    title: operacion + " Comentario",
+                    content: "max 150 caracteres",
+                    buttons: "[Aceptar][Cancelar]",
+                    input: "textarea",
+                    inputValue: jsonData[0].Anotacion,
+                    placeholder: "Ingresar un Comentario"
+                }, function (ButtonPress) {
+                    if (ButtonPress === "Aceptar") {
+                        IngresarComentario(id_VerFav, id_p, $("#txtarea1").val(), opci);
+                    }
+                    if (ButtonPress === "Cancelar") {
+                        return 0;
+                    }
+                });
+            }
+        }
+
+    });
+}
+
+function IngresarComentario(id_V, id_p, Comentario, opci) {
+    $.ajax({
+        type: "POST",
+        url: '../Controlador/VersiculoFavortio.php',
+        data: {opc: "IngresarVF", idV: id_V, id_Per: id_p, Com: Comentario, opci: opci},
+        success: function (response)
+        {
+            if (response) {
+                $.smallBox({
+                    title: "Versiculo Favorito Resgistrado!",
+                    content: "<i class='fa fa-check'></i> Registrado Correctamente...<i></i>",
+                    color: "#659265",
+                    iconSmall: "fa fa-check fa-2x fadeInRight animated",
+                    timeout: 4000
+                });
+                $('#frameVer').attr("src", $('#frameVer').attr("src"));
+                ListaVersiculos($("#seCapitulo").val(), id_p);
+            } else {
+                $.smallBox({
+                    title: "Error al Registrar Versiculo Favorito",
+                    content: "<i class='fa fa-times'></i> Error al Registrar...<i></i>",
+                    color: "#C46A69",
+                    iconSmall: "fa fa-times fa-2x fadeInRight animated",
+                    timeout: 4000
+                });
+            }
+        }
+
     });
 }

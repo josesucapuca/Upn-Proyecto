@@ -3,7 +3,7 @@ session_start();
 if ($_SESSION["Usuario"] !== null) {
     ?>
     <!DOCTYPE html>
-    <html lang="es" style="background-image: url('img/pattern/tileable_wood_texture.png');">
+    <html lang="es" style="background-image: url('../images/fondo2.png');background-size: auto 100%">
         <head>
 
             <!--<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">-->
@@ -11,6 +11,11 @@ if ($_SESSION["Usuario"] !== null) {
             <?php include_once './inc2/Estilos.php'; ?>
             <link rel="stylesheet" type="text/css" media="screen" href="css/fontAdventSans.css">
             <link rel="stylesheet" type="text/css" media="screen" href="css/header.css">
+            <link rel="apple-touch-startup-image" href="../images/iconoweb.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape)">
+            <link rel="apple-touch-startup-image" href="../images/iconoweb.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait)">
+            <link rel="apple-touch-startup-image" href="../images/iconoweb.png" media="screen and (max-device-width: 320px)">
+            <link rel="shortcut icon" href="../images/iconoweb.png" type="image/x-icon">
+            <link rel="icon" href=".../images/iconoweb.png" type="image/x-icon">
             <style>
 
             </style>
@@ -31,7 +36,107 @@ if ($_SESSION["Usuario"] !== null) {
                 * 'container'         - boxed layout mode (non-responsive: will not work with fixed-navigation & fixed-ribbon)
         -->
         <body class="bod">
+            <div class="modal fade" id="ModalIngresarCampana" tabindex="-1" role="dialog" aria-labelledby="ModalIngresarCampanaLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                                &times;
+                            </button>
+                            <h4 class="modal-title" id="ModalIngresarCampanaLabel">Ingresar Nueva Campaña Evangelistica</h4>
+                        </div>
+                        <div class="modal-body">
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <input type="text" id="TitCampana" class="form-control" placeholder="Nombre de Campaña Evangelistica" required />
+                                    </div>
+                                    <div class="form-group">
+                                        <select id="OpcVideo" class="form-control">
+                                            <option value="">Seleccionar opcion de Video Conferencia</option>
+                                            <option value="C">Con Video LLamada</option>
+                                            <option value="S">Sin Video LLamada</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group" >
+                                        <select id="PlataformaVideoLLamada" class="form-control">
+                                            <option value="">Seleccionar La plataforma de Video LLamada</option>
+                                            <option value="J">Jitsi Meet</option>
+                                            <option value="S">Sangoma Meet</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" id="UrlVideoConferencia" class="form-control" placeholder="URL de Video Conferencia" required />
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" id="UrlVideoConferencia" class="form-control" placeholder="Codigo de Campaña Evangelistica" required />
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="tags"> Fecha de Inicio</label>
+                                        <input type="date" id="Fe_Inicio" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="tags"> Fecha de Cierre</label>
+                                        <input type="date" id="Fe_Inicio" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">
+                                Cancel
+                            </button>
+                            <button type="button" class="btn btn-primary" id="AgregarCampaña">
+                                Egregar Campaña
+                            </button>
+                        </div>
+                    </div><!-- /.modal-content -->
+                </div><!-- /.modal-dialog -->
+            </div><!-- /.modal -->
+            <div class="modal fade" id="ModalSuscribirse" tabindex="-1" role="dialog" aria-labelledby="ModalSuscribirseLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                                &times;
+                            </button>
+                            <h4 class="modal-title" id="ModalSuscribirseLabel">Suscribirse a una Campaña Evangelistica</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="tags"> Codigo de Campaña Evangelistica</label>
+                                        <input type="text" id="TitCampana" class="form-control" placeholder="Codigo de Campaña" required />
+                                    </div>
+                                   
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">
+                                Cancel
+                            </button>
+                            <button type="button" class="btn btn-primary" id="AgregarCampaña">
+                                Suscribirse a Campaña Evangelistica
+                            </button>
+                        </div>
+                    </div><!-- /.modal-content -->
+                </div><!-- /.modal-dialog -->
+            </div><!-- /.modal -->
             <input id="PersonaUsuario" type="hidden" value="<?php echo $_SESSION["Persona"] ?>">
+            <input id="id_Persona" type="hidden" value="<?php echo $_SESSION["id_Persona"]; ?>">
             <div class="row" style=" margin-left: 0px;margin-right: 0px;height: 100%;">
 
                 <div class="col-xs-12 col-sm-8 col-md-9 col-lg-10" style="margin-left: 0px;margin-right: 0px;padding-left: 0px;padding-right: 0px;height: 90%;">
@@ -132,19 +237,19 @@ if ($_SESSION["Usuario"] !== null) {
                                     <div class="row">
 
                                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="padding-bottom: 8%;"> 
-                                            <h1 class="titp" style="">CEO Adventistas</h1>
+                                            <h1 class="titp" style="box-shadow: 0px 1px 41px white;border-radius: 15px;">CEO Adventistas</h1>
                                         </div>
                                         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3">
                                             <div class="panel panel-green  pricing-big panelm panEs">
 
-                                                <div class="panel-heading panehead panelm-black" id="panHeadEsp" style="border-radius: 10px 10px 10px 10px ;">
+                                                <div class="panel-heading panehead panelm-white" id="panHeadEsp" style="border-radius: 10px 10px 10px 10px ;">
                                                     <div style="width: 100%;text-align: center">
                                                         <img class="imgEs" src="../images/iconos/icon-Biblia-personal.png" style="max-width: 55px">
                                                         <h3 class="panel-title titop">
                                                             Estudio Personal de la biblia</h3>
                                                     </div>
                                                 </div>
-                                                <div class="panel-body no-padding text-align-center pan-bod-esPer panelm-black" style="border-radius: 0px 0px 10px 10px">
+                                                <div class="panel-body no-padding text-align-center pan-bod-esPer panelm-white" style="border-radius: 0px 0px 10px 10px">
                                                     <div class="the-price panel-heading panelm-green" style="border-radius: 0px 0px 0px 0px;height: 45px;display: flex;justify-content: center;align-items: center;">
                                                         <h1>
                                                             <strong>Opciones</strong>
@@ -183,14 +288,14 @@ if ($_SESSION["Usuario"] !== null) {
                                         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3">
                                             <div class="panel panel-red pricing-big panelm panEs">
 
-                                                <div class="panel-heading panehead panelm-black " id="panHeadEsBi" style="border-radius: 10px 10px 10px 10px ;">
+                                                <div class="panel-heading panehead panelm-white " id="panHeadEsBi" style="border-radius: 10px 10px 10px 10px ;">
                                                     <div style="width: 100%;text-align: center">
                                                         <img src="../images/iconos/icon-Biblia-personal.png" style="max-width: 55px">
                                                         <h3 class="panel-title titop">
                                                             Estudios Biblicos</h3>
                                                     </div>
                                                 </div>
-                                                <div class="panel-body no-padding text-align-center pan-bod-esBi panelm-black" style="border-radius: 0px 0px 10px 10px">
+                                                <div class="panel-body no-padding text-align-center pan-bod-esBi panelm-white" style="border-radius: 0px 0px 10px 10px">
                                                     <div class="the-price panel-heading panelm-red" style="border-radius: 0px 0px 0px 0px;height: 45px;display: flex;justify-content: center;align-items: center;">
                                                         <h1>
                                                             <strong>Opciones</strong>
@@ -211,14 +316,14 @@ if ($_SESSION["Usuario"] !== null) {
                                             <div class="panel panel-blueDark pricing-big panelm panEs">
 
 
-                                                <div class="panel-heading panehead panelm-black " id="panHeadCamEva" style="border-radius: 10px 10px 10px 10px ;">
+                                                <div class="panel-heading panehead panelm-white " id="panHeadCamEva" style="border-radius: 10px 10px 10px 10px ;">
                                                     <div style="width: 100%;text-align: center">
                                                         <img src="../images/iconos/icon-Biblia-personal.png" style="max-width: 55px">
                                                         <h3 class="panel-title titop">
                                                             Campañas Evangelsiticas</h3>
                                                     </div>
                                                 </div>
-                                                <div class="panel-body no-padding text-align-center pan-bod-cam panelm-black" style="border-radius: 0px 0px 10px 10px">
+                                                <div class="panel-body no-padding text-align-center pan-bod-cam panelm-white" style="border-radius: 0px 0px 10px 10px">
                                                     <div class="the-price panel-heading panelm-gris" style="border-radius: 0px 0px 0px 0px;height: 45px;display: flex;justify-content: center;align-items: center;">
                                                         <h1>
                                                             <strong>Opciones</strong>
@@ -226,20 +331,20 @@ if ($_SESSION["Usuario"] !== null) {
                                                     </div>
                                                     <div class="price-features" >
                                                         <ul class="list-unstyled text-left">
-                                                            <li><i class="fa fa-plus text-success icEnc"></i> <strong style="color: #74a7ca;">Encargado de:</strong>
+                                                            <li class="lienca"><i class="fa fa-plus text-success icEnc"></i> <strong style="color: #74a7ca;">Encargado de:</strong>
                                                                 <ul id="Encargado" style="display: none">
                                                                     <li class="list-unstyled lipri"><i class="fa fa-check text-success"></i> <a href="Campana_Evangelistica.php">Semana de Oracion:</a></li>
                                                                     <li class="list-unstyled lipri"><i class="fa fa-check text-success"></i> <a href="Campana_Evangelistica.php">Semana de Oracion:</a></li>
                                                                 </ul>
                                                             <li>
-                                                            <li><i class="fa fa-plus text-success icPart"></i> <strong style="color: #74a7ca;">Participando en:</strong>
+                                                            <li class="lipart"><i class="fa fa-plus text-success icPart"></i> <strong style="color: #74a7ca;">Participando en:</strong>
                                                                 <ul id="Participando" style="display: none">
                                                                     <li class="list-unstyled lipri"><i class="fa fa-check text-success"></i> <a href="Campana_Evangelistica.php">Encargado de:</a></li>
                                                                     <li class="list-unstyled lipri"><i class="fa fa-check text-success"></i> <a href="Trabajando.php">Encargado de:</a></li>
                                                                 </ul>
                                                             <li>
-                                                            <li><i class="fa fa-plus-circle text-success"></i> <a href="Trabajando.php"><strong>Agregar Campaña Evangelistica</strong></a><li>
-
+                                                            <li><i class="fa fa-plus-circle text-success"></i> <a data-toggle="modal" data-target="#ModalIngresarCampana"><strong>Agregar Campaña Evangelistica</strong></a><li>
+                                                            <li><i class="fa fa-plus-circle text-success"></i> <a data-toggle="modal" data-target="#ModalSuscribirse" ><strong>Suscribirse a una campaña Evangelistica</strong></a><li>
                                                         </ul>
                                                     </div>
                                                 </div>
@@ -249,14 +354,14 @@ if ($_SESSION["Usuario"] !== null) {
                                         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3">
                                             <div class="panel panel-orange  pricing-big panelm panEs" style="margin-bottom: 0px;">
 
-                                                <div class="panel-heading panehead panelm-black " id="panHeadEsSab" style="border-radius: 10px 10px 10px 10px ;">
+                                                <div class="panel-heading panehead panelm-white " id="panHeadEsSab" style="border-radius: 10px 10px 10px 10px ;">
                                                     <div style="width: 100%;text-align: center">
                                                         <img  src="../images/iconos/icon-Biblia-personal.png" style="max-width: 55px">
                                                         <h3 class="panel-title titop">
                                                             Escuela Sabatica</h3>
                                                     </div>
                                                 </div>
-                                                <div class="panel-body no-padding text-align-center pan-bod-escu panelm-black" style="border-radius: 0px 0px 10px 10px">
+                                                <div class="panel-body no-padding text-align-center pan-bod-escu panelm-white" style="border-radius: 0px 0px 10px 10px">
                                                     <div class="the-price panel-heading panelm-warming" style="border-radius: 0px 0px 0px 0px;height: 45px;display: flex;justify-content: center;align-items: center;">
                                                         <h1>
                                                             <strong>Opciones</strong>
@@ -433,6 +538,28 @@ if ($_SESSION["Usuario"] !== null) {
                         } else {
                             $("#VideoPe").hide("slow");
                             $(".icvi").removeClass("fa-minus").addClass("fa-plus");
+                        }
+                    });
+                    $(".lienca").on("click", function () {
+                        if ($("#Encargado").css("display") === "none") {
+                            $("#Encargado").show("slow");
+                            $("#Participando").hide("slow");
+                            $(".icEnc").removeClass("fa-plus").addClass("fa-minus");
+                            $(".icPart").removeClass("fa-minus").addClass("fa-plus");
+                        } else {
+                            $("#Encargado").hide("slow");
+                            $(".icEnc").removeClass("fa-minus").addClass("fa-plus");
+                        }
+                    });
+                    $(".lipart").on("click", function () {
+                        if ($("#Participando").css("display") === "none") {
+                            $("#Participando").show("slow");
+                            $("#Encargado").hide("slow");
+                            $(".icPart").removeClass("fa-plus").addClass("fa-minus");
+                            $(".icEnc").removeClass("fa-minus").addClass("fa-plus");
+                        } else {
+                            $("#Participando").hide("slow");
+                            $(".icPart").removeClass("fa-minus").addClass("fa-plus");
                         }
                     });
                 });

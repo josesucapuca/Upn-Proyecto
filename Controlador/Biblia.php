@@ -9,10 +9,7 @@ if ($opc === "ListarLibro") {
     if (mysqli_num_rows($var) != 0) {
         $i=0;
         while ($row = $var->fetch_object()) {
-            $arr[$i]["id_Libro"] = $row->id_Libro;
-            $arr[$i]["No_Libro"] = $row->No_Libro;
-            $arr[$i]["id_Biblia"] = $row->id_Biblia;
-            $arr[$i]["Testamento"] = $row->Testamento;
+            $arr[]  = $row;
         }
     }
     echo json_encode($arr,JSON_UNESCAPED_UNICODE);
