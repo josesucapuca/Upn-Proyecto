@@ -1,4 +1,12 @@
 <?php
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+require '../PHPMailer/Exception.php';
+require '../PHPMailer/PHPMailer.php';
+require '../PHPMailer/SMTP.php';
+
 include_once '../DAO/UsuarioDAO.php';
 $opc = $_POST["opc"];
 if ($opc === "ValidarUsuario") {
@@ -8,10 +16,10 @@ if ($opc === "ValidarUsuario") {
     $var = $objs->ValidarUsuario($usuario, $password);
     $arr = array();
     if (mysqli_num_rows($var) != 0) {
-            while ($row = mysqli_fetch_assoc($var)) {
-                $arr[] = $row;
-            }
+        while ($row = mysqli_fetch_assoc($var)) {
+            $arr[] = $row;
         }
+    }
     echo json_encode($arr);
 }
 if ($opc === "CrearSesion") {
@@ -49,11 +57,20 @@ if ($opc === "ListarMision") {
     $objs = new UsuarioDAO();
 
     $var = $objs->ComboMision();
-     if (mysqli_num_rows($var) != 0) {
-            while ($row = mysqli_fetch_assoc($var)) {
-                $arr[] = $row;
-            }
+    $result = array();
+    //looping through all the records fetched
+    $i = 0;
+    while ($row = $var->fetch_object()) {
+        $result[$i]["id_Mision"] = $row->id_Mision;
+        $result[$i]["No_Mision"] = utf8_encode($row->No_Mision);
+        $i++;
+    }
+    echo json_encode($result, JSON_UNESCAPED_UNICODE);
+    if (mysqli_num_rows($var) != 0) {
+        while ($row = mysqli_fetch_assoc($var)) {
+            $arr[] = $row;
         }
+    }
     echo json_encode($arr);
 }
 if ($opc === "ListarDistrito") {
@@ -66,7 +83,7 @@ if ($opc === "ListarIglesia") {
     $objs = new UsuarioDAO();
     $id_Distrito = $_POST["id_Distrito"];
     $var = $objs->ComboIglesia($id_Distrito);
-    echo json_encode($var,JSON_UNESCAPED_UNICODE);
+    echo json_encode($var, JSON_UNESCAPED_UNICODE);
 }
 if ($opc === "RegistrarUsuario") {
     $No_Persona = strtoupper($_POST['No_Persona']);
@@ -98,11 +115,64 @@ if ($opc === "ValidarCorreoR") {
     $var = $objs->ValidarCorreoR($correo_Persona);
     echo $var;
 }
-function utf8_converter($array){
-      array_walk_recursive($array, function(&$item){
-          $item = utf8_encode( $item ); 
-      });
-      return json_encode( $array );
+if ($opc === "RecuperarContra") {
+    $correo_Persona = strtoupper($_POST['correo_Persona']);
+    $contraactual = strtoupper($_POST['Contra']);
+    $Contra = strtoupper($_POST['Contra']);
+    $objs = new UsuarioDAO();
+    $var = $objs->recuperar_contra($correo_Persona, $Contra);
+    if ($var == "1") {
+        // Instantiation and passing `true` enables exceptions
+        $mail = new PHPMailer(true);
+
+        try {
+            $mail->SMTPOptions = array(
+                'ssl' => array(
+                    'verify_peer' => false,
+                    'verify_peer_name' => false,
+                    'allow_self_signed' => true
+                )
+            );
+            //Server settings
+            $mail->SMTPDebug = 0;                      // Enable verbose debug output
+            $mail->isSMTP();                                            // Send using SMTP
+            $mail->Host = 'smtp.gmail.com';                    // Set the SMTP server to send through
+            $mail->SMTPAuth = true;                                   // Enable SMTP authentication
+            $mail->Username = 'estefannygarcia@upeu.edu.pe';                     // SMTP username
+            $mail->Password = 'contra';                               // SMTP password
+//           $mail->SMTPSecure = 'tls';
+            $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
+            $mail->Port = 587;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
+            //Recipients
+            $mail->setFrom('estefannygarcia@upeu.edu.pe', 'UPN');
+//            $mail->addAddress ('nicogarcia459@gmail.com','nico');
+            $mail->addAddress($correo_Persona);     // Add a recipient
+            // Content
+            $mail->isHTML(true);                                  // Set email format to HTML
+            $subject = "Nueva contraseña";
+            $subject = "=?UTF-8?B?" . base64_encode($subject) . "=?=";
+            $mail->Subject = $subject;
+            $mail->Body = 'Hola que tal, tu contraseña se restablecio <br> su contraseña es: <b>' . $contraactual . '</b> '
+                    . '<br>Se le recomienda cambiar la nueva contraseña brindada por motivos de seguridad, dirigirse ah: <br>'
+                    . '- configuraciones <br> - cambiar contraseña <br> - ingresar la nueva contraseña';
+            $mail->send();
+            echo '1 ENVIOOO';
+        } catch (Exception $e) {
+//            echo "0 ERROR"
+            echo "Hubo un error : ", $mail->ErrorInfo;
+        }
+    } else {
+        echo '2 :( BUUU';
+    }
+    echo $var;
 }
+
+function utf8_converter($array) {
+    array_walk_recursive($array, function(&$item) {
+        $item = utf8_encode($item);
+    });
+    return json_encode($array);
+}
+
 //mysqli_close($conexion);
 ?>

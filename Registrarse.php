@@ -337,7 +337,7 @@
     </body>
     <script src="js/jquery-3.4.1.min.js" type="text/javascript"></script>
     <!--<script src="js/jquery-3.3.1.min.js" type="text/javascript"></script>-->
-    <script src="js/popper.min.js" type="text/javascript"></script>
+    <script src="js/popper.min.js" type=script>"text/javascript"></script>
     <script src="js/bootstrap.min.js" type="text/javascript"></script>
     <script src="plugins/sweetAlert2/sweetalert2.all.min.js" type="text/javascript"></script>
     <script src="js/Logueo/RegistrarUsuario.js" type="text/javascript"></script>

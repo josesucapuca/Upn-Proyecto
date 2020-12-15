@@ -3,8 +3,19 @@
     background-image: url("images/upn2.png");
     background-size: cover;
     background-repeat: no-repeat;
-    height: 100%;
+    /*height: 100%;*/
     font-family: 'Numans', sans-serif;
+    margin-top: auto;
+    /*padding-left: 5px;*/
+    /*padding-right: 5px;*/
+    height: 80vh;
+     /*flex-direction: column;*/
+     display: flex;
+}
+.fondocentro{
+    /*margin-top: auto;*/
+    /*display: flex;*/
+    padding: 90px;
 }
 .texto {
     margin-top:-24px;
@@ -17,11 +28,11 @@
     border:double;
     background:#1A2A4D;
     color: white;
-    border-radius: 50px;
-    font-weight: 300;
-    font-size: 25px;
-    padding-left: 30px;
-    padding-right: 30px;
+    /*border-radius: 50px;*/
+    /*font-weight: normal;*/
+    /*font-size: ;*/
+    /*padding-left: 30px;*/
+    /*padding-right: 30px;*/
     /*position: inherit;*/
 }
 .footerfondo {

@@ -113,7 +113,19 @@ class UsuarioDAO {
             echo 0;
         }
     }
-
+    //CONTRASEÑA NUEVA
+    public function recuperar_contra($correo_Persona, $Contra){
+        $sql = "call Recuperar_Contra('$correo_Persona','$Contra')";
+        if($consulta = $this->sql($sql)){
+            if($row = mysqli_fetch_array($consulta)){
+                return $id= trim($row[0]);
+            }
+        }
+    }
 }
+
+
+
+
 
 ?>
