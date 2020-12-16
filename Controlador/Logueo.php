@@ -103,10 +103,8 @@ if ($opc === "RecuperarContra") {
     $correo_Persona = strtoupper($_POST['correo_Persona']);
     $contraactual = strtoupper($_POST['Contra']);
     $Contra = strtoupper($_POST['Contra']);
-    $Usuario = strtoupper($_POST['Usuario']);
-    $usuarioactual = strtoupper($_POST['Usuario']);
     $objs = new UsuarioDAO();
-    $var = $objs->recuperar_contra($correo_Persona, $Contra, $Usuario);
+    $var = $objs->recuperar_contra($correo_Persona, $Contra);
     if ($var == "1") {
         // Instantiation and passing `true` enables exceptions
         $mail = new PHPMailer(true);
@@ -121,18 +119,16 @@ if ($opc === "RecuperarContra") {
             //Server settings
             $mail->SMTPDebug = 0;                      // Enable verbose debug output
             $mail->isSMTP();                                            // Send using SMTP
-            $mail->Host = 'smtp.gmail.com';                    // Set the SMTP server to send through
+            //$mail->Host = 'smtp.gmail.com';                    // Set the SMTP server to send through
+            $mail->Host = 'ceoadventista.org';
             $mail->SMTPAuth = true;                                   // Enable SMTP authentication
-//            $mail->Username = 'soporte@ceoadventista.org';                     // SMTP username
-            $mail->Username = 'estefannygarcia@upeu.edu.pe'; 
-            $mail->Password = 'Youaremysempiterno1998';
-//            $mail->Password = 'Ceonexo2020';                               // SMTP password
+            $mail->Username = 'soporte@ceoadventista.org';                     // SMTP username
+            $mail->Password = 'Ceonexo2020';                               // SMTP password
 //           $mail->SMTPSecure = 'tls';
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
             $mail->Port = 587;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
             //Recipients
-//            $mail->setFrom('soporte@ceoadventista.org', 'CEO-ADVENTISTA');
-            $mail->setFrom('estefannygarcia@upeu.edu.pe', 'CEO-ADVENTISTA');
+            $mail->setFrom('soporte@ceoadventista.org', 'CEO-ADVENTISTA');
 //            $mail->addAddress ('nicogarcia459@gmail.com','nico');
             $mail->addAddress($correo_Persona);     // Add a recipient
             // Content
@@ -140,7 +136,7 @@ if ($opc === "RecuperarContra") {
             $subject = "Nueva contraseña";
             $subject = "=?UTF-8?B?" . base64_encode($subject) . "=?=";
             $mail->Subject = $subject;
-            $mail->Body = 'Hola que tal, tu contraseña se restablecio <br> su contraseña nueva es: <b>' . $contraactual . '</b> <br> su nuevo usuario es: <b>' .$usuarioactual. '</b>'
+            $mail->Body = 'Hola que tal, tu contraseña se restablecio <br> su contraseña nueva es: <b>' . $contraactual . '</b>'
                     . '<br>Se le recomienda cambiar la nueva contraseña brindada por motivos de seguridad, dirigirse ah: <br>'
                     . '- configuraciones <br> - cambiar contraseña <br> - ingresar la nueva contraseña';
             $mail->send();

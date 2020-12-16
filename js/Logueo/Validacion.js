@@ -48,11 +48,8 @@ function Restablecer_Contra(){
     }
     var caracteres ="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ23456789";
     var Contra ="";
-    var caracteresusuario = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ23456789";
-    var Usuario ="";
     for(var i=0;i<8;i++){
         Contra+=caracteres.charAt(Math.floor(Math.random()*caracteres.length));
-        Usuario+=caracteresusuario.charAt(Math.floor(Math.random()*caracteresusuario.length));
     }
    // alert(Usuario);
     $.ajax({
@@ -60,8 +57,7 @@ function Restablecer_Contra(){
         url: 'Controlador/Logueo.php',
         data: {opc: "RecuperarContra", 
             correo_Persona:correo_Persona, 
-            Contra: Contra,
-            Usuario:Usuario
+            Contra: Contra
         },
         success: function (response)
         {

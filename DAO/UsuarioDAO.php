@@ -124,8 +124,8 @@ class UsuarioDAO {
     }
     
 //CONTRASEÑA NUEVA Y USUARIO
-    public function recuperar_contra($correo_Persona, $Contra, $Usuario){
-        $sql = "call Recuperar_Contra('$correo_Persona','$Contra', '$Usuario')";
+    public function recuperar_contra($correo_Persona, $Contra){
+        $sql = "call Recuperar_Contra('$correo_Persona','$Contra')";
         if($consulta = $this->sql($sql)){
             if($row = mysqli_fetch_array($consulta)){
                 return $id= trim($row[0]);
