@@ -1,19 +1,19 @@
 <html>
     <head>
         <title></title>     
-
+        <meta name="viewport" content="width=device-width, initial-scale=1"> 
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
         <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> 
         <!--<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>-->
         <link href="plugins/sweetAlert2/sweetalert2.min.css" rel="stylesheet" type="text/css"/>
         <link href="plugins/animate.css/animate.css" rel="stylesheet" type="text/css"/>       
-        <link href="css/registrarse.css" rel="stylesheet" type="text/css"/>   
-        
-        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link href="css/registrarse.css" rel="stylesheet" type="text/css"/>          
         <link href="css/footer.css" rel="stylesheet" type="text/css"/>
         <link href="style.css" rel="stylesheet" type="text/css"/>
-        <link rel="stylesheet" href="css/responsive.css">       
-        <link href="css/botones.css" rel="stylesheet" type="text/css"/>
+        <!--<link rel="stylesheet" href="css/responsive.css">-->       
+        <!--<link href="css/botones.css" rel="stylesheet" type="text/css"/>-->
         <style>
             .mi{
                 text-align: left
@@ -39,7 +39,7 @@
                 .fm{
                     text-align: left;
                 }
-                
+
             }
             @media (max-width: 576px)
             {
@@ -51,6 +51,8 @@
         </style>
     </head>
     <body>
+        <div class="gtco-loader"></div>
+        <header id="gtco-header" class="gtco-cover" role="banner" style="background-image:url('https://algoritmo.digital/blog/wp-content/uploads/2020/01/por-que-mi-empresa-presente-mundo-digital.jpg');">
         <div class="container">
             <div class="d-flex justify-content-center h-100">
                 <div class="card">
@@ -71,8 +73,8 @@
                             </div>
                         </div>
                     </div>
-                        
-                    
+
+
                     <div class="card-body">                       
                         <form method="post" class="formulario" id="formulario">
                             <div class="row"> 
@@ -272,66 +274,61 @@
                             </div>
                         </form>
                     </div>
-                        
+
                 </div>
             </div>
         </div>
-
-        <footer class="mainfooter" role="contentinfo">
-            <div class="footer-middle">
-                <div class="container">
-                    <br><br>
-                    <div class="row">
-                        <div class="row col-xs-12 col-sm-12 col-md-4 col-lg-4" style="padding-bottom: 20px">
-                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 imgf">
-                                <div class="footer-pad" >
-                                    <div class="col-md-3 asi" >
-                                        <div id="fh5co-logo " style=""><a><img src="images/logo.png" width="140" height="140" ><span></span></a></div>
-                                    </div>
+            </header>
+        <footer id="gtco-footer" role="contentinfo">
+            <div class="gtco-container">
+                <div class="row row-pb-md">
+                    <div class="row col-xs-12 col-sm-12 col-md-4 col-lg-4" style="padding-bottom: 20px">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 imgf">
+                            <div class="footer-pad" >
+                                <div class="col-md-3 asi" >
+                                    <div id="fh5co-logo " style=""><a><img src="images/logo.png" width="140" height="140" ><span></span></a></div>
                                 </div>
                             </div>
-                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 imgf" >
-                                <div class="footer-pad " style="text-align: center" >
-                                    <h3>Unión Peruana del Norte</h3>
-                                </div>
-                            </div> 
                         </div>
-                        <div class="row col-xs-12 col-sm-12 col-md-8 col-lg-8 al" style="padding-bottom: 20px">
-                            <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 mi" >
-                                <div class="footer-pad fm" style="text-align: left;">
-                                    <h4>MISIONES</h4>
-                                    <ul class="list-unstyled" >
-                                        <li><a href="#">APCE - Asociación Peruana Central Este</a></li>
-                                        <li><a href="#">MICOP - Misión Centro Oeste del Perú</a></li>
-                                        <li><a href="#">MNO - Misión Norte Oriental </a></li>
-                                        <li><a href="#">MPN - Misión Peruana del Norte</a></li>
-                                        <li><a href="#">ANOP - Asociacioni Norte Pacífico del Perú</a></li>
-                                        <li>
-                                            <a href="#"></a>
-                                        </li>
-                                    </ul>
-                                    
-                                </div>
-                            </div> 
-                            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 ali" style="text-align: left">
-                                <h4>Redes Sociales</h4>
-                                <ul class="social-network social-circle">
-                                    <li><a href="https://www.facebook.com/adventistas.upn/" class="icoFacebook" title="Facebook" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
-                                    <li><a href="https://www.instagram.com/adventistasupn/" class="icoInstagram" title="Instagram" target="_blank"><i class="fab fa-instagram"></i></a></li>
-                                    <li><a href="https://www.youtube.com/adventistasupn" class="icoYoutube" title="Youtube" target="_blank"><i class="fab fa-youtube"></i></a></li>
-                                    <li><a href="https://twitter.com/AdventistasUPN" class="icoTwitter" title="Twitter" target="_blank"><i class="fab fa-twitter"></i></a></li>
-                                </ul>				
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 imgf" >
+                            <div  style="text-align: center" >
+                                <h3 style="color: white">Unión Peruana del Norte</h3>
                             </div>
-                        </div>
-
+                        </div> 
                     </div>
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 copy">
-                            <p class="text-center">&copy; 2020 - v1.0 - Derechos reservados por Unión Peruana del Norte.</p>
-                            <p class="text-center">Diseñado por <a href="https://www.nexo-consultores.com/" target="_blank"> Nexo Consultores IT SAC</a></p>
-                        </div>
+                    <div class="col-md-5 col-sm-5 col-xs-12 imgf">
+                        <!--<h4 style="color: white">MISIONES</h4>-->
+                        <ul class="" >
+                            <h4 style="color: white">MISIONES</h4>
+                            <li><a href="#">APCE - Asociación Peruana Central Este</a></li>
+                            <li><a href="#">MICOP - Misión Centro Oeste del Perú</a></li>
+                            <li><a href="#">MNO - Misión Nor Oriental </a></li>
+                            <li><a href="#">MPN - Misión Peruana del Nor</a></li>
+                            <li><a href="#">ANOP - Asociacioni Nor Pacífico del Perú</a></li>
+                        </ul> 
+                    </div>
+
+                    <div class="clearfix visible-xs-block"></div>
+
+                    <div class="col-md-3 col-sm-6 col-xs-12 imgf">
+
+                        <ul class="social-network social-circle">
+                            <h4 style="color: white">Redes Sociales</h4>
+                            <li><a href="https://www.facebook.com/adventistas.upn/" class="icoTwitter" title="Twitter" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                            <li><a href="https://www.instagram.com/adventistasupn/" class="icoInstagram" title="Instagram" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                            <li><a href="https://www.youtube.com/adventistasupn" class="icoYoutube" title="Youtube" target="_blank"><i class="fab fa-youtube"></i></a></li>
+                            <li><a href="https://twitter.com/AdventistasUPN" class="icoTwitter" title="Twitter" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                        </ul>
+                    </div>
+
+                </div>
+                <div class="row copyright">
+                    <div class="col-md-12">
+                        <p class="text-center">&copy; 2020 - v1.0 - Derechos reservados por Unión Peruana del Norte.</p>
+                        <p class="text-center">Diseñado por <a href="https://www.nexo-consultores.com/" target="_blank"> Nexo Consultores IT SAC</a></p>
                     </div>
                 </div>
+
             </div>
         </footer>
     </body>

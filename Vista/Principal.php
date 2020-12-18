@@ -303,7 +303,7 @@ if ($_SESSION["Usuario"] !== null) {
                                                     </div>
                                                     <div class="price-features">
                                                         <ul class="list-unstyled text-left">
-                                                            <li class="lipri"><i class="fa fa-check text-success"></i><a href="Trabajando.php?Ti=1"><strong> Cursos Bíblicos Adultos y Jóvenes</strong></a></li>
+                                                            <li class="lipri"><i class="fa fa-check text-success"></i><a href="CursoAdultoJoven.php"><strong> Cursos Bíblicos Adultos y Jóvenes</strong></a></li>
                                                             <li class="lipri"><i class="fa fa-check text-success"></i><a href="Trabajando.php?Ti=2"><strong> Cursos Bíblicos Adolescentes y Niños</strong></a></li>
 
                                                         </ul>

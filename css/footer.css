@@ -1,11 +1,9 @@
-/*FOOTER*/
-
 footer {
   background: #16213e;
   background: -webkit-linear-gradient(59deg, #16213e, #000033);
   background: linear-gradient(59deg, #16213e, #000033);
   color: white;
-  /*margin-top:10px;*/
+  margin-top:10px;
 }
 
 footer a {
@@ -15,25 +13,11 @@ footer a {
 }
 
 footer a:hover {
-  color: white;
+  color: #007bb7;
   text-decoration: none;
 }
 
-.copy {
-  font-size: 12px;
-  padding: 10px;
-  border-top: 1px solid #FFFFFF;
-}
-
-.footer-middle {
-  padding-top: 2em;
-  color: white;
-}
-
-
-/*SOCİAL İCONS*/
-
-/* footer social icons */
+ footer social icons 
 
 ul.social-network {
   list-style: none;
@@ -48,10 +32,10 @@ ul.social-network li {
 }
 
 
-/* footer social icons */
+ footer social icons 
 
 .social-network a.icoFacebook:hover {
-  background-color: #3B5998;
+  background-color:  #007bb7;
 }
 
 .social-network a.icoTwitter:hover {

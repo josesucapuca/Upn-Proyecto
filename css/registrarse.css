@@ -1,9 +1,9 @@
 /* Made with love by Mutiullah Samim*/
 
-@import url('https://fonts.googleapis.com/css?family=Numans');
+/*@import url('https://fonts.googleapis.com/css?family=Numans');
 
 html,body{
-    /*background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXRo0L2IJ3z4GtrmhT1ZXKFJG5QWaB5HvF9A&usqp=CAU');*/
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXRo0L2IJ3z4GtrmhT1ZXKFJG5QWaB5HvF9A&usqp=CAU');
     background-image: url('https://algoritmo.digital/blog/wp-content/uploads/2020/01/por-que-mi-empresa-presente-mundo-digital.jpg');
     background-size: cover;
     background-repeat: no-repeat;
@@ -12,9 +12,9 @@ html,body{
 }
 
 .container{
-    /*height: 100%;*/
+    height: 100%;
     align-content: center;
-}
+}*/
 
 .card{
     height: auto;
