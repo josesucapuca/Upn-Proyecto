@@ -18,6 +18,7 @@ and open the template in the editor.
         <link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
         <link href="style.css" rel="stylesheet" type="text/css"/>
         <link href="css/footer.css" rel="stylesheet" type="text/css"/>
+        <link href="css/botones.css" rel="stylesheet" type="text/css"/>
         <style>
             .mi{
                 text-align: left
@@ -64,10 +65,11 @@ and open the template in the editor.
                         <div class="col-md-12 col-md-offset-0 text-center">
                             <div class="display-t">
                                 <div class="display-tc animate-box" data-animate-effect="fadeIn">
-                                    <h1 style="color: white">Centro de Evangelio Online</h1>
+                                    <h1 style="color: white">Centro de Evangelismo Online</h1>
                                     <h1 style="color: white">CEO</h1>
                                     <img src="images/img_logo/adventist-es--white.png" alt="" style="width: 30%;"/>                                      
                                     <p>
+                                        <br>
                                         <a href="Iniciar.php" class="btn btn-white btn-lg">Ingresar</a> 
                                         <a href="Registrarse.php" class="btn btn-white  btn-lg">Registrarse</a></p>
                                 </div>
@@ -83,9 +85,9 @@ and open the template in the editor.
                     <div class="row col-xs-12 col-sm-12 col-md-4 col-lg-4" style="padding-bottom: 20px">
                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 imgf">
                             <div class="footer-pad" >
-                                <div class="col-md-3 asi" >
-                                    <div id="fh5co-logo " style=""><a><img src="images/logo.png" width="140" height="140" ><span></span></a></div>
-                                </div>
+                                <!--<div class="col-md-3 asi" >-->
+                                    <div id="fh5co-logo " style=""><a><img src="images/logo.png" width="160" height="160" ><span></span></a></div>
+                                <!--</div>-->
                             </div>
                         </div>
                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 imgf" >
@@ -101,8 +103,8 @@ and open the template in the editor.
                             <li><a href="#">APCE - Asociación Peruana Central Este</a></li>
                             <li><a href="#">MICOP - Misión Centro Oeste del Perú</a></li>
                             <li><a href="#">MNO - Misión Nor Oriental </a></li>
-                            <li><a href="#">MPN - Misión Peruana del Nor</a></li>
-                            <li><a href="#">ANOP - Asociacioni Nor Pacífico del Perú</a></li>
+                            <li><a href="#">MPN - Misión Peruana del Norte</a></li>
+                            <li><a href="#">ANOP - Asociación Nor Pacífico del Perú</a></li>
                         </ul> 
                     </div>
 

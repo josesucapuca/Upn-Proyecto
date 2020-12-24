@@ -11,7 +11,9 @@ if ($_SESSION["Usuario"] !== null) {
 
     <html>
         <head>
-            <title></title>     
+            <title></title>
+            <link rel="stylesheet" type="text/css" media="screen" href="css/fontAdventSans.css">
+            <link rel="shortcut icon" href="../images/iconoweb.png" type="image/x-icon">
             <meta name="viewport" content="width=device-width, initial-scale=1"> 
             <link rel="stylesheet" href="css/bootstrap.min.css">            
             <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
@@ -20,8 +22,9 @@ if ($_SESSION["Usuario"] !== null) {
             <link href="plugins/animate.css/animate.css" rel="stylesheet" type="text/css"/> 
             <link href="css/icomoon.css" rel="stylesheet" type="text/css"/>
             <link href="css/footer.css" rel="stylesheet" type="text/css"/>
-            <link href="style.css" rel="stylesheet" type="text/css"/>
+            <!--<link href="style.css" rel="stylesheet" type="text/css"/>-->
             <link href="css/iniciar.css" rel="stylesheet" type="text/css"/> 
+            <link href="css/botones.css" rel="stylesheet" type="text/css"/>
             <style>
                 .mi{
                     text-align: left
@@ -71,14 +74,11 @@ if ($_SESSION["Usuario"] !== null) {
                                         <img src="images/logo.png" alt="" width="90" height="90"/>                                   
                                     </div>
                                     <div class="col-md-8 col-xs-8 col-sm-8 col-md-8 col-lg-8 asi">
-                                        <div class="row">
-                                            .
-                                        </div>
+                                        <div class="row">.</div>
                                         <div class="row">
                                             <h2 style="color: white">Iniciar Sesión</h2> 
                                         </div>
-                                        <div class="row">                                    
-                                        </div>                                                                
+                                        <div class="row"></div>                                                                
                                     </div>
                                 </div>
                             </div>
@@ -114,11 +114,12 @@ if ($_SESSION["Usuario"] !== null) {
                                     </div>
 
                                     <div class="row"> 
-                                        <div class="col-xs-4 col-sm-6 col-md-6 col-lg-6 asi">   
-                                            <a href="index.php"> <input type="button" value="Regresar" class=" btn float-left login_btn"></a>
+                                        <div class="col-xs-5 col-sm-1 col-md-1 col-lg-1 asi"></div>
+                                        <div class="col-xs-3 col-sm-5 col-md-5 col-lg-5 ">
+                                            <a href="index.php"><div class="text-center"><button class="btn login_btn" type="button">Cancelar</button></div></a>
                                         </div>
-                                        <div class="col-xs-4 col-sm-6 col-md-6 col-lg-6 asi">                                    
-                                            <input type="button" value="Ingresar" class=" btn float-left login_btn" name="login" id="login">
+                                        <div class="col-xs-3 col-sm-5 col-md-5 col-lg-5" style="align-items: center;">                                    
+                                            <div class="text-center"><button class="btn login_btn" type="button" name="login" id="login">Ingresar</button></div>
                                         </div>
                                     </div>
                                     <span id="result"></span>
@@ -131,60 +132,68 @@ if ($_SESSION["Usuario"] !== null) {
                                 <div class="d-flex justify-content-center">
                                     <button type="button" class="btn btn-default btn-link " data-toggle="modal" data-target="#myModal">Recuperar usuario y/o contraseña</button>
                                 </div>
-                                <div id="myModal" class="modal fade" role="dialog">
-                                    <div class="modal-dialog">
 
-                                        <!-- Modal content-->
-                                        <div class="modal-content">
-                                            <div class="card-header" style="background: #1A2A4D">
-                                                <div class="row"> 
-                                                    <div class="col-md-3">
-                                                        <div id="fh5co-logo"><a href="index.php"><img src="images/logo.png" width="60" height="60" ><span></span></a></div>
-                                                    </div>
-                                                    <div class="col-md-9">
-                                                        <h3>Recuperar Contraseña</h3>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="card-body">
-                                                <form method="POST">
-                                                    <div class="row"> 
-                                                        <div class="col-md-1" ></div>
-                                                        <div class="col-md-10">
-                                                            <div class="input-group form-group">
-                                                                <div class="input-group-prepend">
-                                                                    <span class="input-group-text"><i class="fas fa-envelope-open-text"></i></span>
-                                                                </div>
-                                                                <input type="text" name="Correor" id="Correor" class="form-control" placeholder="Correo" required="">
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-1">
-                                                        </div>
-                                                    </div>
-                                                    <div class="row"> 
-                                                        <div class="col-md-4">                              
-                                                        </div>
-                                                        <div class="col-md-8">
-                                                            <input type="button" value="Enviar" class="btn float-left login_btn" name="enviarr" id="enviarr" onclick="Restablecer_Contra()">
-                                                        </div>
-                                                    </div>
-                                                    <span id="result"></span>
-                                                </form>
-                                            </div>
-                                            <div class="card-footer" style="background: #1A2A4D">
-                                                <div class="d-flex justify-content-center links">
-                                                    ¿Eres nuevo?<a href="Registrarse.php">Resgistrate</a>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </header>
+            <div id="myModal" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="card-header" style="background: #1A2A4D">
+                            <div class="row"> 
+                                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 asi">
+                                    <div id="fh5co-logo"><a href="index.php"><img src="images/logo.png" width="60" height="60" ><span></span></a></div>
+                                </div>
+                                <div class="col-md-8 col-xs-8 col-sm-8 col-md-8 col-lg-8 asi">
+                                    <div class="row">.</div>
+                                    <div class="row">
+                                        <h3 style="color: white">Recuperar Contraseña</h3> 
+                                    </div>
+                                    <div class="row"></div>                                                                
+                                </div>
+                                <!--                                <div class="col-md-8 col-xs-8 col-sm-8 col-md-8 col-lg-8 asi">
+                                                                    <h3>Recuperar Contraseña</h3>
+                                                                </div>-->
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <form method="POST">
+                                <div class="row"> 
+                                    <div class="col-md-1" ></div>
+                                    <div class="col-md-10">
+                                        <div class="input-group form-group">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fas fa-envelope-open-text"></i></span>
+                                            </div>
+                                            <input type="text" name="Correor" id="Correor" class="form-control" placeholder="Correo" required="">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-1">
+                                    </div>
+                                </div>
+                                <div class="row"> 
+                                    <div class="col-md-4">                              
+                                    </div>
+                                    <div class="col-md-8 asi">
+                                        <input type="button" value="Enviar" class="btn float-left login_btn" name="enviarr" id="enviarr" onclick="Restablecer_Contra()">
+                                    </div>
+                                </div>
+                                <span id="result"></span>
+                            </form>
+                        </div>
+                        <div class="card-footer" style="background: #1A2A4D">
+                            <div class="d-flex justify-content-center links">
+                                ¿Eres nuevo?<a href="Registrarse.php">Resgistrate</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
             <footer id="gtco-footer" role="contentinfo">
                 <div class="gtco-container">
                     <div class="row row-pb-md">
@@ -205,12 +214,12 @@ if ($_SESSION["Usuario"] !== null) {
                         <div class="col-md-5 col-sm-5 col-xs-12 imgf">
                             <!--<h4 style="color: white">MISIONES</h4>-->
                             <ul class="" >
-                                <h4 style="color: white">MISIONES</h4>
+                                <h4 style="color: white">CAMPOS MISIONEROS</h4>
                                 <li><a href="#">APCE - Asociación Peruana Central Este</a></li>
                                 <li><a href="#">MICOP - Misión Centro Oeste del Perú</a></li>
                                 <li><a href="#">MNO - Misión Nor Oriental </a></li>
-                                <li><a href="#">MPN - Misión Peruana del Nor</a></li>
-                                <li><a href="#">ANOP - Asociacioni Nor Pacífico del Perú</a></li>
+                                <li><a href="#">MPN - Misión Peruana del Norte</a></li>
+                                <li><a href="#">ANOP - Asociación Nor Pacífico del Perú</a></li>
                             </ul> 
                         </div>
 

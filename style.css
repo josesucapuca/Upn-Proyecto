@@ -23,13 +23,13 @@ p {
   margin-bottom: 20px;
 }
 
-.gtco-container {
+/*.gtco-container {
   max-width: 1140px;
   position: relative;
   margin: 0 auto;
   padding-left: 15px;
   padding-right: 15px;
-}
+}*/
 
 #gtco-header,
 #gtco-counter,
@@ -73,10 +73,10 @@ p {
   right: 0;
   background: rgba(0, 0, 0, 0.4);
 }
-.gtco-cover > .gtco-container {
+/*.gtco-cover > .gtco-container {
   position: relative;
   z-index: 10;
-}
+}*/
 @media screen and (max-width: 768px) {
   .gtco-cover {
     height: 600px;
@@ -153,7 +153,7 @@ p {
   margin-bottom: 30px;
 }
 
-#gtco-features,
+/*#gtco-features,
 #gtco-features-2,
 #gtco-testimonial,
 #gtco-services,
@@ -202,7 +202,7 @@ p {
 }
 #gtco-footer .copyright .block {
   display: block;
-}
+}*/
 
 .gototop {
   position: fixed;
