@@ -169,7 +169,7 @@ if ($_SESSION["Usuario"] !== null) {
                                         </li>
                                         <li class="divider"></li>
                                         <li>
-                                            <a href="profile.html" class="padding-10 padding-top-0 padding-bottom-0"> <i class="fa fa-user"></i> <u>P</u>erfil</a>
+                                            <a href="Perfil.php?id=<?php echo $_SESSION["id_Usuario"];?>" class="padding-10 padding-top-0 padding-bottom-0" id="ediusuario"> <i class="fa fa-user"></i> <u>P</u>erfil</a>
                                         </li>
                                         <li class="divider"></li>
 
@@ -203,7 +203,7 @@ if ($_SESSION["Usuario"] !== null) {
                                             </li>
                                             <li class="divider"></li>
                                             <li>
-                                                <a href="profile.html" class="padding-10 padding-top-0 padding-bottom-0"> <i class="fa fa-user"></i> <u>P</u>erfil</a>
+                                                <a href="Perfil.php?id=<?php echo $_SESSION["id_Usuario"];?>" class="padding-10 padding-top-0 padding-bottom-0" id="ediusuario"> <i class="fa fa-user"></i> <u>P</u>erfil</a>
                                             </li>
                                             <li class="divider"></li>
 
@@ -433,6 +433,7 @@ if ($_SESSION["Usuario"] !== null) {
             <!-- PACE LOADER - turn this on if you want ajax loading to show (caution: uses lots of memory on iDevices)-->
             <?php include_once './inc2/scripts.php'; ?>
             <script src="../js/Principal/Principal.js"></script>
+            <script src="../js/Logueo/Validacion.js" type="text/javascript"></script>
             <script type="text/javascript">
 
                 $(document).ready(function () {

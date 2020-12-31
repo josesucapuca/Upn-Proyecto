@@ -2,7 +2,8 @@
 session_start();
 if ($_SESSION["Usuario"] !== null) {
     ?><!DOCTYPE html>
-    <html lang="es" style="background-image: url('../images/fondoestudiojovene.png');">
+    <html lang="es" style="background-image: url('../images/estudios/fondojoveadul.png');background-size: cover;background-position: top center;
+          background-repeat: no-repeat;position: relative;float: left;width: 100%;">
         <head>
 
             <!--<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">-->
@@ -201,7 +202,7 @@ if ($_SESSION["Usuario"] !== null) {
                             <div class="col-xs-10 col-sm-7 col-md-7 col-lg-4 abs-center" style="text-align: center;">
                                 <!--<div class="row"></div>-->
                                 <div class="row">
-                                    <img src="../images/letrasestudiojoven.png" alt="" style="width: 100%"/>
+                                    <img src="../images/estudios/letrajoveadul.png" alt="" style="width: 100%"/>
                                 </div>
 
                         <!--<h1 class="page-title txt-color-blueDark" style="font-weight: 600"><i class="fa fa-book"></i> Cursos Bíblicos Adultos y Jóvenes</h1>-->
@@ -710,13 +711,14 @@ if ($_SESSION["Usuario"] !== null) {
                     <!-- END MAIN PANEL -->
                 </div>
                 <!-- PAGE FOOTER -->
-                <!--            <div class="page-footer">
+                            <div class="">
                                 <div class="row">
-                                    <div class="col-xs-12 col-sm-6">
-                                        <span class="txt-color-white">SmartAdmin 1.5 <span class="hidden-xs"> - Web Application Framework</span> © 2014-2015</span>
+                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                        <img src="../images/estudios/personasjoveadul.png" alt="" style="width: 100%"/>
+                                        <!--<span class="txt-color-white">SmartAdmin 1.5 <span class="hidden-xs"> - Web Application Framework</span> © 2014-2015</span>-->
                                     </div>
                 
-                                    <div class="col-xs-6 col-sm-6 text-right hidden-xs">
+<!--                                    <div class="col-xs-6 col-sm-6 text-right hidden-xs">
                                         <div class="txt-color-white inline-block">
                                             <i class="txt-color-blueLight hidden-mobile">Last account activity <i class="fa fa-clock-o"></i> <strong>52 mins ago &nbsp;</strong> </i>
                                             <div class="btn-group dropup">
@@ -759,9 +761,9 @@ if ($_SESSION["Usuario"] !== null) {
                                                 </ul>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div>-->
                                 </div>
-                            </div>-->
+                            </div>
                 <!-- END PAGE FOOTER -->
             </div>
 

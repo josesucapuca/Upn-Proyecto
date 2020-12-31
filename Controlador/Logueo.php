@@ -1,4 +1,5 @@
 <?php
+
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
@@ -15,10 +16,10 @@ if ($opc === "ValidarUsuario") {
     $var = $objs->ValidarUsuario($usuario, $password);
     $arr = array();
     if (mysqli_num_rows($var) != 0) {
-            while ($row = mysqli_fetch_assoc($var)) {
-                $arr[] = $row;
-            }
+        while ($row = mysqli_fetch_assoc($var)) {
+            $arr[] = $row;
         }
+    }
     echo json_encode($arr);
 }
 if ($opc === "CrearSesion") {
@@ -41,9 +42,17 @@ if ($opc === "CrearSesion") {
     $_SESSION["id_Iglesia"] = $data->id_Iglesia;
     $_SESSION["Nombre_Iglesia"] = $data->Nombre_Iglesia;
     $_SESSION["id_Distrito"] = $data->id_Distrito;
+    $_SESSION["No_Distrito"] = $data->No_Distrito;
     $_SESSION["id_Mision"] = $data->id_Mision;
+    $_SESSION["No_Mision"] = $data->No_Mision;
     $_SESSION["id_Uniones"] = $data->id_Uniones;
     $_SESSION["id_Division"] = $data->id_Division;
+    $_SESSION["Contra"] = $data->Contra;
+    $_SESSION["No_Persona"] = $data->No_Persona;
+    $_SESSION["AP_Persona"] = $data->AP_Persona;
+    $_SESSION["dire_Persona"] = $data->dire_Persona;
+    $_SESSION["tele_Persona"] = $data->tele_Persona;
+    $_SESSION["correo_Persona"] = $data->correo_Persona;
     echo "ok";
 }
 if ($opc === "SalirSesion") {
@@ -99,6 +108,26 @@ if ($opc === "ValidarCorreoR") {
     $var = $objs->ValidarCorreoR($correo_Persona);
     echo $var;
 }
+//ACTUALIZAR DATOS
+if ($opc === "ActualizarDatos") {
+    $id_Usuario = strtoupper($_POST['id_Usuario']);
+    $No_Persona = strtoupper($_POST['No_Persona']);
+    $AP_Persona = strtoupper($_POST['AP_Persona']);
+    $Edad_Persona = strtoupper($_POST['Edad_Persona']);
+    $Se_Persona = strtoupper($_POST['Se_Persona']);
+    $Es_Civil_Persona = strtoupper($_POST['Es_Civil_Persona']);
+    $Ti_Persona = strtoupper($_POST['Ti_Persona']);
+    $dire_Persona = strtoupper($_POST['dire_Persona']);
+    $tele_Persona = strtoupper($_POST['tele_Persona']);
+    $correo_Persona = strtoupper($_POST['correo_Persona']);
+    $id_Iglesia = strtoupper($_POST['id_Iglesia']);
+//    $id_Usuario = strtoupper($_POST['id_Usuario']);
+    $Contra = strtoupper($_POST['Contra']);   
+//    $id_Persona = strtoupper($_POST['id_Persona']);
+    $objs = new UsuarioDAO();
+    $var = $objs->ActualizarDatos($No_Persona, $AP_Persona, $Edad_Persona, $Se_Persona, $Es_Civil_Persona, $Ti_Persona, $dire_Persona, $tele_Persona, $correo_Persona, $id_Iglesia, $id_Usuario, $Contra);
+    echo $var;
+}
 if ($opc === "RecuperarContra") {
     $correo_Persona = strtoupper($_POST['correo_Persona']);
     $contraactual = strtoupper($_POST['Contra']);
@@ -138,7 +167,7 @@ if ($opc === "RecuperarContra") {
             $mail->Subject = $subject;
             $mail->Body = 'Hola que tal, tu contraseña se restablecio <br> su contraseña nueva es: <b>' . $contraactual . '</b>'
                     . '<br>Se le recomienda cambiar la nueva contraseña brindada por motivos de seguridad, dirigirse ah: <br>'
-                    . '- configuraciones <br> - cambiar contraseña <br> - ingresar la nueva contraseña';
+                    . '- Perfil <br> - identificar el campo "Contraseña" <br> - ingresar la nueva contraseña <br> - seleccionar el botón guardar';
             $mail->send();
             echo '1 ENVIOOO';
         } catch (Exception $e) {
@@ -157,6 +186,8 @@ function utf8_converter($array) {
     });
     return json_encode($array);
 }
+
+
 
 //mysqli_close($conexion);
 ?>
