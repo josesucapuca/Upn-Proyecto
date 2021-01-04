@@ -194,7 +194,7 @@ if ($_SESSION["Usuario"] !== null) {
                                                         <div class="col-xs-12 col-sm-6 col-md-8 col-lg-12">
                                                             <div class="row">
                                                                 <div class="col-sm-4 profile-pic">
-                                                                    <img src="img/avatars/sunny-big.png" alt="demo user">                                                       
+                                                                    <img src="../images/users.png" style="width: 30%;">                                                     
                                                                 </div>
                                                                 <div class="col-sm-8">
                                                                     <h1><?php echo $_SESSION["Persona"]; ?> <span class="semi-bold"></span>

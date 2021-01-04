@@ -169,7 +169,7 @@ if ($_SESSION["Usuario"] !== null) {
                                         </li>
                                         <li class="divider"></li>
                                         <li>
-                                            <a href="Perfil.php?id=<?php echo $_SESSION["id_Usuario"];?>" class="padding-10 padding-top-0 padding-bottom-0" id="ediusuario"> <i class="fa fa-user"></i> <u>P</u>erfil</a>
+                                            <a href="Perfil.php" class="padding-10 padding-top-0 padding-bottom-0" id="ediusuario"> <i class="fa fa-user"></i> <u>P</u>erfil</a>
                                         </li>
                                         <li class="divider"></li>
 
@@ -203,7 +203,7 @@ if ($_SESSION["Usuario"] !== null) {
                                             </li>
                                             <li class="divider"></li>
                                             <li>
-                                                <a href="Perfil.php?id=<?php echo $_SESSION["id_Usuario"];?>" class="padding-10 padding-top-0 padding-bottom-0" id="ediusuario"> <i class="fa fa-user"></i> <u>P</u>erfil</a>
+                                                <a href="Perfil.php" class="padding-10 padding-top-0 padding-bottom-0" id="ediusuario"> <i class="fa fa-user"></i> <u>P</u>erfil</a>
                                             </li>
                                             <li class="divider"></li>
 
@@ -369,9 +369,9 @@ if ($_SESSION["Usuario"] !== null) {
                                                     </div>
                                                     <div class="price-features">
                                                         <ul class="list-unstyled text-left">
-                                                            <li class="lipri"><i class="fa fa-check text-success"></i> <a href="Trabajando.php"><strong>Repaso de la Leccion</strong></a><li>
-                                                            <li class="lipri"><i class="fa fa-check text-success"></i> <a href="Trabajando.php"><strong>Comentario Biblico</strong></a><li>
-                                                            <li class="lipri"><i class="fa fa-check text-success"></i> <a href="Trabajando.php"><strong>Diario Devocional</strong></a><li>
+                                                            <li class="lipri"><i class="fa fa-check text-success"></i> <a href="RepasoLeccion.php"><strong>Repaso de la Leccion</strong></a><li>
+                                                            <li class="lipri"><i class="fa fa-check text-success"></i> <a href="ComentarioBiblico.php"><strong>Comentario Biblico</strong></a><li>
+                                                            <li class="lipri"><i class="fa fa-check text-success"></i> <a href="DiarioDevocional.php"><strong>Diario Devocional</strong></a><li>
                                                         </ul>
                                                     </div>
                                                 </div>
