@@ -244,11 +244,11 @@ if ($_SESSION["Usuario"] !== null) {
                                                                     <div id="collapseThree-1" class="panel-collapse collapse">
                                                                         <div class="panel-body">
                                                                             <ul id="estudios">
-                                                                                <li><a id="S1" href="" >Comentarios de la Lección - S1</a></li>
-                                                                                <li><a id="S2" href="" >Comentarios de la Lección - S2</a></li>
-                                                                                <li><a id="S3" href="" >Comentarios de la Lección - S3</a></li>
-                                                                                <li><a id="S4" href="" >Comentarios de la Lección - S4</a></li>
-                                                                                <li><a id="S5" href="" >Comentarios de la Lección - S5</a></li>
+                                                                                <li><a id="S1" href="https://drive.google.com/file/d/1lRM4CrOKYwiJwhpKj2CmgN6eq7Kru0Oo/preview" >Comentarios de la Lección - S1</a></li>
+                                                                                <li><a id="S2" href="https://drive.google.com/file/d/1TYYgk9_S8OWUhTkGjIX8lgVxQRGQHI2o/preview" >Comentarios de la Lección - S2</a></li>
+                                                                                <li><a id="S3" href="https://drive.google.com/file/d/1VpuCK75LjXF9KiuZabSvWES7FQmiArSP/preview" >Comentarios de la Lección - S3</a></li>
+                                                                                <li><a id="S4" href="https://drive.google.com/file/d/1R8CLH6tolSI7vb078CqvKOiabjQXy3P9/preview" >Comentarios de la Lección - S4</a></li>
+<!--                                                                                <li><a id="S5" href="" >Comentarios de la Lección - S5</a></li>
                                                                                 <li><a id="S6" href="" >Comentarios de la Lección - S6</a></li>
                                                                                 <li><a id="S7" href="" >Comentarios de la Lección - S7</a></li>
                                                                                 <li><a id="S8" href="" >Comentarios de la Lección - S8</a></li>
@@ -256,7 +256,7 @@ if ($_SESSION["Usuario"] !== null) {
                                                                                 <li><a id="S10" href="" >Comentarios de la Lección - S10</a></li>
                                                                                 <li><a id="S11" href="" >Comentarios de la Lección - S11</a></li>
                                                                                 <li><a id="S12" href="" >Comentarios de la Lección - S12</a></li> 
-                                                                                <li><a id="S13" href="" >Comentarios de la Lección - S13</a></li> 
+                                                                                <li><a id="S13" href="" >Comentarios de la Lección - S13</a></li> -->
                                                                             </ul>
                                                                         </div>
                                                                     </div>

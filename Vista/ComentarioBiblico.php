@@ -225,117 +225,88 @@ if ($_SESSION["Usuario"] !== null) {
                                                 <div class="panel-group smart-accordion-default" id="verFav" >
                                                     <div class="panel panel-default">
                                                         <div class="panel-heading">
-                                                            <div class="col-xs-8 col-sm-9 col-md-9 col-lg-9">
-                                                                <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion-2" href="#collapseOne-1"> <i class="fa fa-fw fa-plus-circle txt-color-green"></i> <i class="fa fa-fw fa-minus-circle txt-color-red"></i>Comentarios de Elena G. de White</a></h4>
-                                                            </div>
-                                                            <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3 estudio-img">
-                                                                <div class="row">
-                                                                    <br>
-                                                                    <img src="../images/estudios/comentarioelena.PNG" alt="" style="width: 60%"/>
-                                                                </div>                                 
-                                                            </div>
-    <!--<h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion-2" href="#collapseOne-1"> <i class="fa fa-fw fa-plus-circle txt-color-green"></i> <i class="fa fa-fw fa-minus-circle txt-color-red"></i>Comentarios de Elena G. de White</a></h4>-->
+                                                            <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion-2" href="#collapseOne-1"> <i class="fa fa-fw fa-plus-circle txt-color-green"></i> <i class="fa fa-fw fa-minus-circle txt-color-red"></i>Comentarios de Elena G. de White</a></h4>
                                                         </div>
                                                         <div id="collapseOne-1" class="panel-collapse collapse in">
-                                                            <div class="panel-body">
-                                                                <ul id="estudios">
-                                                                    <li><a id="S1" href="" >Comentarios de Elena G. de White - S1</a></li>
-                                                                    <li><a id="S2" href="" >Comentarios de Elena G. de White - S2</a></li>
-                                                                    <li><a id="S3" href="" >Comentarios de Elena G. de White - S3</a></li>
-                                                                    <li><a id="S4" href="" >Comentarios de Elena G. de White - S4</a></li>
-                                                                    <li><a id="S5" href="" >Comentarios de Elena G. de White - S5</a></li>
-                                                                    <li><a id="S6" href="" >Comentarios de Elena G. de White - S6</a></li>
-                                                                    <li><a id="S7" href="" >Comentarios de Elena G. de White - S7</a></li>
-                                                                    <li><a id="S8" href="" >Comentarios de Elena G. de White - S8</a></li>
-                                                                    <li><a id="S9" href="" >Comentarios de Elena G. de White - S9</a></li> 
-                                                                    <li><a id="S10" href="" >Comentarios de Elena G. de White - S10</a></li>
-                                                                    <li><a id="S11" href="" >Comentarios de Elena G. de White - S11</a></li>
-                                                                    <li><a id="S12" href="" >Comentarios de Elena G. de White - S12</a></li> 
-                                                                    <li><a id="S13" href="" >Comentarios de Elena G. de White - S13</a></li> 
-                                                                </ul>
+                                                            <div class="">
+                                                                <div class="panel">
+                                                                    <div class="panel-heading">
+                                                                        <div class="col-xs-8 col-sm-9 col-md-9 col-lg-9">
+                                                                            <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion-2" href="#collapseThree-1" class="collapsed"> <i class="fa fa-fw fa-plus-circle txt-color-green"></i><i class="fa fa-fw fa-minus-circle txt-color-red"></i>Notas de Elena G. de White</a></h4>
+                                                                        </div>
+                                                                        <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3 estudio-img">
+                                                                            <div class="row">
+                                                                                <br>
+                                                                                <img src="../images/estudios/comentarioelena.PNG" alt="" style="width: 60%"/>
+                                                                            </div>                                 
+                                                                        </div>                                                                        
+                                                                    </div>
+                                                                    <div id="collapseThree-1" class="panel-collapse collapse">
+                                                                        <div class="panel-body">
+                                                                            <ul id="estudios">
+                                                                                <li><a id="S1" href="" >Comentarios de Elena G. de White - S1</a></li>
+                                                                                <li><a id="S2" href="" >Comentarios de Elena G. de White - S2</a></li>
+                                                                                <li><a id="S3" href="" >Comentarios de Elena G. de White - S3</a></li>
+                                                                                <li><a id="S4" href="" >Comentarios de Elena G. de White - S4</a></li>
+                                                                                <li><a id="S5" href="" >Comentarios de Elena G. de White - S5</a></li>
+                                                                                <li><a id="S6" href="" >Comentarios de Elena G. de White - S6</a></li>
+                                                                                <li><a id="S7" href="" >Comentarios de Elena G. de White - S7</a></li>
+                                                                                <li><a id="S8" href="" >Comentarios de Elena G. de White - S8</a></li>
+                                                                                <li><a id="S9" href="" >Comentarios de Elena G. de White - S9</a></li> 
+                                                                                <li><a id="S10" href="" >Comentarios de Elena G. de White - S10</a></li>
+                                                                                <li><a id="S11" href="" >Comentarios de Elena G. de White - S11</a></li>
+                                                                                <li><a id="S12" href="" >Comentarios de Elena G. de White - S12</a></li> 
+                                                                                <li><a id="S13" href="" >Comentarios de Elena G. de White - S13</a></li>
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>                                                                                                                                                                                                    
                                                             </div>
                                                         </div>
-                                                        <!--                                                        <div id="collapseOne-1" class="panel-collapse collapse in">
-                                                                                                                    <div class="">
-                                                                                                                        <div class="panel">
-                                                                                                                            <div class="panel-heading">
-                                                                                                                                <div class="col-xs-8 col-sm-9 col-md-9 col-lg-9">
-                                                                                                                                    <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion-2" href="#collapseThree-1" class="collapsed"> <i class="fa fa-fw fa-plus-circle txt-color-green"></i><i class="fa fa-fw fa-minus-circle txt-color-red"></i>Comentarios de Elena G. de White</a></h4>
-                                                                                                                                </div>
-                                                                                                                                <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3 estudio-img">
-                                                                                                                                    <div class="row">
-                                                                                                                                        <br>
-                                                                                                                                        <img src="../images/estudios/es-escuelasabatica.PNG" alt="" style="width: 60%"/>
-                                                                                                                                    </div>                                 
-                                                                                                                                </div>                                                                        
-                                                                                                                            </div>
-                                                                                                                            <div id="collapseThree-1" class="panel-collapse collapse">
-                                                                                                                                <div class="panel-body">
-                                                                                                                                    <ul id="estudios">
-                                                                                                                                        <li><a id="S1" href="" >Comentarios de Elena G. de White - S1</a></li>
-                                                                                                                                        <li><a id="S2" href="" >Comentarios de Elena G. de White - S2</a></li>
-                                                                                                                                        <li><a id="S3" href="" >Comentarios de Elena G. de White - S3</a></li>
-                                                                                                                                        <li><a id="S4" href="" >Comentarios de Elena G. de White - S4</a></li>
-                                                                                                                                        <li><a id="S5" href="" >Comentarios de Elena G. de White - S5</a></li>
-                                                                                                                                        <li><a id="S6" href="" >Comentarios de Elena G. de White - S6</a></li>
-                                                                                                                                        <li><a id="S7" href="" >Comentarios de Elena G. de White - S7</a></li>
-                                                                                                                                        <li><a id="S8" href="" >Comentarios de Elena G. de White - S8</a></li>
-                                                                                                                                        <li><a id="S9" href="" >Comentarios de Elena G. de White - S9</a></li> 
-                                                                                                                                        <li><a id="S10" href="" >Comentarios de Elena G. de White - S10</a></li>
-                                                                                                                                        <li><a id="S11" href="" >Comentarios de Elena G. de White - S11</a></li>
-                                                                                                                                        <li><a id="S12" href="" >Comentarios de Elena G. de White - S12</a></li> 
-                                                                                                                                        <li><a id="S13" href="" >Comentarios de Elena G. de White - S13</a></li> 
-                                                                                                                                    </ul>
-                                                                                                                                </div>
-                                                                                                                            </div>
-                                                                                                                        </div>                                                                                                                                                                                                    
-                                                                                                                    </div>
-                                                                                                                </div>-->
                                                     </div>
-                                                    <!--                                                    <div class="panel panel-default">
-                                                                                                            <div class="panel-heading">
-                                                                                                                <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion-2" href="#collapseFor-1" class="collapsed"> <i class="fa fa-fw fa-plus-circle txt-color-green"></i> <i class="fa fa-fw fa-minus-circle txt-color-red"></i>Repaso de la Lección – Alumno</a></h4>
-                                                                                                            </div>
-                                                                                                            <div id="collapseFor-1" class="panel-collapse collapse">
-                                                                                                                <div class="">
-                                                                                                                    <div class="panel">
-                                                                                                                        <div class="panel-heading">
-                                                                                                                            <div class="col-xs-8 col-sm-9 col-md-9 col-lg-9">
-                                                                                                                                <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion-2" href="#collapseThree1" class="collapsed"> <i class="fa fa-fw fa-plus-circle txt-color-green"></i> <i class="fa fa-fw fa-minus-circle txt-color-red"></i>Comentarios de la Lección</a></h4>
-                                                                                                                            </div>
-                                                                                                                            <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3 estudio-img">
-                                                                                                                                <div class="row">
-                                                                                                                                    <br>
-                                                                                                                                    <img src="../images/estudios/es-escuelasabatica.PNG" alt="" style="width: 60%"/>
-                                                                                                                                </div>                                 
-                                                                                                                            </div>                                                                      
-                                                                                                                        </div>
-                                                                                                                        <div id="collapseThree1" class="panel-collapse collapse">
-                                                                                                                            <div class="panel-body">
-                                                                                                                                <ul id="estudios">
-                                                                                                                                    <li><a id="SA1" href="" >Comentarios de la Lección - S1</a></li>
-                                                                                                                                    <li><a id="SA2" href="" >Comentarios de la Lección - S2</a></li>
-                                                                                                                                    <li><a id="SA3" href="" >Comentarios de la Lección - S3</a></li>
-                                                                                                                                    <li><a id="SA4" href="" >Comentarios de la Lección - S4</a></li>
-                                                                                                                                    <li><a id="SA5" href="" >Comentarios de la Lección - S5</a></li>
-                                                                                                                                    <li><a id="SA6" href="" >Comentarios de la Lección - S6</a></li>
-                                                                                                                                    <li><a id="SA7" href="" >Comentarios de la Lección - S7</a></li>
-                                                                                                                                    <li><a id="SA8" href="" >Comentarios de la Lección - S8</a></li>
-                                                                                                                                    <li><a id="SA9" href="" >Comentarios de la Lección - S9</a></li> 
-                                                                                                                                    <li><a id="SA10" href="" >Comentarios de la Lección - S10</a></li>
-                                                                                                                                    <li><a id="SA11" href="" >Comentarios de la Lección - S11</a></li>
-                                                                                                                                    <li><a id="SA12" href="" >Comentarios de la Lección - S12</a></li> 
-                                                                                                                                    <li><a id="SA13" href="" >Comentarios de la Lección - S13</a></li> 
-                                                                                                                                </ul>
-                                                                                                                            </div>
-                                                                                                                        </div>
-                                                                                                                    </div>                                                                                                                             
-                                                                                                                </div>
-                                                                                                            </div>
-                                                                                                        </div>-->
+                                                    <div class="panel panel-default">
+                                                        <div class="panel-heading">
+                                                            <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion-2" href="#collapseFor-1" class="collapsed"> <i class="fa fa-fw fa-plus-circle txt-color-green"></i> <i class="fa fa-fw fa-minus-circle txt-color-red"></i>Libros de Elena</a></h4>
+                                                        </div>
+                                                        <div id="collapseFor-1" class="panel-collapse collapse">
+                                                            <div class="">
+                                                                <div class="panel">
+                                                                    <div class="panel-heading">
+                                                                        <div class="col-xs-8 col-sm-9 col-md-9 col-lg-9">
+                                                                            <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion-2" href="#collapseThree1" class="collapsed"> <i class="fa fa-fw fa-plus-circle txt-color-green"></i> <i class="fa fa-fw fa-minus-circle txt-color-red"></i>Libros de Elena G. de White</a></h4>
+                                                                        </div>
+                                                                        <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3 estudio-img">
+                                                                            <div class="row">
+                                                                                <br>
+                                                                                <img src="../images/estudios/patriarcas.jpg" alt="" style="width: 60%"/>
+                                                                            </div>                                 
+                                                                        </div>                                                                      
+                                                                    </div>
+                                                                    <div id="collapseThree1" class="panel-collapse collapse">
+                                                                        <div class="panel-body">
+                                                                            <ul id="estudios">
+                                                                                <li><a id="S1" href="" >El deseado de todas las gentes</a></li>
+                                                                                <li><a id="S2" href="" >Patriarcas y profetas</a></li>
+                                                                                <li><a id="S3" href="" >El Camino a Cristo</a></li>
+<!--                                                                                <li><a id="S4" href="" >Comentarios de Elena G. de White - S4</a></li>
+                                                                                <li><a id="S5" href="" >Comentarios de Elena G. de White - S5</a></li>
+                                                                                <li><a id="S6" href="" >Comentarios de Elena G. de White - S6</a></li>
+                                                                                <li><a id="S7" href="" >Comentarios de Elena G. de White - S7</a></li>
+                                                                                <li><a id="S8" href="" >Comentarios de Elena G. de White - S8</a></li>
+                                                                                <li><a id="S9" href="" >Comentarios de Elena G. de White - S9</a></li> 
+                                                                                <li><a id="S10" href="" >Comentarios de Elena G. de White - S10</a></li>
+                                                                                <li><a id="S11" href="" >Comentarios de Elena G. de White - S11</a></li>
+                                                                                <li><a id="S12" href="" >Comentarios de Elena G. de White - S12</a></li> 
+                                                                                <li><a id="S13" href="" >Comentarios de Elena G. de White - S13</a></li> -->
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>                                                                                                                             
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                 </div>
-
-                                            </div>
+                                            </div>                                           
                                             <!-- end widget content -->
 
                                         </div>
