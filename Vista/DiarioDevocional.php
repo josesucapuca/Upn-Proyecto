@@ -20,7 +20,7 @@ if ($_SESSION["Usuario"] !== null) {
 
             <link href="../css/fullcalendar.min.css" rel="stylesheet" type="text/css"/>
 
-                                                                                <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>-->
+                                                                                    <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>-->
             <style>
                 @media(max-width:750px){
                     .sortable-grid{
@@ -88,12 +88,12 @@ if ($_SESSION["Usuario"] !== null) {
                     vertical-align: middle;
                     background: #F2F2F2;
                 }
-/*                hr {
-                        margin-top: 55rem;
-                        margin-bottom: 1rem;
-                        border: 0;
-                        border-top: 1px solid rgba(0, 0, 0, 0.1);
-                    }*/
+                /*                hr {
+                                        margin-top: 55rem;
+                                        margin-bottom: 1rem;
+                                        border: 0;
+                                        border-top: 1px solid rgba(0, 0, 0, 0.1);
+                                    }*/
             </style>
         </head>     
         <body class="conta2 bod">
@@ -228,77 +228,87 @@ if ($_SESSION["Usuario"] !== null) {
             <div class="modal fade" id="ModalEventos" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content" style="background-image:url(../images/diariodevocional/fodomatutina3.PNG);background-repeat: no-repeat;background-size: cover;background-position: top center;position: relative;">
+
                         <!--<div class="">-->
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="tituloEvento"></h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
                         <div class=" col-xs-12 col-sm-12 col-md-12 col-lg-12 asi">
                             <img src="../images/diariodevocional/logo-adventista.png" alt="" style="width: 15%;"/>
                         </div>
                         <div class=" col-xs-12 col-sm-12 col-md-12 col-lg-12 asi">
                             <h1 style="color: white">Mi Diario Devocional</h1>
                         </div>
-                        <input type="hidden" id="txtID" name="txtID">
-                        <input type="hidden" id="txtFecha" name="txtFecha" />                          
-                        <div class="form-row">
-                            <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                                <div class="form-group has-success">                                
-                                    <div class="input-group">
-                                        <span class="input-group-addon"><i class="far fa-star"> Nombre:</i></span>
-                                        <input type="text" id="txtTitulo" class="form-control" placeholder="Ingresar su nombre">
-                                    </div>                                 
+                        <div class="modal-body">
+                            <input type="hidden" id="txtID_devocional" name="txtID_devocional">
+                            <input type="hidden" id="txtFecha" name="txtFecha" /> 
+                            <input type="hidden" id="txtID_persona" name="txtID_persona" />
+                            <div class="form-row">
+                                <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                    <div class="form-group has-success">                                
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="far fa-star"> Nombre:</i></span>
+                                            <input type="text" id="txtNombre" class="form-control" placeholder="Ingresar su nombre">
+                                        </div>                                 
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                                <div class="form-group has-success">                                
-                                    <div class="input-group">
-                                        <span class="input-group-addon"><i class="far fa-star"> Iglesia / Distrito:</i></span>
-                                        <input type="text" id="txtTitulo" class="form-control" placeholder="Ingresar Iglesia / Distrito">
-                                    </div>                                 
+                                <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                    <div class="form-group has-success">                                
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="far fa-star"> Iglesia / Distrito:</i></span>
+                                            <input type="text" id="txtIgleDistri" class="form-control" placeholder="Ingresar Iglesia / Distrito">
+                                        </div>                                 
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                                <div class="form-group has-success">                                
-                                    <div class="input-group">
-                                        <span class="input-group-addon"><i class="far fa-star">Asociación / Misión:</i></span>
-                                        <input type="text" id="txtTitulo" class="form-control" placeholder="Ingresar Asociación / Misión">
-                                    </div>                                 
+                                <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                    <div class="form-group has-success">                                
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="far fa-star">Asociación / Misión:</i></span>
+                                            <input type="text" id="txtAsoMisio" class="form-control" placeholder="Ingresar Asociación / Misión">
+                                        </div>                                 
+                                    </div>
+                                </div>                                               
+                                <div class="form-group col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                    <div class="form-group has-success">                                
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="far fa-star"> Teléfono:</i></span>
+                                            <input type="text" id="txtTelefono" class="form-control" placeholder="Ingresar su teléfono">
+                                        </div>                                 
+                                    </div>
                                 </div>
-                            </div>                                               
-                            <div class="form-group col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                                <div class="form-group has-success">                                
-                                    <div class="input-group">
-                                        <span class="input-group-addon"><i class="far fa-star"> Teléfono:</i></span>
-                                        <input type="text" id="txtTitulo" class="form-control" placeholder="Ingresar su teléfono">
-                                    </div>                                 
+                                <div class="form-group col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                    <div class="form-group has-success">                                
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="far fa-star"> Email:</i></span>
+                                            <input type="text" id="txtEmail" class="form-control" placeholder="Ingresar su Email">
+                                        </div>                                 
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="form-group col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                                <div class="form-group has-success">                                
-                                    <div class="input-group">
-                                        <span class="input-group-addon"><i class="far fa-star"> Email:</i></span>
-                                        <input type="text" id="txtTitulo" class="form-control" placeholder="Ingresar su Email">
-                                    </div>                                 
+                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                    <div class="form-group has-success">                                
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="far fa-star"> Hora de la Devoción:</i></span>
+                                            <input type="text" id="txtHora" value="10:30" class="form-control"/>
+                                        </div>                                 
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                                <div class="form-group has-success">                                
-                                    <div class="input-group">
-                                        <span class="input-group-addon"><i class="far fa-star"> Hora del evento:</i></span>
-                                        <input type="text" id="txtHora" value="10:30" class="form-control"/>
-                                    </div>                                 
+                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                    <div class="form-group has-success">                                
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="far fa-star">Color del evento:</i></span>
+                                            <input type="color" id="txtColor" value="#ff0000" class="form-control"/>
+                                        </div>                                 
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                                <div class="form-group has-success">                                
-                                    <div class="input-group">
-                                        <span class="input-group-addon"><i class="far fa-star">Color del evento:</i></span>
-                                        <input type="color" id="txtColor" value="#ff0000" class="form-control"/>
-                                    </div>                                 
+                                <div class=" col-xs-12 col-sm-12 col-md-12 col-lg-12 asi">
+                                    <img src="../images/diariodevocional/mayordomia1.png" alt="" style="width: 20%;"/>
                                 </div>
-                            </div>
-                            <div class=" col-xs-12 col-sm-12 col-md-12 col-lg-12 asi">
-                                <img src="../images/diariodevocional/mayordomia1.png" alt="" style="width: 20%;"/>
-                            </div>
-                            <div class=" col-xs-12 col-sm-12 col-md-12 col-lg-12 asi">
-                                <h1 style="color: white">UNIÓN PERUANA DEL NORTE</h1>
+                                <div class=" col-xs-12 col-sm-12 col-md-12 col-lg-12 asi">
+                                    <h1 style="color: white">UNIÓN PERUANA DEL NORTE</h1>
+                                </div>
                             </div>
                         </div>
                         <!--</div>-->
@@ -317,7 +327,7 @@ if ($_SESSION["Usuario"] !== null) {
                                     <div class="form-group has-success">                                
                                         <div class="input-group">
                                             <span class="input-group-addon"><i class="far fa-star"> Texto de Estudio:</i></span>
-                                            <input type="text" id="txtTitulo" class="form-control" placeholder="Ingresar el texto de estudio">
+                                            <input type="text" id="txtTexto" class="form-control" placeholder="Ingresar el texto de estudio">
                                         </div>                                 
                                     </div>
                                 </div>                                
@@ -326,7 +336,7 @@ if ($_SESSION["Usuario"] !== null) {
                                 </div>
                                 <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12">
                                     <div class="form-group">
-                                        <textarea id="txtDescripcion" rows="3" class="form-control"></textarea>
+                                        <textarea id="txtResumen" rows="3" class="form-control"></textarea>
                                     </div>
                                 </div>
                                 <div class=" col-xs-12 col-sm-12 col-md-12 col-lg-12 asi">
@@ -334,7 +344,7 @@ if ($_SESSION["Usuario"] !== null) {
                                 </div>
                                 <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12">
                                     <div class="form-group">
-                                        <textarea id="txtDescripcion" rows="3" class="form-control"></textarea>
+                                        <textarea id="txtAplica" rows="3" class="form-control"></textarea>
                                     </div>
                                 </div>
                                 <div class=" col-xs-12 col-sm-12 col-md-12 col-lg-12 asi">
@@ -342,12 +352,12 @@ if ($_SESSION["Usuario"] !== null) {
                                 </div>
                                 <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                                     <div class="form-group">
-                                        <textarea id="txtDescripcion" rows="3" class="form-control"></textarea>
+                                        <textarea id="txtPedido" rows="3" class="form-control"></textarea>
                                     </div>
                                 </div>
                                 <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                                     <div class="form-group">
-                                        <textarea id="txtDescripcion" rows="3" class="form-control"></textarea>
+                                        <textarea id="txtContestado" rows="3" class="form-control"></textarea>
                                     </div>
                                 </div>
                                 <div class=" col-xs-12 col-sm-12 col-md-12 col-lg-12 asi">
@@ -355,12 +365,12 @@ if ($_SESSION["Usuario"] !== null) {
                                 </div>
                                 <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12">
                                     <div class="form-group">
-                                        <textarea id="txtDescripcion" rows="3" class="form-control"></textarea>
+                                        <textarea id="txtCompartire" rows="3" class="form-control"></textarea>
                                     </div>
                                 </div>
                                 <div class=" col-xs-3 col-sm-3 col-md-3 col-lg-3 asi">
                                     <button type="button" id="btnAgregar" class="btn btn-success">Agregar</button>
-                                    </div>
+                                </div>
                                 <div class=" col-xs-3 col-sm-3 col-md-3 col-lg-3 asi">
                                     <button type="button" id="btnModificar" class="btn btn-warning">Modificar</button>
                                 </div>
@@ -370,10 +380,6 @@ if ($_SESSION["Usuario"] !== null) {
                                 <div class=" col-xs-3 col-sm-3 col-md-3 col-lg-3 asi">
                                     <button type="button" class="btn btn-default" data-dismiss="modal">cancelar</button>
                                 </div>
-                                    
-                                    
-                                    
-                                
                             </div>
                         </div>
                     </div>

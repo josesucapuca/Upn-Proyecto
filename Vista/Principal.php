@@ -371,7 +371,7 @@ if ($_SESSION["Usuario"] !== null) {
                                                         <ul class="list-unstyled text-left">
                                                             <li class="lipri"><i class="fa fa-check text-success"></i> <a href="RepasoLeccion.php"><strong>Repaso de la Leccion</strong></a><li>
                                                             <li class="lipri"><i class="fa fa-check text-success"></i> <a href="ComentarioBiblico.php"><strong>Comentario Biblico</strong></a><li>
-                                                            <li class="lipri"><i class="fa fa-check text-success"></i> <a href="DiarioDevocional.php"><strong>Diario Devocional</strong></a><li>
+                                                            <li class="lipri"><i class="fa fa-check text-success"></i> <a href="DiarioDevocional.php?idpersona=<?php echo $_SESSION["id_Persona"];?>"><strong>Diario Devocional</strong></a><li>
                                                         </ul>
                                                     </div>
                                                 </div>

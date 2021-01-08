@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    alert("entrando calendario");
                 $('#CalendarioWeb').fullCalendar({
                     header: {
                         left: 'today prev,next',
@@ -15,19 +16,30 @@ $(document).ready(function () {
                         $("#ModalEventos").modal();
 
                     },
-                    events: 'http://localhost/calendario/eventos.php',
+                    events: 'http://localhost/Upn-Proyecto/Controlador/Controller-DiarioDevocional.php',
                     eventClick: function (calEvent, jsEvent, view) {
                         
                         $('#btnAgregar').prop("disabled",true);
                         $('#btnModificar').prop("disabled",false);
                         $('#btnEliminar').prop("disabled",false);
                         
-                        $('#tituloEvento').html(calEvent.title);
+                        $('#tituloEvento').html(calEvent.Texto_estudio);
                         //Mostrar información de los eventos
-                        $('#txtDescripcion').val(calEvent.descripcion);
-                        $('#txtID').val(calEvent.ideventos);
-                        $('#txtTitulo').val(calEvent.title);
-                        $('#txtColor').val(calEvent.color);
+                        $('#txtID_devocional').val(calEvent.id_Devocional_Diario);  
+                        $('#txtID_persona').val(calEvent.id_persona);
+                        $('#txtNombre').val(calEvent.No_Persona); 
+                        $('#txtIgleDistri').val(calEvent.Nombre_Iglesia); 
+                        $('#txtIgleDistri').val(calEvent.No_Distrito); 
+                        $('#txtAsoMisio').val(calEvent.No_Mision); 
+                        $('#txtTelefono').val(calEvent.tele_Persona); 
+                        $('#txtEmail').val(calEvent.correo_Persona); 
+                        $('#txtColor').val(calEvent.color);                       
+                        $('#txtTexto').val(calEvent.Texto_estudio);
+                        $('#txtResumen').val(calEvent.Resumen_Personal);
+                        $('#txtAplica').val(calEvent.Aplicacion_Diaria);
+                        $('#txtPedido').val(calEvent.Pedido_Oracion);
+                        $('#txtContestado').val(calEvent.Pedido_Oracion);
+                        $('#txtCompartire').val(calEvent.Compartir_Fe);
                         FechaHora = calEvent.start._i.split(" ");
                         $('#txtFecha').val(FechaHora[0]);
                         $('#txtHora').val(FechaHora[1]);
@@ -37,10 +49,21 @@ $(document).ready(function () {
                     },
                     editable: true,
                     eventDrop: function (calEvent) {
-                        $('#txtID').val(calEvent.ideventos);
-                        $('#txtTitulo').val(calEvent.title);
-                        $('#txtColor').val(calEvent.color);
-                        $('#txtDescripcion').val(calEvent.descripcion);
+                        $('#txtID_devocional').val(calEvent.id_Devocional_Diario);  
+                        $('#txtID_persona').val(calEvent.id_persona);
+                        $('#txtNombre').val(calEvent.No_Persona); 
+                        $('#txtIgleDistri').val(calEvent.Nombre_Iglesia); 
+                        $('#txtIgleDistri').val(calEvent.No_Distrito); 
+                        $('#txtAsoMisio').val(calEvent.No_Mision); 
+                        $('#txtTelefono').val(calEvent.tele_Persona); 
+                        $('#txtEmail').val(calEvent.correo_Persona); 
+                        $('#txtColor').val(calEvent.color);                       
+                        $('#txtTexto').val(calEvent.Texto_estudio);
+                        $('#txtResumen').val(calEvent.Resumen_Personal);
+                        $('#txtAplica').val(calEvent.Aplicacion_Diaria);
+                        $('#txtPedido').val(calEvent.Pedido_Oracion);
+                        $('#txtContestado').val(calEvent.Pedido_Oracion);
+                        $('#txtCompartire').val(calEvent.Compartir_Fe);
 
                         var fechaHora = calEvent.start.format().split("T");
                         $('#txtFecha').val(fechaHora[0]);
@@ -69,20 +92,32 @@ var NuevoEvento;
                 EnviarInformacion('modificar', NuevoEvento);
             });
             function RecolectarDatos() {
-                NuevoEvento = {
-                    ideventos: $('#txtID').val(),
-                    title: $('#txtTitulo').val(),
-                    start: $('#txtFecha').val() + " " + $('#txtHora').val(),
+                alert("entrando a Datos");
+                NuevoEvento = {                  
+                        
+                    id_Devocional_Diario: $('#txtID_devocional').val(),
+                    id_Persona: $('#txtID_persona').val(),
+                    No_Persona: $('#txtNombre').val(),
+                    Nombre_Iglesia: $('#txtIgleDistri').val(),
+                    No_Distrito: $('#txtIgleDistri').val(),
+                    No_Mision: $('#txtAsoMisio').val(),
+                    tele_Persona: $('#txtTelefono').val(),
+                    correo_Persona: $('#correo_Persona').val(),
                     color: $('#txtColor').val(),
-                    descripcion: $('#txtDescripcion').val(),
-                    textColor: "#FFFFFF",
-                    end: $('#txtFecha').val() + " " + $('#txtHora').val()
+                    Texto_estudio: $('#txtTexto').val(),
+                    Resumen_Personal: $('#txtResumen').val(),
+                    Aplicacion_Diaria: $('#txtAplica').val(),
+                    Pedido_Oracion: $('#txtPedido').val() + " " + $('#txtContestado').val(),                  
+                    HoraFecha: $('#txtFecha').val() + " " + $('#txtHora').val(),                 
+                    Compartir_Fe: $('#txtCompartire').val(),
+                    textColor: "#FFFFFF"
+                    
                 };
             }
             function EnviarInformacion(accion, objEvento, modal) {
                 $.ajax({
                     type: 'POST',
-                    url: 'eventos.php?accion=' + accion,
+                    url: 'Controlador/Controller-DiarioDevocional.php?accion=' + accion,
                     data: objEvento,
                     success: function (msg) {
                         if (msg) {
@@ -100,10 +135,15 @@ var NuevoEvento;
             }
 
             function limpiar() {
-                $('#txtID').val('');
-                $('#txtTitulo').val('');
+                $('#txtID_devocional').val('');
+                $('#txtID_persona').val('');
                 $('#txtColor').val('');
-                $('#txtDescripcion').val('');
+                $('#txtTexto').val('');
+                $('#txtResumen').val('');
+                $('#txtAplica').val('');
+                $('#txtPedido').val('');
+                $('#txtContestado').val('');
+                $('#txtCompartire').val('');               
             }
 
 
