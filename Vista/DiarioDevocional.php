@@ -240,7 +240,7 @@ if ($_SESSION["Usuario"] !== null) {
                             <img src="../images/diariodevocional/logo-adventista.png" alt="" style="width: 15%;"/>
                         </div>
                         <div class=" col-xs-12 col-sm-12 col-md-12 col-lg-12 asi">
-                            <h1 style="color: white">Mi Diario Devocional</h1>
+                            <h1 style="color: white">Mi Diario Devocional :D</h1>
                         </div>
                         <div class="modal-body">
                             <input type="hidden" id="txtID_devocional" name="txtID_devocional">
