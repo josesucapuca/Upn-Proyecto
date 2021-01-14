@@ -3,6 +3,10 @@
 header('Conten-Type: application/json');
 $pdo = new PDO("mysql:dbname=proyecto_upn;host=localhost", "root", "12345678");
 
+$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+$pdo->exec("SET CHARACTER SET utf8");
+
 
 $accion = (isset($_GET['accion'])) ? $_GET['accion'] : 'leer';
 
@@ -65,16 +69,23 @@ switch ($accion) {
 //        $prepare->execute(array(':id_Persona' => $_POST['id_Persona']));
 //        $movimientos = $prepare->fetchAll(PDO::FETCH_ASSOC);
 //        return $movimientos;
-    $id_Persona = "133";    
-$datos = $pdo->prepare("Select * from devocional_diario where id_Persona = :id_Persona");
+//    $person = "8";   
+        $person= $_GET["id_Persona"];
+$sql ="select d.id_Devocional_Diario,d.id_Persona,r.No_Persona,i.Nombre_Iglesia,s.No_Distrito,n.No_Mision,r.tele_Persona,r.correo_Persona, t.Fe_Detalle_Devocional_Diario, t.color,t.textColor, t.Texto_estudio, t.Resumen_Personal, t.Aplicacion_Diaria, p.Pedido_Oracion, c.id_Pedido_Oracion, m.Meta from devocional_diario d, detalle_devocional_diario t, meta_devocional_diario m, pedido_oracion p, pedido_contestado c, persona r, iglesia i, distrito s, mision n where d.id_Persona=r.id_Persona and  r.id_Iglesia=i.id_Iglesia and i.id_Distrito=s.id_Distrito and s.id_Mision=n.id_Mision and r.id_Persona=?";
 //$dat= array();
-$datos->execute(array("id_Persona" => $_GET['id_Persona'])); 
+//$datos->execute(array("id_Persona" => $id_Persona)); 
 
-        $respuesta = $datos->fetchAll(PDO::FETCH_ASSOC);
-//$respuesta = $query->excute(array($myinsecuredata));
+//        $respuesta = $datos->fetchAll(PDO::FETCH_ASSOC);
+
 //        echo $respuesta->id_Persona;
-        echo json_encode($respuesta);
-        echo json_encode($datos);
+        $resultado=$pdo->prepare($sql);
+        $resultado->execute(array($person));
+        $registro=$resultado->fetchAll(PDO::FETCH_ASSOC);
+//        while($registro=$resultado->fetch(PDO::FETCH_ASSOC)){
+//             echo json_encode($registro);
+//        }
+        echo json_encode($registro);
+//        echo json_encode($datos);
         break;
 //        $sentenciaSQL = $pdo->prepare("  select * from devocional_diario d where d.id_Persona=:ID");
 //        $respuesta = $sentenciaSQL->execute(array("ID"=>$_POST['id_Persona']));

@@ -292,7 +292,7 @@ if ($_SESSION["Usuario"] !== null) {
                                                     <div style="width: 100%;text-align: center">
                                                         <img src="../images/iconos/icon-Biblia-personal.png" style="max-width: 55px">
                                                         <h3 class="panel-title titop">
-                                                            Estudios Biblicos</h3>
+                                                            Estudios Bíblicos</h3>
                                                     </div>
                                                 </div>
                                                 <div class="panel-body no-padding text-align-center pan-bod-esBi panelm-white" style="border-radius: 0px 0px 10px 10px">
@@ -358,7 +358,7 @@ if ($_SESSION["Usuario"] !== null) {
                                                     <div style="width: 100%;text-align: center">
                                                         <img  src="../images/iconos/icon-Biblia-personal.png" style="max-width: 55px">
                                                         <h3 class="panel-title titop">
-                                                            Escuela Sabatica</h3>
+                                                            Escuela Sabática</h3>
                                                     </div>
                                                 </div>
                                                 <div class="panel-body no-padding text-align-center pan-bod-escu panelm-white" style="border-radius: 0px 0px 10px 10px">
@@ -369,9 +369,9 @@ if ($_SESSION["Usuario"] !== null) {
                                                     </div>
                                                     <div class="price-features">
                                                         <ul class="list-unstyled text-left">
-                                                            <li class="lipri"><i class="fa fa-check text-success"></i> <a href="RepasoLeccion.php"><strong>Repaso de la Leccion</strong></a><li>
-                                                            <li class="lipri"><i class="fa fa-check text-success"></i> <a href="ComentarioBiblico.php"><strong>Comentario Biblico</strong></a><li>
-                                                            <li class="lipri"><i class="fa fa-check text-success"></i> <a href="DiarioDevocional.php?idpersona=<?php echo $_SESSION["id_Persona"];?>"><strong>Diario Devocional</strong></a><li>
+                                                            <li class="lipri"><i class="fa fa-check text-success"></i> <a href="RepasoLeccion.php"><strong>Repaso de la Lección</strong></a><li>
+                                                            <li class="lipri"><i class="fa fa-check text-success"></i> <a href="ComentarioBiblico.php"><strong>Comentario Bíblico</strong></a><li>
+                                                            <li class="lipri"><i class="fa fa-check text-success"></i> <a id="id_Persona" name="id_Persona" href="DiarioDevocional.php?idpersona=<?php echo $_SESSION["id_Persona"];?>"><strong>Diario Devocional</strong></a><li>
                                                         </ul>
                                                     </div>
                                                 </div>
@@ -434,6 +434,7 @@ if ($_SESSION["Usuario"] !== null) {
             <?php include_once './inc2/scripts.php'; ?>
             <script src="../js/Principal/Principal.js"></script>
             <script src="../js/Logueo/Validacion.js" type="text/javascript"></script>
+            <!--<script src="../js/EstudiosBiblicos/DevocionalDiario.js" type="text/javascript"></script>-->
             <script type="text/javascript">
 
                 $(document).ready(function () {

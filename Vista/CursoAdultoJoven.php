@@ -176,25 +176,7 @@ if ($_SESSION["Usuario"] !== null) {
                             </div>
                             <!-- fullscreen button -->
                         </div>
-                    </div>
-
-                    <!-- RIBBON -->
-                    <!--                        <div id="ribbon">
-                    
-                                                <span class="ribbon-button-alignment"> 
-                                                    <span id="refresh" class="btn btn-ribbon" data-action="resetWidgets" data-title="refresh"  rel="tooltip" data-placement="bottom" data-original-title="<i class='text-warning fa fa-warning'></i> Warning! This will reset all your widget settings." data-html="true">
-                                                        <i class="fa fa-refresh"></i>
-                                                    </span> 
-                                                </span>
-                    
-                                                 breadcrumb 
-                                                <ol class="breadcrumb">
-                                                    <li>Jose Sucapuca</li><li>Cursos Bíblicos Adultos y Jóvenes</li>
-                                                </ol>
-                    
-                                            </div>-->
-                    <!-- END RIBBON -->
-
+                    </div>                
                     <!-- MAIN CONTENT -->
                     <div id="content" style="margin-bottom: 0px;display: flow-root;height: 100%;">
 
@@ -219,20 +201,7 @@ if ($_SESSION["Usuario"] !== null) {
                                 <article class="col-xs-12 col-sm-5 col-md-5 col-lg-5" style="margin-bottom: 30px">
 
                                     <!-- Widget ID (each widget will need unique ID)-->
-                                    <div class="jarviswidget jarviswidget-color-blueLight" id="wid-id-10" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-togglebutton="false" data-widget-deletebutton="false" data-widget-fullscreenbutton="false" data-widget-custombutton="false" data-widget-sortable="false">
-                                        <!-- widget options:
-                                        usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
-
-                                        data-widget-colorbutton="false"
-                                        data-widget-editbutton="false"
-                                        data-widget-togglebutton="false"
-                                        data-widget-deletebutton="false"
-                                        data-widget-fullscreenbutton="false"
-                                        data-widget-custombutton="false"
-                                        data-widget-collapsed="true"
-                                        data-widget-sortable="false"
-
-                                        -->
+                                    <div class="jarviswidget jarviswidget-color-blueLight" id="wid-id-10" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-togglebutton="false" data-widget-deletebutton="false" data-widget-fullscreenbutton="false" data-widget-custombutton="false" data-widget-sortable="false">                                      
                                         <header>
                                             <span class="widget-icon"> <i class="fa fa-book"></i> </span>
                                             <h2>Cursos Bíblicos Adultos y Jóvenes </h2>
@@ -337,7 +306,7 @@ if ($_SESSION["Usuario"] !== null) {
                                                                 <div class="panel ">
                                                                     <div class="panel-heading">
                                                                         <div class="col-xs-8 col-sm-9 col-md-9 col-lg-9">
-                                                                            <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion-2" href="#collapseThree-3" class="collapsed"> <i class="fa fa-fw fa-plus-circle txt-color-green"></i> <i class="fa fa-fw fa-minus-circle txt-color-red"></i> El gran conflicto  </a></h4>        
+                                                                            <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion-2" href="#collapseThree-3" class="collapsed"> <i class="fa fa-fw fa-plus-circle txt-color-green"></i> <i class="fa fa-fw fa-minus-circle txt-color-red"></i> El gran conflicto</a></h4>        
                                                                         </div>
                                                                         <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3 estudio-img">
                                                                             <div class="row">
@@ -575,7 +544,7 @@ if ($_SESSION["Usuario"] !== null) {
                                                     </div>
                                                     <div class="panel panel-default">
                                                         <div class="panel-heading">
-                                                            <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion-2" href="#collapseFor-1" class="collapsed"> <i class="fa fa-fw fa-plus-circle txt-color-green"></i> <i class="fa fa-fw fa-minus-circle txt-color-red"></i> Cursos Bíblicos para Jovenes </a></h4>
+                                                            <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion-2" href="#collapseFor-1" class="collapsed"> <i class="fa fa-fw fa-plus-circle txt-color-green"></i> <i class="fa fa-fw fa-minus-circle txt-color-red"></i> Cursos Bíblicos para Jóvenes </a></h4>
                                                         </div>
                                                         <div id="collapseFor-1" class="panel-collapse collapse">
                                                             <div class="">
@@ -611,7 +580,7 @@ if ($_SESSION["Usuario"] !== null) {
                                                                 <div class="panel">
                                                                     <div class="panel-heading">
                                                                         <div class="col-xs-8 col-sm-9 col-md-9 col-lg-9">
-                                                                            <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion-2" href="#collapseThree2" class="collapsed"> <i class="fa fa-fw fa-plus-circle txt-color-green"></i> <i class="fa fa-fw fa-minus-circle txt-color-red"></i> La fe de Jesús  </a></h4>        
+                                                                            <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion-2" href="#collapseThree2" class="collapsed"> <i class="fa fa-fw fa-plus-circle txt-color-green"></i> <i class="fa fa-fw fa-minus-circle txt-color-red"></i> La fe de Jesús</a></h4>        
                                                                         </div>
                                                                         <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3 estudio-img">
                                                                             <div class="row">
@@ -646,46 +615,26 @@ if ($_SESSION["Usuario"] !== null) {
                                     </div>
                                     <!-- end widget -->
                                     <!-- Widget ID (each widget will need unique ID)-->
-                                    <div class="jarviswidget" id="wid-id-1" data-widget-editbutton="true">
-                                        <!-- widget options:
-                                        usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
-
-                                        data-widget-colorbutton="false"
-                                        data-widget-editbutton="false"
-                                        data-widget-togglebutton="false"
-                                        data-widget-deletebutton="false"
-                                        data-widget-fullscreenbutton="false"
-                                        data-widget-custombutton="false"
-                                        data-widget-collapsed="true"
-                                        data-widget-sortable="false"
-
-                                        -->
+                                    <div class="jarviswidget" id="wid-id-1" data-widget-editbutton="true">                                 
                                         <header>
                                             <span class="widget-icon"> <i class="fa fa-book"></i> </span>
                                             <h2>Biblia</h2>
-
                                         </header>
-
                                         <!-- widget div-->
                                         <div>
-
                                             <!-- widget edit box -->
                                             <div class="jarviswidget-editbox">
                                                 <!-- This area used as dropdown edit box -->
-
                                             </div>
                                             <!-- end widget edit box -->
-
                                             <!-- widget content -->
                                             <div class="widget-body no-padding">
                                                 <iframe src="Biblia.php" width="100%" height="486px"></iframe>
                                             </div>
                                             <!-- end widget content -->
-
                                         </div>
                                     </div>
                                     <!-- end widget -->
-
                                 </article>
                                 <!-- WIDGET END -->
                                 <article class="col-xs-12 col-sm-7 col-md-7 col-lg-7" style="margin-bottom: 30px">
@@ -713,8 +662,8 @@ if ($_SESSION["Usuario"] !== null) {
                 <!-- PAGE FOOTER -->
                             <div class="">
                                 <div class="row">
-                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                                        <img src="../images/estudios/personasjoveadul.png" alt="" style="width: 100%"/>
+                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 abs-center">
+                                        <img src="../images/estudios/personasjoveadul.png" alt="" style="width: 90%; height: 600px"/>
                                         <!--<span class="txt-color-white">SmartAdmin 1.5 <span class="hidden-xs"> - Web Application Framework</span> © 2014-2015</span>-->
                                     </div>
                 

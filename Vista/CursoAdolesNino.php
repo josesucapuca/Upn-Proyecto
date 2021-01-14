@@ -2,7 +2,8 @@
 session_start();
 if ($_SESSION["Usuario"] !== null) {
     ?><!DOCTYPE html>
-    <html lang="es" style="background-image: url('../images/FONDONIÑOS.png');">
+    <html lang="es" style="background-image: url('../images/estudios/fondo.png');background-size: cover;background-position: top center;
+          background-repeat: no-repeat;position: relative;float: left;width: 100%;">
         <head>
 
             <!--<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">-->
@@ -118,7 +119,7 @@ if ($_SESSION["Usuario"] !== null) {
                                         </li>
                                         <li class="divider"></li>
                                         <li>
-                                            <a href="profile.html" class="padding-10 padding-top-0 padding-bottom-0"> <i class="fa fa-user"></i> <u>P</u>erfil</a>
+                                            <a href="Perfil.php" class="padding-10 padding-top-0 padding-bottom-0"> <i class="fa fa-user"></i> <u>P</u>erfil</a>
                                         </li>
                                         <li class="divider"></li>
 
@@ -157,7 +158,7 @@ if ($_SESSION["Usuario"] !== null) {
                                             </li>
                                             <li class="divider"></li>
                                             <li>
-                                                <a href="profile.html" class="padding-10 padding-top-0 padding-bottom-0"> <i class="fa fa-user"></i> <u>P</u>erfil</a>
+                                                <a href="Perfil.php" class="padding-10 padding-top-0 padding-bottom-0"> <i class="fa fa-user"></i> <u>P</u>erfil</a>
                                             </li>
                                             <li class="divider"></li>
 
@@ -202,7 +203,7 @@ if ($_SESSION["Usuario"] !== null) {
                             <div class="col-xs-12 col-sm-7 col-md-7 col-lg-4 abs-center" style="text-align: center;">
                                 <!--<div class="row"></div>-->
                                 <div class="row">
-                                    <img src="../images/LETRASESTUDIONIÑOS.png" alt="" style="width: 100%"/>
+                                    <img src="../images/estudios/LETRASESTUDIO NIÑOS.png" alt="" style="width: 100%"/>
                                 </div>
 
             <!--<h1 class="page-title txt-color-blueDark" style="font-weight: 600"><i class="fa fa-book"></i> Cursos Bíblicos Adultos y Jóvenes</h1>-->
@@ -220,19 +221,7 @@ if ($_SESSION["Usuario"] !== null) {
 
                                     <!-- Widget ID (each widget will need unique ID)-->
                                     <div class="jarviswidget jarviswidget-color-blueLight" id="wid-id-10" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-togglebutton="false" data-widget-deletebutton="false" data-widget-fullscreenbutton="false" data-widget-custombutton="false" data-widget-sortable="false">
-                                        <!-- widget options:
-                                        usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
-
-                                        data-widget-colorbutton="false"
-                                        data-widget-editbutton="false"
-                                        data-widget-togglebutton="false"
-                                        data-widget-deletebutton="false"
-                                        data-widget-fullscreenbutton="false"
-                                        data-widget-custombutton="false"
-                                        data-widget-collapsed="true"
-                                        data-widget-sortable="false"
-
-                                        -->
+                                        
                                         <header>
                                             <span class="widget-icon"> <i class="fa fa-book"></i> </span>
                                             <h2>Cursos Bíblicos Adolescentes y Niños </h2>
@@ -294,7 +283,7 @@ if ($_SESSION["Usuario"] !== null) {
                                                                 <div class="panel">
                                                                     <div class="panel-heading">
                                                                         <div class="col-xs-8 col-sm-9 col-md-9 col-lg-9">
-                                                                            <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion-2" href="#collapseThree-2" class="collapsed"> <i class="fa fa-fw fa-plus-circle txt-color-green"></i> <i class="fa fa-fw fa-minus-circle txt-color-red"></i> Explorando de la verdad</a></h4>
+                                                                            <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion-2" href="#collapseThree-2" class="collapsed"> <i class="fa fa-fw fa-plus-circle txt-color-green"></i> <i class="fa fa-fw fa-minus-circle txt-color-red"></i> Exploradores de la verdad</a></h4>
                                                                         </div>
                                                                         <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3 estudio-img">
                                                                             <div class="row">
@@ -371,7 +360,7 @@ if ($_SESSION["Usuario"] !== null) {
                                                                 <div class="panel">
                                                                     <div class="panel-heading">
                                                                         <div class="col-xs-8 col-sm-9 col-md-9 col-lg-9">
-                                                                            <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion-2" href="#collapseThree2" class="collapsed"> <i class="fa fa-fw fa-plus-circle txt-color-green"></i> <i class="fa fa-fw fa-minus-circle txt-color-red"></i> Jesus y Yo </a></h4>
+                                                                            <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion-2" href="#collapseThree2" class="collapsed"> <i class="fa fa-fw fa-plus-circle txt-color-green"></i> <i class="fa fa-fw fa-minus-circle txt-color-red"></i> Jesús y Yo </a></h4>
                                                                         </div>
                                                                         <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3 estudio-img">
                                                                             <div class="row">
@@ -401,7 +390,7 @@ if ($_SESSION["Usuario"] !== null) {
                                                                 <div class="panel">
                                                                     <div class="panel-heading">
                                                                         <div class="col-xs-8 col-sm-9 col-md-9 col-lg-9">
-                                                                            <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion-2" href="#collapseThree3" class="collapsed"> <i class="fa fa-fw fa-plus-circle txt-color-green"></i> <i class="fa fa-fw fa-minus-circle txt-color-red"></i> Yo creo - infantil </a></h4>
+                                                                            <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion-2" href="#collapseThree3" class="collapsed"> <i class="fa fa-fw fa-plus-circle txt-color-green"></i> <i class="fa fa-fw fa-minus-circle txt-color-red"></i> Yo creo - Infantil </a></h4>
                                                                         </div>
                                                                         <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3 estudio-img">
                                                                             <div class="row">
@@ -443,20 +432,7 @@ if ($_SESSION["Usuario"] !== null) {
                                     </div>
                                     <!-- end widget -->
                                     <!-- Widget ID (each widget will need unique ID)-->
-                                    <div class="jarviswidget" id="wid-id-1" data-widget-editbutton="true">
-                                        <!-- widget options:
-                                        usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
-
-                                        data-widget-colorbutton="false"
-                                        data-widget-editbutton="false"
-                                        data-widget-togglebutton="false"
-                                        data-widget-deletebutton="false"
-                                        data-widget-fullscreenbutton="false"
-                                        data-widget-custombutton="false"
-                                        data-widget-collapsed="true"
-                                        data-widget-sortable="false"
-
-                                        -->
+                                    <div class="jarviswidget" id="wid-id-1" data-widget-editbutton="true">                                      
                                         <header>
                                             <span class="widget-icon"> <i class="fa fa-book"></i> </span>
                                             <h2>Biblia</h2>
@@ -508,13 +484,14 @@ if ($_SESSION["Usuario"] !== null) {
                     <!-- END MAIN PANEL -->
                 </div>
                 <!-- PAGE FOOTER -->
-                <!--            <div class="page-footer">
+                <div class="">
                                 <div class="row">
-                                    <div class="col-xs-12 col-sm-6">
-                                        <span class="txt-color-white">SmartAdmin 1.5 <span class="hidden-xs"> - Web Application Framework</span> © 2014-2015</span>
+                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 abs-center">
+                                        <img src="../images/estudios/niños.png" alt="" style="width: 80%; height: 700px"/>
+                                        <!--<span class="txt-color-white">SmartAdmin 1.5 <span class="hidden-xs"> - Web Application Framework</span> © 2014-2015</span>-->
                                     </div>
                 
-                                    <div class="col-xs-6 col-sm-6 text-right hidden-xs">
+<!--                                    <div class="col-xs-6 col-sm-6 text-right hidden-xs">
                                         <div class="txt-color-white inline-block">
                                             <i class="txt-color-blueLight hidden-mobile">Last account activity <i class="fa fa-clock-o"></i> <strong>52 mins ago &nbsp;</strong> </i>
                                             <div class="btn-group dropup">
@@ -557,9 +534,9 @@ if ($_SESSION["Usuario"] !== null) {
                                                 </ul>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div>-->
                                 </div>
-                            </div>-->
+                            </div>
                 <!-- END PAGE FOOTER -->
             </div>
 

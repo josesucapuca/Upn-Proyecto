@@ -17,10 +17,8 @@ if ($_SESSION["Usuario"] !== null) {
             <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
             <!--NUEVO-->
             <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">-->
-
             <link href="../css/fullcalendar.min.css" rel="stylesheet" type="text/css"/>
-
-                                                                                    <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>-->
+<!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>-->
             <style>
                 @media(max-width:750px){
                     .sortable-grid{
@@ -30,6 +28,7 @@ if ($_SESSION["Usuario"] !== null) {
                         height: 50vh !important;
                     }
                 }
+                /*pantalla normal*/
                 @media only screen and (min-width: 500px) and (max-width: 1600px){
                     .conta2 {
                         width: 100%;
@@ -38,7 +37,7 @@ if ($_SESSION["Usuario"] !== null) {
                         height: 100%;
                     }
                     hr {
-                        margin-top: 55rem;
+                        margin-top: 60rem;
                         margin-bottom: 1rem;
                         border: 0;
                         border-top: 1px solid rgba(0, 0, 0, 0.1);
@@ -49,12 +48,13 @@ if ($_SESSION["Usuario"] !== null) {
                         height: 804px;
                     }
                     hr {
-                        margin-top: 67rem;
+                        margin-top: 75rem;
                         margin-bottom: 1rem;
                         border: 0;
                         border-top: 1px solid rgba(0, 0, 0, 0.1);
                     }
                 }
+                /*modo celular*/ 
                 @media screen and (max-width: 600px) {
                     .conta2 {
                         height: 767px;
@@ -102,16 +102,10 @@ if ($_SESSION["Usuario"] !== null) {
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="margin-left: 0px;margin-right: 0px;padding-left: 0px;padding-right: 0px;height: 90%;">
                     <div id="header" style="background: none;">
                         <div id="logo-group">
-
                             <!-- PLACE YOUR LOGO HERE -->
-                            <span id="logo"> <img class="imglog" src="../images/img_logo/adventist-es--white.png" alt="" > </span>
-                            <!-- END LOGO PLACEHOLDER -->
-
-                            <!-- Note: The activity badge color changes when clicked and resets the number to 0
-                            Suggestion: You may want to set a flag when this happens to tick off all checked messages / notifications -->
+                            <span id="logo"> <img class="imglog" src="../images/img_logo/adventist-es--white.png" alt="" > </span>                 
                         </div>
                         <div class="pull-right">
-
                             <!-- Top menu profile link : this shows only when top menu is active -->
                             <ul id="mobile-profile-img" class="header-dropdown-list padding-5">
                                 <li class="LiReporte" style="display: none">
@@ -144,7 +138,6 @@ if ($_SESSION["Usuario"] !== null) {
                                     </ul>
                                 </li>
                             </ul>
-
                             <!-- logout button -->
                             <div id="" class="transparent pull-right">
                                 <ul id="" class="header-dropdown-list ">
@@ -201,17 +194,13 @@ if ($_SESSION["Usuario"] !== null) {
                                         <header>
                                             <span class="widget-icon"> <i class="fa fa-edit"></i> </span>
                                             <h2>Diario Devocional</h2>
-                                        </header>
-                                        <!-- widget div-->
-                                        <!--<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">-->
-                                        <!-- end widget edit box -->
-                                        <!-- widget content -->
+                                        </header>                                       
                                         <div class="widget-grid no-padding" style="min-height: 0px">
                                             <div id="content" style="margin-bottom: 100px;">
                                                 <div class="row">
                                                     <!--<div class="col"></div>--> 
-                                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                                                        <div id="CalendarioWeb"></div>
+                                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">                                                      
+                                                        <div id="CalendarioWeb"></div>                                                                                                               
                                                     </div>
                                                     <!--<div class="col"></div>-->
                                                 </div>  
@@ -225,33 +214,33 @@ if ($_SESSION["Usuario"] !== null) {
                     </div>
                 </div>
             </div>
-            <div class="modal fade" id="ModalEventos" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal fade" id="ModalDevocional" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
-                    <div class="modal-content" style="background-image:url(../images/diariodevocional/fodomatutina3.PNG);background-repeat: no-repeat;background-size: cover;background-position: top center;position: relative;">
-
+                    <div class="modal-content" style="background-image:url(../images/diariodevocional/fondodiariodevocional.png);background-repeat: no-repeat;background-size: cover;background-position: top center;position: relative;">
                         <!--<div class="">-->
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="tituloEvento"></h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
+                        <!--                        <div class="modal-header">
+                                                    <h5 class="modal-title" id="tituloEvento"></h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>-->
                         <div class=" col-xs-12 col-sm-12 col-md-12 col-lg-12 asi">
                             <img src="../images/diariodevocional/logo-adventista.png" alt="" style="width: 15%;"/>
                         </div>
                         <div class=" col-xs-12 col-sm-12 col-md-12 col-lg-12 asi">
-                            <h1 style="color: white">Mi Diario Devocional :D</h1>
+                            <img src="../images/diariodevocional/letradiariodevocional.png" alt="" style="width: 70%;"/>
+                            <!--<h1 style="color: white">Mi Diario Devocional</h1>-->
                         </div>
                         <div class="modal-body">
                             <input type="hidden" id="txtID_devocional" name="txtID_devocional">
                             <input type="hidden" id="txtFecha" name="txtFecha" /> 
-                            <input type="hidden" id="txtID_persona" name="txtID_persona" />
+                            <input type="hidden" id="id_Persona" name="id_Persona"/>
                             <div class="form-row">
                                 <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12">
                                     <div class="form-group has-success">                                
                                         <div class="input-group">
                                             <span class="input-group-addon"><i class="far fa-star"> Nombre:</i></span>
-                                            <input type="text" id="txtNombre" class="form-control" placeholder="Ingresar su nombre">
+                                            <input type="text" id="txtNombre" name="No_Persona" class="form-control" placeholder="Ingresar su nombre">
                                         </div>                                 
                                     </div>
                                 </div>
@@ -259,7 +248,7 @@ if ($_SESSION["Usuario"] !== null) {
                                     <div class="form-group has-success">                                
                                         <div class="input-group">
                                             <span class="input-group-addon"><i class="far fa-star"> Iglesia / Distrito:</i></span>
-                                            <input type="text" id="txtIgleDistri" class="form-control" placeholder="Ingresar Iglesia / Distrito">
+                                            <input type="text" id="txtIgleDistri" name="Nombre_Iglesia" class="form-control" placeholder="Ingresar Iglesia / Distrito">
                                         </div>                                 
                                     </div>
                                 </div>
@@ -267,7 +256,7 @@ if ($_SESSION["Usuario"] !== null) {
                                     <div class="form-group has-success">                                
                                         <div class="input-group">
                                             <span class="input-group-addon"><i class="far fa-star">Asociación / Misión:</i></span>
-                                            <input type="text" id="txtAsoMisio" class="form-control" placeholder="Ingresar Asociación / Misión">
+                                            <input type="text" id="txtAsoMisio" name="No_Mision" class="form-control" placeholder="Ingresar Asociación / Misión">
                                         </div>                                 
                                     </div>
                                 </div>                                               
@@ -275,15 +264,15 @@ if ($_SESSION["Usuario"] !== null) {
                                     <div class="form-group has-success">                                
                                         <div class="input-group">
                                             <span class="input-group-addon"><i class="far fa-star"> Teléfono:</i></span>
-                                            <input type="text" id="txtTelefono" class="form-control" placeholder="Ingresar su teléfono">
+                                            <input type="text" id="txtTelefono" name="tele_Persona" class="form-control" placeholder="Ingresar su teléfono">
                                         </div>                                 
                                     </div>
                                 </div>
                                 <div class="form-group col-xs-12 col-sm-6 col-md-6 col-lg-6">
                                     <div class="form-group has-success">                                
                                         <div class="input-group">
-                                            <span class="input-group-addon"><i class="far fa-star"> Email:</i></span>
-                                            <input type="text" id="txtEmail" class="form-control" placeholder="Ingresar su Email">
+                                            <span class="input-group-addon"><i class="far fa-star"> Correo:</i></span>
+                                            <input type="text" id="correo_Persona" name="correo_Persona" class="form-control" placeholder="Ingresar su Email">
                                         </div>                                 
                                     </div>
                                 </div>
@@ -291,15 +280,15 @@ if ($_SESSION["Usuario"] !== null) {
                                     <div class="form-group has-success">                                
                                         <div class="input-group">
                                             <span class="input-group-addon"><i class="far fa-star"> Hora de la Devoción:</i></span>
-                                            <input type="text" id="txtHora" value="10:30" class="form-control"/>
+                                            <input type="text" id="txtFecha" name="Fe_Detalle_Devocional_Diario" value="10:30" class="form-control"/>
                                         </div>                                 
                                     </div>
                                 </div>
                                 <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                                     <div class="form-group has-success">                                
                                         <div class="input-group">
-                                            <span class="input-group-addon"><i class="far fa-star">Color del evento:</i></span>
-                                            <input type="color" id="txtColor" value="#ff0000" class="form-control"/>
+                                            <span class="input-group-addon"><i class="far fa-star">Color del Diario Devocional:</i></span>
+                                            <input type="color" id="txtColor" name="color" value="#ff0000" class="form-control"/>
                                         </div>                                 
                                     </div>
                                 </div>
@@ -319,7 +308,8 @@ if ($_SESSION["Usuario"] !== null) {
                                     <img src="../images/diariodevocional/mayordomia2.png" width="100" height="100">
                                 </div>
                                 <div class="col-xs-8 col-sm-6 col-md-6 col-lg-6 abs-center">
-                                    <div class="row"><h1 style="color: white">Mi Diario Devocional</h1> </div>                                                                
+                                    <img src="../images/diariodevocional/letradiariodevocional.png" alt="" style="width: 80%;"/>
+                                    <!--<div class="row"><h1 style="color: white">Mi Diario Devocional</h1> </div>-->                                                                
                                 </div>
                             </div>
                             <div class="form-row">
@@ -327,7 +317,7 @@ if ($_SESSION["Usuario"] !== null) {
                                     <div class="form-group has-success">                                
                                         <div class="input-group">
                                             <span class="input-group-addon"><i class="far fa-star"> Texto de Estudio:</i></span>
-                                            <input type="text" id="txtTexto" class="form-control" placeholder="Ingresar el texto de estudio">
+                                            <input type="text" id="txtTexto" name="Texto_estudio" class="form-control" placeholder="Ingresar el texto de estudio">
                                         </div>                                 
                                     </div>
                                 </div>                                
@@ -336,7 +326,7 @@ if ($_SESSION["Usuario"] !== null) {
                                 </div>
                                 <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12">
                                     <div class="form-group">
-                                        <textarea id="txtResumen" rows="3" class="form-control"></textarea>
+                                        <textarea id="txtResumen" name="Resumen_Personal" rows="3" class="form-control"></textarea>
                                     </div>
                                 </div>
                                 <div class=" col-xs-12 col-sm-12 col-md-12 col-lg-12 asi">
@@ -344,7 +334,7 @@ if ($_SESSION["Usuario"] !== null) {
                                 </div>
                                 <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12">
                                     <div class="form-group">
-                                        <textarea id="txtAplica" rows="3" class="form-control"></textarea>
+                                        <textarea id="txtAplica" name="Aplicacion_Diaria" rows="3" class="form-control"></textarea>
                                     </div>
                                 </div>
                                 <div class=" col-xs-12 col-sm-12 col-md-12 col-lg-12 asi">
@@ -352,12 +342,12 @@ if ($_SESSION["Usuario"] !== null) {
                                 </div>
                                 <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                                     <div class="form-group">
-                                        <textarea id="txtPedido" rows="3" class="form-control"></textarea>
+                                        <textarea id="txtPedido" name="Pedido_Oracion" rows="3" class="form-control"></textarea>
                                     </div>
                                 </div>
                                 <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                                     <div class="form-group">
-                                        <textarea id="txtContestado" rows="3" class="form-control"></textarea>
+                                        <textarea id="txtContestado" name="id_Pedido_Oracion" rows="3" class="form-control"></textarea>
                                     </div>
                                 </div>
                                 <div class=" col-xs-12 col-sm-12 col-md-12 col-lg-12 asi">
@@ -365,7 +355,7 @@ if ($_SESSION["Usuario"] !== null) {
                                 </div>
                                 <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12">
                                     <div class="form-group">
-                                        <textarea id="txtCompartire" rows="3" class="form-control"></textarea>
+                                        <textarea id="txtCompartire" name="Meta" rows="3" class="form-control"></textarea>
                                     </div>
                                 </div>
                                 <div class=" col-xs-3 col-sm-3 col-md-3 col-lg-3 asi">
@@ -387,10 +377,9 @@ if ($_SESSION["Usuario"] !== null) {
             </div>
             <script src="../js/jquery.min.js" type="text/javascript"></script>
             <script src="../js/moment.min.js" type="text/javascript"></script>
-            <script src="../js/DevocionesMatutinas/DiarioDevocional.js" type="text/javascript"></script>
-
+            <!--<script src="../js/DevocionesMatutinas/DiarioDevocional.js" type="text/javascript"></script>-->
+            <script src="../js/EstudiosBiblicos/DevocionalDiario.js" type="text/javascript"></script>
             <script data-pace-options='{ "restartOnRequestAfter": true }' src="js/plugin/pace/pace.min.js"></script>
-
             <!-- Link to Google CDN's jQuery + jQueryUI; fall back to local -->
             <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
             <script>
@@ -398,75 +387,52 @@ if ($_SESSION["Usuario"] !== null) {
                     document.write('<script src="js/libs/jquery-2.1.1.min.js"><\/script>');
                 }
             </script>
-
             <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
             <script>
                 if (!window.jQuery.ui) {
                     document.write('<script src="js/libs/jquery-ui-1.10.3.min.js"><\/script>');
                 }
             </script>
-
             <!-- IMPORTANT: APP CONFIG -->
             <script src="js/app.config.js"></script>
-
             <!-- JS TOUCH : include this plugin for mobile drag / drop touch events-->
             <script src="js/plugin/jquery-touch/jquery.ui.touch-punch.min.js"></script> 
-
             <!-- BOOTSTRAP JS -->
             <script src="js/bootstrap/bootstrap.min.js"></script>
-
             <!-- CUSTOM NOTIFICATION -->
             <script src="js/notification/SmartNotification.min.js"></script>
-
             <!-- JARVIS WIDGETS -->
             <script src="js/smartwidgets/jarvis.widget.min.js"></script>
-
             <!-- EASY PIE CHARTS -->
             <script src="js/plugin/easy-pie-chart/jquery.easy-pie-chart.min.js"></script>
-
             <!-- SPARKLINES -->
             <script src="js/plugin/sparkline/jquery.sparkline.min.js"></script>
-
             <!-- JQUERY VALIDATE -->
             <script src="js/plugin/jquery-validate/jquery.validate.min.js"></script>
-
             <!-- JQUERY MASKED INPUT -->
             <script src="js/plugin/masked-input/jquery.maskedinput.min.js"></script>
-
             <!-- JQUERY SELECT2 INPUT -->
             <script src="js/plugin/select2/select2.min.js"></script>
-
             <!-- JQUERY UI + Bootstrap Slider -->
             <script src="js/plugin/bootstrap-slider/bootstrap-slider.min.js"></script>
-
             <!-- browser msie issue fix -->
             <script src="js/plugin/msie-fix/jquery.mb.browser.min.js"></script>
-
             <!-- FastClick: For mobile devices -->
             <script src="js/plugin/fastclick/fastclick.min.js"></script>
-
             <!--[if IE 8]>
-
             <h1>Your browser is out of date, please update your browser by going to www.microsoft.com/download</h1>
-
             <![endif]-->
-
             <!-- Demo purpose only -->
             <script src="js/demo.min.js"></script>
-
             <!-- MAIN APP JS FILE -->
             <script src="js/app.min.js"></script>
-
             <!-- ENHANCEMENT PLUGINS : NOT A REQUIREMENT -->
             <!-- Voice command : plugin -->
             <script src="js/speech/voicecommand.min.js"></script>
-
             <!-- SmartChat UI : plugin -->
             <script src="js/smart-chat-ui/smart.chat.ui.min.js"></script>
             <script src="js/smart-chat-ui/smart.chat.manager.min.js"></script>
-
             <!-- PAGE RELATED PLUGIN(S) -->
-
             <!-- Morris Chart Dependencies -->
             <script src="js/plugin/morris/raphael.min.js"></script>
             <script src="js/plugin/morris/morris.min.js"></script>
@@ -475,8 +441,6 @@ if ($_SESSION["Usuario"] !== null) {
             <script src="../js/es.js" type="text/javascript"></script>                       
             <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
             <!--<script src="../js/DevocionesMatutinas/DevocionesMatutinas.js"></script>-->
-
-
             <!-- Your GOOGLE ANALYTICS CODE Below -->
             <script type="text/javascript">
                 var _gaq = _gaq || [];
@@ -493,9 +457,7 @@ if ($_SESSION["Usuario"] !== null) {
                 })();
 
             </script>
-
         </body>
-
     </html><?php
 } else {
     include_once './inc2/Redireccionar.php';
