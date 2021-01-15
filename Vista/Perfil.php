@@ -1,838 +1,807 @@
-<!DOCTYPE html>
-<html lang="en-us">
-	<head>
-		<meta charset="utf-8">
-		<!--<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">-->
-
-		<title> SmartAdmin </title>
-		<meta name="description" content="">
-		<meta name="author" content="">
-			
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
-		<!-- Basic Styles -->
-		<link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.min.css">
-		<link rel="stylesheet" type="text/css" media="screen" href="css/font-awesome.min.css">
-
-		<!-- SmartAdmin Styles : Caution! DO NOT change the order -->
-		<link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-production-plugins.min.css">
-		<link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-production.min.css">
-		<link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-skins.min.css">
-
-		<!-- SmartAdmin RTL Support -->
-		<link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-rtl.min.css"> 
-
-		<!-- We recommend you use "your_style.css" to override SmartAdmin
-		     specific styles this will also ensure you retrain your customization with each SmartAdmin update.
-		<link rel="stylesheet" type="text/css" media="screen" href="css/your_style.css"> -->
-
-		<!-- Demo purpose only: goes with demo.js, you can delete this css when designing your own WebApp -->
-		<link rel="stylesheet" type="text/css" media="screen" href="css/demo.min.css">
-
-		<!-- FAVICONS -->
-		<link rel="shortcut icon" href="img/favicon/favicon.ico" type="image/x-icon">
-		<link rel="icon" href="img/favicon/favicon.ico" type="image/x-icon">
-
-		<!-- GOOGLE FONT -->
-		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,300,400,700">
-
-		<!-- Specifying a Webpage Icon for Web Clip 
-			 Ref: https://developer.apple.com/library/ios/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html -->
-		<link rel="apple-touch-icon" href="img/splash/sptouch-icon-iphone.png">
-		<link rel="apple-touch-icon" sizes="76x76" href="img/splash/touch-icon-ipad.png">
-		<link rel="apple-touch-icon" sizes="120x120" href="img/splash/touch-icon-iphone-retina.png">
-		<link rel="apple-touch-icon" sizes="152x152" href="img/splash/touch-icon-ipad-retina.png">
-		
-		<!-- iOS web-app metas : hides Safari UI Components and Changes Status Bar Appearance -->
-		<meta name="apple-mobile-web-app-capable" content="yes">
-		<meta name="apple-mobile-web-app-status-bar-style" content="black">
-		
-		<!-- Startup image for web apps -->
-		<link rel="apple-touch-startup-image" href="img/splash/ipad-landscape.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape)">
-		<link rel="apple-touch-startup-image" href="img/splash/ipad-portrait.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait)">
-		<link rel="apple-touch-startup-image" href="img/splash/iphone.png" media="screen and (max-device-width: 320px)">
-
-	</head>
-	
-	<!--
-
-	TABLE OF CONTENTS.
-	
-	Use search to find needed section.
-	
-	===================================================================
-	
-	|  01. #CSS Links                |  all CSS links and file paths  |
-	|  02. #FAVICONS                 |  Favicon links and file paths  |
-	|  03. #GOOGLE FONT              |  Google font link              |
-	|  04. #APP SCREEN / ICONS       |  app icons, screen backdrops   |
-	|  05. #BODY                     |  body tag                      |
-	|  06. #HEADER                   |  header tag                    |
-	|  07. #PROJECTS                 |  project lists                 |
-	|  08. #TOGGLE LAYOUT BUTTONS    |  layout buttons and actions    |
-	|  09. #MOBILE                   |  mobile view dropdown          |
-	|  10. #SEARCH                   |  search field                  |
-	|  11. #NAVIGATION               |  left panel & navigation       |
-	|  12. #RIGHT PANEL              |  right panel userlist          |
-	|  13. #MAIN PANEL               |  main panel                    |
-	|  14. #MAIN CONTENT             |  content holder                |
-	|  15. #PAGE FOOTER              |  page footer                   |
-	|  16. #SHORTCUT AREA            |  dropdown shortcuts area       |
-	|  17. #PLUGINS                  |  all scripts and plugins       |
-	
-	===================================================================
-	
-	-->
-	
-	<!-- #BODY -->
-	<!-- Possible Classes
-
-		* 'smart-style-{SKIN#}'
-		* 'smart-rtl'         - Switch theme mode to RTL
-		* 'menu-on-top'       - Switch to top navigation (no DOM change required)
-		* 'no-menu'			  - Hides the menu completely
-		* 'hidden-menu'       - Hides the main menu but still accessable by hovering over left edge
-		* 'fixed-header'      - Fixes the header
-		* 'fixed-navigation'  - Fixes the main menu
-		* 'fixed-ribbon'      - Fixes breadcrumb
-		* 'fixed-page-footer' - Fixes footer
-		* 'container'         - boxed layout mode (non-responsive: will not work with fixed-navigation & fixed-ribbon)
-	-->
-	<body class="">
-
-		<!-- HEADER -->
-		<header id="header">
-			<div id="logo-group">
-
-				<!-- PLACE YOUR LOGO HERE -->
-				<span id="logo"> <img src="img/logo.png" alt="SmartAdmin"> </span>
-				<!-- END LOGO PLACEHOLDER -->
-
-				<!-- Note: The activity badge color changes when clicked and resets the number to 0
-				Suggestion: You may want to set a flag when this happens to tick off all checked messages / notifications -->
-				<span id="activity" class="activity-dropdown"> <i class="fa fa-user"></i> <b class="badge"> 21 </b> </span>
-
-				<!-- AJAX-DROPDOWN : control this dropdown height, look and feel from the LESS variable file -->
-				<div class="ajax-dropdown">
-
-					<!-- the ID links are fetched via AJAX to the ajax container "ajax-notifications" -->
-					<div class="btn-group btn-group-justified" data-toggle="buttons">
-						<label class="btn btn-default">
-							<input type="radio" name="activity" id="ajax/notify/mail.html">
-							Msgs (14) </label>
-						<label class="btn btn-default">
-							<input type="radio" name="activity" id="ajax/notify/notifications.html">
-							notify (3) </label>
-						<label class="btn btn-default">
-							<input type="radio" name="activity" id="ajax/notify/tasks.html">
-							Tasks (4) </label>
-					</div>
-
-					<!-- notification content -->
-					<div class="ajax-notifications custom-scroll">
-
-						<div class="alert alert-transparent">
-							<h4>Click a button to show messages here</h4>
-							This blank page message helps protect your privacy, or you can show the first message here automatically.
-						</div>
-
-						<i class="fa fa-lock fa-4x fa-border"></i>
-
-					</div>
-					<!-- end notification content -->
-
-					<!-- footer: refresh area -->
-					<span> Last updated on: 12/12/2013 9:43AM
-						<button type="button" data-loading-text="<i class='fa fa-refresh fa-spin'></i> Loading..." class="btn btn-xs btn-default pull-right">
-							<i class="fa fa-refresh"></i>
-						</button> </span>
-					<!-- end footer -->
-
-				</div>
-				<!-- END AJAX-DROPDOWN -->
-			</div>
-
-			<!-- projects dropdown -->
-			<div class="project-context hidden-xs">
-
-				<span class="label">Projects:</span>
-				<span class="project-selector dropdown-toggle" data-toggle="dropdown">Recent projects <i class="fa fa-angle-down"></i></span>
-
-				<!-- Suggestion: populate this list with fetch and push technique -->
-				<ul class="dropdown-menu">
-					<li>
-						<a href="javascript:void(0);">Online e-merchant management system - attaching integration with the iOS</a>
-					</li>
-					<li>
-						<a href="javascript:void(0);">Notes on pipeline upgradee</a>
-					</li>
-					<li>
-						<a href="javascript:void(0);">Assesment Report for merchant account</a>
-					</li>
-					<li class="divider"></li>
-					<li>
-						<a href="javascript:void(0);"><i class="fa fa-power-off"></i> Clear</a>
-					</li>
-				</ul>
-				<!-- end dropdown-menu-->
-
-			</div>
-			<!-- end projects dropdown -->
-
-			<!-- pulled right: nav area -->
-			<div class="pull-right">
-				
-				<!-- collapse menu button -->
-				<div id="hide-menu" class="btn-header pull-right">
-					<span> <a href="javascript:void(0);" data-action="toggleMenu" title="Collapse Menu"><i class="fa fa-reorder"></i></a> </span>
-				</div>
-				<!-- end collapse menu -->
-				
-				<!-- #MOBILE -->
-				<!-- Top menu profile link : this shows only when top menu is active -->
-				<ul id="mobile-profile-img" class="header-dropdown-list hidden-xs padding-5">
-					<li class="">
-						<a href="#" class="dropdown-toggle no-margin userdropdown" data-toggle="dropdown"> 
-							<img src="img/avatars/sunny.png" alt="John Doe" class="online" />  
-						</a>
-						<ul class="dropdown-menu pull-right">
-							<li>
-								<a href="javascript:void(0);" class="padding-10 padding-top-0 padding-bottom-0"><i class="fa fa-cog"></i> Setting</a>
-							</li>
-							<li class="divider"></li>
-							<li>
-								<a href="profile.html" class="padding-10 padding-top-0 padding-bottom-0"> <i class="fa fa-user"></i> <u>P</u>rofile</a>
-							</li>
-							<li class="divider"></li>
-							<li>
-								<a href="javascript:void(0);" class="padding-10 padding-top-0 padding-bottom-0" data-action="toggleShortcut"><i class="fa fa-arrow-down"></i> <u>S</u>hortcut</a>
-							</li>
-							<li class="divider"></li>
-							<li>
-								<a href="javascript:void(0);" class="padding-10 padding-top-0 padding-bottom-0" data-action="launchFullscreen"><i class="fa fa-arrows-alt"></i> Full <u>S</u>creen</a>
-							</li>
-							<li class="divider"></li>
-							<li>
-								<a href="login.html" class="padding-10 padding-top-5 padding-bottom-5" data-action="userLogout"><i class="fa fa-sign-out fa-lg"></i> <strong><u>L</u>ogout</strong></a>
-							</li>
-						</ul>
-					</li>
-				</ul>
-
-				<!-- logout button -->
-				<div id="logout" class="btn-header transparent pull-right">
-					<span> <a href="login.html" title="Sign Out" data-action="userLogout" data-logout-msg="You can improve your security further after logging out by closing this opened browser"><i class="fa fa-sign-out"></i></a> </span>
-				</div>
-				<!-- end logout button -->
-
-				<!-- search mobile button (this is hidden till mobile view port) -->
-				<div id="search-mobile" class="btn-header transparent pull-right">
-					<span> <a href="javascript:void(0)" title="Search"><i class="fa fa-search"></i></a> </span>
-				</div>
-				<!-- end search mobile button -->
-
-				<!-- input: search field -->
-				<form action="search.html" class="header-search pull-right">
-					<input id="search-fld"  type="text" name="param" placeholder="Find reports and more" data-autocomplete='[
-					"ActionScript",
-					"AppleScript",
-					"Asp",
-					"BASIC",
-					"C",
-					"C++",
-					"Clojure",
-					"COBOL",
-					"ColdFusion",
-					"Erlang",
-					"Fortran",
-					"Groovy",
-					"Haskell",
-					"Java",
-					"JavaScript",
-					"Lisp",
-					"Perl",
-					"PHP",
-					"Python",
-					"Ruby",
-					"Scala",
-					"Scheme"]'>
-					<button type="submit">
-						<i class="fa fa-search"></i>
-					</button>
-					<a href="javascript:void(0);" id="cancel-search-js" title="Cancel Search"><i class="fa fa-times"></i></a>
-				</form>
-				<!-- end input: search field -->
-
-				<!-- fullscreen button -->
-				<div id="fullscreen" class="btn-header transparent pull-right">
-					<span> <a href="javascript:void(0);" data-action="launchFullscreen" title="Full Screen"><i class="fa fa-arrows-alt"></i></a> </span>
-				</div>
-				<!-- end fullscreen button -->
-				
-				<!-- #Voice Command: Start Speech -->
-				<div id="speech-btn" class="btn-header transparent pull-right hidden-sm hidden-xs">
-					<div> 
-						<a href="javascript:void(0)" title="Voice Command" data-action="voiceCommand"><i class="fa fa-microphone"></i></a> 
-						<div class="popover bottom"><div class="arrow"></div>
-							<div class="popover-content">
-								<h4 class="vc-title">Voice command activated <br><small>Please speak clearly into the mic</small></h4>
-								<h4 class="vc-title-error text-center">
-									<i class="fa fa-microphone-slash"></i> Voice command failed
-									<br><small class="txt-color-red">Must <strong>"Allow"</strong> Microphone</small>
-									<br><small class="txt-color-red">Must have <strong>Internet Connection</strong></small>
-								</h4>
-								<a href="javascript:void(0);" class="btn btn-success" onclick="commands.help()">See Commands</a> 
-								<a href="javascript:void(0);" class="btn bg-color-purple txt-color-white" onclick="$('#speech-btn .popover').fadeOut(50);">Close Popup</a> 
-							</div>
-						</div>
-					</div>
-				</div>
-				<!-- end voice command -->
-
-				<!-- multiple lang dropdown : find all flags in the flags page -->
-				<ul class="header-dropdown-list hidden-xs">
-					<li>
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown"> <img src="img/blank.gif" class="flag flag-us" alt="United States"> <span> English (US) </span> <i class="fa fa-angle-down"></i> </a>
-						<ul class="dropdown-menu pull-right">
-							<li class="active">
-								<a href="javascript:void(0);"><img src="img/blank.gif" class="flag flag-us" alt="United States"> English (US)</a>
-							</li>
-							<li>
-								<a href="javascript:void(0);"><img src="img/blank.gif" class="flag flag-fr" alt="France"> Français</a>
-							</li>
-							<li>
-								<a href="javascript:void(0);"><img src="img/blank.gif" class="flag flag-es" alt="Spanish"> Español</a>
-							</li>
-							<li>
-								<a href="javascript:void(0);"><img src="img/blank.gif" class="flag flag-de" alt="German"> Deutsch</a>
-							</li>
-							<li>
-								<a href="javascript:void(0);"><img src="img/blank.gif" class="flag flag-jp" alt="Japan"> 日本語</a>
-							</li>
-							<li>
-								<a href="javascript:void(0);"><img src="img/blank.gif" class="flag flag-cn" alt="China"> 中文</a>
-							</li>	
-							<li>
-								<a href="javascript:void(0);"><img src="img/blank.gif" class="flag flag-it" alt="Italy"> Italiano</a>
-							</li>	
-							<li>
-								<a href="javascript:void(0);"><img src="img/blank.gif" class="flag flag-pt" alt="Portugal"> Portugal</a>
-							</li>
-							<li>
-								<a href="javascript:void(0);"><img src="img/blank.gif" class="flag flag-ru" alt="Russia"> Русский язык</a>
-							</li>
-							<li>
-								<a href="javascript:void(0);"><img src="img/blank.gif" class="flag flag-kr" alt="Korea"> 한국어</a>
-							</li>						
-							
-						</ul>
-					</li>
-				</ul>
-				<!-- end multiple lang -->
-
-			</div>
-			<!-- end pulled right: nav area -->
-
-		</header>
-		<!-- END HEADER -->
-
-		
-		<!-- MAIN PANEL -->
-		<div>
-
-			<!-- RIBBON -->
-			<div id="ribbon">
-
-				<span class="ribbon-button-alignment"> 
-					<span id="refresh" class="btn btn-ribbon" data-action="resetWidgets" data-title="refresh"  rel="tooltip" data-placement="bottom" data-original-title="<i class='text-warning fa fa-warning'></i> Warning! This will reset all your widget settings." data-html="true">
-						<i class="fa fa-refresh"></i>
-					</span> 
-				</span>
-
-				<!-- breadcrumb -->
-				<ol class="breadcrumb">
-					<li>Home</li><li>App Views</li><li>Profile</li>
-				</ol>
-				<!-- end breadcrumb -->
-
-				<!-- You can also add more buttons to the
-				ribbon for further usability
-
-				Example below:
-
-				<span class="ribbon-button-alignment pull-right">
-				<span id="search" class="btn btn-ribbon hidden-xs" data-title="search"><i class="fa-grid"></i> Change Grid</span>
-				<span id="add" class="btn btn-ribbon hidden-xs" data-title="add"><i class="fa-plus"></i> Add</span>
-				<span id="search" class="btn btn-ribbon" data-title="search"><i class="fa-search"></i> <span class="hidden-mobile">Search</span></span>
-				</span> -->
-
-			</div>
-			<!-- END RIBBON -->
-
-			<!-- MAIN CONTENT -->
-			<div id="content">
-
-				<!-- Bread crumb is created dynamically -->
-				<!-- row -->
-				<div class="row">
-				
-					<!-- col -->
-					<div class="col-xs-12 col-sm-7 col-md-7 col-lg-4">
-						<h1 class="page-title txt-color-blueDark"><!-- PAGE HEADER --><i class="fa-fw fa fa-puzzle-piece"></i> App Views <span>>
-							Profile </span></h1>
-					</div>
-					<!-- end col -->
-				
-					<!-- right side of the page with the sparkline graphs -->
-					<!-- col -->
-				
-				</div>
-				<!-- end row -->
-				
-				<!-- row -->
-				
-				<div class="row">
-				
-					<div class="col-sm-12">
-				
-				
-							<div class="well well-sm">
-				
-								<div class="row">
-				
-									<div class="col-sm-12 col-md-12 col-lg-6">
-										<div class="well well-light well-sm no-margin no-padding">
-				
-											<div class="row">
-				
-												<div class="col-sm-12">
-													<div id="myCarousel" class="carousel fade profile-carousel">
-														<div class="air air-bottom-right padding-10">
-															<a href="javascript:void(0);" class="btn txt-color-white bg-color-teal btn-sm"><i class="fa fa-check"></i> Follow</a>&nbsp; <a href="javascript:void(0);" class="btn txt-color-white bg-color-pinkDark btn-sm"><i class="fa fa-link"></i> Connect</a>
-														</div>
-														<div class="air air-top-left padding-10">
-															<h4 class="txt-color-white font-md">Jan 1, 2014</h4>
-														</div>
-														<ol class="carousel-indicators">
-															<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-															<li data-target="#myCarousel" data-slide-to="1" class=""></li>
-															<li data-target="#myCarousel" data-slide-to="2" class=""></li>
-														</ol>
-														<div class="carousel-inner">
-															<!-- Slide 1 -->
-															<div class="item active">
-																<img src="img/demo/s1.jpg" alt="demo user">
-															</div>
-															<!-- Slide 2 -->
-															<div class="item">
-																<img src="img/demo/s2.jpg" alt="demo user">
-															</div>
-															<!-- Slide 3 -->
-															<div class="item">
-																<img src="img/demo/m3.jpg" alt="demo user">
-															</div>
-														</div>
-													</div>
-												</div>
-				
-												<div class="col-sm-12">
-				
-													<div class="row">
-				
-														<div class="col-sm-3 profile-pic">
-															<img src="img/avatars/sunny-big.png" alt="demo user">
-															<div class="padding-10">
-																<h4 class="font-md"><strong>1,543</strong>
-																<br>
-																<small>Followers</small></h4>
-																<br>
-																<h4 class="font-md"><strong>419</strong>
-																<br>
-																<small>Connections</small></h4>
-															</div>
-														</div>
-														<div class="col-sm-6">
-															<h1>John <span class="semi-bold">Doe</span>
-															<br>
-															<small> CEO, SmartAdmin</small></h1>
-				
-															<ul class="list-unstyled">
-																<li>
-																	<p class="text-muted">
-																		<i class="fa fa-phone"></i>&nbsp;&nbsp;(<span class="txt-color-darken">313</span>) <span class="txt-color-darken">464</span> - <span class="txt-color-darken">6473</span>
-																	</p>
-																</li>
-																<li>
-																	<p class="text-muted">
-																		<i class="fa fa-envelope"></i>&nbsp;&nbsp;<a href="mailto:simmons@smartadmin">ceo@smartadmin.com</a>
-																	</p>
-																</li>
-																<li>
-																	<p class="text-muted">
-																		<i class="fa fa-skype"></i>&nbsp;&nbsp;<span class="txt-color-darken">john12</span>
-																	</p>
-																</li>
-																<li>
-																	<p class="text-muted">
-																		<i class="fa fa-calendar"></i>&nbsp;&nbsp;<span class="txt-color-darken">Free after <a href="javascript:void(0);" rel="tooltip" title="" data-placement="top" data-original-title="Create an Appointment">4:30 PM</a></span>
-																	</p>
-																</li>
-															</ul>
-															<br>
-															<p class="font-md">
-																<i>A little about me...</i>
-															</p>
-															<p>
-				
-																Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio
-																cumque nihil impedit quo minus id quod maxime placeat facere
-				
-															</p>
-															<br>
-															<a href="javascript:void(0);" class="btn btn-default btn-xs"><i class="fa fa-envelope-o"></i> Send Message</a>
-															<br>
-															<br>
-				
-														</div>
-														<div class="col-sm-3">
-															<h1><small>Connections</small></h1>
-															<ul class="list-inline friends-list">
-																<li><img src="img/avatars/1.png" alt="friend-1">
-																</li>
-																<li><img src="img/avatars/2.png" alt="friend-2">
-																</li>
-																<li><img src="img/avatars/3.png" alt="friend-3">
-																</li>
-																<li><img src="img/avatars/4.png" alt="friend-4">
-																</li>
-																<li><img src="img/avatars/5.png" alt="friend-5">
-																</li>
-																<li><img src="img/avatars/male.png" alt="friend-6">
-																</li>
-																<li>
-																	<a href="javascript:void(0);">413 more</a>
-																</li>
-															</ul>
-				
-															<h1><small>Recent visitors</small></h1>
-															<ul class="list-inline friends-list">
-																<li><img src="img/avatars/male.png" alt="friend-1">
-																</li>
-																<li><img src="img/avatars/female.png" alt="friend-2">
-																</li>
-																<li><img src="img/avatars/female.png" alt="friend-3">
-																</li>
-															</ul>
-				
-														</div>
-				
-													</div>
-				
-												</div>
-				
-											</div>
-				
-											<div class="row">
-				
-												<div class="col-sm-12">
-				
-													<hr>
-				
-													<div class="padding-10">
-				
-														<ul class="nav nav-tabs tabs-pull-right">
-															<li class="active">
-																<a href="#a1" data-toggle="tab">Recent Articles</a>
-															</li>
-															<li>
-																<a href="#a2" data-toggle="tab">New Members</a>
-															</li>
-															<li class="pull-left">
-																<span class="margin-top-10 display-inline"><i class="fa fa-rss text-success"></i> Activity</span>
-															</li>
-														</ul>
-				
-														<div class="tab-content padding-top-10">
-															<div class="tab-pane fade in active" id="a1">
-				
-																<div class="row">
-				
-																	<div class="col-xs-2 col-sm-1">
-																		<time datetime="2014-09-20" class="icon">
-																			<strong>Jan</strong>
-																			<span>10</span>
-																		</time>
-																	</div>
-				
-																	<div class="col-xs-10 col-sm-11">
-																		<h6 class="no-margin"><a href="javascript:void(0);">Allice in Wonderland</a></h6>
-																		<p>
-																			Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi Nam eget dui.
-																			Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero,
-																			sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel.
-																		</p>
-																	</div>
-				
-																	<div class="col-sm-12">
-				
-																		<hr>
-				
-																	</div>
-				
-																	<div class="col-xs-2 col-sm-1">
-																		<time datetime="2014-09-20" class="icon">
-																			<strong>Jan</strong>
-																			<span>10</span>
-																		</time>
-																	</div>
-				
-																	<div class="col-xs-10 col-sm-11">
-																		<h6 class="no-margin"><a href="javascript:void(0);">World Report</a></h6>
-																		<p>
-																			Morning our be dry. Life also third land after first beginning to evening cattle created let subdue you'll winged don't Face firmament.
-																			You winged you're was Fruit divided signs lights i living cattle yielding over light life life sea, so deep.
-																			Abundantly given years bring were after. Greater you're meat beast creeping behold he unto She'd doesn't. Replenish brought kind gathering Meat.
-																		</p>
-																	</div>
-				
-																	<div class="col-sm-12">
-				
-																		<br>
-				
-																	</div>
-				
-																</div>
-				
-															</div>
-                                                                                                                    
-                                                                                                                    
-                                                                                                                        
-														</div>
-				
-													</div>
-				
-												</div>
-				
-											</div>
-											<!-- end row -->
-				
-										</div>
-				
-									</div>
-                                                                    
-                                                                    
-                                                                    
-								</div>
-				
-							</div>
-				
-				
-					</div>
-				
-				</div>
-				
-				<!-- end row -->
-
-			</div>
-			<!-- END MAIN CONTENT -->
-
-		</div>
-		<!-- END MAIN PANEL -->
-
-		<!-- PAGE FOOTER -->
-		<div class="page-footer">
-			<div class="row">
-				<div class="col-xs-12 col-sm-6">
-					<span class="txt-color-white">SmartAdmin 1.5 <span class="hidden-xs"> - Web Application Framework</span> © 2014-2015</span>
-				</div>
-
-				<div class="col-xs-6 col-sm-6 text-right hidden-xs">
-					<div class="txt-color-white inline-block">
-						<i class="txt-color-blueLight hidden-mobile">Last account activity <i class="fa fa-clock-o"></i> <strong>52 mins ago &nbsp;</strong> </i>
-						<div class="btn-group dropup">
-							<button class="btn btn-xs dropdown-toggle bg-color-blue txt-color-white" data-toggle="dropdown">
-								<i class="fa fa-link"></i> <span class="caret"></span>
-							</button>
-							<ul class="dropdown-menu pull-right text-left">
-								<li>
-									<div class="padding-5">
-										<p class="txt-color-darken font-sm no-margin">Download Progress</p>
-										<div class="progress progress-micro no-margin">
-											<div class="progress-bar progress-bar-success" style="width: 50%;"></div>
-										</div>
-									</div>
-								</li>
-								<li class="divider"></li>
-								<li>
-									<div class="padding-5">
-										<p class="txt-color-darken font-sm no-margin">Server Load</p>
-										<div class="progress progress-micro no-margin">
-											<div class="progress-bar progress-bar-success" style="width: 20%;"></div>
-										</div>
-									</div>
-								</li>
-								<li class="divider"></li>
-								<li>
-									<div class="padding-5">
-										<p class="txt-color-darken font-sm no-margin">Memory Load <span class="text-danger">*critical*</span></p>
-										<div class="progress progress-micro no-margin">
-											<div class="progress-bar progress-bar-danger" style="width: 70%;"></div>
-										</div>
-									</div>
-								</li>
-								<li class="divider"></li>
-								<li>
-									<div class="padding-5">
-										<button class="btn btn-block btn-default">refresh</button>
-									</div>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- END PAGE FOOTER -->
-
-		<!-- SHORTCUT AREA : With large tiles (activated via clicking user name tag)
-		Note: These tiles are completely responsive,
-		you can add as many as you like
-		-->
-		<div id="shortcut">
-			<ul>
-				<li>
-					<a href="inbox.html" class="jarvismetro-tile big-cubes bg-color-blue"> <span class="iconbox"> <i class="fa fa-envelope fa-4x"></i> <span>Mail <span class="label pull-right bg-color-darken">14</span></span> </span> </a>
-				</li>
-				<li>
-					<a href="calendar.html" class="jarvismetro-tile big-cubes bg-color-orangeDark"> <span class="iconbox"> <i class="fa fa-calendar fa-4x"></i> <span>Calendar</span> </span> </a>
-				</li>
-				<li>
-					<a href="gmap-xml.html" class="jarvismetro-tile big-cubes bg-color-purple"> <span class="iconbox"> <i class="fa fa-map-marker fa-4x"></i> <span>Maps</span> </span> </a>
-				</li>
-				<li>
-					<a href="invoice.html" class="jarvismetro-tile big-cubes bg-color-blueDark"> <span class="iconbox"> <i class="fa fa-book fa-4x"></i> <span>Invoice <span class="label pull-right bg-color-darken">99</span></span> </span> </a>
-				</li>
-				<li>
-					<a href="gallery.html" class="jarvismetro-tile big-cubes bg-color-greenLight"> <span class="iconbox"> <i class="fa fa-picture-o fa-4x"></i> <span>Gallery </span> </span> </a>
-				</li>
-				<li>
-					<a href="profile.html" class="jarvismetro-tile big-cubes selected bg-color-pinkDark"> <span class="iconbox"> <i class="fa fa-user fa-4x"></i> <span>My Profile </span> </span> </a>
-				</li>
-			</ul>
-		</div>
-		<!-- END SHORTCUT AREA -->
-
-		<!--================================================== -->
-
-		<!-- PACE LOADER - turn this on if you want ajax loading to show (caution: uses lots of memory on iDevices)-->
-		<script data-pace-options='{ "restartOnRequestAfter": true }' src="js/plugin/pace/pace.min.js"></script>
-
-		<!-- Link to Google CDN's jQuery + jQueryUI; fall back to local -->
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-		<script>
-			if (!window.jQuery) {
-				document.write('<script src="js/libs/jquery-2.1.1.min.js"><\/script>');
-			}
-		</script>
-
-		<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
-		<script>
-			if (!window.jQuery.ui) {
-				document.write('<script src="js/libs/jquery-ui-1.10.3.min.js"><\/script>');
-			}
-		</script>
-
-		<!-- IMPORTANT: APP CONFIG -->
-		<script src="js/app.config.js"></script>
-
-		<!-- JS TOUCH : include this plugin for mobile drag / drop touch events-->
-		<script src="js/plugin/jquery-touch/jquery.ui.touch-punch.min.js"></script> 
-
-		<!-- BOOTSTRAP JS -->
-		<script src="js/bootstrap/bootstrap.min.js"></script>
-
-		<!-- CUSTOM NOTIFICATION -->
-		<script src="js/notification/SmartNotification.min.js"></script>
-
-		<!-- JARVIS WIDGETS -->
-		<script src="js/smartwidgets/jarvis.widget.min.js"></script>
-
-		<!-- EASY PIE CHARTS -->
-		<script src="js/plugin/easy-pie-chart/jquery.easy-pie-chart.min.js"></script>
-
-		<!-- SPARKLINES -->
-		<script src="js/plugin/sparkline/jquery.sparkline.min.js"></script>
-
-		<!-- JQUERY VALIDATE -->
-		<script src="js/plugin/jquery-validate/jquery.validate.min.js"></script>
-
-		<!-- JQUERY MASKED INPUT -->
-		<script src="js/plugin/masked-input/jquery.maskedinput.min.js"></script>
-
-		<!-- JQUERY SELECT2 INPUT -->
-		<script src="js/plugin/select2/select2.min.js"></script>
-
-		<!-- JQUERY UI + Bootstrap Slider -->
-		<script src="js/plugin/bootstrap-slider/bootstrap-slider.min.js"></script>
-
-		<!-- browser msie issue fix -->
-		<script src="js/plugin/msie-fix/jquery.mb.browser.min.js"></script>
-
-		<!-- FastClick: For mobile devices -->
-		<script src="js/plugin/fastclick/fastclick.min.js"></script>
-
-		<!--[if IE 8]>
-
-		<h1>Your browser is out of date, please update your browser by going to www.microsoft.com/download</h1>
-
-		<![endif]-->
-
-		<!-- Demo purpose only -->
-		<script src="js/demo.min.js"></script>
-
-		<!-- MAIN APP JS FILE -->
-		<script src="js/app.min.js"></script>
-
-		<!-- ENHANCEMENT PLUGINS : NOT A REQUIREMENT -->
-		<!-- Voice command : plugin -->
-		<script src="js/speech/voicecommand.min.js"></script>
-
-		<!-- SmartChat UI : plugin -->
-		<script src="js/smart-chat-ui/smart.chat.ui.min.js"></script>
-		<script src="js/smart-chat-ui/smart.chat.manager.min.js"></script>
-
-		<!-- PAGE RELATED PLUGIN(S) 
-		<script src="..."></script>-->
-
-		<script type="text/javascript">
-		
-		// DO NOT REMOVE : GLOBAL FUNCTIONS!
-		
-		$(document).ready(function() {
-			
-			pageSetUp();
-		
-		})
-
-		</script>
-
-		<!-- Your GOOGLE ANALYTICS CODE Below -->
-		<script type="text/javascript">
-			var _gaq = _gaq || [];
-				_gaq.push(['_setAccount', 'UA-XXXXXXXX-X']);
-				_gaq.push(['_trackPageview']);
-			
-			(function() {
-				var ga = document.createElement('script');
-				ga.type = 'text/javascript';
-				ga.async = true;
-				ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-				var s = document.getElementsByTagName('script')[0];
-				s.parentNode.insertBefore(ga, s);
-			})();
-
-		</script>
-
-	</body>
-
-</html>
+<?php
+session_start();
+if ($_SESSION["Usuario"] !== null) {
+    ?>
+    <!DOCTYPE html>
+    <html lang="es" style="background-image: url('img/pattern/tileable_wood_texture.png');">
+        <head>
+            <meta charset="utf-8">
+            <!--<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">-->
+
+            <title>ceoadventista.org</title>
+            <meta name="description" content="">
+            <meta name="author" content="">
+
+            <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+            <!-- Basic Styles -->
+            <!--            <link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.min.css">
+                        <link rel="stylesheet" type="text/css" media="screen" href="css/font-awesome.min.css">-->
+
+            <!-- SmartAdmin Styles : Caution! DO NOT change the order -->
+            <!--            <link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-production-plugins.min.css">
+                        <link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-production.min.css">
+                        <link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-skins.min.css">-->
+
+            <!-- SmartAdmin RTL Support -->
+            <!--<link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-rtl.min.css">--> 
+
+            <!-- We recommend you use "your_style.css" to override SmartAdmin
+                 specific styles this will also ensure you retrain your customization with each SmartAdmin update.
+            <link rel="stylesheet" type="text/css" media="screen" href="css/your_style.css"> -->
+
+            <!-- Demo purpose only: goes with demo.js, you can delete this css when designing your own WebApp -->
+            <!--<link rel="stylesheet" type="text/css" media="screen" href="css/demo.min.css">-->
+
+            <!-- FAVICONS -->
+            <!--            <link rel="shortcut icon" href="img/favicon/favicon.ico" type="image/x-icon">
+                        <link rel="icon" href="img/favicon/favicon.ico" type="image/x-icon">-->
+
+            <!-- GOOGLE FONT -->
+            <!--            <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,300,400,700">-->
+
+            <!-- Specifying a Webpage Icon for Web Clip 
+                     Ref: https://developer.apple.com/library/ios/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html -->
+            <!--            <link rel="apple-touch-icon" href="img/splash/sptouch-icon-iphone.png">
+                        <link rel="apple-touch-icon" sizes="76x76" href="img/splash/touch-icon-ipad.png">
+                        <link rel="apple-touch-icon" sizes="120x120" href="img/splash/touch-icon-iphone-retina.png">
+                        <link rel="apple-touch-icon" sizes="152x152" href="img/splash/touch-icon-ipad-retina.png">-->
+
+            <!-- iOS web-app metas : hides Safari UI Components and Changes Status Bar Appearance -->
+            <!--            <meta name="apple-mobile-web-app-capable" content="yes">
+                        <meta name="apple-mobile-web-app-status-bar-style" content="black">-->
+
+            <!-- Startup image for web apps -->
+            <!--            <link rel="apple-touch-startup-image" href="img/splash/ipad-landscape.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape)">
+                        <link rel="apple-touch-startup-image" href="img/splash/ipad-portrait.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait)">
+                        <link rel="apple-touch-startup-image" href="img/splash/iphone.png" media="screen and (max-device-width: 320px)">-->
+            <!--LINKS ANTIGUOS-->
+            <?php include_once './inc2/Estilos.php'; ?>
+            <link rel="stylesheet" type="text/css" media="screen" href="css/fontAdventSans.css">
+            <link rel="stylesheet" type="text/css" media="screen" href="css/header.css">
+            <link rel="apple-touch-startup-image" href="../images/iconoweb.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape)">
+            <link rel="apple-touch-startup-image" href="../images/iconoweb.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait)">
+            <link rel="apple-touch-startup-image" href="../images/iconoweb.png" media="screen and (max-device-width: 320px)">
+            <link rel="shortcut icon" href="../images/iconoweb.png" type="image/x-icon">
+            <link rel="icon" href=".../images/iconoweb.png" type="image/x-icon">
+            <style>
+                @media(max-width:767px){
+                    .sortable-grid{
+                        height: auto;
+                    }
+                    #frameVer{
+                        height: 50vh !important;
+                    }
+                }
+            </style>
+        </head>     
+        <body class="conta bod">
+            <input id="PersonaUsuario" type="hidden" value="<?php echo $_SESSION["Persona"] ?>">
+            <div class="row" style=" margin-left: 0px;margin-right: 0px;height: 100%;">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="margin-left: 0px;margin-right: 0px;padding-left: 0px;padding-right: 0px;height: 90%;">
+                    <div id="header" style="background: none;">
+                        <div id="logo-group">
+
+                            <!-- PLACE YOUR LOGO HERE -->
+                            <span id="logo"> <img class="imglog" src="../images/img_logo/adventist-es--ming.png" alt="SmartAdmin" > </span>                            
+                        </div>
+                        <div class="pull-right">
+
+                            <!-- Top menu profile link : this shows only when top menu is active -->
+                            <ul id="mobile-profile-img" class="header-dropdown-list padding-5">
+                                <li class="LiReporte" style="display: none">
+                                    <a id="Reporte" href="Trabajando.php" class="btn btn-primary" style="font-size: 13px;text-align: center;align-items: center;"> 
+                                        <i class="fa fa-bar-chart-o"></i>
+                                    </a>
+                                </li>
+                                <li class="">
+                                    <a href="#" class="btn btn-circle btn-primary"  data-toggle="dropdown" style="font-size: 15px;text-align: center;align-items: center;padding-top: 2px;"> 
+                                        <i class="fa fa-sort-desc"></i>
+                                    </a>
+                                    <ul class="dropdown-menu pull-right">
+                                        <li>
+                                            <a href="javascript:void(0);" class="padding-10 padding-top-0 padding-bottom-0"><i class="fa fa-cog"></i> <u>C</u>onfiguración</a>
+                                        </li>
+                                        <li class="divider"></li>
+                                        <li>
+                                            <a href="Perfil.php" class="padding-10 padding-top-0 padding-bottom-0"> <i class="fa fa-user"></i> <u>P</u>erfil</a>
+                                        </li>
+                                        <li class="divider"></li>
+
+                                        <li class="divider"></li>
+                                        <li>
+                                            <a href="javascript:void(0);" class="padding-10 padding-top-0 padding-bottom-0" data-action="launchFullscreen"><i class="fa fa-arrows-alt"></i> <u>P</u>antalla <u>C</u>ompleta</a>
+                                        </li>
+                                        <li class="divider"></li>
+                                        <li>
+                                            <a href="../CerrarSesion.php" class="padding-10 padding-top-5 padding-bottom-5" data-action="userLogout"  data-logout-msg="Estas Seguro de Salir de Sesion"><i class="fa fa-sign-out fa-lg"></i> <strong><u>C</u>errar Sesion</strong></a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+
+                            <!-- logout button -->
+                            <div id="" class="transparent pull-right">
+                                <ul id="" class="header-dropdown-list ">
+                                    <li class="LiReporte2" style="display: none">
+                                        <a id="Reporte2" href="Trabajando.php" class="btn1 btn-primary1" style="font-size: 13px;text-align: center;align-items: center;"> 
+                                            <i class="fa fa-bar-chart-o"></i>
+                                        </a>
+                                    </li>
+                                    <li class="volver" >
+                                        <a id="volver" href="Principal.php" class="btn1 btn-primary1" style="font-size: 13px;text-align: center;align-items: center;"> 
+                                            <i class="fa fa-home "></i> Inicio
+                                        </a>
+                                    </li>
+                                    <li class="">
+                                        <a href="#" class="btn btn-primary"  data-toggle="dropdown" style="font-size: 15px;text-align: center;align-items: center;padding-top: 2px;"> 
+                                            <i class="fa fa-sort-desc"></i>
+                                        </a>
+                                        <ul class="dropdown-menu pull-right">
+                                            <li>
+                                                <a href="Configuracion.php" class="padding-10 padding-top-0 padding-bottom-0"><i class="fa fa-cog"></i> <u>C</u>onfiguración</a>
+                                            </li>
+                                            <li class="divider"></li>
+                                            <li>
+                                                <a href="Perfil.php" class="padding-10 padding-top-0 padding-bottom-0"> <i class="fa fa-user"></i> <u>P</u>erfil</a>
+                                            </li>
+                                            <li class="divider"></li>
+
+                                            <li class="divider"></li>
+                                            <li>
+                                                <a href="javascript:void(0);" class="padding-10 padding-top-0 padding-bottom-0" data-action="launchFullscreen"><i class="fa fa-arrows-alt"></i> <u>P</u>antalla <u>C</u>ompleta</a>
+                                            </li>
+                                            <li class="divider"></li>
+                                            <li>
+                                                <a href="../CerrarSesion.php" class="padding-10 padding-top-5 padding-bottom-5" data-action="userLogout"  data-logout-msg="Estas Seguro de Salir de Sesion"><i class="fa fa-sign-out fa-lg"></i> <strong><u>C</u>errar Sesion</strong></a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- fullscreen button -->
+                        </div>
+                    </div>
+                    <!-- MAIN CONTENT -->
+                    <br>
+                    <div id="content" style="margin-bottom: 0px;display: flow-root;height: 100%;">
+                        <!-- widget grid -->
+                        <section id="widget-grid" class="">
+
+                            <!-- row -->
+                            <div class="row">
+
+                                <!-- NEW COL START -->
+                                <article class="col-xs-12 col-sm-6 col-md-8 col-lg-12" style="margin-bottom: 30px">
+
+                                    <!-- Widget ID (each widget will need unique ID)-->
+                                    <div class="jarviswidget  jarviswidget-color-green" id="wid-id-11" data-widget-colorbutton="false" data-widget-fullscreenbutton="false" data-widget-editbutton="false" data-widget-sortable="false" data-widget-attstyle="jarviswidget-color-teal">
+                                        <header>
+                                            <span class="widget-icon"> <i class="fa fa-edit"></i> </span>
+                                            <h2>Datos generales</h2>
+
+                                        </header>
+
+                                        <!-- widget div-->
+                                        <div>
+                                            <!-- end widget edit box -->
+
+                                            <!-- widget content -->
+                                            <div class="widget-body no-padding">
+                                                <div id="content" style="margin-bottom: 20px;">
+                                                    <div class="row">
+                                                        <br><br>
+                                                        <div class="col-xs-12 col-sm-6 col-md-8 col-lg-12">
+                                                            <div class="row">
+                                                                <div class="col-sm-4 profile-pic">
+                                                                    <img src="../images/users.png" style="width: 30%;">                                                     
+                                                                </div>
+                                                                <div class="col-sm-8">
+                                                                    <h1><?php echo $_SESSION["Persona"]; ?> <span class="semi-bold"></span>
+                                                                        <br>
+                                                                        <small><?php echo $_SESSION["Usuario"]; ?></small></h1>
+                                                                    <br>                  
+                                                                </div>                                                 
+                                                            </div>
+                                                        </div>
+                                                    </div> 
+                                                    <form method="POST">
+                                                        <table id="user" class="table table-bordered table-striped" style="clear: both">                                                        
+                                                            <tbody>
+                                                            <input id="idediuser" type="hidden" value="<?php echo $_SESSION["id_Usuario"] ?>">
+                                                            <tr>
+                                                                <td style="width:35%;">Contraseña:</td>
+                                                                <td style="width:65%"><a href="form-x-editable.html#" id="edicontra" data-type="password" data-pk="1" data-original-title="Enter edicontra"><?php echo $_SESSION["Contra"]; ?></a></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td style="width:35%;">Nombres:</td>
+                                                                <td style="width:65%"><a href="form-x-editable.html#" id="edinombre" data-type="text" data-pk="1" data-original-title="Enter edinombre"><?php echo $_SESSION["No_Persona"]; ?></a></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td style="width:35%;">Apellidos:</td>
+                                                                <td style="width:65%"><a href="form-x-editable.html#" id="ediapellido" data-type="text" data-pk="1" data-original-title="Enter ediapellido" ><?php echo $_SESSION["AP_Persona"]; ?></a></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td style="width:35%;">Edad:</td>
+                                                                <td style="width:65%"><a href="form-x-editable.html#" id="ediedad" data-type="text" data-pk="1" data-original-title="Enter ediedad"><?php echo $_SESSION["Edad_Persona"]; ?></a></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Sexo:</td>
+                                                                <td><a href="form-x-editable.html#" id="edisexo" data-type="select" data-pk="1" data-value="5" data-source="/sexos" data-original-title="Select edisexo"><?php echo $_SESSION["Se_Persona"]; ?></a></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Estado civil:</td>
+                                                                <td><a href="form-x-editable.html#" id="ediestadocivil" data-type="select" data-pk="1" data-value="5" data-source="/estadociviles" data-original-title="Select ediestadocivil"><?php echo $_SESSION["Es_Civil_Persona"]; ?></a></td>
+                                                            </tr> 
+                                                            <tr>
+                                                                <td>Tipo de usuario:</td>
+                                                                <td><a href="form-x-editable.html#" id="editipouser" data-type="select" data-pk="1" data-value="5" data-value="LI" data-source="/tipousers" data-original-title="Select editipouser"><?php echo $_SESSION["Ti_Persona"]; ?></a></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Dirección:</td>
+                                                                <td><a href="form-x-editable.html#" id="edidireccion" data-type="textarea" data-pk="1" data-placeholder="Your comments here..." data-original-title="Enter edidireccion"><?php echo $_SESSION["dire_Persona"]; ?></a></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td style="width:35%;">Teléfono:</td>
+                                                                <td style="width:65%"><a href="form-x-editable.html#" id="editelefono" data-type="text" data-pk="1" data-original-title="Enter editelefono"><?php echo $_SESSION["tele_Persona"]; ?></a></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Misión:</td>
+                                                                <!--<td><a href="form-x-editable.html#" id="sel_mision" data-type="select2" data-pk="1" data-select-search="true" data-value="BS" data-original-title="Select sel_mision"><?php echo $_SESSION["No_Mision"]; ?></a></td>-->
+                                                                <td><select class="form-control" name="state" id="sel_mision" required="">
+                                                                        <option value="0"><?php echo $_SESSION["No_Mision"]; ?></option>                                                                                                                          
+                                                                    </select></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Distrito:</td>
+                                                                <!--<td><a href="form-x-editable.html#" id="sel_distrito" data-type="select2" data-pk="1" data-select-search="true" data-value="BS" data-original-title="Select sel_distrito"><?php echo $_SESSION["No_Distrito"]; ?></a></td>-->
+                                                                <td><select class="form-control" name="state" id="sel_distrito">
+                                                                        <option value="0"><?php echo $_SESSION["No_Distrito"]; ?></option>
+                                                                    </select></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Iglesia:</td>
+                                                                <!--<td><a href="form-x-editable.html#" id="sel_iglesia" data-type="select2" data-pk="1" data-select-search="true" data-value="BS" data-original-title="Select sel_iglesia"><?php echo $_SESSION["Nombre_Iglesia"]; ?></a></td>-->
+                                                            <td><select class="form-control" name="state" id="sel_iglesia">
+                                                                <option value="0"><?php echo $_SESSION["Nombre_Iglesia"]; ?></option>
+                                                            </select></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td style="width:35%;">Correo:</td>
+                                                                <td style="width:65%"><a href="form-x-editable.html#" id="edicorreo" data-type="text" data-pk="1" data-original-title="Enter edicorreo"><?php echo $_SESSION["correo_Persona"]; ?></a></td>
+                                                            </tr>                                                                
+                                                            </tbody>
+                                                        </table>
+                                                        <div class="row"> 
+                                                            <div class="col-xs-5 col-sm-1 col-md-1 col-lg-1 asi"></div>
+                                                            <div class="col-xs-3 col-sm-5 col-md-5 col-lg-5 ">
+                                                                <a href="Principal.php"><div class="text-center"><button class="btn login_btn" type="button">Cancelar</button></div></a>
+                                                            </div>
+                                                            <div class="col-xs-3 col-sm-5 col-md-5 col-lg-5" style="align-items: center;">                                    
+                                                                <div class="text-center"><button class="btn login_btn" type="submit" name="edituser" id="edituser" onclick="cargardatos()">Actualizar</button></div>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>										
+                                </article>
+                            </div>																
+                        </section>
+                    </div>
+                </div>
+            </div>
+            <!--================================================== -->
+
+            <!-- PACE LOADER - turn this on if you want ajax loading to show (caution: uses lots of memory on iDevices)-->
+            <!--<script data-pace-options='{ "restartOnRequestAfter": true }' src="js/plugin/pace/pace.min.js"></script>-->
+
+            <!-- Link to Google CDN's jQuery + jQueryUI; fall back to local -->
+            <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+            <!--<script src="../js/jquery-3.4.1.min.js" type="text/javascript"></script>-->
+    <!--            <script>
+                                                                    if (!window.jQuery) {
+                                                                        document.write('<script src="js/libs/jquery-2.1.1.min.js"><\/script>');
+                                                                    }
+            </script>-->
+
+                    <!--<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>-->
+        <!--            <script>
+                                                                            if (!window.jQuery.ui) {
+                                                                                document.write('<script src="js/libs/jquery-ui-1.10.3.min.js"><\/script>');
+                                                                            }
+                    </script>-->
+
+            <!-- IMPORTANT: APP CONFIG -->
+
+            <script src="js/app.config.js"></script>
+
+            <!-- JS TOUCH : include this plugin for mobile drag / drop touch events-->
+            <!--<script src="js/plugin/jquery-touch/jquery.ui.touch-punch.min.js"></script>--> 
+
+            <!-- BOOTSTRAP JS -->
+            <script src="js/bootstrap/bootstrap.min.js"></script>
+
+            <!-- CUSTOM NOTIFICATION -->
+            <!--<script src="js/notification/SmartNotification.min.js"></script>-->
+
+            <!-- JARVIS WIDGETS -->
+            <!--<script src="js/smartwidgets/jarvis.widget.min.js"></script>-->
+
+            <!-- EASY PIE CHARTS -->
+            <!--<script src="js/plugin/easy-pie-chart/jquery.easy-pie-chart.min.js"></script>-->
+
+            <!-- SPARKLINES -->
+            <!--<script src="js/plugin/sparkline/jquery.sparkline.min.js"></script>-->
+
+            <!-- JQUERY VALIDATE -->
+            <!--<script src="js/plugin/jquery-validate/jquery.validate.min.js"></script>-->
+
+            <!-- JQUERY MASKED INPUT -->
+            <!--<script src="js/plugin/masked-input/jquery.maskedinput.min.js"></script>-->
+
+            <!-- JQUERY SELECT2 INPUT -->
+            <script src="js/plugin/select2/select2.min.js"></script>
+
+            <!-- JQUERY UI + Bootstrap Slider -->
+            <!--<script src="js/plugin/bootstrap-slider/bootstrap-slider.min.js"></script>-->
+
+            <!-- browser msie issue fix -->
+            <!--<script src="js/plugin/msie-fix/jquery.mb.browser.min.js"></script>-->
+
+            <!-- FastClick: For mobile devices -->
+            <!--<script src="js/plugin/fastclick/fastclick.min.js"></script>-->
+
+            <!--[if IE 8]>
+
+            <h1>Your browser is out of date, please update your browser by going to www.microsoft.com/download</h1>
+
+            <![endif]-->
+
+            <!-- Demo purpose only -->
+            <!--<script src="js/demo.min.js"></script>-->
+
+            <!-- MAIN APP JS FILE -->
+            <script src="js/app.min.js"></script>
+
+            <!-- ENHANCEMENT PLUGINS : NOT A REQUIREMENT -->
+            <!-- Voice command : plugin -->
+            <!--<script src="js/speech/voicecommand.min.js"></script>-->
+
+            <!-- SmartChat UI : plugin -->
+    <!--            <script src="js/smart-chat-ui/smart.chat.ui.min.js"></script>
+            <script src="js/smart-chat-ui/smart.chat.manager.min.js"></script>-->
+
+            <!-- PAGE RELATED PLUGIN(S) -->
+            <!--<script src="js/plugin/maxlength/bootstrap-maxlength.min.js"></script>-->
+            <!--<script src="js/plugin/bootstrap-timepicker/bootstrap-timepicker.min.js"></script>-->
+            <!--<script src="js/plugin/clockpicker/clockpicker.min.js"></script>-->
+            <!--<script src="js/plugin/bootstrap-tags/bootstrap-tagsinput.min.js"></script>-->
+            <!--<script src="js/plugin/noUiSlider/jquery.nouislider.min.js"></script>-->
+            <!--<script src="js/plugin/ion-slider/ion.rangeSlider.min.js"></script>-->
+            <!--<script src="js/plugin/bootstrap-duallistbox/jquery.bootstrap-duallistbox.min.js"></script>-->		
+            <!--<script src="js/plugin/colorpicker/bootstrap-colorpicker.min.js"></script>-->
+            <!--<script src="js/plugin/knob/jquery.knob.min.js"></script>-->
+            <script src="js/plugin/x-editable/moment.min.js"></script>
+            <script src="js/plugin/x-editable/jquery.mockjax.min.js"></script>
+            <script src="js/plugin/x-editable/x-editable.min.js"></script>
+            <!--<script src="js/plugin/typeahead/typeahead.min.js"></script>-->
+            <!--<script src="js/plugin/typeahead/typeaheadjs.min.js"></script>-->
+            <script src="../js/Logueo/Validacion.js" type="text/javascript"></script>
+            <script src="../js/Logueo/RegistrarUsuario.js" type="text/javascript"></script>
+            <script type="text/javascript">
+
+                                                                    // DO NOT REMOVE : GLOBAL FUNCTIONS!
+
+                                                                    $(document).ready(function () {
+
+                                                                        pageSetUp();
+                                                                        //                                                                        Mision();
+
+                                                                        /*
+                                                                         * X-Ediable
+                                                                         */
+
+
+                                                                        (function (e) {
+                                                                            "use strict";
+                                                                            var t = function (e) {
+                                                                                this.init("address", e, t.defaults)
+                                                                            };
+                                                                            e.fn.editableutils.inherit(t, e.fn.editabletypes.abstractinput);
+                                                                            e.extend(t.prototype, {
+                                                                                render: function () {
+                                                                                    this.$input = this.$tpl.find("input")
+                                                                                },
+                                                                                value2html: function (t, n) {
+                                                                                    if (!t) {
+                                                                                        e(n).empty();
+                                                                                        return
+                                                                                    }
+                                                                                    var r = e("<div>").text(t.city).html() + ", " + e("<div>").text(t.street).html() +
+                                                                                            " st., bld. " + e("<div>").text(t.building).html();
+                                                                                    e(n).html(r)
+                                                                                },
+                                                                                html2value: function (e) {
+                                                                                    return null
+                                                                                },
+                                                                                value2str: function (e) {
+                                                                                    var t = "";
+                                                                                    if (e)
+                                                                                        for (var n in e)
+                                                                                            t = t + n + ":" + e[n] + ";";
+                                                                                    return t
+                                                                                },
+                                                                                str2value: function (e) {
+                                                                                    return e
+                                                                                },
+                                                                                value2input: function (e) {
+                                                                                    if (!e)
+                                                                                        return;
+                                                                                    this.$input.filter('[name="city"]').val(e.city);
+                                                                                    this.$input.filter('[name="street"]').val(e.street);
+                                                                                    this.$input.filter('[name="building"]').val(e.building)
+                                                                                },
+                                                                                input2value: function () {
+                                                                                    return {
+                                                                                        city: this.$input.filter('[name="city"]').val(),
+                                                                                        street: this.$input.filter('[name="street"]').val(),
+                                                                                        building: this.$input.filter('[name="building"]').val()
+                                                                                    }
+                                                                                },
+                                                                                activate: function () {
+                                                                                    this.$input.filter('[name="city"]').focus()
+                                                                                },
+                                                                                autosubmit: function () {
+                                                                                    this.$input.keydown(function (t) {
+                                                                                        t.which === 13 && e(this).closest("form").submit()
+                                                                                    })
+                                                                                }
+                                                                            });
+                                                                            t.defaults = e.extend({}, e.fn.editabletypes.abstractinput.defaults, {
+                                                                                tpl: '<div class="editable-address"><label><span>City: </span><input type="text" name="city" class="input-small"></label></div><div class="editable-address"><label><span>Street: </span><input type="text" name="street" class="input-small"></label></div><div class="editable-address"><label><span>Building: </span><input type="text" name="building" class="input-mini"></label></div>',
+                                                                                inputclass: ""
+                                                                            });
+                                                                            e.fn.editabletypes.address = t
+                                                                        })(window.jQuery);
+
+                                                                        //ajax mocks
+                                                                        $.mockjaxSettings.responseTime = 500;
+
+                                                                        $.mockjax({
+                                                                            url: '/post',
+                                                                            response: function (settings) {
+                                                                                log(settings, this);
+                                                                            }
+                                                                        });
+
+                                                                        $.mockjax({
+                                                                            url: '/error',
+                                                                            status: 400,
+                                                                            statusText: 'Bad Request',
+                                                                            response: function (settings) {
+                                                                                this.responseText = 'Please input correct value';
+                                                                                log(settings, this);
+                                                                            }
+                                                                        });
+
+                                                                        $.mockjax({
+                                                                            url: '/status',
+                                                                            status: 500,
+                                                                            response: function (settings) {
+                                                                                this.responseText = 'Internal Server Error';
+                                                                                log(settings, this);
+                                                                            }
+                                                                        });
+                                                                        //INICIO DE COMBOS
+                                                                        $.mockjax({
+                                                                            url: '/sexos',
+                                                                            response: function (settings) {
+                                                                                this.responseText = [{
+                                                                                        value: 0,
+                                                                                        text: 'Masculino'
+                                                                                    }, {
+                                                                                        value: 1,
+                                                                                        text: 'Femenino'
+                                                                                    }];
+                                                                                log(settings, this);
+                                                                            }
+                                                                        });
+                                                                        $.mockjax({
+                                                                            url: '/estadociviles',
+                                                                            response: function (settings) {
+                                                                                this.responseText = [{
+                                                                                        value: 0,
+                                                                                        text: 'Soltero'
+                                                                                    }, {
+                                                                                        value: 1,
+                                                                                        text: 'Casado'
+                                                                                    }, {
+                                                                                        value: 2,
+                                                                                        text: 'Viudo'
+                                                                                    }, {
+                                                                                        value: 3,
+                                                                                        text: 'Divorciado'
+                                                                                    }];
+                                                                                log(settings, this);
+                                                                            }
+                                                                        });
+                                                                        $.mockjax({
+                                                                            url: '/tipousers',
+                                                                            response: function (settings) {
+                                                                                this.responseText = [{
+                                                                                        value: 0,
+                                                                                        text: 'Líder'
+                                                                                    }, {
+                                                                                        value: 1,
+                                                                                        text: 'Estudiante'
+                                                                                    }, {
+                                                                                        value: 2,
+                                                                                        text: 'Miembro'
+                                                                                    }, {
+                                                                                        value: 3,
+                                                                                        text: 'Pastor'
+                                                                                    }];
+                                                                                log(settings, this);
+                                                                            }
+                                                                        });
+                                                                        //FIN DE COMBOS
+
+                                                                        //TODO: add this div to page
+                                                                        function log(settings, response) {
+                                                                            var s = [],
+                                                                                    str;
+                                                                            s.push(settings.type.toUpperCase() + ' url = "' + settings.url + '"');
+                                                                            for (var a in settings.data) {
+                                                                                if (settings.data[a] && typeof settings.data[a] === 'object') {
+                                                                                    str = [];
+                                                                                    for (var j in settings.data[a]) {
+                                                                                        str.push(j + ': "' + settings.data[a][j] + '"');
+                                                                                    }
+                                                                                    str = '{ ' + str.join(', ') + ' }';
+                                                                                } else {
+                                                                                    str = '"' + settings.data[a] + '"';
+                                                                                }
+                                                                                s.push(a + ' = ' + str);
+                                                                            }
+                                                                            s.push('RESPONSE: status = ' + response.status);
+
+                                                                            if (response.responseText) {
+                                                                                if ($.isArray(response.responseText)) {
+                                                                                    s.push('[');
+                                                                                    $.each(response.responseText, function (i, v) {
+                                                                                        s.push('{value: ' + v.value + ', text: "' + v.text + '"}');
+                                                                                    });
+                                                                                    s.push(']');
+                                                                                } else {
+                                                                                    s.push($.trim(response.responseText));
+                                                                                }
+                                                                            }
+                                                                            s.push('--------------------------------------\n');
+                                                                            $('#console').val(s.join('\n') + $('#console').val());
+                                                                        }
+
+                                                                        /*
+                                                                         * X-EDITABLES
+                                                                         */
+
+                                                                        $('#inline').on('change', function (e) {
+                                                                            if ($(this).prop('checked')) {
+                                                                                window.location.href = '?mode=inline#ajax/plugins.html';
+                                                                            } else {
+                                                                                window.location.href = '?#ajax/plugins.html';
+                                                                            }
+                                                                        });
+
+                                                                        if (window.location.href.indexOf("?mode=inline") > -1) {
+                                                                            $('#inline').prop('checked', true);
+                                                                            $.fn.editable.defaults.mode = 'inline';
+                                                                        } else {
+                                                                            $('#inline').prop('checked', false);
+                                                                            $.fn.editable.defaults.mode = 'popup';
+                                                                        }
+
+                                                                        //defaults
+                                                                        $.fn.editable.defaults.url = '/post';
+                                                                        //$.fn.editable.defaults.mode = 'inline'; use this to edit inline
+
+                                                                        //enable / disable
+                                                                        $('#enable').click(function () {
+                                                                            $('#user .editable').editable('toggleDisabled');
+                                                                        });
+                                                                        //INICIO DE CAMPOS EDITABLES
+                                                                        //editables
+
+                                                                        $('#edidUsuario').editable({
+                                                                            url: '/post',
+                                                                            type: 'text',
+                                                                            pk: 1,
+                                                                            name: 'edidUsuario',
+                                                                            title: 'Enter edidUsuario'
+                                                                        });
+                                                                        $('#edicontra').editable({
+                                                                            url: '/post',
+                                                                            type: 'text',
+                                                                            pk: 1,
+                                                                            name: 'edicontra',
+                                                                            title: 'Enter edicontra'
+                                                                        });
+                                                                        $('#edinombre').editable({
+                                                                            url: '/post',
+                                                                            type: 'text',
+                                                                            pk: 1,
+                                                                            name: 'edinombre',
+                                                                            title: 'Enter edinombre'
+                                                                        });
+                                                                        $('#ediapellido').editable({
+                                                                            url: '/post',
+                                                                            type: 'text',
+                                                                            pk: 1,
+                                                                            name: 'ediapellido',
+                                                                            title: 'Enter ediapellido'
+                                                                        });
+                                                                        $('#ediedad').editable({
+                                                                            url: '/post',
+                                                                            type: 'text',
+                                                                            pk: 1,
+                                                                            name: 'ediedad',
+                                                                            title: 'Enter ediedad'
+                                                                        });
+                                                                        $('#editelefono').editable({
+                                                                            url: '/post',
+                                                                            type: 'text',
+                                                                            pk: 1,
+                                                                            name: 'editelefono',
+                                                                            title: 'Enter editelefono'
+                                                                        });
+                                                                        $('#edicorreo').editable({
+                                                                            url: '/post',
+                                                                            type: 'text',
+                                                                            pk: 1,
+                                                                            name: 'correo',
+                                                                            title: 'Enter edicorreo'
+                                                                        });
+
+                                                                        $('#status').editable();
+
+                                                                        $('#edisexo').editable({
+                                                                            showbuttons: false
+                                                                        });
+                                                                        $('#ediestadocivil').editable({
+                                                                            showbuttons: false
+                                                                        });
+                                                                        $('#editipouser').editable({
+                                                                            showbuttons: false
+                                                                        });
+
+
+                                                                        $('#vacation').editable({
+                                                                            datepicker: {
+                                                                                todayBtn: 'linked'
+                                                                            }
+                                                                        });
+
+                                                                        $('#dob').editable();
+
+                                                                        $('#event').editable({
+                                                                            placement: 'right',
+                                                                            combodate: {
+                                                                                firstItem: 'name'
+                                                                            }
+                                                                        });
+
+                                                                        $('#edidireccion').editable({
+                                                                            showbuttons: 'bottom'
+                                                                        });
+    //                                                                        var countries = [];
+    //                                                                        $.each({
+    //                                                                            "BD": "lall",
+    //                                                                            "BE": "nuevo",
+    //                                                                            "BF": "tut Faso",
+    //                                                                            "BG": "Bulgaria",
+    //                                                                            "BA": "Bosnia and Herzegovina",
+    //                                                                            "BB": "Barbados",
+    //                                                                            "WF": "Wallis and Futuna",
+    //                                                                            "BL": "Saint Bartelemey",
+    //                                                                            "BM": "Bermuda",
+    //                                                                            "BN": "Brunei Darussalam",
+    //                                                                            "BS": "Bahamas"
+    //                                                                        }, function (k, v) {
+    //                                                                            countries.push({
+    //                                                                                id: k,
+    //                                                                                text: v
+    //                                                                            });
+    //                                                                        });
+    //
+    //
+    //                                                                        var mision = [];
+    //                                                                        $.each({
+    //                                                                            "BD": "lall",
+    //                                                                            "BE": "nuevo",
+    //                                                                            "BF": "tut Faso",
+    //                                                                            "BG": "Bulgaria",
+    //                                                                            "BA": "Bosnia and Herzegovina",
+    //                                                                            "BB": "Barbados",
+    //                                                                            "WF": "Wallis and Futuna",
+    //                                                                            "BL": "Saint Bartelemey",
+    //                                                                            "BM": "Bermuda",
+    //                                                                            "BN": "Brunei Darussalam",
+    //                                                                            "BS": "Bahamas"
+    //                                                                        }, function (k, v) {
+    //                                                                            mision.push({
+    //                                                                                id: k,
+    //                                                                                text: v
+    //                                                                            });
+    //                                                                        });
+
+
+
+    //                                                                        $('#sel_mision').editable({
+    //                                                                            source: mision,
+    //                                                                            select2: {
+    //                                                                                width: 200
+    //                                                                            }
+    //                                                                        });
+    //                                                                        $('#sel_distrito').editable({
+    //                                                                            source: countries,
+    //                                                                            select2: {
+    //                                                                                width: 200
+    //                                                                            }
+    //                                                                        });
+    //                                                                        $('#sel_iglesia').editable({
+    //                                                                            source: countries,
+    //                                                                            select2: {
+    //                                                                                width: 200
+    //                                                                            }
+    //                                                                        });
+
+                                                                        $('#user .editable').on('hidden', function (e, reason) {
+                                                                            if (reason === 'save' || reason === 'nochange') {
+                                                                                var $next = $(this).closest('tr').next().find('.editable');
+                                                                                if ($('#autoopen').is(':checked')) {
+                                                                                    setTimeout(function () {
+                                                                                        $next.editable('show');
+                                                                                    }, 300);
+                                                                                } else {
+                                                                                    $next.focus();
+                                                                                }
+                                                                            }
+                                                                        });
+
+                                                                    });
+
+            </script>
+            <script type="text/javascript">
+                function Mision() {
+                    $.ajax({
+                        type: "POST",
+                        url: 'Controlador/Logueo.php',
+                        data: {opc: "ListarMision"},
+                        success: function (response)
+                        {
+                            var data = JSON.parse(response);
+                            var cadena = "<option value=''>SELECCIONAR MISIÓN</option>";
+                            if (data.length > 0) {
+                                for (var i = 0; i < data.length; i++) {
+                                    // alert(data[i].id_Mision);
+                                    cadena += "<option value='" + data[i].id_Mision + "'>" + data[i].No_Mision + "</option>";
+                                }
+                                $("#sel_mision").html(cadena);
+                                var id_Mision = $("#sel_mision").val();
+                                Distrito(id_Mision);
+                            } else {
+                                cadena += "<option value=''>No hay datos</option>";
+                                $("#sel_mision").html(cadena);
+                            }
+                        }
+                    });
+                }
+            </script>
+        </body>
+
+    </html><?php
+} else {
+    include_once './inc2/Redireccionar.php';
+}
+?>

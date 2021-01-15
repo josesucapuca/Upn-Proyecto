@@ -16,16 +16,16 @@ $(document).ready(function () {
 function Mision() {
     $.ajax({
         type: "POST",
-        url: 'Controlador/Controller_RegistrarUsuario.php',
+        url: 'Controlador/Logueo.php',
         data: {opc: "ListarMision"},
         success: function (response)
         {
-//            alert(response);
             var data = JSON.parse(response);
             var cadena = "<option value=''>SELECCIONAR MISIÓN</option>";
             if (data.length > 0) {
                 for (var i = 0; i < data.length; i++) {
-                    cadena += "<option value='" + data[i][0] + "'>" + data[i][1] + "</option>";
+                   // alert(data[i].id_Mision);
+                    cadena += "<option value='" + data[i].id_Mision + "'>" + data[i].No_Mision + "</option>";
                 }
                 $("#sel_mision").html(cadena);
                 var id_Mision = $("#sel_mision").val();
@@ -40,16 +40,15 @@ function Mision() {
 function Distrito(id_Mision) {
     $.ajax({
         type: "POST",
-        url: 'Controlador/Controller_RegistrarUsuario.php',
-        data: {opc: "ListarDistrito",id_Mision:id_Mision},
+        url: 'Controlador/Logueo.php',
+        data: {opc: "ListarDistrito", id_Mision: id_Mision},
         success: function (response)
         {
-//            alert(response);
             var data = JSON.parse(response);
             var cadena = "<option value=''>SELECCIONE UN DISTRITO</option>";
             if (data.length > 0) {
                 for (var i = 0; i < data.length; i++) {
-                    cadena += "<option value='" + data[i][0] + "'>" + data[i][1] + "</option>";
+                    cadena += "<option value='" + data[i].id_Distrito + "'>" + data[i].No_Distrito + "</option>";
                 }
                 $("#sel_distrito").html(cadena);
                 var id_Distrito = $("#sel_distrito").val();
@@ -64,17 +63,18 @@ function Distrito(id_Mision) {
 function Iglesia(id_Distrito) {
     $.ajax({
         type: "POST",
-        url: 'Controlador/Controller_RegistrarUsuario.php',
-        data: {opc: "ListarIglesia", id_Distrito:id_Distrito},
+        url: 'Controlador/Logueo.php',
+        data: {opc: "ListarIglesia", id_Distrito: id_Distrito},
         success: function (response)
         {
             var data = JSON.parse(response);
-            var cadena = "";
+            var cadena = "<option value=''>SELECCIONE UNA IGLESIA</option>";
             if (data.length > 0) {
                 for (var i = 0; i < data.length; i++) {
-                    cadena += "<option value='" + data[i][0] + "'>" + data[i][1] + "</option>";
+                    cadena += "<option value='" + data[i].id_Iglesia + "'>" + data[i].Nombre_Iglesia + "</option>";
                 }
                 $("#sel_iglesia").html(cadena);
+                var id_Iglesia = $("#sel_distrito").val();
             } else {
                 cadena += "<option value=''>No hay datos</option>";
                 $("#sel_iglesia").html(cadena);
