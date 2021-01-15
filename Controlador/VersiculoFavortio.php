@@ -35,3 +35,10 @@ if ($opc === "IngresarVF") {
     $var=$objs->IngresarVersiculoFavorito($id_VF,$id_Persona,$opci,$Com);
     echo json_encode($var);
 }
+if ($opc === "ModificarAnotacion") {
+    $a = $_POST["a"];
+    $b = $_POST["b"];
+    $objs= new VersiculoFavoritoDAO();
+    $var=$objs->IngresarVersiculoFavorito($id_VF,$id_Persona,$opci,$Com);
+    echo json_encode($var);
+}

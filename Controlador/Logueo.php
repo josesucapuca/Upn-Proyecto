@@ -53,18 +53,9 @@ if ($opc === "SalirSesion") {
 }
 
 if ($opc === "ListarMision") {
-
     $objs = new UsuarioDAO();
-
     $var = $objs->ComboMision();
-    $result = array();
-    //looping through all the records fetched
-    $i = 0;
-    while ($row = $var->fetch_object()) {
-        $result[$i]["id_Mision"] = $row->id_Mision;
-        $result[$i]["No_Mision"] = utf8_encode($row->No_Mision);
-        $i++;
-    }
+    $arr = array();
     echo json_encode($result, JSON_UNESCAPED_UNICODE);
     if (mysqli_num_rows($var) != 0) {
         while ($row = mysqli_fetch_assoc($var)) {
@@ -167,12 +158,7 @@ if ($opc === "RecuperarContra") {
     echo $var;
 }
 
-function utf8_converter($array) {
-    array_walk_recursive($array, function(&$item) {
-        $item = utf8_encode($item);
-    });
-    return json_encode($array);
-}
+
 
 //mysqli_close($conexion);
 ?>

@@ -3783,13 +3783,14 @@
 					content : "Please enter your user name",
 					buttons : "[Accept]",
 					input : "text",
-					placeholder : "Enter your user name"
+					placeholder : "Enter your user name",
+                                        inputValue:""
 				}, function(ButtonPress, Value) {
 					alert(ButtonPress + " " + Value);
 				});
 		
 				e.preventDefault();
-			})
+			});
 			// With Buttons
 			$("#smart-mod-eg3").click(function(e) {
 		

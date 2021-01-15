@@ -880,6 +880,7 @@
                                     <!-- widget content -->
                                     <div class="widget-body no-padding">
 
+
                                         <textarea id="mymarkdown" class="custom-scroll" style="max-height:180px;">
 ### Hello there 
 How are you?
@@ -1156,6 +1157,9 @@ Enjoy!
                                     <div class="widget-body">
 
                                         <h3>Summernote Example</h3>
+                                        <button id="edit" class="btn btn-primary" onclick="edit()" type="button">Edit 1</button>
+                                        <button id="save" class="btn btn-primary" onclick="save()" type="button">Save 2</button>
+                                        <div class="click3edit">click2edit</div>
                                         <p>
                                             <button id="edit" class="btn btn-primary" onclick="edit()" type="button">
                                                 Edit
@@ -1165,7 +1169,7 @@ Enjoy!
                                             </button>
                                         </p>
                                         <p></p>
-                                        <div class="click2edit" onclick="edit()">
+                                        <div class="click2edit" ondblclick="edit()">
                                             <pre><code class="javascript">var edit = function() { $('.click2edit').summernote() };</code></pre>
                                         </div>
 
@@ -1187,10 +1191,20 @@ var save = function() {
                                                 $('.click2edit').summernote({
                                                     focus: true
                                                 });
+
                                             };
                                             var save = function () {
-                                                
+                                                alert();
                                                 $('.click2edit').destroy();
+                                            };
+                                            var edit2 = function () {
+                                                $('.click3edit').summernote({
+                                                    focus: true
+                                                });
+                                            };
+                                            var save2 = function () {
+
+                                                $('.click3edit').destroy();
                                             };
                                         </script>
 

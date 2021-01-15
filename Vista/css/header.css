@@ -3,13 +3,29 @@
     ALIGN-ITEMS: center;
     min-height: 60px !important;
 }
+
+a {
+    color: #3fa1f8;
+    text-decoration: none;
+}
+a:focus, a:hover {
+    color: #ccd6de;
+    text-decoration: none;
+}
+.divti{
+    margin-top: -80px;
+}
+#imatit{
+    width: 100%;
+    height: 100%;
+}
 .lipri{
     font-size: 14px;
 }
 .row {
-     margin-left: 0px; 
-     margin-right: 0px; 
-     width: 100%; 
+    margin-left: 0px; 
+    margin-right: 0px; 
+    width: 100%; 
 }
 #ribbon .breadcrumb {
     padding: 11px 10px 11px 0!important;
@@ -44,6 +60,10 @@
 .panelm-green{
     background-color: #356e35 !important;
 }
+.titMusic{
+    font-weight: 600;
+    font-size: 33px;
+}
 .panelm-red{
     background-color: #a90329 !important;
 }
@@ -57,7 +77,7 @@
     background-color: #00000085 !important;
 }
 .panelm-white{
-    background-color: #59595985 !important
+    background-color: #aea8a885 !important
 }
 .panelm{
     background-color: #fff0;
@@ -91,11 +111,11 @@
 }
 .price-features{
     background: none;
-    min-height: 200px;
+    min-height: auto;
 }
 .panehead{
     border-radius: 10px 10px 10px 10px ;
-    height: 250px;
+    height: 200px;
     display: grid;
     align-items: center;
     justify-content: center;
@@ -164,13 +184,16 @@
     border-color: #2c699d;
 }
 .titp{
-    font-size: 80px;text-align: center;color: white;font-weight: 600;
+    font-size: 60px;text-align: center;color: white;font-weight: 600;
 }
 .imglog{
     height: 80px !important;width: auto !important;
 }
 .price-features li+li {
     margin-top: 7px;
+}
+.imagetot{
+    background-size: 100% 100%;
 }
 @media only screen and (min-width: 980px) and (max-width: 1600px){
     .conta {
@@ -179,6 +202,7 @@
         margin-right: auto;
         height: 100%;
     }
+
 }
 @media only screen and (max-width: 679px) and (min-width: 0){
     .btn-primary1 {
@@ -226,6 +250,16 @@
         flex-direction: column;
         height: 100%;
     }
+    .imagetot{
+        background-size: auto 100%;
+    }
+    #imatit{
+        width: 100%;
+        height: 100%;
+    }
+    .divti{
+        margin-top: 0px;
+    }
 }
 ol, ul {
     margin-top: 0;
@@ -249,6 +283,7 @@ a{
     .imglog{
         height: 60px !important;width: auto !important;
     }
+
 }
 @media only screen and (max-width: 280px)  and (min-width: 0){
     .titp{
@@ -270,5 +305,40 @@ a{
 @media only screen and (max-width: 970px)  and (min-width: 768px){
     .titp{
         font-size: 60px;
+    }
+}
+@media (max-width: 1200px)  and (min-width: 680px){
+    .divti{
+        margin-top: 0px;
+    }
+}
+@media only screen and (width: 360px){
+    .titMusic{
+        font-weight: 600;
+        font-size: 20px;
+    }
+}
+@media (min-width: 992px){
+    .fecri {
+        width: 49%;
+        margin-right: 1%;
+    } 
+    .fecrf {
+        width: 49%;
+        margin-left: 1%;
+    } 
+    .fecriR {
+        width: 49%;
+        margin-right: 1%;
+    } 
+    .fecrfR {
+        width: 49%;
+        margin-left: 1%;
+    } 
+}
+
+@media (max-width:991px){
+    #tithim{
+        justify-content: center;
     }
 }

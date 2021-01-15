@@ -3,7 +3,7 @@ function ListaVersiculosFavoritos() {
     $.ajax({
         type: "POST",
         url: '../Controlador/VersiculoFavortio.php',
-        data: {opc: "ListaVersiculoFavorito", p: $("#per").val()},
+        data: {opc: "ListaVersiculoFavorito", p: $("#id_P").val()},
         success: function (response)
         {
             var jsonData = JSON.parse(response);
@@ -20,7 +20,7 @@ function ListaVersiculosFavoritos() {
                             '<p>' + jsonData[i].Con_Versiculo + '</p>';
                     
                     if (jsonData[i].Anotacion !== "") {
-                        html1 += '<small id="Comen">' + jsonData[i].Anotacion + '</small>';
+                        html1 += '<small id="Comen"><div class="Comen'+i+'">' + jsonData[i].Anotacion + '</div></small>';
                     }
                     if (jsonData[i].Anotacion === "") {
                         html1 += '<small id="Comen">Sin Comentario</small>';

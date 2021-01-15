@@ -1,0 +1,323 @@
+.head{
+    DISPLAY: FLEX;
+    ALIGN-ITEMS: center;
+    min-height: 60px !important;
+}
+.foring{
+    width: 100%;
+}
+a {
+    color: #3fa1f8;
+    text-decoration: none;
+}
+a:focus, a:hover {
+    color: #ccd6de;
+    text-decoration: none;
+}
+.divti{
+    margin-top: -80px;
+}
+#imatit{
+    width: 100%;
+    height: 100%;
+}
+.lipri{
+    font-size: 14px;
+}
+.row {
+    margin-left: 0px; 
+    margin-right: 0px; 
+    width: 100%; 
+}
+#ribbon .breadcrumb {
+    padding: 11px 10px 11px 0!important;
+}
+#header>div {
+    height: 60px;
+    display: flex;
+    align-items: center;
+}
+#header {
+    height: 60px;
+
+}
+#logo {
+    margin-top: 0px;
+}
+#logo-group>span {
+    height: 60px;
+}
+.bod{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background: #0000005e;
+}
+.contop{
+    padding: 10px;
+}
+.panelm{
+    background-color: #fff0;
+}
+.panelm-green{
+    background-color: #356e35 !important;
+}
+.titMusic{
+    font-weight: 600;
+    font-size: 33px;
+}
+.panelm-red{
+    background-color: #a90329 !important;
+}
+.panelm-warming{
+    background-color: #c79121 !important;
+}
+.panelm-gris{
+    background-color: #4c4f53 !important;
+}
+.panelm-black{
+    background-color: #00000085 !important;
+}
+.panelm-white{
+    background-color: #aea8a885 !important
+}
+.panelm{
+    background-color: #fff0;
+}
+.pan-bod-esPer{
+    display: none;
+}
+.pan-bod-esBi{
+    display: none;
+}
+.pan-bod-cam{
+    display: none;
+}
+.pan-bod-escu{
+    display: none;
+}
+.imgEs{
+}
+
+#panHeadEsp :hover,#panHeadEsp  :focus {
+    color: #356e35 !important;
+}
+#panHeadEsBi :hover,#panHeadEsBi  :focus {
+    color: #a90329 !important;
+}
+#panHeadCamEva :hover,#panHeadCamEva  :focus {
+    color: #cfcfcf !important;
+}
+#panHeadEsSab :hover,#panHeadEsSab  :focus {
+    color: #c79121 !important;
+}
+.price-features{
+    background: none;
+    min-height: 200px;
+}
+.panehead{
+    border-radius: 10px 10px 10px 10px ;
+    height: 200px;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 5px solid transparent;
+}
+.titop{
+    font-size: 25px !important;
+}
+.btn-header.transparent a {
+    /* border: none!important; */
+    /* background: 0 0; */
+    /* margin-left: 0; */
+    /* width: 25px!important; */
+    /* box-shadow: none!important; */
+}
+#ribbon .breadcrumb, #ribbon .breadcrumb a {
+    color: #fff!important;
+    text-decoration: none!Important;
+}
+#ribbon .breadcrumb li:last-child, #ribbon .breadcrumb>.active {
+    color: #fff;
+}
+.page-footer {
+    height: 80px;
+
+}
+.page-footer {
+    padding: 0px 13px 0;
+}
+.fot{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+}
+.btn1{
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: 400;
+    text-align: center;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    padding: 6px 12px;
+    font-size: 13px;
+    line-height: 1.42857143;
+    border-radius: 2px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: rgba(169,3,41,.5);
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    box-shadow: inset 0 -2px 0 rgba(0,0,0,.05);
+    -moz-box-shadow: inset 0 -2px 0 rgba(0,0,0,.05);
+    -webkit-box-shadow: inset 0 -2px 0 rgba(0,0,0,.05);
+}
+.btn-primary1 {
+    color: #fff;
+    background-color: #3276b1;
+    border-color: #2c699d;
+}
+.titp{
+    font-size: 60px;text-align: center;color: white;font-weight: 600;
+}
+.imglog{
+    height: 80px !important;width: auto !important;
+}
+.price-features li+li {
+    margin-top: 7px;
+}
+.imagetot{
+    background-size: 100% 100%;
+}
+@media only screen and (min-width: 980px) and (max-width: 1600px){
+    .conta {
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        height: 100%;
+    }
+
+}
+@media only screen and (max-width: 679px) and (min-width: 0){
+    .btn-primary1 {
+        color: #fff;
+        background-color: #3276b1;
+        border-color: #2c699d;
+        -webkit-box-shadow: inset 0 -2px 0 rgba(0,0,0,.05);
+    }
+
+    .btn-primary1:hover{
+        color: #fff !important;
+        background-color: #275b89 !important;
+        border-color: #1f496d !important;
+    }
+    .asidelat{
+        height: 100%;
+    }
+    #ribbon {
+        border-bottom: 1px solid #CFCFCF;
+        border-top: 1px solid #E6E6E6;
+        background: #3e8391;
+    }
+    #ribbon .breadcrumb li:last-child, #ribbon .breadcrumb>.active {
+        color: #fff!important;
+    }
+    .btn-header.transparent a {
+        border-radius: 2px;
+        cursor: default!important;
+        display: inline-block;
+        font-weight: 700;
+        height: 30px;
+        line-height: 24px;
+        min-width: 30px;
+        padding: 2px;
+        text-align: center;
+        text-decoration: none!important;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        background-color: #f8f8f8;
+        border: 1px solid #bfbfbf ;
+        width:  40px!important;
+    }
+    .bod{
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+    .imagetot{
+        background-size: auto 100%;
+    }
+    #imatit{
+        width: 100%;
+        height: 100%;
+    }
+    .divti{
+        margin-top: 0px;
+    }
+}
+ol, ul {
+    margin-top: 0;
+    margin-bottom: 0px;
+}
+a{
+    font-size: 14px;
+}
+@media only screen and (max-width: 1200px)  and (min-width: 0){
+    .asidelat{
+        height: 100% !important;
+    }
+    .bod{
+        height: 100%;
+    }
+}
+@media only screen and (max-width: 414px)  and (min-width: 0){
+    .titp{
+        font-size:60px !important;
+    }
+    .imglog{
+        height: 60px !important;width: auto !important;
+    }
+
+}
+@media only screen and (max-width: 280px)  and (min-width: 0){
+    .titp{
+        font-size:40px !important;
+    }
+    .imglog{
+        height: 60px !important;width: auto !important;
+    }
+}
+@media (width: 1024px )  and (height: 1366px){
+    .bod{
+        height: 100vh;
+    }
+    .imglog {
+        height: 100px !important;
+        width: auto !important;
+    }
+}
+@media only screen and (max-width: 970px)  and (min-width: 768px){
+    .titp{
+        font-size: 60px;
+    }
+}
+@media (max-width: 1200px)  and (min-width: 680px){
+    .divti{
+        margin-top: 0px;
+    }
+}
+@media only screen and (width: 360px){
+    .titMusic{
+        font-weight: 600;
+        font-size: 20px;
+    }
+}
+
