@@ -1,76 +1,85 @@
 $(document).ready(function () {
-    alert("entrando calendario");
+    alert("entrando calendario otra vez");
     $('#CalendarioWeb').fullCalendar({
         header: {
             left: 'today prev,next',
             center: 'title',
             right: 'month,basicweek, basicDay, agendaWeek, agendaDay'
         },
-        dayClick: function (date, jsEvent, view) {
-            $('#btnAgregar').prop("disabled", false);
-            $('#btnModificar').prop("disabled", true);
-            $('#btnEliminar').prop("disabled", true);
-
-            limpiar();
+        dayClick: function (date, jsEvent, view) { 
             $('#txtFecha').val(date.format());
-            $("#ModalEventos").modal();
-
+            $("#ModalDevocional").modal();
         },
+//        eventSources: [{
+//                events: [
+//                    {
+////                        title: 'evento 1',
+//                        Resumen_Personal: "holisss",
+//                        start: '2021-01-01'
+//                    }
+//                    // other events here
+//                ],
+//                color: "black",
+//                textColor: "yellow"
+//            }],
+
         events: 'http://localhost/Upn-Proyecto/Controlador/Controller-DiarioDevocional.php',
         eventClick: function (calEvent, jsEvent, view) {
-            alert ("sdjsh");
-            $('#btnAgregar').prop("disabled", true);
-            $('#btnModificar').prop("disabled", false);
-            $('#btnEliminar').prop("disabled", false);
-
-            $('#tituloEvento').html(calEvent.Texto_estudio);
-            //Mostrar información de los eventos
+//            alert ("sdjsh");
+//            $('#btnAgregar').prop("disabled", true);
+//            $('#btnModificar').prop("disabled", false);
+//            $('#btnEliminar').prop("disabled", false);
+//
+            $('#txtTexto').html(calEvent.title);
+            $('#txtTexto').val(calEvent.title);
+//            //Mostrar información de los eventos
             $('#txtID_devocional').val(calEvent.id_Devocional_Diario);
             $('#txtID_persona').val(calEvent.id_Persona);
             $('#txtNombre').val(calEvent.No_Persona);
-            $('#txtIgleDistri').val(calEvent.Nombre_Iglesia);
-            $('#txtIgleDistri').val(calEvent.No_Distrito);
+            $('#txtIgleDistri').val(calEvent.Nombre_Iglesia +""+calEvent.No_Distrito);
+//            $('#txtIgleDistri').val(calEvent.No_Distrito);
             $('#txtAsoMisio').val(calEvent.No_Mision);
             $('#txtTelefono').val(calEvent.tele_Persona);
-            $('#txtEmail').val(calEvent.correo_Persona);
+            $('#txtcorreo').val(calEvent.correo_Persona);
             $('#txtColor').val(calEvent.color);
-            $('#txtTexto').val(calEvent.Texto_estudio);
-            $('#txtResumen').val(calEvent.Resumen_Personal);
+//            $('#txtTexto').val(calEvent.Texto_estudio);
+            $('#txtResumen').html(calEvent.Resumen_Personal);
             $('#txtAplica').val(calEvent.Aplicacion_Diaria);
             $('#txtPedido').val(calEvent.Pedido_Oracion);
             $('#txtContestado').val(calEvent.id_Pedido_Oracion);
             $('#txtCompartire').val(calEvent.Meta);
-            FechaHora = calEvent.start._i.split(" ");
-            $('#txtFecha').val(FechaHora[0]);
-            $('#txtHora').val(FechaHora[1]);
-
-            $("#ModalEventos").modal();
-        },
-        editable: true,
-        eventDrop: function (calEvent) {
-            $('#txtID_devocional').val(calEvent.id_Devocional_Diario);
-            $('#txtID_persona').val(calEvent.id_Persona);
-            $('#txtNombre').val(calEvent.No_Persona);
-            $('#txtIgleDistri').val(calEvent.Nombre_Iglesia);
-            $('#txtIgleDistri').val(calEvent.No_Distrito);
-            $('#txtAsoMisio').val(calEvent.No_Mision);
-            $('#txtTelefono').val(calEvent.tele_Persona);
-            $('#txtEmail').val(calEvent.correo_Persona);
-            $('#txtColor').val(calEvent.color);
-            $('#txtTexto').val(calEvent.Texto_estudio);
-            $('#txtResumen').val(calEvent.Resumen_Personal);
-            $('#txtAplica').val(calEvent.Aplicacion_Diaria);
-            $('#txtPedido').val(calEvent.Pedido_Oracion);
-            $('#txtContestado').val(calEvent.id_Pedido_Oracion);
-            $('#txtCompartire').val(calEvent.Meta);
-
-            var fechaHora = calEvent.start.format().split("T");
-            $('#txtFecha').val(fechaHora[0]);
-            $('#txtHora').val(fechaHora[1]);
-
-            RecolectarDatos();
-            EnviarInformacion('modificar', NuevoEvento, true);
+//            $("#txtFecha").val(calEvent.start);
+//            FechaHora = calEvent.start._i.split(" ");
+//            $('#txtFecha').val(FechaHora[0]);
+//            $('#txtHora').val(FechaHora[1]);
+//
+            $("#ModalDevocional").modal();
         }
+//        editable: true,
+//        eventDrop: function (calEvent) {
+//            $('#txtID_devocional').val(calEvent.id_Devocional_Diario);
+//            $('#txtID_persona').val(calEvent.id_Persona);
+//            $('#txtNombre').val(calEvent.No_Persona);
+//            $('#txtIgleDistri').val(calEvent.Nombre_Iglesia);
+//            $('#txtIgleDistri').val(calEvent.No_Distrito);
+//            $('#txtAsoMisio').val(calEvent.No_Mision);
+//            $('#txtTelefono').val(calEvent.tele_Persona);
+//            $('#txtEmail').val(calEvent.correo_Persona);
+//            $('#txtColor').val(calEvent.color);
+//            $('#txtTexto').val(calEvent.Texto_estudio);
+//            $('#txtResumen').val(calEvent.Resumen_Personal);
+//            $('#txtAplica').val(calEvent.Aplicacion_Diaria);
+//            $('#txtPedido').val(calEvent.Pedido_Oracion);
+//            $('#txtContestado').val(calEvent.id_Pedido_Oracion);
+//            $('#txtCompartire').val(calEvent.Meta);
+//
+//            var fechaHora = calEvent.start.format().split("T");
+//            $('#txtFecha').val(fechaHora[0]);
+//            $('#txtHora').val(fechaHora[1]);
+//
+//            RecolectarDatos();
+//            EnviarInformacion('modificar', NuevoEvento, true);
+//        }
 
     });
 });
@@ -123,7 +132,6 @@ function EnviarInformacion(accion, objEvento, modal) {
                 if (!modal) {
                     $("#ModalEventos").modal('toggle');
                 }
-
             }
         },
         error: function () {

@@ -17,23 +17,45 @@ class DiarioDevocionalDAO {
 
     //Diario devocional Listar
     public function listarDevocional($id_Persona) {
-//        $link = new Conexion();
-//        $conectar = $link->Conectar();
-        $arreglo = array();
-        $sql = "select d.id_Devocional_Diario,d.id_Persona,r.No_Persona,i.Nombre_Iglesia,s.No_Distrito,n.No_Mision,r.tele_Persona,r.correo_Persona, t.Fe_Detalle_Devocional_Diario, t.color,t.textColor, t.Texto_estudio,
-t.Resumen_Personal, t.Aplicacion_Diaria, p.Pedido_Oracion, c.id_Pedido_Oracion, m.Meta
-from devocional_diario d, detalle_devocional_diario t, meta_devocional_diario m, pedido_oracion p, pedido_contestado c, persona r, iglesia i,
-distrito s, mision n
-where d.id_Persona=r.id_Persona and  r.id_Iglesia=i.id_Iglesia and i.id_Distrito=s.id_Distrito and s.id_Mision=n.id_Mision and r.id_Persona='$id_Persona'";
+        $link = new Conexion();
+        $conectar = $link->Conectar();
+//        $arreglo = array();
+        $sql = "select d.id_Devocional_Diario,d.id_Persona,r.No_Persona,i.Nombre_Iglesia,s.No_Distrito,n.No_Mision,r.tele_Persona,r.correo_Persona, 
+t.Fe_Detalle_Devocional_Diario, t.color,t.textColor, t.Texto_estudio, t.Resumen_Personal, t.Aplicacion_Diaria, p.Pedido_Oracion, c.id_Pedido_Oracion, m.Meta
+from devocional_diario d, detalle_devocional_diario t, meta_devocional_diario m, pedido_oracion p, pedido_contestado c, persona r, iglesia i, distrito s, mision n
+where d.id_Persona=r.id_Persona and t.id_Devocional_Diario=d.id_Devocional_Diario and m.id_Detalle_Devocional_Diario=t.id_Detalle_Devocional_Diario
+and p.id_Detalle_Devocional_Diario=t.id_Detalle_Devocional_Diario and c.id_Pedido_Oracion=p.id_Pedido_Oracion and i.id_Distrito=s.id_Distrito 
+and r.id_Iglesia=i.id_Iglesia and s.id_Mision=n.id_Mision and r.id_Persona'$id_Persona'";
+        
+    if ($conectar->query($sql)->num_rows){ 
+    $datos = array(); 
+    $i=0; 
+    $e = $conectar->query($sql); 
+    while($row=$e->fetch_array()) 
+    {      
+        $datos[$i] = $row; 
+        $i++;
+    }
+        echo json_encode(
+                array(
+                    "success" => 1,
+                    "result" => $datos
+                )
+            );
+    }
+    else
+    {    
+        echo "No hay datos"; 
+    }    
 //        $resultado = mysqli_query($conectar, $consulta);
 //        $fila = mysqli_num_rows($resultado);
-              if($consulta = $this->sql($sql)){
-                  while($consulta_VU = mysqli_fetch_assoc($consulta)){
-                      $arreglo["data"][]=$consulta_VU;
-                  }
-                  return$arreglo;
-                  
-              }
+//              if($consulta = $this->sql($sql)){
+//                  while($consulta_VU = mysqli_fetch_assoc($consulta)){
+//                      $arreglo["data"][]=$consulta_VU;
+//                  }
+//                  return$arreglo;
+//                  
+//              }
        
 //        return $this->sql($consulta);
 //        if(!$resultado){

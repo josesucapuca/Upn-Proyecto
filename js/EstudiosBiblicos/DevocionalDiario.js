@@ -36,7 +36,7 @@ function DiarioDevocional(id_Persona) {
             
 //            alert("entro response");
             alert("data"+ response);
-            listarDiario();
+//            listarDiario();
             
 //            RecolectarDatos();
 //            location.href = "Vista/Principal.php";

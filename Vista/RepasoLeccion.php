@@ -181,16 +181,16 @@ if ($_SESSION["Usuario"] !== null) {
                                                                                 <li><a id="S1" href="https://drive.google.com/file/d/1TYYgk9_S8OWUhTkGjIX8lgVxQRGQHI2o/preview" >Comentarios de la Lección - S1</a></li>
                                                                                 <li><a id="S2" href="https://drive.google.com/file/d/1VpuCK75LjXF9KiuZabSvWES7FQmiArSP/preview" >Comentarios de la Lección - S2</a></li>
                                                                                 <li><a id="S3" href="https://drive.google.com/file/d/1R8CLH6tolSI7vb078CqvKOiabjQXy3P9/preview" >Comentarios de la Lección - S3</a></li>
-                                                                                <li><a id="S4" href="" >Comentarios de la Lección - S4</a></li>
-                                                                                <li><a id="S5" href="" >Comentarios de la Lección - S5</a></li>
-                                                                                <li><a id="S6" href="" >Comentarios de la Lección - S6</a></li>
-                                                                                <li><a id="S7" href="" >Comentarios de la Lección - S7</a></li>
-                                                                                <li><a id="S8" href="" >Comentarios de la Lección - S8</a></li> 
-                                                                                <li><a id="S9" href="https://drive.google.com/file/d/1lRM4CrOKYwiJwhpKj2CmgN6eq7Kru0Oo/preview" >Comentarios de la Lección - S9</a></li>
-                                                                                <li><a id="S10" href="" >Comentarios de la Lección - S10</a></li>
-                                                                                <li><a id="S11" href="" >Comentarios de la Lección - S11</a></li>
-                                                                                <li><a id="S12" href="" >Comentarios de la Lección - S12</a></li> 
-                                                                                <li><a id="S13" href="" >Comentarios de la Lección - S13</a></li> 
+                                                                                <li><a id="S4" href="https://drive.google.com/file/d/1MyW1wdcqfBLF1XmRkyj-FPB-zBmlXFKv/preview" >Comentarios de la Lección - S4</a></li>
+                                                                                <li><a id="S5" href="https://drive.google.com/file/d/1tZgdItRv3kN5aYDw4zuOAHK2riCtQhpc/preview" >Comentarios de la Lección - S5</a></li>
+                                                                                <li><a id="S6" href="https://drive.google.com/file/d/1tZgdItRv3kN5aYDw4zuOAHK2riCtQhpc/preview" >Comentarios de la Lección - S6</a></li>
+                                                                                <li><a id="S7" href="https://drive.google.com/file/d/1k-vrnf_Knz9Yy_c24shtIEhxDKDVyBdS/preview" >Comentarios de la Lección - S7</a></li>
+                                                                                <li><a id="S8" href="https://drive.google.com/file/d/1W6LRzEp5WbQ4CdnzQHwePs0LmLDJ7bI_/preview" >Comentarios de la Lección - S8</a></li> 
+                                                                                <li><a id="S9" href="https://drive.google.com/file/d/1b7pewpsbBIdotCZLwL088kCvWcv_weko/preview" >Comentarios de la Lección - S9</a></li>
+                                                                                <li><a id="S10" href="https://drive.google.com/file/d/1OxWG4itBYvVaojEnnMOuSWFu3DtZ8jY2/preview" >Comentarios de la Lección - S10</a></li>
+                                                                                <li><a id="S11" href="https://drive.google.com/file/d/1OxWG4itBYvVaojEnnMOuSWFu3DtZ8jY2/preview" >Comentarios de la Lección - S11</a></li>
+                                                                                <li><a id="S12" href="https://drive.google.com/file/d/1yKgcf6i2_xoHHTqDFh0smsH51ZhDqxCJ/preview" >Comentarios de la Lección - S12</a></li> 
+                                                                                <li><a id="S13" href="https://drive.google.com/file/d/1Y3CYXZb3881t9GMjA1TOPyWurW4ZRLk8/preview" >Comentarios de la Lección - S13</a></li> 
                                                                             </ul>
                                                                         </div>
                                                                     </div>

@@ -100,16 +100,14 @@ and open the template in the editor.
                         <!--<h4 style="color: white">MISIONES</h4>-->
                         <ul class="" >
                             <h4 style="color: white">CAMPOS MISIONEROS</h4>
-                            <li><a href="#">APCE - Asociación Peruana Central Este</a></li>
-                            <li><a href="#">MICOP - Misión Centro Oeste del Perú</a></li>
-                            <li><a href="#">MNO - Misión Nor Oriental </a></li>
-                            <li><a href="#">MPN - Misión Peruana del Norte</a></li>
-                            <li><a href="#">ANOP - Asociación Nor Pacífico del Perú</a></li>
+                            <li><a>APCE - Asociación Peruana Central Este</a></li>
+                            <li><a>MICOP - Misión Centro Oeste del Perú</a></li>
+                            <li><a>MNO - Misión Nor Oriental </a></li>
+                            <li><a>MPN - Misión Peruana del Norte</a></li>
+                            <li><a>ANOP - Asociación Nor Pacífico del Perú</a></li>
                         </ul> 
                     </div>
-
                     <div class="clearfix visible-xs-block"></div>
-
                     <div class="col-md-3 col-sm-6 col-xs-12 imgf">
 
                         <ul class="social-network social-circle">
@@ -120,7 +118,6 @@ and open the template in the editor.
                             <li><a href="https://twitter.com/AdventistasUPN" class="icoTwitter" title="Twitter" target="_blank"><i class="fab fa-twitter"></i></a></li>
                         </ul>
                     </div>
-
                 </div>
                 <div class="row copyright">
                     <div class="col-md-12">
@@ -128,10 +125,8 @@ and open the template in the editor.
                         <p class="text-center">Diseñado por <a href="https://www.nexo-consultores.com/" target="_blank"> Nexo Consultores IT SAC</a></p>
                     </div>
                 </div>
-
             </div>
         </footer>
-
         <div class="gototop js-top">
             <a href="#" class="js-gotop"><i class="fas fa-arrow-up"></i></a>
         </div>

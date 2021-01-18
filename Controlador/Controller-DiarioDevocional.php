@@ -3,49 +3,63 @@
 header('Conten-Type: application/json');
 $pdo = new PDO("mysql:dbname=proyecto_upn;host=localhost", "root", "12345678");
 
-$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+ $person = "8"; 
+//$person= $_GET["id_Persona"];
+//$sql =$pdo->prepare("select * from detalle_devocional_diario");
+//$sql =$pdo->prepare("select d.id_Devocional_Diario,d.id_Persona,r.No_Persona,i.Nombre_Iglesia,s.No_Distrito,n.No_Mision,r.tele_Persona,r.correo_Persona, 
+//t.start, t.color,t.textColor, t.title, t.Resumen_Personal, t.Aplicacion_Diaria, p.Pedido_Oracion, c.id_Pedido_Oracion, m.Meta
+//from devocional_diario d, detalle_devocional_diario t, meta_devocional_diario m, pedido_oracion p, pedido_contestado c, persona r, iglesia i, distrito s, mision n
+//where d.id_Persona=r.id_Persona and t.id_Devocional_Diario=d.id_Devocional_Diario and m.id_Detalle_Devocional_Diario=t.id_Detalle_Devocional_Diario
+//and p.id_Detalle_Devocional_Diario=t.id_Detalle_Devocional_Diario and c.id_Pedido_Oracion=p.id_Pedido_Oracion and i.id_Distrito=s.id_Distrito 
+//and r.id_Iglesia=i.id_Iglesia and s.id_Mision=n.id_Mision and r.id_Persona='$person'");
+ $sql =$pdo->prepare("call ListarDiarioDevocional ('$person')");
+$sql ->execute();
 
-$pdo->exec("SET CHARACTER SET utf8");
+$resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
+echo json_encode($resultado);
+//$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+//$pdo->exec("SET CHARACTER SET utf8");
 
 
-$accion = (isset($_GET['accion'])) ? $_GET['accion'] : 'leer';
-
-switch ($accion) {
-    case 'agregar':
-//        $sentenciaSQL = $pdo->prepare("insert into eventos(title,descripcion,color,textColor,start,end)"
-//                . "values(:title,:descripcion,:color,:textColor,:start,:end)");
-//        $respuesta = $sentenciaSQL->execute(array(
-//            "title" => $_POST['title'],
-//            "descripcion" => $_POST['descripcion'],
-//            "color" => $_POST['color'],
-//            "textColor" => $_POST['textColor'],
-//            "start" => $_POST['start'],
-//            "end" => $_POST['end']
-//        ));
-//        echo json_encode($respuesta);
-        break;
-    case 'eliminar':
-//        $respuesta=false;
-//        if(isset($_POST['ideventos'])){
-//            $sentenciaSQL  = $pdo->prepare("delete from eventos where ideventos=:ID");
-//            $respuesta = $sentenciaSQL->execute(array("ID"=>$_POST['ideventos']));
-//        }
-//        echo json_encode($respuesta);
-        break;
-    case 'modificar':
-//        $sentenciaSQL  = $pdo->prepare("update eventos set title=:title,descripcion=:descripcion,color=:color,textColor=:textColor,start=:start,end=:end where ideventos=:ID");
-//        $respuesta = $sentenciaSQL->execute(array(
-//            "ID" =>$_POST['ideventos'],
-//            "title" => $_POST['title'],
-//            "descripcion" => $_POST['descripcion'],
-//            "color" => $_POST['color'],
-//            "textColor" => $_POST['textColor'],
-//            "start" => $_POST['start'],
-//            "end" => $_POST['end']
-//        ));
-//        echo json_encode($respuesta);
-        break;
-    default :
+//$accion = (isset($_GET['accion'])) ? $_GET['accion'] : 'leer';
+//
+//switch ($accion) {
+//    case 'agregar':
+////        $sentenciaSQL = $pdo->prepare("insert into eventos(title,descripcion,color,textColor,start,end)"
+////                . "values(:title,:descripcion,:color,:textColor,:start,:end)");
+////        $respuesta = $sentenciaSQL->execute(array(
+////            "title" => $_POST['title'],
+////            "descripcion" => $_POST['descripcion'],
+////            "color" => $_POST['color'],
+////            "textColor" => $_POST['textColor'],
+////            "start" => $_POST['start'],
+////            "end" => $_POST['end']
+////        ));
+////        echo json_encode($respuesta);
+//        break;
+//    case 'eliminar':
+////        $respuesta=false;
+////        if(isset($_POST['ideventos'])){
+////            $sentenciaSQL  = $pdo->prepare("delete from eventos where ideventos=:ID");
+////            $respuesta = $sentenciaSQL->execute(array("ID"=>$_POST['ideventos']));
+////        }
+////        echo json_encode($respuesta);
+//        break;
+//    case 'modificar':
+////        $sentenciaSQL  = $pdo->prepare("update eventos set title=:title,descripcion=:descripcion,color=:color,textColor=:textColor,start=:start,end=:end where ideventos=:ID");
+////        $respuesta = $sentenciaSQL->execute(array(
+////            "ID" =>$_POST['ideventos'],
+////            "title" => $_POST['title'],
+////            "descripcion" => $_POST['descripcion'],
+////            "color" => $_POST['color'],
+////            "textColor" => $_POST['textColor'],
+////            "start" => $_POST['start'],
+////            "end" => $_POST['end']
+////        ));
+////        echo json_encode($respuesta);
+//        break;
+//    default :
 //        $likeparametro = "$ID";
 //        $query = "SELECT * FROM devocional_diario WHERE id_Persona =:ID";
 //        $stmt = $pdo->prepare("SELECT * FROM devocional_diario WHERE id_Persona =$ID");
@@ -70,23 +84,28 @@ switch ($accion) {
 //        $movimientos = $prepare->fetchAll(PDO::FETCH_ASSOC);
 //        return $movimientos;
 //    $person = "8";   
-        $person= $_GET["id_Persona"];
-$sql ="select d.id_Devocional_Diario,d.id_Persona,r.No_Persona,i.Nombre_Iglesia,s.No_Distrito,n.No_Mision,r.tele_Persona,r.correo_Persona, t.Fe_Detalle_Devocional_Diario, t.color,t.textColor, t.Texto_estudio, t.Resumen_Personal, t.Aplicacion_Diaria, p.Pedido_Oracion, c.id_Pedido_Oracion, m.Meta from devocional_diario d, detalle_devocional_diario t, meta_devocional_diario m, pedido_oracion p, pedido_contestado c, persona r, iglesia i, distrito s, mision n where d.id_Persona=r.id_Persona and  r.id_Iglesia=i.id_Iglesia and i.id_Distrito=s.id_Distrito and s.id_Mision=n.id_Mision and r.id_Persona=?";
+//        $person= $_GET["id_Persona"];
+//$sql ="select d.id_Devocional_Diario,d.id_Persona,r.No_Persona,i.Nombre_Iglesia,s.No_Distrito,n.No_Mision,r.tele_Persona,r.correo_Persona, 
+//t.Fe_Detalle_Devocional_Diario, t.color,t.textColor, t.Texto_estudio, t.Resumen_Personal, t.Aplicacion_Diaria, p.Pedido_Oracion, c.id_Pedido_Oracion, m.Meta
+//from devocional_diario d, detalle_devocional_diario t, meta_devocional_diario m, pedido_oracion p, pedido_contestado c, persona r, iglesia i, distrito s, mision n
+//where d.id_Persona=r.id_Persona and t.id_Devocional_Diario=d.id_Devocional_Diario and m.id_Detalle_Devocional_Diario=t.id_Detalle_Devocional_Diario
+//and p.id_Detalle_Devocional_Diario=t.id_Detalle_Devocional_Diario and c.id_Pedido_Oracion=p.id_Pedido_Oracion and i.id_Distrito=s.id_Distrito 
+//and r.id_Iglesia=i.id_Iglesia and s.id_Mision=n.id_Mision and r.id_Persona='$person'";
 //$dat= array();
 //$datos->execute(array("id_Persona" => $id_Persona)); 
 
 //        $respuesta = $datos->fetchAll(PDO::FETCH_ASSOC);
 
 //        echo $respuesta->id_Persona;
-        $resultado=$pdo->prepare($sql);
-        $resultado->execute(array($person));
-        $registro=$resultado->fetchAll(PDO::FETCH_ASSOC);
+//        $resultado=$pdo->prepare($sql);
+//        $resultado->execute(array($person));
+//        $registro=$resultado->fetchAll(PDO::FETCH_ASSOC);
 //        while($registro=$resultado->fetch(PDO::FETCH_ASSOC)){
 //             echo json_encode($registro);
 //        }
-        echo json_encode($registro);
+//        echo json_encode($registro);
 //        echo json_encode($datos);
-        break;
+//        break;
 //        $sentenciaSQL = $pdo->prepare("  select * from devocional_diario d where d.id_Persona=:ID");
 //        $respuesta = $sentenciaSQL->execute(array("ID"=>$_POST['id_Persona']));
 ////         $sentenciaSQL->execute();
@@ -95,7 +114,7 @@ $sql ="select d.id_Devocional_Diario,d.id_Persona,r.No_Persona,i.Nombre_Iglesia,
 //        $resultado = $respuesta->fetchAll(PDO::FETCH_ASSOC);
 //        echo json_encode($resultado);
 //        break;
-}
+//}
 
 /* 
  * To change this license header, choose License Headers in Project Properties.

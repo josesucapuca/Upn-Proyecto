@@ -272,7 +272,7 @@ if ($_SESSION["Usuario"] !== null) {
                                     <div class="form-group has-success">                                
                                         <div class="input-group">
                                             <span class="input-group-addon"><i class="far fa-star"> Correo:</i></span>
-                                            <input type="text" id="correo_Persona" name="correo_Persona" class="form-control" placeholder="Ingresar su Email">
+                                            <input type="text" id="txtcorreo" name="correo_Persona" class="form-control" placeholder="Ingresar su Email">
                                         </div>                                 
                                     </div>
                                 </div>
@@ -280,7 +280,7 @@ if ($_SESSION["Usuario"] !== null) {
                                     <div class="form-group has-success">                                
                                         <div class="input-group">
                                             <span class="input-group-addon"><i class="far fa-star"> Hora de la Devoción:</i></span>
-                                            <input type="text" id="txtFecha" name="Fe_Detalle_Devocional_Diario" value="10:30" class="form-control"/>
+                                            <input type="text" id="txtFecha" name="txtFecha" class="form-control"/>
                                         </div>                                 
                                     </div>
                                 </div>
@@ -377,8 +377,8 @@ if ($_SESSION["Usuario"] !== null) {
             </div>
             <script src="../js/jquery.min.js" type="text/javascript"></script>
             <script src="../js/moment.min.js" type="text/javascript"></script>
-            <!--<script src="../js/DevocionesMatutinas/DiarioDevocional.js" type="text/javascript"></script>-->
-            <script src="../js/EstudiosBiblicos/DevocionalDiario.js" type="text/javascript"></script>
+            <script src="../js/DevocionesMatutinas/DiarioDevocional.js" type="text/javascript"></script>
+            <!--<script src="../js/EstudiosBiblicos/DevocionalDiario.js" type="text/javascript"></script>-->
             <script data-pace-options='{ "restartOnRequestAfter": true }' src="js/plugin/pace/pace.min.js"></script>
             <!-- Link to Google CDN's jQuery + jQueryUI; fall back to local -->
             <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
