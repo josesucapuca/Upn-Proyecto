@@ -1,7 +1,11 @@
 <?php
+include_once '../DAO/CampanaEvangelisticaDAO.php';
+$objs = new CampanaEvangelisticaDAO();
 session_start();
+$var = $objs->ListaCampanaById($_SESSION["id_Persona"], $_GET["id"]);
 if ($_SESSION["Usuario"] !== null) {
-    ?><!DOCTYPE html>
+    ?>
+    <!DOCTYPE html>
     <html lang="es" style="background-image: url('img/pattern/tileable_wood_texture.png');">
         <head>
 
@@ -10,26 +14,31 @@ if ($_SESSION["Usuario"] !== null) {
             <title> SmartAdmin </title>
             <?php include_once './inc2/Estilos.php'; ?>
             <link rel="stylesheet" type="text/css" media="screen" href="css/fontAdventSans.css">
+            <link rel="stylesheet" type="text/css" media="screen" href="css/header.css">
+            <link rel="apple-touch-startup-image" href="../images/iconoweb.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape)">
+            <link rel="apple-touch-startup-image" href="../images/iconoweb.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait)">
+            <link rel="apple-touch-startup-image" href="../images/iconoweb.png" media="screen and (max-device-width: 320px)">
+            <link rel="shortcut icon" href="../images/iconoweb.png" type="image/x-icon">
+            <link rel="icon" href="../images/iconoweb.png" type="image/x-icon">
             <style>
-                .ifraVid{
-                    min-height: 775px;
-                }
-                @media (max-width: 576px)
-                {
-                    .ifraHim{
-                        min-height: 450px;
+                @media(max-width:1598px){
+                    .sortable-grid{
+                        height: auto;
                     }
-                    .ifraBib{
-                        min-height: 450px;
+                    #frameVer{
+                        height: 99% !important;
                     }
                 }
-                @media (max-width: 1200px)
-                {
-                    .ifraVid{
-                        min-height: 500px;
+                @media(width:428px)and (height:633px){
+                    .titCamp{
+                        font-size: 30px !important;
                     }
                 }
-                
+                @media(min-width:360px)and (max-width:414px){
+                    .titCamp{
+                        font-size: 30px !important;
+                    }
+                }
             </style>
         </head>
 
@@ -77,318 +86,249 @@ if ($_SESSION["Usuario"] !== null) {
                 * 'fixed-page-footer' - Fixes footer
                 * 'container'         - boxed layout mode (non-responsive: will not work with fixed-navigation & fixed-ribbon)
         -->
-        <body class="container">
 
-            <!-- HEADER -->
-            <header id="header">
-                <div id="logo-group">
+        <body class="conta bod"  >
+            <?php
+            $data = $var->fetch_object();
+            ?>
+            <input id="PersonaUsuario" type="hidden" value="<?php echo $_SESSION["Persona"] ?>">
+            <div class="row" style=" margin-left: 0px;margin-right: 0px;height: 100%;">
 
-                    <!-- PLACE YOUR LOGO HERE -->
-                    <span id="logo"> <img src="../images/iglesia.jpg" alt="SmartAdmin" style="height: 30px;width: 30px"> </span>
-                    <!-- END LOGO PLACEHOLDER -->
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="margin-left: 0px;margin-right: 0px;padding-left: 0px;padding-right: 0px;height: 90%;">
+                    <div id="header" style="background: none;">
+                        <div id="logo-group">
 
-                    <!-- Note: The activity badge color changes when clicked and resets the number to 0
-                    Suggestion: You may want to set a flag when this happens to tick off all checked messages / notifications -->
-                </div>
-                <!-- pulled right: nav area -->
-                <div class="pull-right">
+                            <!-- PLACE YOUR LOGO HERE -->
+                            <span id="logo"> <img class="imglog" src="../images/img_logo/adventist-es--ming.png" alt="SmartAdmin" > </span>
+                            <!-- END LOGO PLACEHOLDER -->
 
-                    <!-- Top menu profile link : this shows only when top menu is active -->
-                    <ul id="mobile-profile-img" class="header-dropdown-list hidden-xs padding-5">
-                        <li class="">
-                            <a href="#" class="dropdown-toggle no-margin userdropdown" data-toggle="dropdown"> 
-                                <img src="img/avatars/sunny.png" alt="John Doe" class="online" />  
-                            </a>
-                            <ul class="dropdown-menu pull-right">
-                                <li>
-                                    <a href="javascript:void(0);" class="padding-10 padding-top-0 padding-bottom-0"><i class="fa fa-cog"></i> Setting</a>
+                            <!-- Note: The activity badge color changes when clicked and resets the number to 0
+                            Suggestion: You may want to set a flag when this happens to tick off all checked messages / notifications -->
+                        </div>
+                        <div class="pull-right">
+
+                            <!-- Top menu profile link : this shows only when top menu is active -->
+                            <ul id="mobile-profile-img" class="header-dropdown-list padding-5">
+                                <li class="LiReporte" style="display: none">
+                                    <a id="Reporte" href="Trabajando.php" class="btn btn-primary" style="font-size: 13px;text-align: center;align-items: center;"> 
+                                        <i class="fa fa-bar-chart-o"></i>
+                                    </a>
                                 </li>
-                                <li class="divider"></li>
-                                <li>
-                                    <a href="profile.html" class="padding-10 padding-top-0 padding-bottom-0"> <i class="fa fa-user"></i> <u>P</u>rofile</a>
-                                </li>
-                                <li class="divider"></li>
+                                <li class="">
+                                    <a href="#" class="btn btn-circle btn-primary"  data-toggle="dropdown" style="font-size: 15px;text-align: center;align-items: center;padding-top: 2px;"> 
+                                        <i class="fa fa-sort-desc"></i>
+                                    </a>
+                                    <ul class="dropdown-menu pull-right">
+                                        <li>
+                                            <a href="javascript:void(0);" class="padding-10 padding-top-0 padding-bottom-0"><i class="fa fa-cog"></i> <u>C</u>onfiguración</a>
+                                        </li>
+                                        <li class="divider"></li>
+                                        <li>
+                                            <a href="profile.html" class="padding-10 padding-top-0 padding-bottom-0"> <i class="fa fa-user"></i> <u>P</u>erfil</a>
+                                        </li>
+                                        <li class="divider"></li>
 
-                                <li class="divider"></li>
-                                <li>
-                                    <a href="javascript:void(0);" class="padding-10 padding-top-0 padding-bottom-0" data-action="launchFullscreen"><i class="fa fa-arrows-alt"></i> Full <u>S</u>creen</a>
-                                </li>
-                                <li class="divider"></li>
-                                <li>
-                                    <a href="login.html" class="padding-10 padding-top-5 padding-bottom-5" data-action="userLogout"><i class="fa fa-sign-out fa-lg"></i> <strong><u>L</u>ogout</strong></a>
+                                        <li class="divider"></li>
+                                        <li>
+                                            <a href="javascript:void(0);" class="padding-10 padding-top-0 padding-bottom-0" data-action="launchFullscreen"><i class="fa fa-arrows-alt"></i> <u>P</u>antalla <u>C</u>ompleta</a>
+                                        </li>
+                                        <li class="divider"></li>
+                                        <li>
+                                            <a href="../CerrarSesion.php" class="padding-10 padding-top-5 padding-bottom-5" data-action="userLogout"  data-logout-msg="Estas Seguro de Salir de Sesion"><i class="fa fa-sign-out fa-lg"></i> <strong><u>C</u>errar Sesion</strong></a>
+                                        </li>
+                                    </ul>
                                 </li>
                             </ul>
-                        </li>
-                    </ul>
 
-                    <!-- logout button -->
-                    <div id="logout" class="btn-header transparent pull-right">
-                        <span> <a href="login.html" title="Sign Out" data-action="userLogout" data-logout-msg="You can improve your security further after logging out by closing this opened browser"><i class="fa fa-sign-out"></i></a> </span>
-                    </div>
-                    <!-- end logout button -->
-
-                    <!-- search mobile button (this is hidden till mobile view port) -->
-                    <div id="search-mobile" class="btn-header transparent pull-right">
-                        <span> <a href="javascript:void(0)" title="Search"><i class="fa fa-search"></i></a> </span>
-                    </div>
-                    <!-- end search mobile button -->
-
-                    <!-- fullscreen button -->
-                    <div id="fullscreen" class="btn-header transparent pull-right">
-                        <span> <a href="javascript:void(0);" data-action="launchFullscreen" title="Full Screen"><i class="fa fa-arrows-alt"></i></a> </span>
-                    </div>
-                    <!-- end fullscreen button -->
-
-                </div>
-                <!-- end pulled right: nav area -->
-
-            </header>
-            <div >
-
-                <!-- RIBBON -->
-                <div id="ribbon">
-
-                    <span class="ribbon-button-alignment"> 
-                        <span id="refresh" class="btn btn-ribbon" data-action="resetWidgets" data-title="refresh"  rel="tooltip" data-placement="bottom" data-original-title="<i class='text-warning fa fa-warning'></i> Warning! This will reset all your widget settings." data-html="true">
-                            <i class="fa fa-refresh"></i>
-                        </span> 
-                    </span>
-
-                    <!-- breadcrumb -->
-                    <ol class="breadcrumb">
-                        Campaña Evangelistica Dirigido por Jose Sucapuca
-                    </ol>
-                    <!-- end breadcrumb -->
-
-                    <!-- You can also add more buttons to the
-                    ribbon for further usability
-
-                    Example below:
-
-                    <span class="ribbon-button-alignment pull-right">
-                    <span id="search" class="btn btn-ribbon hidden-xs" data-title="search"><i class="fa-grid"></i> Change Grid</span>
-                    <span id="add" class="btn btn-ribbon hidden-xs" data-title="add"><i class="fa-plus"></i> Add</span>
-                    <span id="search" class="btn btn-ribbon" data-title="search"><i class="fa-search"></i> <span class="hidden-mobile">Search</span></span>
-                    </span> -->
-
-                </div>
-                <!-- END RIBBON -->
-
-                <!-- MAIN CONTENT -->
-                <div id="content">
-
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-7 col-md-7 col-lg-4">
-                            <h1 class="page-title txt-color-blueDark"><i class="fa fa-book"></i> Campaña Evangelistica</h1>
-                        </div>
-                        <div class="col-xs-12 col-sm-5 col-md-5 col-lg-8">
-
-                        </div>
-                    </div>
-
-                    <!-- widget grid -->
-                    <section id="widget-grid" class="">
-
-                        <!-- row -->
-                        <div class="row">
-                            <article class="col-xs-12 col-sm-12 col-md-12 col-lg-7" style="margin-bottom: 30px">
-
-                                <!-- Widget ID (each widget will need unique ID)-->
-                                <div class="jarviswidget" id="wid-id-2" data-widget-editbutton="true">
-                                    <!-- widget options:
-                                    usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
-
-                                    data-widget-colorbutton="false"
-                                    data-widget-editbutton="false"
-                                    data-widget-togglebutton="false"
-                                    data-widget-deletebutton="false"
-                                    data-widget-fullscreenbutton="false"
-                                    data-widget-custombutton="false"
-                                    data-widget-collapsed="true"
-                                    data-widget-sortable="false"
-
-                                    -->
-                                    <header>
-                                        <span class="widget-icon"> <i class="fa fa-book"></i> </span>
-                                        <h2>Video Conferencia
-                                        </h2>
-
-                                    </header>
-
-                                    <!-- widget div-->
-                                    <div>
-
-                                        <!-- widget edit box -->
-                                        <div class="jarviswidget-editbox">
-                                            <!-- This area used as dropdown edit box -->
-
-                                        </div>
-                                        <!-- end widget edit box -->
-
-                                        <!-- widget content -->
-                                        <div class="widget-body no-padding">
-                                            <iframe class="ifraVid" src="https://meet.jit.si/Reunion123jk" width="100%"></iframe>
-                                        </div>
-                                        <!-- end widget content -->
-
-                                    </div>
-                                </div>
-                                <!-- end widget -->
-
-                            </article>
-                            <!-- NEW WIDGET START -->
-                            <article class="col-xs-12 col-sm-12 col-md-12 col-lg-5" style="margin-bottom: 30px">
-
-                                <!-- Widget ID (each widget will need unique ID)-->
-                                <div class="jarviswidget" id="wid-id-1" data-widget-editbutton="true">
-                                    <!-- widget options:
-                                    usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
-
-                                    data-widget-colorbutton="false"
-                                    data-widget-editbutton="false"
-                                    data-widget-togglebutton="false"
-                                    data-widget-deletebutton="false"
-                                    data-widget-fullscreenbutton="false"
-                                    data-widget-custombutton="false"
-                                    data-widget-collapsed="true"
-                                    data-widget-sortable="false"
-
-                                    -->
-                                    <header>
-                                        <span class="widget-icon"> <i class="fa fa-book"></i> </span>
-                                        <h2>Biblia</h2>
-
-                                    </header>
-
-                                    <!-- widget div-->
-                                    <div>
-
-                                        <!-- widget edit box -->
-                                        <div class="jarviswidget-editbox">
-                                            <!-- This area used as dropdown edit box -->
-
-                                        </div>
-                                        <!-- end widget edit box -->
-
-                                        <!-- widget content -->
-                                        <div class="widget-body no-padding" style="height: 100%;">
-                                            <iframe class="ifraBib" src="Biblia.php" width="100%" height="450px"></iframe>
-                                        </div>
-                                        <!-- end widget content -->
-
-                                    </div>
-                                </div>
-                                <!-- end widget -->
-                                <!-- Widget ID (each widget will need unique ID)-->
-                                <div class="jarviswidget" id="wid-id-1" data-widget-editbutton="true">
-                                    <!-- widget options:
-                                    usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
-
-                                    data-widget-colorbutton="false"
-                                    data-widget-editbutton="false"
-                                    data-widget-togglebutton="false"
-                                    data-widget-deletebutton="false"
-                                    data-widget-fullscreenbutton="false"
-                                    data-widget-custombutton="false"
-                                    data-widget-collapsed="true"
-                                    data-widget-sortable="false"
-
-                                    -->
-                                    <header>
-                                        <span class="widget-icon"> <i class="fa fa-book"></i> </span>
-                                        <h2>Himinario</h2>
-
-                                    </header>
-
-                                    <!-- widget div-->
-                                    <div>
-
-                                        <!-- widget edit box -->
-                                        <div class="jarviswidget-editbox">
-                                            <!-- This area used as dropdown edit box -->
-
-                                        </div>
-                                        <!-- end widget edit box -->
-
-                                        <!-- widget content -->
-                                        <div class="widget-body no-padding">
-                                            <iframe class="ifraHim" src="Himinario.php" width="100%" height="100%" style="min-height: 255px;"></iframe>
-                                        </div>
-                                        <!-- end widget content -->
-
-                                    </div>
-                                </div>
-                                <!-- end widget -->
-                            </article>
-                            <!-- WIDGET END -->
-
-                            <!-- WIDGET END -->
-                        </div>
-
-                        <!-- end row -->
-
-                    </section>
-                    <!-- end widget grid -->
-
-                </div>
-                <!-- END MAIN CONTENT -->
-
-            </div>
-            <!-- END MAIN PANEL -->
-
-            <!-- PAGE FOOTER -->
-            <div class="page-footer">
-                <div class="row">
-                    <div class="col-xs-12 col-sm-6">
-                        <span class="txt-color-white">SmartAdmin 1.5 <span class="hidden-xs"> - Web Application Framework</span> © 2014-2015</span>
-                    </div>
-
-                    <div class="col-xs-6 col-sm-6 text-right hidden-xs">
-                        <div class="txt-color-white inline-block">
-                            <i class="txt-color-blueLight hidden-mobile">Last account activity <i class="fa fa-clock-o"></i> <strong>52 mins ago &nbsp;</strong> </i>
-                            <div class="btn-group dropup">
-                                <button class="btn btn-xs dropdown-toggle bg-color-blue txt-color-white" data-toggle="dropdown">
-                                    <i class="fa fa-link"></i> <span class="caret"></span>
-                                </button>
-                                <ul class="dropdown-menu pull-right text-left">
-                                    <li>
-                                        <div class="padding-5">
-                                            <p class="txt-color-darken font-sm no-margin">Download Progress</p>
-                                            <div class="progress progress-micro no-margin">
-                                                <div class="progress-bar progress-bar-success" style="width: 50%;"></div>
-                                            </div>
-                                        </div>
+                            <!-- logout button -->
+                            <div id="" class="transparent pull-right">
+                                <ul id="" class="header-dropdown-list ">
+                                    <li class="LiReporte2" style="display: none">
+                                        <a id="Reporte2" href="Trabajando.php" class="btn1 btn-primary1" style="font-size: 13px;text-align: center;align-items: center;"> 
+                                            <i class="fa fa-bar-chart-o"></i>
+                                        </a>
                                     </li>
-                                    <li class="divider"></li>
-                                    <li>
-                                        <div class="padding-5">
-                                            <p class="txt-color-darken font-sm no-margin">Server Load</p>
-                                            <div class="progress progress-micro no-margin">
-                                                <div class="progress-bar progress-bar-success" style="width: 20%;"></div>
-                                            </div>
-                                        </div>
+                                    <li class="volver" >
+                                        <a id="volver" href="Principal.php" class="btn1 btn-primary1" style="font-size: 13px;text-align: center;align-items: center;"> 
+                                            <i class="fa fa-home "></i> Home
+                                        </a>
                                     </li>
-                                    <li class="divider"></li>
-                                    <li>
-                                        <div class="padding-5">
-                                            <p class="txt-color-darken font-sm no-margin">Memory Load <span class="text-danger">*critical*</span></p>
-                                            <div class="progress progress-micro no-margin">
-                                                <div class="progress-bar progress-bar-danger" style="width: 70%;"></div>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="divider"></li>
-                                    <li>
-                                        <div class="padding-5">
-                                            <button class="btn btn-block btn-default">refresh</button>
-                                        </div>
+                                    <li class="">
+                                        <a href="#" class="btn btn-primary"  data-toggle="dropdown" style="font-size: 15px;text-align: center;align-items: center;padding-top: 2px;"> 
+                                            <i class="fa fa-sort-desc"></i>
+                                        </a>
+                                        <ul class="dropdown-menu pull-right">
+                                            <li>
+                                                <a href="Configuracion.php" class="padding-10 padding-top-0 padding-bottom-0"><i class="fa fa-cog"></i> <u>C</u>onfiguración</a>
+                                            </li>
+                                            <li class="divider"></li>
+                                            <li>
+                                                <a href="profile.html" class="padding-10 padding-top-0 padding-bottom-0"> <i class="fa fa-user"></i> <u>P</u>erfil</a>
+                                            </li>
+                                            <li class="divider"></li>
+
+                                            <li class="divider"></li>
+                                            <li>
+                                                <a href="javascript:void(0);" class="padding-10 padding-top-0 padding-bottom-0" data-action="launchFullscreen"><i class="fa fa-arrows-alt"></i> <u>P</u>antalla <u>C</u>ompleta</a>
+                                            </li>
+                                            <li class="divider"></li>
+                                            <li>
+                                                <a href="../CerrarSesion.php" class="padding-10 padding-top-5 padding-bottom-5" data-action="userLogout"  data-logout-msg="Estas Seguro de Salir de Sesion"><i class="fa fa-sign-out fa-lg"></i> <strong><u>C</u>errar Sesion</strong></a>
+                                            </li>
+                                        </ul>
                                     </li>
                                 </ul>
+                            </div>
+                            <!-- fullscreen button -->
+                        </div>
+                    </div>
+
+
+                    <!-- END RIBBON -->
+                    <!-- MAIN CONTENT -->
+                    <div id="content" style="margin-bottom: 0px;display: flow-root;height: 100%;">
+                        <div class="row" style="display: flex;justify-content: center;">
+                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="text-align: center;">
+                                <h1 class="txt-color-blueDark titCamp" style="font-weight: 600;font-size: 40px;margin-bottom: 10px;"><i class="fa fa-book"></i> Campaña Evangelistica<br><?php echo $data->No_Campana_Evangelistica ?></h1>
+                                <h2 class=" txt-color-blueDark DesCamp" ><?php echo $data->Des_Campana_Evangelistica ?></h2>
+                            </div>
+                        </div>
+                        <section id="widget-grid" class="">
+                            <div class="row">
+                                <?php if ($data->Es_Video_Conferencia === "C") {
+                                    if ($data->Plataforma === "J") {
+                                        ?>
+                                        <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="margin-bottom: 5px">
+                                            <div class="jarviswidget  jarviswidget-color-green" id="wid-id-11" data-widget-colorbutton="false" data-widget-fullscreenbutton="false" data-widget-editbutton="false" data-widget-sortable="false" data-widget-attstyle="jarviswidget-color-teal"
+                                                 style="margin-bottom: 15px;">
+                                                <header>
+                                                    <span class="widget-icon"> <i class="fa fa-book"></i> </span>
+                                                    <h2>Video Conferencia</h2>
+
+                                                </header>
+                                                <div style="background-color: #ffffff82!important;">
+                                                    <div class="jarviswidget-editbox">
+                                                    </div>
+                                                    <div class="widget-body no-padding ">
+                                                        <iframe  src="https://meet.jit.si/<?php echo $data->Cod_Campana_Evangelistica ?>" frameborder="0" allow="livestreaming,sharedvideo,chat,raisehand,settings,microphone,camera,desktop,fullscreen,shortcuts,tileview,mute-everyone" allowfullscreen="" style="width: 100%;height: 500px" ></iframe>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </article>
+        <?php } else if ($data->Plataforma === "S") { ?>
+                                        <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="margin-bottom: 5px">
+                                            <div class="jarviswidget  jarviswidget-color-green" id="wid-id-11" data-widget-colorbutton="false" data-widget-fullscreenbutton="false" data-widget-editbutton="false" data-widget-sortable="false" data-widget-attstyle="jarviswidget-color-teal"
+                                                 style="margin-bottom: 15px;">
+                                                <header>
+                                                    <span class="widget-icon"> <i class="fa fa-book"></i> </span>
+                                                    <h2>Video Conferencia</h2>
+
+                                                </header>
+                                                <div style="background-color: #ffffff82!important;">
+                                                    <div class="jarviswidget-editbox">
+                                                    </div>
+                                                    <div class="widget-body no-padding ">
+                                                        <iframe  src="<?php echo $data->URL_Campana_Evangelistica ?>" frameborder="0" allow="livestreaming,sharedvideo,chat,raisehand,settings,microphone,camera,desktop,fullscreen,shortcuts,tileview,mute-everyone" allowfullscreen="" style="width: 100%;height: 500px" ></iframe>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </article>
+                                    <?php }
+                                }
+                                ?>
+                                <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="margin-bottom: 5px">
+                                    <div class="jarviswidget jarviswidget-color-green" id="wid-id-11" data-widget-colorbutton="false" data-widget-fullscreenbutton="false" data-widget-editbutton="false" data-widget-sortable="false">
+                                        <header>
+                                            <span class="widget-icon"> <i class="fa fa-book"></i> </span>
+                                            <h2>Biblia Personal</h2>
+
+                                        </header>
+                                        <div>
+                                            <div class="jarviswidget-editbox">
+                                            </div>
+                                            <div class="widget-body no-padding ver" style="height: 530px;overflow: auto;">
+                                                <iframe id="frameVer" src="Biblia.php" width="100%" style="height: 90.685vh;border: 0px;"></iframe>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>
+
+                                <article class="col-xs-12 col-sm-6 col-md-6 col-lg-6" style="margin-bottom: 5px">
+
+                                    <!-- Widget ID (each widget will need unique ID)-->
+                                    <div class="jarviswidget jarviswidget-color-green" id="wid-id-11" data-widget-colorbutton="false" data-widget-fullscreenbutton="false" data-widget-editbutton="false" data-widget-sortable="false"
+                                         style="margin-bottom: 15px;">
+                                        <header>
+                                            <span class="widget-icon"> <i class="fa fa-book"></i> </span>
+                                            <h2>Himinario</h2>
+
+                                        </header>
+
+                                        <!-- widget div-->
+                                        <div>
+
+                                            <!-- widget edit box -->
+                                            <div class="jarviswidget-editbox">
+                                                <!-- This area used as dropdown edit box -->
+
+                                            </div>
+                                            <!-- end widget edit box -->
+
+                                            <!-- widget content -->
+                                            <div class="widget-body no-padding ver" >
+                                                <iframe id="frameVer" src="Himinario.php" width="100%" style="height: 100vh;border: 0px;"></iframe>
+                                            </div>
+                                            <!-- end widget content -->
+
+                                        </div>
+                                    </div>
+                                    <!-- end widget -->
+
+
+                                </article>
+                            </div>
+
+                            <!-- end row -->
+
+                        </section>
+
+
+                    </div>
+                    <!-- END MAIN CONTENT -->
+                </div>
+                <!-- END MAIN PANEL -->
+                <!--<div class="col-sm-4 col-md-4 col-lg-2 hidden-xs asidelat" style="background: linear-gradient( 155deg,#3e8391,black 50%);height: 100vh;display: flex;">
+                    
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-12" style="float: bottom;align-items: flex-end;display: flex;height: 50%;"> 
+                            <h1 style="font-size: 40px;text-align: center;color: white;">CEO Adventistas</h1>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-12" style="float: bottom;align-items: flex-end;display: flex;height: 50%;">
+                            <img src="../images/adventist-symbol-png--symbol/adventist-symbol--white.png" width="100%">
+                        </div>
+                    </div>
+                </div>-->
+                <!-- PAGE FOOTER
+                <div class="page-footer" style="padding-left: 0px;border: solid 0px;">
+                    <div class="row fot">
+                        <div class="col-xs-12 col-sm-6">
+                            <span class="txt-color-white"> <span class="hidden-xs">Aplicación Web Diseñado por  </span>Nexo-Consultores </span>
+                        </div>
+
+                        <div class="col-xs-6 col-sm-6 text-right ">
+                            <div class="txt-color-white inline-block">
+                                <i class="txt-color-blueLight hidden-mobile">Iglesia Adventista del Septimo Dia  </i>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
+             END PAGE FOOTER -->
+            </div>
+            <!-- END MAIN PANEL -->
+
+            <!-- PAGE FOOTER -->
             <!-- END PAGE FOOTER -->
 
             <!-- PACE LOADER - turn this on if you want ajax loading to show (caution: uses lots of memory on iDevices)-->
@@ -472,7 +412,29 @@ if ($_SESSION["Usuario"] !== null) {
 
             <!-- Morris Chart Dependencies -->
             <script src="js/plugin/morris/raphael.min.js"></script>
-            <script src="js/plugin/morris/morris.min.js"></script>
+            <script src="js/plugin/morris/morris.min.js"></script><script src="../js/Biblia/Biblia.js"></script>
+            <script type="text/javascript">
+
+                // DO NOT REMOVE : GLOBAL FUNCTIONS!
+
+                $(document).ready(function () {
+                    pageSetUp();
+                    // PAGE RELATED SCRIPTS
+                });
+                function ARBOL() {
+                    $('.tree > ul').attr('role', 'tree').find('ul').attr('role', 'group');
+                    $('.tree').find('li:has(ul)').addClass('parent_li').attr('role', 'treeitem').find(' > span').attr('title', 'Collapse this branch').on('click', function (e) {
+                        var children = $(this).parent('li.parent_li').find(' > ul > li');
+                        if (children.is(':visible')) {
+                            children.hide('fast');
+                            $(this).attr('title', 'Expand this branch').find(' > i').removeClass().addClass('fa fa-lg fa-plus-circle');
+                        } else {
+                            children.show('fast');
+                            $(this).attr('title', 'Collapse this branch').find(' > i').removeClass().addClass('fa fa-lg fa-minus-circle');
+                        }
+                    });
+                }
+            </script>
 
             <script type="text/javascript">
                 // PAGE RELATED SCRIPTS

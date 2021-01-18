@@ -1,107 +1,26 @@
 <?php
+include_once '../DAO/VideoDAO.php';
 session_start();
+
+$obj = new VideoDAO();
+$var = $obj->ListarVideoByPersona($_SESSION["id_Persona"]);
 if ($_SESSION["Usuario"] !== null) {
     ?><!DOCTYPE html>
     <html lang="es" style="background-image: url('img/pattern/tileable_wood_texture.png');">
         <head>
-            <meta charset="utf-8">
-            <title> SmartAdmin </title>
-            <meta name="description" content="">
-            <meta name="author" content="">
+             <meta charset="UTF-8">
+            <!--<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">-->
+            <title> Videos </title>
+            <?php include_once './inc2/Estilos.php'; ?>
             <link rel="stylesheet" type="text/css" media="screen" href="css/fontAdventSans.css">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
-            <!-- #CSS Links -->
-            <!-- Basic Styles -->
-            <link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.min.css">
-            <link rel="stylesheet" type="text/css" media="screen" href="css/font-awesome.min.css">
-
-            <!-- SmartAdmin Styles : Caution! DO NOT change the order -->
-            <link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-production-plugins.min.css">
-            <link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-production.min.css">
-            <link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-skins.min.css">
-
-            <!-- SmartAdmin RTL Support -->
-            <link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-rtl.min.css"> 
-
-            <!-- We recommend you use "your_style.css" to override SmartAdmin
-                 specific styles this will also ensure you retrain your customization with each SmartAdmin update.
-            <link rel="stylesheet" type="text/css" media="screen" href="css/your_style.css"> -->
-
-            <!-- Demo purpose only: goes with demo.js, you can delete this css when designing your own WebApp -->
-            <link rel="stylesheet" type="text/css" media="screen" href="css/demo.min.css">
-
-            <!-- #FAVICONS -->
-            <link rel="shortcut icon" href="img/favicon/favicon.ico" type="image/x-icon">
-            <link rel="icon" href="img/favicon/favicon.ico" type="image/x-icon">
-
-            <!-- #GOOGLE FONT -->
-            <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,300,400,700">
-
-            <!-- #APP SCREEN / ICONS -->
-            <!-- Specifying a Webpage Icon for Web Clip 
-                     Ref: https://developer.apple.com/library/ios/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html -->
-            <link rel="apple-touch-icon" href="img/splash/sptouch-icon-iphone.png">
-            <link rel="apple-touch-icon" sizes="76x76" href="img/splash/touch-icon-ipad.png">
-            <link rel="apple-touch-icon" sizes="120x120" href="img/splash/touch-icon-iphone-retina.png">
-            <link rel="apple-touch-icon" sizes="152x152" href="img/splash/touch-icon-ipad-retina.png">
-
-            <!-- iOS web-app metas : hides Safari UI Components and Changes Status Bar Appearance -->
-            <meta name="apple-mobile-web-app-capable" content="yes">
-            <meta name="apple-mobile-web-app-status-bar-style" content="black">
-
-            <!-- Startup image for web apps -->
-            <link rel="apple-touch-startup-image" href="img/splash/ipad-landscape.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape)">
-            <link rel="apple-touch-startup-image" href="img/splash/ipad-portrait.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait)">
-            <link rel="apple-touch-startup-image" href="img/splash/iphone.png" media="screen and (max-device-width: 320px)">
-
+            <link rel="stylesheet" type="text/css" media="screen" href="css/header.css">
+            <link rel="apple-touch-startup-image" href="../images/iconoweb.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape)">
+            <link rel="apple-touch-startup-image" href="../images/iconoweb.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait)">
+            <link rel="apple-touch-startup-image" href="../images/iconoweb.png" media="screen and (max-device-width: 320px)">
+            <link rel="shortcut icon" href="../images/iconoweb.png" type="image/x-icon">
+            <link rel="icon" href="../images/iconoweb.png" type="image/x-icon">
         </head>
-
-        <!--
-
-        TABLE OF CONTENTS.
-        
-        Use search to find needed section.
-        
-        ===================================================================
-        
-        |  01. #CSS Links                |  all CSS links and file paths  |
-        |  02. #FAVICONS                 |  Favicon links and file paths  |
-        |  03. #GOOGLE FONT              |  Google font link              |
-        |  04. #APP SCREEN / ICONS       |  app icons, screen backdrops   |
-        |  05. #BODY                     |  body tag                      |
-        |  06. #HEADER                   |  header tag                    |
-        |  07. #PROJECTS                 |  project lists                 |
-        |  08. #TOGGLE LAYOUT BUTTONS    |  layout buttons and actions    |
-        |  09. #MOBILE                   |  mobile view dropdown          |
-        |  10. #SEARCH                   |  search field                  |
-        |  11. #NAVIGATION               |  left panel & navigation       |
-        |  12. #MAIN PANEL               |  main panel                    |
-        |  13. #MAIN CONTENT             |  content holder                |
-        |  14. #PAGE FOOTER              |  page footer                   |
-        |  15. #SHORTCUT AREA            |  dropdown shortcuts area       |
-        |  16. #PLUGINS                  |  all scripts and plugins       |
-        
-        ===================================================================
-        
-        -->
-
-        <!-- #BODY -->
-        <!-- Possible Classes
-
-                * 'smart-style-{SKIN#}'
-                * 'smart-rtl'         - Switch theme mode to RTL
-                * 'menu-on-top'       - Switch to top navigation (no DOM change required)
-                * 'no-menu'			  - Hides the menu completely
-                * 'hidden-menu'       - Hides the main menu but still accessable by hovering over left edge
-                * 'fixed-header'      - Fixes the header
-                * 'fixed-navigation'  - Fixes the main menu
-                * 'fixed-ribbon'      - Fixes breadcrumb
-                * 'fixed-page-footer' - Fixes footer
-                * 'container'         - boxed layout mode (non-responsive: will not work with fixed-navigation & fixed-ribbon)
-        -->
-        <body class="container">
-
+        <body class="bod">
             <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
@@ -179,6 +98,230 @@ if ($_SESSION["Usuario"] !== null) {
                     </div><!-- /.modal-content -->
                 </div><!-- /.modal-dialog -->
             </div>
+            <input id="PersonaUsuario" type="hidden" value="<?php echo $_SESSION["Persona"] ?>">
+            <div class="row" style=" margin-left: 0px;margin-right: 0px;height: 100%;">
+
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="margin-left: 0px;margin-right: 0px;padding-left: 0px;padding-right: 0px;height: 90%;">
+                    <div id="header" style="background: none;">
+                        <div id="logo-group">
+
+                            <!-- PLACE YOUR LOGO HERE -->
+                            <span id="logo"> <img class="imglog" src="../images/img_logo/adventist-es--ming.png" alt="SmartAdmin" > </span>
+                            <!-- END LOGO PLACEHOLDER -->
+
+                            <!-- Note: The activity badge color changes when clicked and resets the number to 0
+                            Suggestion: You may want to set a flag when this happens to tick off all checked messages / notifications -->
+                        </div>
+                        <div class="pull-right">
+
+                            <!-- Top menu profile link : this shows only when top menu is active -->
+                            <ul id="mobile-profile-img" class="header-dropdown-list padding-5">
+                                <li class="LiReporte" style="display: none">
+                                    <a id="Reporte" href="#" class="btn btn-primary" style="font-size: 13px;text-align: center;align-items: center;"> 
+                                        <i class="fa fa-bar-chart-o"></i>
+                                    </a>
+                                </li>
+                                <li class="">
+                                    <a href="#" class="btn btn-circle btn-primary"  data-toggle="dropdown" style="font-size: 15px;text-align: center;align-items: center;padding-top: 2px;"> 
+                                        <i class="fa fa-sort-desc"></i>
+                                    </a>
+                                    <ul class="dropdown-menu pull-right">
+                                        <li>
+                                            <a href="javascript:void(0);" class="padding-10 padding-top-0 padding-bottom-0"><i class="fa fa-cog"></i> <u>C</u>onfiguración</a>
+                                        </li>
+                                        <li class="divider"></li>
+                                        <li>
+                                            <a href="profile.html" class="padding-10 padding-top-0 padding-bottom-0"> <i class="fa fa-user"></i> <u>P</u>erfil</a>
+                                        </li>
+                                        <li class="divider"></li>
+
+                                        <li class="divider"></li>
+                                        <li>
+                                            <a href="javascript:void(0);" class="padding-10 padding-top-0 padding-bottom-0" data-action="launchFullscreen"><i class="fa fa-arrows-alt"></i> <u>P</u>antalla <u>C</u>ompleta</a>
+                                        </li>
+                                        <li class="divider"></li>
+                                        <li>
+                                            <a href="../CerrarSesion.php" class="padding-10 padding-top-5 padding-bottom-5" data-action="userLogout"  data-logout-msg="Estas Seguro de Salir de Sesion"><i class="fa fa-sign-out fa-lg"></i> <strong><u>C</u>errar Sesion</strong></a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+
+                            <!-- logout button -->
+                            <div id="" class="transparent pull-right">
+                                <ul id="" class="header-dropdown-list ">
+                                    <li class="LiReporte2" style="display: none">
+                                        <a id="Reporte2" href="Trabajando.php" class="btn1 btn-primary1" style="font-size: 13px;text-align: center;align-items: center;"> 
+                                            <i class="fa fa-bar-chart-o"></i>
+                                        </a>
+                                    </li>
+                                    <li class="volver" >
+                                        <a id="volver" href="Principal.php" class="btn1 btn-primary1" style="font-size: 13px;text-align: center;align-items: center;"> 
+                                            <i class="fa fa-home "></i> Home
+                                        </a>
+                                    </li>
+                                    <li class="">
+                                        <a href="#" class="btn btn-primary"  data-toggle="dropdown" style="font-size: 15px;text-align: center;align-items: center;padding-top: 2px;"> 
+                                            <i class="fa fa-sort-desc"></i>
+                                        </a>
+                                        <ul class="dropdown-menu pull-right">
+                                            <li>
+                                                <a href="Configuracion.php" class="padding-10 padding-top-0 padding-bottom-0"><i class="fa fa-cog"></i> <u>C</u>onfiguración</a>
+                                            </li>
+                                            <li class="divider"></li>
+                                            <li>
+                                                <a href="profile.html" class="padding-10 padding-top-0 padding-bottom-0"> <i class="fa fa-user"></i> <u>P</u>erfil</a>
+                                            </li>
+                                            <li class="divider"></li>
+
+                                            <li class="divider"></li>
+                                            <li>
+                                                <a href="javascript:void(0);" class="padding-10 padding-top-0 padding-bottom-0" data-action="launchFullscreen"><i class="fa fa-arrows-alt"></i> <u>P</u>antalla <u>C</u>ompleta</a>
+                                            </li>
+                                            <li class="divider"></li>
+                                            <li>
+                                                <a href="../CerrarSesion.php" class="padding-10 padding-top-5 padding-bottom-5" data-action="userLogout"  data-logout-msg="Estas Seguro de Salir de Sesion"><i class="fa fa-sign-out fa-lg"></i> <strong><u>C</u>errar Sesion</strong></a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- fullscreen button -->
+                        </div>
+                    </div>
+
+
+                    <!-- END RIBBON -->
+                    <!-- MAIN CONTENT -->
+                    <div id="content" style="margin-bottom: 0px;display: flow-root;height: 100%;">
+                        <div class="row" style="height: 100%;justify-content: center;margin-top: 20px;">
+                             
+                            <div class="row" >
+                                <div class="col-sm-12" style="display: flex;align-items: center;">
+                                    <div class="form-group col-xs-6 col-sm-3 col-md-2 col-lg-2"><h1 class="titMusic" style="font-weight: 600;font-size: 30px"><i class="fa fa-film"></i> Video <i class="fa fa-film"></i></h1></div>
+                                    <div class="form-group col-xs-6 col-sm-9 col-md-10 col-lg-10">
+                                        <div class="input-group input-group-lg">
+                                            <div class="icon-addon addon-lg">
+                                                <input type="hidden" value="<?php echo $_SESSION["id_Persona"]?>" id="id_Per">
+                                                <input type="text" placeholder="Ingresar Video" class="form-control" id="cadena">
+                                                <label for="Video" class="glyphicon glyphicon-search" rel="tooltip" title="Video"></label>
+                                            </div>
+                                            <span class="input-group-btn">
+                                                <button class="btn btn-default" type="button" id="BuscarVideo"><i class="glyphicon glyphicon-search"></i></button>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+
+                                <div class="col-sm-12">
+                                    <div class="well padding-10" style="margin: 10px">
+
+                                        <div class="row">
+
+                                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="background: #00000040" id="Videos">
+                                                <?php if (mysqli_num_rows($var) > 0) { ?>
+                                                    <?php
+                                                    $i = 0;
+                                                    while ($data = $var->fetch_object()) {
+                                                        ?>
+                                                        <div class="row" style="border-top: solid 1px #9e9c9c;border-bottom: solid 1px #9e9c9c;padding-bottom: 10px;">
+                                                            <div id="tithim" class="col-xs-12 col-sm-12 col-md-3 col-lg-2" style="display: flex;align-items: center;min-height: 60px;">
+                                                                <div><strong  style="font-size:16px"> <?php echo utf8_encode($data->No_Video); ?></strong></div>
+                                                            </div>
+                                                            <div class="col-xs-12 col-sm-12 col-md-5 col-lg-6"> 
+                                                                <div>
+
+                                                                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6" style="height: auto">
+                                                                        <h3 style="text-align: center;margin: 5px;font-size: 14px;font-family: ">Descripción</h3> 
+                                                                        <div style="text-align: center"><?php echo utf8_encode($data->Des_Video) ?></div>
+                                                                        <div style="text-align: center"> Por <strong><?php echo utf8_encode($data->persona) ?></strong></div>
+                                                                    </div>
+                                                                    <?php if ($data->id_Videos_Anotados !== null) { ?>
+                                                                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6" style="text-align: center;color: #0081c2;font-size: 25px;align-items: center;">
+                                                                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"><h3 style="text-align: center;margin: 5px;font-size: 14px;font-family: ">Opción</h3></div><br>
+                                                                            <div>
+                                                                                <a onclick="CMGV(<?php echo utf8_encode($data->id_Videos_Anotados); ?>)" class="btn btn-labeled btn-danger"> <span class="btn-label"><i class="glyphicon glyphicon-thumbs-up"></i></span>Me Gusta (<?php echo utf8_encode($data->count) ?>)</a>
+                                                                            </div>
+                                                                        </div>
+                                                                    <?php } else { ?>
+                                                                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6" style="text-align: center;color: #0081c2;font-size: 25px;align-items: center;">
+                                                                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"><h3 style="text-align: center;margin: 5px;font-size: 14px;font-family: ">Opción</h3></div><br>
+                                                                            <div>
+                                                                                <a onclick="MGV(<?php echo utf8_encode($data->id_Video); ?>,<?php echo $_SESSION["id_Persona"]; ?>)" class="btn btn-labeled btn-success"> <span class="btn-label"><i class="glyphicon glyphicon-thumbs-up"></i></span>Me Gusta  (<?php echo utf8_encode($data->count) ?>)</a>
+                                                                            </div>
+                                                                        </div>
+                                                                    <?php } ?>
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4" style="padding-bottom: 20px"> 
+                                                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="text-align: center;padding-top: 20px;">
+                                                                    <button class="btn btn-info" data-toggle="modal" data-target="#myModal">Sonido <i class="fa fa-music"></i></button> 
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <?php
+                                                    }
+                                                } else {
+                                                    ?>
+                                                    <div id="tithim" class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="display: flex;align-items: center;min-height: 60px;justify-content: center">
+                                                        <div><strong  style="font-size:16px">No hay Videos Encontrados </strong></div>
+                                                    </div>
+                                                <?php }
+                                                ?>
+
+                                            </div>
+                                        </div>
+
+
+
+
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!-- END MAIN CONTENT -->
+
+                        </div>
+
+
+                    </div>
+                    <!-- END MAIN CONTENT -->
+                </div>
+                <!-- END MAIN PANEL -->
+                <!--<div class="col-sm-4 col-md-4 col-lg-2 hidden-xs asidelat" style="background: linear-gradient( 155deg,#3e8391,black 50%);height: 100vh;display: flex;">
+                    
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-12" style="float: bottom;align-items: flex-end;display: flex;height: 50%;"> 
+                            <h1 style="font-size: 40px;text-align: center;color: white;">CEO Adventistas</h1>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-12" style="float: bottom;align-items: flex-end;display: flex;height: 50%;">
+                            <img src="../images/adventist-symbol-png--symbol/adventist-symbol--white.png" width="100%">
+                        </div>
+                    </div>
+                </div>-->
+                <!-- PAGE FOOTER
+                <div class="page-footer" style="padding-left: 0px;border: solid 0px;">
+                    <div class="row fot">
+                        <div class="col-xs-12 col-sm-6">
+                            <span class="txt-color-white"> <span class="hidden-xs">Aplicación Web Diseñado por  </span>Nexo-Consultores </span>
+                        </div>
+
+                        <div class="col-xs-6 col-sm-6 text-right ">
+                            <div class="txt-color-white inline-block">
+                                <i class="txt-color-blueLight hidden-mobile">Iglesia Adventista del Septimo Dia  </i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+             END PAGE FOOTER -->
+            </div>
+
+
             <!-- END RIBBON -->
 
 
@@ -186,64 +329,7 @@ if ($_SESSION["Usuario"] !== null) {
             <!-- MAIN CONTENT -->
             <div id="content">
                 <!-- end row -->
-                <div class="row">
-                    <div class="row" >
-                        <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="justify-content: center;display: flex;align-items: center">
 
-                            <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12"><h1 style="font-weight: 600;"><i class="fa fa-film"></i> Videos <i class="fa fa-film"></i></h1></div>
-                            <div class="form-group col-xs-12 col-sm-8 col-md-8 col-lg-8">
-                                <input class="form-control" placeholder="Buscar" id="cadena" >
-                            </div>
-                        </article>
-                    </div>
-                    <div class="row">
-
-                        <div class="col-sm-12">
-                            <div class="well padding-10" style="margin: 10px">
-                                <table id="tablaHiminario" class="table table-hover">
-                                    <thead>
-                                        <tr>
-                                            <th>Nombre</th>
-                                            <th>Descripcion</th>
-                                            <th>Video</th>
-                                            <th>Musica</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td><a><strong>Himno N°1 Cantad Alegres</strong></a> </td>
-                                            <td>Mar  d sd sd s d sd s d s d sd s d sk</td>
-                                            <td><button class="btn btn-outline btn-success" data-toggle="modal" data-target="#myModal"><i class="fa fa-music"></i> Audio</button></td>
-                                            <td><button class="btn btn-outline btn-success" data-toggle="modal" data-target="#myModal"><i class="fa fa-film"></i> Video</button></td>
-                                        </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <td>Jacos s d sd s d sd s d sd s d sb</td>
-                                            <td><button class="btn btn-outline btn-success"><i class="fa fa-music"></i> Audio</button></td>
-                                            <td><button class="btn btn-outline btn-success"><i class="fa fa-film"></i> Video</button></td>
-                                        </tr>
-                                        <tr>
-                                            <td>3</td>
-                                            <td>Larry</td>
-                                            <td><button class="btn btn-outline btn-success"><i class="fa fa-music"></i> Audio</button></td>
-                                            <td><button class="btn btn-outline btn-success"><i class="fa fa-film"></i> Video</button></td>
-                                        </tr>
-                                        <tr>
-                                            <td>4</td>
-                                            <td>Wise</td>
-                                            <td><button class="btn btn-outline btn-success"><i class="fa fa-music"></i> Audio</button></td>
-                                            <td><button class="btn btn-outline btn-success"><i class="fa fa-film"></i> Video</button></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-
-                            </div>
-
-                        </div>
-                    </div>
-                    <!-- END MAIN CONTENT -->
-
-                </div>
                 <!-- END MAIN PANEL -->
 
                 <!-- PAGE FOOTER -->
@@ -334,71 +420,45 @@ if ($_SESSION["Usuario"] !== null) {
             <!-- SmartChat UI : plugin -->
             <script src="js/smart-chat-ui/smart.chat.ui.min.js"></script>
             <script src="js/smart-chat-ui/smart.chat.manager.min.js"></script>
+
+            <script src="../js/Video/Video.js"></script>
+            <!-- PAGE RELATED PLUGIN(S) 
+            <script src="..."></script>-->
             <script src="js/plugin/datatables/jquery.dataTables.min.js"></script>
             <script src="js/plugin/datatables/dataTables.colVis.min.js"></script>
             <script src="js/plugin/datatables/dataTables.tableTools.min.js"></script>
             <script src="js/plugin/datatables/dataTables.bootstrap.min.js"></script>
             <script src="js/plugin/datatable-responsive/datatables.responsive.min.js"></script>
-            <script src="../js/Himinario/Himinario.js"></script>
-            <!-- PAGE RELATED PLUGIN(S) 
-            <script src="..."></script>-->
-
+            <script type="text/javascript" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+            <script type="text/javascript" src="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap.min.js"></script>
+            <script type="text/javascript" src="https://cdn.datatables.net/autofill/2.3.5/js/dataTables.autoFill.min.js"></script>
+            <script type="text/javascript" src="https://cdn.datatables.net/autofill/2.3.5/js/autoFill.bootstrap.min.js"></script>
             <script type="text/javascript">
 
                 $(document).ready(function () {
-                    $('#tablaHiminario').DataTable();
-                    /* DO NOT REMOVE : GLOBAL FUNCTIONS!
-                     *
-                     * pageSetUp(); WILL CALL THE FOLLOWING FUNCTIONS
-                     *
-                     * // activate tooltips
-                     * $("[rel=tooltip]").tooltip();
-                     *
-                     * // activate popovers
-                     * $("[rel=popover]").popover();
-                     *
-                     * // activate popovers with hover states
-                     * $("[rel=popover-hover]").popover({ trigger: "hover" });
-                     *
-                     * // activate inline charts
-                     * runAllCharts();
-                     *
-                     * // setup widgets
-                     * setup_widgets_desktop();
-                     *
-                     * // run form elements
-                     * runAllForms();
-                     *
-                     ********************************
-                     *
-                     * pageSetUp() is needed whenever you load a page.
-                     * It initializes and checks for all basic elements of the page
-                     * and makes rendering easier.
-                     *
-                     */
+                    Actudalizar();
+                    $(window).resize(function () {
+                        if ($(document).width() >= 280 && $(document).width() <= 360) {
+                            $("#cadena").removeClass('input-lg').addClass('input-xs');
+                            $(".titMusic").css("font-size", '18px');
 
+                        } else if ($(document).width() > 360) {
+                            $("#cadena").removeClass('input-xs').addClass('input-lg');
+                            $(".titMusic").css("font-size", '30px');
+                        }
+                    });
                     pageSetUp();
+                    function Actudalizar(){
+                        if ($(document).width() >= 280 && $(document).width() <= 360) {
+                            $("#cadena").removeClass('input-lg').addClass('input-xs');
+                            $(".titMusic").css("font-size", '18px');
 
-                    /*
-                     * ALL PAGE RELATED SCRIPTS CAN GO BELOW HERE
-                     * eg alert("my home function");
-                     * 
-                     * var pagefunction = function() {
-                     *   ...
-                     * }
-                     * loadScript("js/plugin/_PLUGIN_NAME_.js", pagefunction);
-                     * 
-                     * TO LOAD A SCRIPT:
-                     * var pagefunction = function (){ 
-                     *  loadScript(".../plugin.js", run_after_loaded);	
-                     * }
-                     * 
-                     * OR
-                     * 
-                     * loadScript(".../plugin.js", run_after_loaded);
-                     */
-
-                })
+                        } else if ($(document).width() > 360) {
+                            $("#cadena").removeClass('input-xs').addClass('input-lg');
+                            $(".titMusic").css("font-size", '30px');
+                        }
+                    }
+                });
 
             </script>
 

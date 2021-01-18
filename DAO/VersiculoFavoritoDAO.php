@@ -20,4 +20,8 @@ class VersiculoFavoritoDAO {
         $consulta = "call IngresarVersiculoFavorito($id_Ver,$id_Persona,'$opcion','$Anotacion')";
         return $this->sql($consulta);
     }
+    public function ModificarAnotacion($a,$b) {
+        $consulta = "call ModificarVersiculoFavorito()";
+        return $this->sql($consulta);
+    }
 }

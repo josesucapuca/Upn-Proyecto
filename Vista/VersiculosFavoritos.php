@@ -72,96 +72,27 @@ if ($_SESSION["Usuario"] !== null) {
                     <section id="widget-grid" class="">
 
                         <div class="row">
-                            <article class="col-xs-12 col-sm-5 col-md-5 col-lg-5" style="margin-bottom: 30px">
+                            <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="margin-bottom: 30px">
 
 
 
                                 <div class="jarviswidget jarviswidget-color-blueLight" id="wid-id-10" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-togglebutton="false" data-widget-deletebutton="false" data-widget-fullscreenbutton="false" data-widget-custombutton="false" data-widget-sortable="false">
-                                    <!-- widget options:
-                                    usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
-
-                                    data-widget-colorbutton="false"
-                                    data-widget-editbutton="false"
-                                    data-widget-togglebutton="false"
-                                    data-widget-deletebutton="false"
-                                    data-widget-fullscreenbutton="false"
-                                    data-widget-custombutton="false"
-                                    data-widget-collapsed="true"
-                                    data-widget-sortable="false"
-
-                                    -->
                                     <header>
                                         <span class="widget-icon"> <i class="fa fa-book"></i> </span>
                                         <h2>Vesiculos Favoritos </h2>
-
                                     </header>
-
-                                    <!-- widget div-->
                                     <div>
-
-                                        <!-- widget edit box -->
                                         <div class="jarviswidget-editbox">
-                                            <!-- This area used as dropdown edit box -->
-
                                         </div>
-                                        <!-- end widget edit box -->
-
-                                        <!-- widget content -->
                                         <div class="widget-body no-padding" style="min-height: 0px">
-
                                             <div class="panel-group smart-accordion-default" id="verFav" >
-                                                <div class="panel panel-default">
-                                                    <div class="panel-heading">
-                                                        <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion-2" href="#collapseOne-1"> <i class="fa fa-fw fa-plus-circle txt-color-green"></i> <i class="fa fa-fw fa-minus-circle txt-color-red"></i>Devocion Matutina Para Adultos </a></h4>
-                                                    </div>
-                                                    <div id="collapseOne-1" class="panel-collapse collapse in">
-                                                        <div class="panel-body">
-                                                            <a href="https://drive.google.com/file/d/1jPvuEy7UOLT-EWcrVJ7MgknYfJt2lITI/view?usp=sharing" target="_blank">Devocion Matutina Para Adultos (12/12/12) <i class="fa fa-file"></i></a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="panel panel-default">
-                                                    <div class="panel-heading">
-                                                        <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion-2" href="#collapseTwo-1" class="collapsed"> <i class="fa fa-fw fa-exclamation txt-color-red"></i> <i class="fa fa-fw fa-minus-circle txt-color-red"></i> Devocion Matutina Para Jovenes </a></h4>
-                                                    </div>
-                                                </div>
-                                                <div class="panel panel-default">
-                                                    <div class="panel-heading">
-                                                        <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion-2" href="#collapseThree-1" class="collapsed"> <i class="fa fa-fw fa-plus-circle txt-color-green"></i> <i class="fa fa-fw fa-minus-circle txt-color-red"></i> Devocion Matutina Para Damas </a></h4>
-                                                    </div>
-                                                    <div id="collapseThree-1" class="panel-collapse collapse">
-                                                        <div class="panel-body">
-                                                            <a href="#">Devocion Matutina Para Adultos (12/12/12) <i class="fa fa-file"></i></a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="panel panel-default">
-                                                    <div class="panel-heading">
-                                                        <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion-2" href="#collapseFor-1" class="collapsed"> <i class="fa fa-fw fa-plus-circle txt-color-green"></i> <i class="fa fa-fw fa-minus-circle txt-color-red"></i> Devocion Matutina Para Niños </a></h4>
-                                                    </div>
-                                                    <div id="collapseFor-1" class="panel-collapse collapse">
-                                                        <div class="panel-body">
-                                                            <a href="#">Devocion Matutina Para Adultos (12/12/12) <i class="fa fa-file"></i></a>
-                                                        </div>
-                                                    </div>
-                                                </div>
                                             </div>
-
                                         </div>
-                                        <!-- end widget content -->
-
                                     </div>
-                                    <!-- end widget div -->
-
                                 </div>
                             </article>
                         </div>
-
-                        <!-- END ROW -->
-
                     </section>
-                    <!-- end widget grid -->
-
                 </div>
                 <!-- END MAIN CONTENT -->
 
@@ -273,7 +204,8 @@ if ($_SESSION["Usuario"] !== null) {
 
             <!-- Morris Chart Dependencies -->
             <script src="js/plugin/morris/raphael.min.js"></script>
-            <script src="js/plugin/morris/morris.min.js"></script><script src="../js/VersiculosFavoritos/VersiculosFavortios.js"></script>
+            <script src="js/plugin/morris/morris.min.js"></script>
+            <script src="../js/VersiculosFavoritos/VersiculosFavortios.js"></script>
 
             <!-- Your GOOGLE ANALYTICS CODE Below -->
             <script type="text/javascript">

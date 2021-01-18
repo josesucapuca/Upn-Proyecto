@@ -210,7 +210,7 @@ function IngresarComentario(id_V, id_p, Comentario, opci) {
         data: {opc: "IngresarVF", idV: id_V, id_Per: id_p, Com: Comentario, opci: opci},
         success: function (response)
         {
-            if (response) {
+            if (response==="true") {
                 $.smallBox({
                     title: "Versiculo Favorito Resgistrado!",
                     content: "<i class='fa fa-check'></i> Registrado Correctamente...<i></i>",
@@ -220,6 +220,7 @@ function IngresarComentario(id_V, id_p, Comentario, opci) {
                 });
                 $('#frameVer').attr("src", $('#frameVer').attr("src"));
                 ListaVersiculos($("#seCapitulo").val(), id_p);
+                ListaVersiculosFavoritos();
             } else {
                 $.smallBox({
                     title: "Error al Registrar Versiculo Favorito",
@@ -227,6 +228,60 @@ function IngresarComentario(id_V, id_p, Comentario, opci) {
                     color: "#C46A69",
                     iconSmall: "fa fa-times fa-2x fadeInRight animated",
                     timeout: 4000
+                });
+            }
+        }
+
+    });
+}
+function editar(i){
+    $("#Anotacion"+i).prop('disabled', false);
+}
+function guardar(i){
+    $.ajax({
+        type: "POST",
+        url: '../Controlador/VersiculoFavortio.php',
+        data: {opc: "ModificarAnotacion", a:i , b: $("#Anotacion"+i).val()},
+        success: function (response)
+        {
+            var jsonData = JSON.parse(response);
+            var operacion = "";
+            if (opci === "i") {
+                operacion = "Ingresar";
+            } else if (opci === "m") {
+                operacion = "Modificar";
+            }
+            if (jsonData[0].id_Versiculo_Favorito === "0") {
+                $.SmartMessageBox({
+                    title: operacion + " Comentario",
+                    content: "max 150 caracteres",
+                    buttons: "[Aceptar][Cancelar]",
+                    input: "textarea",
+                    inputValue: "",
+                    placeholder: "Ingresar un Comentario"
+                }, function (ButtonPress) {
+                    if (ButtonPress === "Aceptar") {
+                        IngresarComentario(id_VerFav, id_p, $("#txtarea1").val(), opci);
+                    }
+                    if (ButtonPress === "Cancelar") {
+                        return 0;
+                    }
+                });
+            } else {
+                $.SmartMessageBox({
+                    title: operacion + " Comentario",
+                    content: "max 150 caracteres",
+                    buttons: "[Aceptar][Cancelar]",
+                    input: "textarea",
+                    inputValue: jsonData[0].Anotacion,
+                    placeholder: "Ingresar un Comentario"
+                }, function (ButtonPress) {
+                    if (ButtonPress === "Aceptar") {
+                        IngresarComentario(id_VerFav, id_p, $("#txtarea1").val(), opci);
+                    }
+                    if (ButtonPress === "Cancelar") {
+                        return 0;
+                    }
                 });
             }
         }
