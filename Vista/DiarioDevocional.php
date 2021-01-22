@@ -233,14 +233,16 @@ if ($_SESSION["Usuario"] !== null) {
                         </div>
                         <div class="modal-body">
                             <input type="hidden" id="txtID_devocional" name="txtID_devocional">
-                            <input type="hidden" id="txtFecha" name="txtFecha" /> 
-                            <input type="hidden" id="id_Persona" name="id_Persona"/>
+                            <!--<input type="hidden" id="txtdetalle_devocional" name="txtdetalle_devocional">-->
+                            <!--<input type="text" id="txtFecha" name="txtFecha" />--> 
+                            <input type="hidden" id="txtID_persona" name="txtID_persona" value="<?php echo $_SESSION["id_Persona"] ?>"/>
                             <div class="form-row">
+                                <!--<fieldset disabled>-->
                                 <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12">
                                     <div class="form-group has-success">                                
                                         <div class="input-group">
                                             <span class="input-group-addon"><i class="far fa-star"> Nombre:</i></span>
-                                            <input type="text" id="txtNombre" name="No_Persona" class="form-control" placeholder="Ingresar su nombre">
+                                            <input type="text" id="txtNombre" name="No_Persona" class="form-control" placeholder="Ingresar su nombre" disabled value="<?php echo $_SESSION["Persona"] ?>">
                                         </div>                                 
                                     </div>
                                 </div>
@@ -248,7 +250,7 @@ if ($_SESSION["Usuario"] !== null) {
                                     <div class="form-group has-success">                                
                                         <div class="input-group">
                                             <span class="input-group-addon"><i class="far fa-star"> Iglesia / Distrito:</i></span>
-                                            <input type="text" id="txtIgleDistri" name="Nombre_Iglesia" class="form-control" placeholder="Ingresar Iglesia / Distrito">
+                                            <input type="text" id="txtIgleDistri" name="Nombre_Iglesia" class="form-control" placeholder="Ingresar Iglesia / Distrito" disabled value="<?php echo $_SESSION["Nombre_Iglesia"] ?>">
                                         </div>                                 
                                     </div>
                                 </div>
@@ -256,7 +258,7 @@ if ($_SESSION["Usuario"] !== null) {
                                     <div class="form-group has-success">                                
                                         <div class="input-group">
                                             <span class="input-group-addon"><i class="far fa-star">Asociación / Misión:</i></span>
-                                            <input type="text" id="txtAsoMisio" name="No_Mision" class="form-control" placeholder="Ingresar Asociación / Misión">
+                                            <input type="text" id="txtAsoMisio" name="No_Mision" class="form-control" placeholder="Ingresar Asociación / Misión" disabled value="<?php echo $_SESSION["No_Mision"] ?>">
                                         </div>                                 
                                     </div>
                                 </div>                                               
@@ -264,7 +266,7 @@ if ($_SESSION["Usuario"] !== null) {
                                     <div class="form-group has-success">                                
                                         <div class="input-group">
                                             <span class="input-group-addon"><i class="far fa-star"> Teléfono:</i></span>
-                                            <input type="text" id="txtTelefono" name="tele_Persona" class="form-control" placeholder="Ingresar su teléfono">
+                                            <input type="text" id="txtTelefono" name="tele_Persona" class="form-control" placeholder="Ingresar su teléfono" disabled value="<?php echo $_SESSION["tele_Persona"] ?>">
                                         </div>                                 
                                     </div>
                                 </div>
@@ -272,23 +274,15 @@ if ($_SESSION["Usuario"] !== null) {
                                     <div class="form-group has-success">                                
                                         <div class="input-group">
                                             <span class="input-group-addon"><i class="far fa-star"> Correo:</i></span>
-                                            <input type="text" id="txtcorreo" name="correo_Persona" class="form-control" placeholder="Ingresar su Email">
+                                            <input type="text" id="txtcorreo" name="correo_Persona" class="form-control" placeholder="Ingresar su Email" disabled value="<?php echo $_SESSION["correo_Persona"] ?>">
                                         </div>                                 
                                     </div>
                                 </div>
-                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                                    <div class="form-group has-success">                                
-                                        <div class="input-group">
-                                            <span class="input-group-addon"><i class="far fa-star"> Hora de la Devoción:</i></span>
-                                            <input type="text" id="txtFecha" name="txtFecha" class="form-control"/>
-                                        </div>                                 
-                                    </div>
-                                </div>
-                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                                     <div class="form-group has-success">                                
                                         <div class="input-group">
                                             <span class="input-group-addon"><i class="far fa-star">Color del Diario Devocional:</i></span>
-                                            <input type="color" id="txtColor" name="color" value="#ff0000" class="form-control"/>
+                                            <input type="color" id="txtColor" name="txtColor" value="#ff0000" class="form-control"/>
                                         </div>                                 
                                     </div>
                                 </div>
@@ -300,7 +294,6 @@ if ($_SESSION["Usuario"] !== null) {
                                 </div>
                             </div>
                         </div>
-                        <!--</div>-->
                         <hr/>
                         <div class="modal-footer">  
                             <div class="row">                               
@@ -317,24 +310,24 @@ if ($_SESSION["Usuario"] !== null) {
                                     <div class="form-group has-success">                                
                                         <div class="input-group">
                                             <span class="input-group-addon"><i class="far fa-star"> Texto de Estudio:</i></span>
-                                            <input type="text" id="txtTexto" name="Texto_estudio" class="form-control" placeholder="Ingresar el texto de estudio">
+                                            <input type="text" id="txtTexto" name="txtTexto" class="form-control" placeholder="Ingresar el texto de estudio">
                                         </div>                                 
                                     </div>
                                 </div>                                
                                 <div class=" col-xs-12 col-sm-12 col-md-12 col-lg-12 asi">
                                     <img src="../images/diariodevocional/resumen.png" alt="" style="width: 100%;"/>
                                 </div>
-                                <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12">                                                                     
                                     <div class="form-group">
-                                        <textarea id="txtResumen" name="Resumen_Personal" rows="3" class="form-control"></textarea>
+                                        <textarea id="txtResumen" name="txtResumen" rows="3" class="form-control" ></textarea>
                                     </div>
                                 </div>
                                 <div class=" col-xs-12 col-sm-12 col-md-12 col-lg-12 asi">
                                     <img src="../images/diariodevocional/aplica.png" alt="" style="width: 100%;"/>
                                 </div>
                                 <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                                    <div class="form-group">
-                                        <textarea id="txtAplica" name="Aplicacion_Diaria" rows="3" class="form-control"></textarea>
+                                    <div class="form-group"  style="background: #cccccc">
+                                        <textarea id="txtAplica" name="txtAplica" rows="3" class="form-control"></textarea>
                                     </div>
                                 </div>
                                 <div class=" col-xs-12 col-sm-12 col-md-12 col-lg-12 asi">
@@ -342,12 +335,12 @@ if ($_SESSION["Usuario"] !== null) {
                                 </div>
                                 <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                                     <div class="form-group">
-                                        <textarea id="txtPedido" name="Pedido_Oracion" rows="3" class="form-control"></textarea>
+                                        <textarea id="txtPedido" name="txtPedido" rows="3" class="form-control"></textarea>
                                     </div>
                                 </div>
                                 <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                                     <div class="form-group">
-                                        <textarea id="txtContestado" name="id_Pedido_Oracion" rows="3" class="form-control"></textarea>
+                                        <textarea id="txtContestado" name="txtContestado" rows="3" class="form-control"></textarea>
                                     </div>
                                 </div>
                                 <div class=" col-xs-12 col-sm-12 col-md-12 col-lg-12 asi">
@@ -355,19 +348,19 @@ if ($_SESSION["Usuario"] !== null) {
                                 </div>
                                 <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12">
                                     <div class="form-group">
-                                        <textarea id="txtCompartire" name="Meta" rows="3" class="form-control"></textarea>
+                                        <textarea id="txtMeta" name="txtMeta" rows="3" class="form-control"></textarea>
                                     </div>
                                 </div>
-                                <div class=" col-xs-3 col-sm-3 col-md-3 col-lg-3 asi">
+                                <div class=" col-xs-6 col-sm-6 col-md-6 col-lg-6 asi">
                                     <button type="button" id="btnAgregar" class="btn btn-success">Agregar</button>
                                 </div>
-                                <div class=" col-xs-3 col-sm-3 col-md-3 col-lg-3 asi">
+<!--                                <div class=" col-xs-4 col-sm-4 col-md-4 col-lg-4 asi">
                                     <button type="button" id="btnModificar" class="btn btn-warning">Modificar</button>
-                                </div>
-                                <div class=" col-xs-3 col-sm-3 col-md-3 col-lg-3 asi">
-                                    <button type="button" id="btnEliminar" class="btn btn-danger">Borrar</button>
-                                </div>
-                                <div class=" col-xs-3 col-sm-3 col-md-3 col-lg-3 asi">
+                                </div>-->
+                                <!--<div class=" col-xs-3 col-sm-3 col-md-3 col-lg-3 asi">-->
+                                    <!--<button type="button" id="btnEliminar" class="btn btn-danger">Borrar</button>-->
+                                <!--</div>-->
+                                <div class=" col-xs-6 col-sm-6 col-md-6 col-lg-6 asi">
                                     <button type="button" class="btn btn-default" data-dismiss="modal">cancelar</button>
                                 </div>
                             </div>
@@ -375,6 +368,7 @@ if ($_SESSION["Usuario"] !== null) {
                     </div>
                 </div>
             </div>
+            <script src="../js/jquery-3.4.1.min.js" type="text/javascript"></script>
             <script src="../js/jquery.min.js" type="text/javascript"></script>
             <script src="../js/moment.min.js" type="text/javascript"></script>
             <script src="../js/DevocionesMatutinas/DiarioDevocional.js" type="text/javascript"></script>
@@ -393,6 +387,7 @@ if ($_SESSION["Usuario"] !== null) {
                     document.write('<script src="js/libs/jquery-ui-1.10.3.min.js"><\/script>');
                 }
             </script>
+           
             <!-- IMPORTANT: APP CONFIG -->
             <script src="js/app.config.js"></script>
             <!-- JS TOUCH : include this plugin for mobile drag / drop touch events-->
@@ -419,6 +414,7 @@ if ($_SESSION["Usuario"] !== null) {
             <script src="js/plugin/msie-fix/jquery.mb.browser.min.js"></script>
             <!-- FastClick: For mobile devices -->
             <script src="js/plugin/fastclick/fastclick.min.js"></script>
+             <script src="js/plugin/summernote/summernote.min.js" type="text/javascript"></script>
             <!--[if IE 8]>
             <h1>Your browser is out of date, please update your browser by going to www.microsoft.com/download</h1>
             <![endif]-->
@@ -457,6 +453,37 @@ if ($_SESSION["Usuario"] !== null) {
                 })();
 
             </script>
+            <script type="text/javascript">
+
+                                            // DO NOT REMOVE : GLOBAL FUNCTIONS!
+
+                                            $(document).ready(function () {
+
+                                                pageSetUp();
+
+                                                /*
+                                                 * SUMMERNOTE EDITOR
+                                                 */
+
+                                                $('.summernote').summernote({
+                                                    height: 180,
+                                                    focus: false,
+                                                    tabsize: 2
+                                                });
+
+                                                /*
+                                                 * MARKDOWN EDITOR
+                                                 */
+
+//                                                $("#mymarkdown").markdown({
+//                                                    autofocus: false,
+//                                                    savable: true
+//                                                })
+
+
+                                            });
+
+        </script>
         </body>
     </html><?php
 } else {

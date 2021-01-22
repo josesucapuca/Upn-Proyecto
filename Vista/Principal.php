@@ -879,7 +879,7 @@ if ($_SESSION["Usuario"] !== null) {?>
                                                         <ul class="list-unstyled text-left">
                                                             <li class="lipri"><i class="fa fa-check text-success"></i> <a href="RepasoLeccion.php"><strong>Repaso de la Lección</strong></a></li>
                                                             <li class="lipri"><i class="fa fa-check text-success"></i> <a href="ComentarioBiblico.php"><strong>Comentario Bíblico</strong></a></li>
-                                                            <li class="lipri"><i class="fa fa-check text-success"></i> <a href="DiarioDevocional.php"><strong>Diario Devocional</strong></a></li>
+                                                            <li class="lipri"><i class="fa fa-check text-success"></i> <a href="DiarioDevocional.php?idpersona=<?php echo $_SESSION["id_Persona"];?>" id="btnlistar"><strong>Diario Devocional</strong></a></li>
                                                         </ul>
                                                     </div>
                                                 </div>
@@ -907,9 +907,11 @@ if ($_SESSION["Usuario"] !== null) {?>
                 </aside>
             </div>
             <?php include_once './inc2/scripts.php'; ?>
+            <!--<script src="../js/jquery.min.js" type="text/javascript"></script>-->
             <script src="js/plugin/jquery-validate/jquery.validate.min.js"></script>
             <script src="../js/Principal/Principal.js"></script>
             <script src="../js/CampanaEvangelistica/CampanaEvangelistica.js"></script>
+            <!--<script src="../js/DevocionesMatutinas/DiarioDevocional.js" type="text/javascript"></script>-->
             <script type="text/javascript">
                 $(document).ready(function () {
                     pageSetUp();
