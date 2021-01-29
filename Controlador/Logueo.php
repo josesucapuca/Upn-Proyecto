@@ -152,7 +152,7 @@ if ($opc === "RecuperarContra") {
             $mail->Host = 'ceoadventista.org';
             $mail->SMTPAuth = true;                                   // Enable SMTP authentication
             $mail->Username = 'soporte@ceoadventista.org';                     // SMTP username
-            $mail->Password = 'Ceonexo2020';                               // SMTP password
+            $mail->Password = 'Ceonexo2021';                               // SMTP password
 //           $mail->SMTPSecure = 'tls';
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
             $mail->Port = 587;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above

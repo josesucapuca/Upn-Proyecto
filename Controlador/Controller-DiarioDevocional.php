@@ -1,5 +1,5 @@
 <?php
-
+include_once '../DAO/DiarioDevocionalDAO.php';
 session_start();
 header('Conten-Type: application/json');
 $pdo = new PDO("mysql:dbname=proyecto_upn;host=localhost", "root", "12345678");
@@ -13,14 +13,15 @@ $accion = (isset($_GET['accion'])) ? $_GET['accion'] : 'leer';
 //Las acciones de los bontones
 switch ($accion) {
     case 'agregar':
-        $sentenciaSQL = $pdo->prepare("call RegistrarDiarioDevocional (:id_Persona,:Resumen_Personal,:Aplicacion_Diaria,:title,:color,:Meta)");
+        $sentenciaSQL = $pdo->prepare("call RegistrarDiarioDevocional (:id_Persona,:Resumen_Personal,:Aplicacion_Diaria,:title,:color,:Meta,:Pedido_Oracion)");
         $respuesta = $sentenciaSQL->execute(array(
             "id_Persona" => $_POST['id_Persona'],
             "Resumen_Personal" => $_POST['Resumen_Personal'],
             "Aplicacion_Diaria" => $_POST['Aplicacion_Diaria'],
             "title" => $_POST['title'],
             "color" => $_POST['color'],
-            "Meta" => $_POST['Meta']
+            "Meta" => $_POST['Meta'],
+            "Pedido_Oracion" => $_POST['Pedido_Oracion']
         ));
         echo json_encode($respuesta);
 //        echo 'agregar';
@@ -46,14 +47,21 @@ switch ($accion) {
         ));
         echo json_encode($respuesta);
         break;
+//    case 'listar':
+//        $person = $_SESSION["id_Persona"];
+//        $sql = $pdo->prepare("call ListarDiarioDevocional ('$person')");
+//        $sql->execute();
+//        $resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
+//        echo json_encode($resultado);
+//        break;
     default :
 //        $person = "8";
         $person = $_SESSION["id_Persona"];
         $sql = $pdo->prepare("call ListarDiarioDevocional ('$person')");
         $sql->execute();
-
         $resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
         echo json_encode($resultado);
+//        echo json_encode('holaaa');
         break;
 }
 

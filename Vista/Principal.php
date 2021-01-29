@@ -912,6 +912,7 @@ if ($_SESSION["Usuario"] !== null) {?>
             <script src="../js/Principal/Principal.js"></script>
             <script src="../js/CampanaEvangelistica/CampanaEvangelistica.js"></script>
             <!--<script src="../js/DevocionesMatutinas/DiarioDevocional.js" type="text/javascript"></script>-->
+            <!--<script src="../js/DevocionesMatutinas/DiarioDevocional.js" type="text/javascript"></script>-->
             <script type="text/javascript">
                 $(document).ready(function () {
                     pageSetUp();

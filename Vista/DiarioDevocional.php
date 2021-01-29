@@ -5,6 +5,7 @@ if ($_SESSION["Usuario"] !== null) {
     <!DOCTYPE html>
     <html lang="es" style="background-image: url('../images/diariodevocional/fodomatutina4.jpg');">
         <head>
+            
             <title>ceoadventista.org </title>
             <?php include_once './inc2/Estilos.php'; ?>
             <link rel="stylesheet" type="text/css" media="screen" href="css/fontAdventSans.css">
@@ -18,14 +19,17 @@ if ($_SESSION["Usuario"] !== null) {
             <!--NUEVO-->
             <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">-->
             <link href="../css/fullcalendar.min.css" rel="stylesheet" type="text/css"/>
-<!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>-->
+            <link href="../css/icomoon.css" rel="stylesheet" type="text/css"/>
+            <link href="../plugins/animate.css/animate.css" rel="stylesheet" type="text/css"/>
+            <link href="../plugins/sweetAlert2/sweetalert2.min.css" rel="stylesheet" type="text/css"/>
+    <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>-->
             <style>
                 @media(max-width:750px){
                     .sortable-grid{
                         height: auto;
                     }
                     #frameVer{
-                        height: 50vh !important;
+                        height: 50vh !important;                      
                     }
                 }
                 /*pantalla normal*/
@@ -88,6 +92,23 @@ if ($_SESSION["Usuario"] !== null) {
                     vertical-align: middle;
                     background: #F2F2F2;
                 }
+                .fc a{
+                    padding: 10px 0px;
+                    /*width: 90px;*/
+                    height: 100px;
+                    vertical-align: middle;
+                    /*background: #9E1C00;*/
+                }
+                .btn-group .btn {
+                    width: 50%;
+                }
+                .btn-group {
+                    width: 100%;
+                }
+                .fc-past {
+                    background-color: #F1F1F1;
+                }
+
                 /*                hr {
                                         margin-top: 55rem;
                                         margin-bottom: 1rem;
@@ -310,7 +331,7 @@ if ($_SESSION["Usuario"] !== null) {
                                     <div class="form-group has-success">                                
                                         <div class="input-group">
                                             <span class="input-group-addon"><i class="far fa-star"> Texto de Estudio:</i></span>
-                                            <input type="text" id="txtTexto" name="txtTexto" class="form-control" placeholder="Ingresar el texto de estudio">
+                                            <input type="text" id="txtTexto" name="txtTexto" class="form-control" placeholder="Ingresar el texto de estudio bíblico" required="">
                                         </div>                                 
                                     </div>
                                 </div>                                
@@ -319,7 +340,7 @@ if ($_SESSION["Usuario"] !== null) {
                                 </div>
                                 <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12">                                                                     
                                     <div class="form-group">
-                                        <textarea id="txtResumen" name="txtResumen" rows="3" class="form-control" ></textarea>
+                                        <textarea id="txtResumen" name="txtResumen" rows="3" class="form-control" required="" placeholder="Redacte un breve resumen"></textarea>
                                     </div>
                                 </div>
                                 <div class=" col-xs-12 col-sm-12 col-md-12 col-lg-12 asi">
@@ -327,7 +348,7 @@ if ($_SESSION["Usuario"] !== null) {
                                 </div>
                                 <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12">
                                     <div class="form-group"  style="background: #cccccc">
-                                        <textarea id="txtAplica" name="txtAplica" rows="3" class="form-control"></textarea>
+                                        <textarea id="txtAplica" name="txtAplica" rows="3" class="form-control" required="" placeholder="Redacte su respuesta"></textarea>
                                     </div>
                                 </div>
                                 <div class=" col-xs-12 col-sm-12 col-md-12 col-lg-12 asi">
@@ -335,12 +356,23 @@ if ($_SESSION["Usuario"] !== null) {
                                 </div>
                                 <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                                     <div class="form-group">
-                                        <textarea id="txtPedido" name="txtPedido" rows="3" class="form-control"></textarea>
+<!--                                        <form name="add_name" id="add_name">
+                                            <div class="table-responsive">
+                                                <table class="table table-bordered" id="dynamic_field">
+                                                    <tr>
+                                                        <td><input type="text" name="name[]" placeholder="Nueva oración" class="form-control name_list" disabled/></td>
+                                                        <td><button type="button" name="add" id="add" class="btn btn-primary"><i class="fas fa-plus"></i></button></td>
+                                                    </tr>
+                                                </table>
+                                                <input type="button" name="submit" id="submit" class="btn btn-success" value="Submit" />
+                                            </div>
+                                        </form>-->
+                                                                    <textarea id="txtPedido" name="txtPedido" rows="3" class="form-control" required="" placeholder="Redacte sus pedidos de oraciones"></textarea>
                                     </div>
                                 </div>
                                 <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                                     <div class="form-group">
-                                        <textarea id="txtContestado" name="txtContestado" rows="3" class="form-control"></textarea>
+                                        <textarea id="txtContestado" name="txtContestado" rows="3" class="form-control" disabled placeholder="Aún no tiene oraciones contestadas"></textarea>
                                     </div>
                                 </div>
                                 <div class=" col-xs-12 col-sm-12 col-md-12 col-lg-12 asi">
@@ -348,30 +380,32 @@ if ($_SESSION["Usuario"] !== null) {
                                 </div>
                                 <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12">
                                     <div class="form-group">
-                                        <textarea id="txtMeta" name="txtMeta" rows="3" class="form-control"></textarea>
+                                        <textarea id="txtMeta" name="txtMeta" rows="3" class="form-control" required="" placeholder="Redacte sus metas"></textarea>
                                     </div>
                                 </div>
                                 <div class=" col-xs-6 col-sm-6 col-md-6 col-lg-6 asi">
                                     <button type="button" id="btnAgregar" class="btn btn-success">Agregar</button>
                                 </div>
-<!--                                <div class=" col-xs-4 col-sm-4 col-md-4 col-lg-4 asi">
-                                    <button type="button" id="btnModificar" class="btn btn-warning">Modificar</button>
-                                </div>-->
+                                <!--                                <div class=" col-xs-4 col-sm-4 col-md-4 col-lg-4 asi">
+                                                                    <button type="button" id="btnModificar" class="btn btn-warning">Modificar</button>
+                                                                </div>-->
                                 <!--<div class=" col-xs-3 col-sm-3 col-md-3 col-lg-3 asi">-->
-                                    <!--<button type="button" id="btnEliminar" class="btn btn-danger">Borrar</button>-->
+                                <!--<button type="button" id="btnEliminar" class="btn btn-danger">Borrar</button>-->
                                 <!--</div>-->
                                 <div class=" col-xs-6 col-sm-6 col-md-6 col-lg-6 asi">
                                     <button type="button" class="btn btn-default" data-dismiss="modal">cancelar</button>
-                                </div>
+                                </div>                             
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
             <script src="../js/jquery-3.4.1.min.js" type="text/javascript"></script>
             <script src="../js/jquery.min.js" type="text/javascript"></script>
             <script src="../js/moment.min.js" type="text/javascript"></script>
             <script src="../js/DevocionesMatutinas/DiarioDevocional.js" type="text/javascript"></script>
+            <script src="../plugins/sweetAlert2/sweetalert2.all.min.js" type="text/javascript"></script>
             <!--<script src="../js/EstudiosBiblicos/DevocionalDiario.js" type="text/javascript"></script>-->
             <script data-pace-options='{ "restartOnRequestAfter": true }' src="js/plugin/pace/pace.min.js"></script>
             <!-- Link to Google CDN's jQuery + jQueryUI; fall back to local -->
@@ -387,7 +421,7 @@ if ($_SESSION["Usuario"] !== null) {
                     document.write('<script src="js/libs/jquery-ui-1.10.3.min.js"><\/script>');
                 }
             </script>
-           
+
             <!-- IMPORTANT: APP CONFIG -->
             <script src="js/app.config.js"></script>
             <!-- JS TOUCH : include this plugin for mobile drag / drop touch events-->
@@ -414,7 +448,7 @@ if ($_SESSION["Usuario"] !== null) {
             <script src="js/plugin/msie-fix/jquery.mb.browser.min.js"></script>
             <!-- FastClick: For mobile devices -->
             <script src="js/plugin/fastclick/fastclick.min.js"></script>
-             <script src="js/plugin/summernote/summernote.min.js" type="text/javascript"></script>
+            <script src="js/plugin/summernote/summernote.min.js" type="text/javascript"></script>
             <!--[if IE 8]>
             <h1>Your browser is out of date, please update your browser by going to www.microsoft.com/download</h1>
             <![endif]-->
@@ -455,35 +489,73 @@ if ($_SESSION["Usuario"] !== null) {
             </script>
             <script type="text/javascript">
 
-                                            // DO NOT REMOVE : GLOBAL FUNCTIONS!
+                // DO NOT REMOVE : GLOBAL FUNCTIONS!
 
-                                            $(document).ready(function () {
+                $(document).ready(function () {
 
-                                                pageSetUp();
+                    pageSetUp();
 
-                                                /*
-                                                 * SUMMERNOTE EDITOR
-                                                 */
+                    /*
+                     * SUMMERNOTE EDITOR
+                     */
 
-                                                $('.summernote').summernote({
-                                                    height: 180,
-                                                    focus: false,
-                                                    tabsize: 2
-                                                });
+                    $('.summernote').summernote({
+                        height: 180,
+                        focus: false,
+                        tabsize: 2
+                    });
 
-                                                /*
-                                                 * MARKDOWN EDITOR
-                                                 */
+                    /*
+                     * MARKDOWN EDITOR
+                     */
 
-//                                                $("#mymarkdown").markdown({
-//                                                    autofocus: false,
-//                                                    savable: true
-//                                                })
+                    //                                                $("#mymarkdown").markdown({
+                    //                                                    autofocus: false,
+                    //                                                    savable: true
+                    //                                                })
 
 
-                                            });
+                });
 
-        </script>
+            </script>
+<!--            <script>
+
+                $(document).ready(function () {
+                    var i = 1;
+
+                    $('#add').click(function () {
+                        i++;
+                        $('#dynamic_field').append('<tr id="row' + i + '">' +
+    //                                '<td><textarea id="txtPedido" name="txtPedido" rows="3" class="form-control" required="" placeholder="Redacte sus pedidos de oraciones"></textarea></td>' +
+                                '<td><input type="text" name="name[]" placeholder="Ingrese la nueva oración" class="form-control name_list" id="txtPedido"/></td>' +
+                                //                                '<td><button type="button" name="remove" id="' + i + '" class="btn btn-danger btn_remove btn-group btn-group-xs"><i class="fas fa-times"></i></i></button> <br>' +
+                                //                                '<button type="button" name="remove" id="' + i + '" class="btn btn-success btn_remove btn-group btn-group-xs"><i class="fas fa-check"></i></i></button></td>' +
+                                '<td><div class="btn-group btn-group-block" role="group">' +
+                                '<button type="button" name="remove" id="' + i + '" class="btn btn-danger btn-xs btn_remove"><i class="fas fa-times"></i></button>' +
+                                '<button type="button" name="remove" id="' + i + '" class="btn btn-success btn-xs btn_remove"><i class="fas fa-check"></i></button>' +
+                                '</div></td>' +
+                                '</tr>');
+                    });
+
+                    $(document).on('click', '.btn_remove', function () {
+                        var id = $(this).attr('id');
+                        $('#row' + id).remove();
+                    });
+
+                    $('#submit').click(function () {
+                        $.ajax({
+                            url: "name.php",
+                            method: "POST",
+                            data: $('#add_name').serialize(),
+                            success: function (data)
+                            {
+                                alert(data);
+                                $('#add_name')[0].reset();
+                            }
+                        });
+                    });
+                })
+            </script>-->
         </body>
     </html><?php
 } else {
