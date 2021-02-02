@@ -653,7 +653,7 @@ if ($_SESSION["Usuario"] !== null) {?>
                                         </li>
                                         <li class="divider"></li>
                                         <li>
-                                            <a href="profile.html" class="padding-10 padding-top-0 padding-bottom-0"> <i class="fa fa-user"></i> <u>P</u>erfil</a>
+                                            <a href="Perfil.php" class="padding-10 padding-top-0 padding-bottom-0"> <i class="fa fa-user"></i> <u>P</u>erfil</a>
                                         </li>
                                         <li class="divider"></li>
 
@@ -716,7 +716,7 @@ if ($_SESSION["Usuario"] !== null) {?>
                                             </li>
                                             <li class="divider"></li>
                                             <li>
-                                                <a href="profile.html" class="padding-10 padding-top-0 padding-bottom-0"> <i class="fa fa-user"></i> <u>P</u>erfil</a>
+                                                <a href="Perfil.php" class="padding-10 padding-top-0 padding-bottom-0"> <i class="fa fa-user"></i> <u>P</u>erfil</a>
                                             </li>
                                             <li class="divider"></li>
 

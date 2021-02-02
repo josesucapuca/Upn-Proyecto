@@ -72,8 +72,8 @@ $(document).ready(function () {
             $('#txtMeta').val(calEvent.Meta);
             FechaHora = calEvent.start._i.split(" ");
             $('#txtFecha').val(FechaHora[0]);
-            $('#txtHora').val(FechaHora[1]);
-            $("#ModalDevocional").modal();
+            $('#txtHora').val(FechaHora[1]);           
+            $("#ModalDevocional").modal();        
         }
     });
 });

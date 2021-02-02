@@ -128,7 +128,7 @@ if ($_SESSION["Usuario"] !== null) {
                                     ¿Eres nuevo?<a href="Registrarse.php">Resgistrate</a>
                                 </div>
                                 <div class="d-flex justify-content-center">
-                                    <button type="button" class="btn btn-default btn-link " data-toggle="modal" data-target="#myModal">Recuperar usuario y/o contraseña</button>
+                                    <button type="button" class="btn btn-default btn-link " data-toggle="modal" data-target="#myModal">Recuperar contraseña</button>
                                 </div>
 
                             </div>

@@ -47,13 +47,13 @@ switch ($accion) {
         ));
         echo json_encode($respuesta);
         break;
-//    case 'listar':
-//        $person = $_SESSION["id_Persona"];
-//        $sql = $pdo->prepare("call ListarDiarioDevocional ('$person')");
-//        $sql->execute();
-//        $resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
-//        echo json_encode($resultado);
-//        break;
+    case 'listar':
+        $idevocional = $_GET["id_Devocional_Diario"];
+        $sql = $pdo->prepare("select * from pedido_oracion where id_Devocional_Diario='$idevocional' and Ti_Pedido_Oracion='P'");
+        $sql->execute();
+        $resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
+        echo json_encode($resultado);
+        break;
     default :
 //        $person = "8";
         $person = $_SESSION["id_Persona"];

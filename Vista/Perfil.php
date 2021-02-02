@@ -1,61 +1,11 @@
 <?php
 session_start();
 if ($_SESSION["Usuario"] !== null) {
-    ?>
-    <!DOCTYPE html>
-    <html lang="es" style="background-image: url('img/pattern/tileable_wood_texture.png');">
+    ?><!DOCTYPE html>
+    <html lang="es" style="background-image: url('img/pattern/tileable_wood_texture.png')">
         <head>
-            <meta charset="utf-8">
             <!--<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">-->
-
             <title>ceoadventista.org</title>
-            <meta name="description" content="">
-            <meta name="author" content="">
-
-            <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
-            <!-- Basic Styles -->
-            <!--            <link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.min.css">
-                        <link rel="stylesheet" type="text/css" media="screen" href="css/font-awesome.min.css">-->
-
-            <!-- SmartAdmin Styles : Caution! DO NOT change the order -->
-            <!--            <link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-production-plugins.min.css">
-                        <link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-production.min.css">
-                        <link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-skins.min.css">-->
-
-            <!-- SmartAdmin RTL Support -->
-            <!--<link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-rtl.min.css">--> 
-
-            <!-- We recommend you use "your_style.css" to override SmartAdmin
-                 specific styles this will also ensure you retrain your customization with each SmartAdmin update.
-            <link rel="stylesheet" type="text/css" media="screen" href="css/your_style.css"> -->
-
-            <!-- Demo purpose only: goes with demo.js, you can delete this css when designing your own WebApp -->
-            <!--<link rel="stylesheet" type="text/css" media="screen" href="css/demo.min.css">-->
-
-            <!-- FAVICONS -->
-            <!--            <link rel="shortcut icon" href="img/favicon/favicon.ico" type="image/x-icon">
-                        <link rel="icon" href="img/favicon/favicon.ico" type="image/x-icon">-->
-
-            <!-- GOOGLE FONT -->
-            <!--            <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,300,400,700">-->
-
-            <!-- Specifying a Webpage Icon for Web Clip 
-                     Ref: https://developer.apple.com/library/ios/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html -->
-            <!--            <link rel="apple-touch-icon" href="img/splash/sptouch-icon-iphone.png">
-                        <link rel="apple-touch-icon" sizes="76x76" href="img/splash/touch-icon-ipad.png">
-                        <link rel="apple-touch-icon" sizes="120x120" href="img/splash/touch-icon-iphone-retina.png">
-                        <link rel="apple-touch-icon" sizes="152x152" href="img/splash/touch-icon-ipad-retina.png">-->
-
-            <!-- iOS web-app metas : hides Safari UI Components and Changes Status Bar Appearance -->
-            <!--            <meta name="apple-mobile-web-app-capable" content="yes">
-                        <meta name="apple-mobile-web-app-status-bar-style" content="black">-->
-
-            <!-- Startup image for web apps -->
-            <!--            <link rel="apple-touch-startup-image" href="img/splash/ipad-landscape.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape)">
-                        <link rel="apple-touch-startup-image" href="img/splash/ipad-portrait.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait)">
-                        <link rel="apple-touch-startup-image" href="img/splash/iphone.png" media="screen and (max-device-width: 320px)">-->
-            <!--LINKS ANTIGUOS-->
             <?php include_once './inc2/Estilos.php'; ?>
             <link rel="stylesheet" type="text/css" media="screen" href="css/fontAdventSans.css">
             <link rel="stylesheet" type="text/css" media="screen" href="css/header.css">
@@ -64,29 +14,66 @@ if ($_SESSION["Usuario"] !== null) {
             <link rel="apple-touch-startup-image" href="../images/iconoweb.png" media="screen and (max-device-width: 320px)">
             <link rel="shortcut icon" href="../images/iconoweb.png" type="image/x-icon">
             <link rel="icon" href=".../images/iconoweb.png" type="image/x-icon">
+            <!--NUEVO-->
+            <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+            <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> 
+            <!--<link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">-->
+            <link href="../plugins/sweetAlert2/sweetalert2.min.css" rel="stylesheet" type="text/css"/>
+            <link href="../plugins/animate.css/animate.css" rel="stylesheet" type="text/css"/>                
+            <link href="../css/icomoon.css" rel="stylesheet" type="text/css"/> 
+            <link href="../css/perfilstyle.css" rel="stylesheet" type="text/css"/>
+
             <style>
-                @media(max-width:767px){
-                    .sortable-grid{
-                        height: auto;
+                .mi{
+                    text-align: left
+                }
+                @media (min-width: 576px)
+                {
+                    .imgf{
+                        display: flex;
+                        justify-content: center !important;
                     }
-                    #frameVer{
-                        height: 50vh !important;
+                    #titU{
+                        text-align: center !important;
+                    }
+                    .al{
+                        text-align: center !important;
+                    }
+                    .ali{
+                        text-align: center !important;
+                    }
+                    .mi{
+                        text-align: center !important;
+                    }
+                    .fm{
+                        text-align: left;
+                    }
+
+                }
+                @media (max-width: 576px)
+                {
+                    .asi{
+                        display: flex;
+                        justify-content: center;
+
                     }
                 }
+                .texto{
+                    color: white;
+                }
             </style>
-        </head>     
+        </head>
         <body class="conta bod">
             <input id="PersonaUsuario" type="hidden" value="<?php echo $_SESSION["Persona"] ?>">
             <div class="row" style=" margin-left: 0px;margin-right: 0px;height: 100%;">
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="margin-left: 0px;margin-right: 0px;padding-left: 0px;padding-right: 0px;height: 90%;">
+                    <!-- HEADER -->
                     <div id="header" style="background: none;">
                         <div id="logo-group">
-
                             <!-- PLACE YOUR LOGO HERE -->
-                            <span id="logo"> <img class="imglog" src="../images/img_logo/adventist-es--ming.png" alt="SmartAdmin" > </span>                            
+                            <span id="logo"> <img class="imglog" src="../images/img_logo/adventist-es--white.png" alt="SmartAdmin" > </span>
                         </div>
                         <div class="pull-right">
-
                             <!-- Top menu profile link : this shows only when top menu is active -->
                             <ul id="mobile-profile-img" class="header-dropdown-list padding-5">
                                 <li class="LiReporte" style="display: none">
@@ -114,12 +101,11 @@ if ($_SESSION["Usuario"] !== null) {
                                         </li>
                                         <li class="divider"></li>
                                         <li>
-                                            <a href="../CerrarSesion.php" class="padding-10 padding-top-5 padding-bottom-5" data-action="userLogout"  data-logout-msg="Estas Seguro de Salir de Sesion"><i class="fa fa-sign-out fa-lg"></i> <strong><u>C</u>errar Sesion</strong></a>
+                                            <a href="../CerrarSesion.php" class="padding-10 padding-top-5 padding-bottom-5" data-action="userLogout"  data-logout-msg="¿Estás seguro de salir de sesión?"><i class="fa fa-sign-out fa-lg"></i> <strong><u>C</u>errar Sesión</strong></a>
                                         </li>
                                     </ul>
                                 </li>
                             </ul>
-
                             <!-- logout button -->
                             <div id="" class="transparent pull-right">
                                 <ul id="" class="header-dropdown-list ">
@@ -153,7 +139,7 @@ if ($_SESSION["Usuario"] !== null) {
                                             </li>
                                             <li class="divider"></li>
                                             <li>
-                                                <a href="../CerrarSesion.php" class="padding-10 padding-top-5 padding-bottom-5" data-action="userLogout"  data-logout-msg="Estas Seguro de Salir de Sesion"><i class="fa fa-sign-out fa-lg"></i> <strong><u>C</u>errar Sesion</strong></a>
+                                                <a href="../CerrarSesion.php" class="padding-10 padding-top-5 padding-bottom-5" data-action="userLogout"  data-logout-msg="¿Estás seguro de salir de sesión?"><i class="fa fa-sign-out fa-lg"></i> <strong><u>C</u>errar Sesión</strong></a>
                                             </li>
                                         </ul>
                                     </li>
@@ -162,30 +148,103 @@ if ($_SESSION["Usuario"] !== null) {
                             <!-- fullscreen button -->
                         </div>
                     </div>
-                    <!-- MAIN CONTENT -->
-                    <br>
+                    <div id="myModal" class="modal fade" role="dialog" s>
+                        <div class="modal-dialog">
+                            <!-- Modal content-->
+                            <div class="modal-content"  style="background: #34495E">
+                                <div class="card-header">
+                                    <div class="row"> 
+                                        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 asi">
+                                            <img src="../images/logo.png" width="60" height="60" >
+                                        </div>
+                                        <div class="col-md-8 col-xs-8 col-sm-8 col-md-8 col-lg-8 abs-center">
+                                            <div class="row"><h2 style="color: white">Cambiar contraseña</h2> </div>                                                                
+                                        </div>
+                                    </div>
+                                </div
+                                <div class="card-body">
+                                    <form action="" class="formulario" id="formulario">
+                                        <!--<div class="form-row">-->
+                                        <div class=" col-xs-12 col-sm-12 col-md-12 col-lg-12 formulario__grupo " id="grupo__usuario">
+                                            <div class="input-group-prepend">
+                                                <i class="fas fa-lock texto"></i> <label class="input-group-text texto ">Contraseña actual</label>
+                                            </div>
+                                            <div class="formulario__grupo" id="grupo__usuario">
+                                                <div class="formulario__grupo-input">
+                                                    <input type="password" class="formulario__input" name="usuario" id="usuario">
+                                                    <i class="formulario__validacion-estado far fa-check-circle"></i>
+                                                </div>
+                                                <p class="formulario__input-error" style="color: white">Dígite una contraseña valida.</p>
+                                            </div>
+                                        </div>
+                                        <div class=" col-xs-12 col-sm-12 col-md-12 col-lg-12 formulario__grupo" id="grupo__password">
+                                            <div class="input-group-prepend">
+                                                <i class="fas fa-key texto"></i> <label class="input-group-text texto">Nueva Contraseña</label>
+                                                 <!--<span class="input-group-text"><i class="fas fa-key"></i></span>-->
+                                            </div>
+                                            <div class="formulario__grupo" id="grupo__password">
+                                                <!--<label for="password" class="formulario__label">Contraseña</label>-->
+                                                <div class="formulario__grupo-input">
+                                                    <input type="password" class="formulario__input" name="password" id="password">
+                                                    <i class="formulario__validacion-estado far fa-check-circle"></i>
+                                                </div>
+                                                <p class="formulario__input-error" style="color: white">La contraseña debe tener entre 8 y 16 caracteres, al menos un dígito, al menos una minúscula y al menos una mayúscula. 
+                                                    No puede tener otros símbolos.</p>
+                                            </div>
+                                        </div>
+                                        <div class=" col-xs-12 col-sm-12 col-md-12 col-lg-12 formulario__grupo" id="grupo__password2">
+                                            <div class="input-group-prepend">
+                                                <i class="fas fa-key texto"></i> <label class="input-group-text texto">Confirmar Contraseña</label>
+                                                <!--<span class="input-group-text"><i class="fas fa-key"></i></span>-->
+                                            </div>
+                                            <div class="formulario__grupo" id="grupo__password2">
+                                                <!--<label for="password2" class="formulario__label">Repetir Contraseña</label>-->
+                                                <div class="formulario__grupo-input">
+                                                    <input type="password" class="formulario__input" name="password2" id="password2">
+                                                    <i class="formulario__validacion-estado far fa-check-circle"></i>
+                                                </div>
+                                                <p class="formulario__input-error" style="color: white">Ambas contraseñas deben ser iguales.</p>
+                                            </div>
+                                        </div>
+                                        <div class="row"> 
+                                        </div>
+                                        <!--</div>-->
+                                    </form>
+                                    <br>
+                                    <div class="card-footer">
+                                        <div class="row">                                            
+                                            <div class=" col-xs-3 col-sm-3 col-md-3 col-lg-3 asi"></div>
+                                            <div class=" col-xs-3 col-sm-3 col-md-3 col-lg-3 asi">
+                                                <button type="button" id="btnAgregar" class="btn btn-warning">Actualizar</button>
+                                            </div>
+                                            <div class=" col-xs-3 col-sm-3 col-md-3 col-lg-3 asi">
+                                                <button type="button" class="btn btn-default" data-dismiss="modal">cancelar</button>
+                                            </div>                                            
+                                        </div>
+                                        <span id="result"></span>
+                                    </div>
+                                    <br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--emepzando-->
                     <div id="content" style="margin-bottom: 0px;display: flow-root;height: 100%;">
                         <!-- widget grid -->
                         <section id="widget-grid" class="">
-
                             <!-- row -->
                             <div class="row">
-
                                 <!-- NEW COL START -->
                                 <article class="col-xs-12 col-sm-6 col-md-8 col-lg-12" style="margin-bottom: 30px">
-
                                     <!-- Widget ID (each widget will need unique ID)-->
                                     <div class="jarviswidget  jarviswidget-color-green" id="wid-id-11" data-widget-colorbutton="false" data-widget-fullscreenbutton="false" data-widget-editbutton="false" data-widget-sortable="false" data-widget-attstyle="jarviswidget-color-teal">
                                         <header>
                                             <span class="widget-icon"> <i class="fa fa-edit"></i> </span>
                                             <h2>Datos generales</h2>
-
                                         </header>
-
                                         <!-- widget div-->
                                         <div>
                                             <!-- end widget edit box -->
-
                                             <!-- widget content -->
                                             <div class="widget-body no-padding">
                                                 <div id="content" style="margin-bottom: 20px;">
@@ -209,9 +268,12 @@ if ($_SESSION["Usuario"] !== null) {
                                                         <table id="user" class="table table-bordered table-striped" style="clear: both">                                                        
                                                             <tbody>
                                                             <input id="idediuser" type="hidden" value="<?php echo $_SESSION["id_Usuario"] ?>">
+                                                            <input id="idediper" type="hidden" value="<?php echo $_SESSION["id_Persona"] ?>">
                                                             <tr>
                                                                 <td style="width:35%;">Contraseña:</td>
-                                                                <td style="width:65%"><a href="form-x-editable.html#" id="edicontra" data-type="password" data-pk="1" data-original-title="Enter edicontra"><?php echo $_SESSION["Contra"]; ?></a></td>
+                                                                <td style="width:65%">
+                                                                    <input data-toggle="modal" data-target="#myModal" placeholder="Password field" type="password" value="<?php echo $_SESSION["Contra"]; ?>" style="border: #F8F8F8; background: #F8F8F8">                                                                  
+                                                                </td>
                                                             </tr>
                                                             <tr>
                                                                 <td style="width:35%;">Nombres:</td>
@@ -262,9 +324,9 @@ if ($_SESSION["Usuario"] !== null) {
                                                             <tr>
                                                                 <td>Iglesia:</td>
                                                                 <!--<td><a href="form-x-editable.html#" id="sel_iglesia" data-type="select2" data-pk="1" data-select-search="true" data-value="BS" data-original-title="Select sel_iglesia"><?php echo $_SESSION["Nombre_Iglesia"]; ?></a></td>-->
-                                                            <td><select class="form-control" name="state" id="sel_iglesia">
-                                                                <option value="0"><?php echo $_SESSION["Nombre_Iglesia"]; ?></option>
-                                                            </select></td>
+                                                                <td><select class="form-control" name="state" id="sel_iglesia">
+                                                                        <option value="0"><?php echo $_SESSION["Nombre_Iglesia"]; ?></option>
+                                                                    </select></td>
                                                             </tr>
                                                             <tr>
                                                                 <td style="width:35%;">Correo:</td>
@@ -290,106 +352,28 @@ if ($_SESSION["Usuario"] !== null) {
                             </div>																
                         </section>
                     </div>
-                </div>
+                    <!-- END MAIN PANEL -->
+                </div>             
             </div>
-            <!--================================================== -->
-
-            <!-- PACE LOADER - turn this on if you want ajax loading to show (caution: uses lots of memory on iDevices)-->
-            <!--<script data-pace-options='{ "restartOnRequestAfter": true }' src="js/plugin/pace/pace.min.js"></script>-->
-
-            <!-- Link to Google CDN's jQuery + jQueryUI; fall back to local -->
-            <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+            <!--FORMULARIO-->
             <!--<script src="../js/jquery-3.4.1.min.js" type="text/javascript"></script>-->
-    <!--            <script>
-                                                                    if (!window.jQuery) {
-                                                                        document.write('<script src="js/libs/jquery-2.1.1.min.js"><\/script>');
-                                                                    }
-            </script>-->
-
-                    <!--<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>-->
-        <!--            <script>
-                                                                            if (!window.jQuery.ui) {
-                                                                                document.write('<script src="js/libs/jquery-ui-1.10.3.min.js"><\/script>');
-                                                                            }
-                    </script>-->
-
-            <!-- IMPORTANT: APP CONFIG -->
-
+            <script src="../js/Logueo/perfilusuario.js" type="text/javascript"></script>
+            <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+            <!--FINAL DEL FORMULARIO-->           
+            <!-- Cerrar sesion-->
+            <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>          
             <script src="js/app.config.js"></script>
-
-            <!-- JS TOUCH : include this plugin for mobile drag / drop touch events-->
-            <!--<script src="js/plugin/jquery-touch/jquery.ui.touch-punch.min.js"></script>--> 
-
-            <!-- BOOTSTRAP JS -->
+            <script src="js/plugin/jquery-touch/jquery.ui.touch-punch.min.js"></script>
             <script src="js/bootstrap/bootstrap.min.js"></script>
-
-            <!-- CUSTOM NOTIFICATION -->
-            <!--<script src="js/notification/SmartNotification.min.js"></script>-->
-
-            <!-- JARVIS WIDGETS -->
-            <!--<script src="js/smartwidgets/jarvis.widget.min.js"></script>-->
-
-            <!-- EASY PIE CHARTS -->
-            <!--<script src="js/plugin/easy-pie-chart/jquery.easy-pie-chart.min.js"></script>-->
-
-            <!-- SPARKLINES -->
-            <!--<script src="js/plugin/sparkline/jquery.sparkline.min.js"></script>-->
-
-            <!-- JQUERY VALIDATE -->
-            <!--<script src="js/plugin/jquery-validate/jquery.validate.min.js"></script>-->
-
-            <!-- JQUERY MASKED INPUT -->
-            <!--<script src="js/plugin/masked-input/jquery.maskedinput.min.js"></script>-->
-
-            <!-- JQUERY SELECT2 INPUT -->
-            <script src="js/plugin/select2/select2.min.js"></script>
-
-            <!-- JQUERY UI + Bootstrap Slider -->
-            <!--<script src="js/plugin/bootstrap-slider/bootstrap-slider.min.js"></script>-->
-
-            <!-- browser msie issue fix -->
-            <!--<script src="js/plugin/msie-fix/jquery.mb.browser.min.js"></script>-->
-
-            <!-- FastClick: For mobile devices -->
-            <!--<script src="js/plugin/fastclick/fastclick.min.js"></script>-->
-
-            <!--[if IE 8]>
-
-            <h1>Your browser is out of date, please update your browser by going to www.microsoft.com/download</h1>
-
-            <![endif]-->
-
-            <!-- Demo purpose only -->
-            <!--<script src="js/demo.min.js"></script>-->
-
-            <!-- MAIN APP JS FILE -->
+            <script src="js/notification/SmartNotification.min.js"></script>
             <script src="js/app.min.js"></script>
-
-            <!-- ENHANCEMENT PLUGINS : NOT A REQUIREMENT -->
-            <!-- Voice command : plugin -->
-            <!--<script src="js/speech/voicecommand.min.js"></script>-->
-
-            <!-- SmartChat UI : plugin -->
-    <!--            <script src="js/smart-chat-ui/smart.chat.ui.min.js"></script>
-            <script src="js/smart-chat-ui/smart.chat.manager.min.js"></script>-->
-
-            <!-- PAGE RELATED PLUGIN(S) -->
-            <!--<script src="js/plugin/maxlength/bootstrap-maxlength.min.js"></script>-->
-            <!--<script src="js/plugin/bootstrap-timepicker/bootstrap-timepicker.min.js"></script>-->
-            <!--<script src="js/plugin/clockpicker/clockpicker.min.js"></script>-->
-            <!--<script src="js/plugin/bootstrap-tags/bootstrap-tagsinput.min.js"></script>-->
-            <!--<script src="js/plugin/noUiSlider/jquery.nouislider.min.js"></script>-->
-            <!--<script src="js/plugin/ion-slider/ion.rangeSlider.min.js"></script>-->
-            <!--<script src="js/plugin/bootstrap-duallistbox/jquery.bootstrap-duallistbox.min.js"></script>-->		
-            <!--<script src="js/plugin/colorpicker/bootstrap-colorpicker.min.js"></script>-->
-            <!--<script src="js/plugin/knob/jquery.knob.min.js"></script>-->
+            <!--FINAL DE CERRAR SESION--> 
+            <!--tabla-->
+            <script src="js/plugin/select2/select2.min.js"></script>
+            <!--<script src="js/app.min.js"></script>-->
             <script src="js/plugin/x-editable/moment.min.js"></script>
             <script src="js/plugin/x-editable/jquery.mockjax.min.js"></script>
             <script src="js/plugin/x-editable/x-editable.min.js"></script>
-            <!--<script src="js/plugin/typeahead/typeahead.min.js"></script>-->
-            <!--<script src="js/plugin/typeahead/typeaheadjs.min.js"></script>-->
-            <script src="../js/Logueo/Validacion.js" type="text/javascript"></script>
-            <script src="../js/Logueo/RegistrarUsuario.js" type="text/javascript"></script>
             <script type="text/javascript">
 
                                                                     // DO NOT REMOVE : GLOBAL FUNCTIONS!
@@ -694,67 +678,67 @@ if ($_SESSION["Usuario"] !== null) {
                                                                         $('#edidireccion').editable({
                                                                             showbuttons: 'bottom'
                                                                         });
-    //                                                                        var countries = [];
-    //                                                                        $.each({
-    //                                                                            "BD": "lall",
-    //                                                                            "BE": "nuevo",
-    //                                                                            "BF": "tut Faso",
-    //                                                                            "BG": "Bulgaria",
-    //                                                                            "BA": "Bosnia and Herzegovina",
-    //                                                                            "BB": "Barbados",
-    //                                                                            "WF": "Wallis and Futuna",
-    //                                                                            "BL": "Saint Bartelemey",
-    //                                                                            "BM": "Bermuda",
-    //                                                                            "BN": "Brunei Darussalam",
-    //                                                                            "BS": "Bahamas"
-    //                                                                        }, function (k, v) {
-    //                                                                            countries.push({
-    //                                                                                id: k,
-    //                                                                                text: v
-    //                                                                            });
-    //                                                                        });
-    //
-    //
-    //                                                                        var mision = [];
-    //                                                                        $.each({
-    //                                                                            "BD": "lall",
-    //                                                                            "BE": "nuevo",
-    //                                                                            "BF": "tut Faso",
-    //                                                                            "BG": "Bulgaria",
-    //                                                                            "BA": "Bosnia and Herzegovina",
-    //                                                                            "BB": "Barbados",
-    //                                                                            "WF": "Wallis and Futuna",
-    //                                                                            "BL": "Saint Bartelemey",
-    //                                                                            "BM": "Bermuda",
-    //                                                                            "BN": "Brunei Darussalam",
-    //                                                                            "BS": "Bahamas"
-    //                                                                        }, function (k, v) {
-    //                                                                            mision.push({
-    //                                                                                id: k,
-    //                                                                                text: v
-    //                                                                            });
-    //                                                                        });
+                                                                        //                                                                        var countries = [];
+                                                                        //                                                                        $.each({
+                                                                        //                                                                            "BD": "lall",
+                                                                        //                                                                            "BE": "nuevo",
+                                                                        //                                                                            "BF": "tut Faso",
+                                                                        //                                                                            "BG": "Bulgaria",
+                                                                        //                                                                            "BA": "Bosnia and Herzegovina",
+                                                                        //                                                                            "BB": "Barbados",
+                                                                        //                                                                            "WF": "Wallis and Futuna",
+                                                                        //                                                                            "BL": "Saint Bartelemey",
+                                                                        //                                                                            "BM": "Bermuda",
+                                                                        //                                                                            "BN": "Brunei Darussalam",
+                                                                        //                                                                            "BS": "Bahamas"
+                                                                        //                                                                        }, function (k, v) {
+                                                                        //                                                                            countries.push({
+                                                                        //                                                                                id: k,
+                                                                        //                                                                                text: v
+                                                                        //                                                                            });
+                                                                        //                                                                        });
+                                                                        //
+                                                                        //
+                                                                        //                                                                        var mision = [];
+                                                                        //                                                                        $.each({
+                                                                        //                                                                            "BD": "lall",
+                                                                        //                                                                            "BE": "nuevo",
+                                                                        //                                                                            "BF": "tut Faso",
+                                                                        //                                                                            "BG": "Bulgaria",
+                                                                        //                                                                            "BA": "Bosnia and Herzegovina",
+                                                                        //                                                                            "BB": "Barbados",
+                                                                        //                                                                            "WF": "Wallis and Futuna",
+                                                                        //                                                                            "BL": "Saint Bartelemey",
+                                                                        //                                                                            "BM": "Bermuda",
+                                                                        //                                                                            "BN": "Brunei Darussalam",
+                                                                        //                                                                            "BS": "Bahamas"
+                                                                        //                                                                        }, function (k, v) {
+                                                                        //                                                                            mision.push({
+                                                                        //                                                                                id: k,
+                                                                        //                                                                                text: v
+                                                                        //                                                                            });
+                                                                        //                                                                        });
 
 
 
-    //                                                                        $('#sel_mision').editable({
-    //                                                                            source: mision,
-    //                                                                            select2: {
-    //                                                                                width: 200
-    //                                                                            }
-    //                                                                        });
-    //                                                                        $('#sel_distrito').editable({
-    //                                                                            source: countries,
-    //                                                                            select2: {
-    //                                                                                width: 200
-    //                                                                            }
-    //                                                                        });
-    //                                                                        $('#sel_iglesia').editable({
-    //                                                                            source: countries,
-    //                                                                            select2: {
-    //                                                                                width: 200
-    //                                                                            }
-    //                                                                        });
+                                                                        //                                                                        $('#sel_mision').editable({
+                                                                        //                                                                            source: mision,
+                                                                        //                                                                            select2: {
+                                                                        //                                                                                width: 200
+                                                                        //                                                                            }
+                                                                        //                                                                        });
+                                                                        //                                                                        $('#sel_distrito').editable({
+                                                                        //                                                                            source: countries,
+                                                                        //                                                                            select2: {
+                                                                        //                                                                                width: 200
+                                                                        //                                                                            }
+                                                                        //                                                                        });
+                                                                        //                                                                        $('#sel_iglesia').editable({
+                                                                        //                                                                            source: countries,
+                                                                        //                                                                            select2: {
+                                                                        //                                                                                width: 200
+                                                                        //                                                                            }
+                                                                        //                                                                        });
 
                                                                         $('#user .editable').on('hidden', function (e, reason) {
                                                                             if (reason === 'save' || reason === 'nochange') {
@@ -798,8 +782,8 @@ if ($_SESSION["Usuario"] !== null) {
                     });
                 }
             </script>
+            <!--fin de la tabla-->
         </body>
-
     </html><?php
 } else {
     include_once './inc2/Redireccionar.php';
