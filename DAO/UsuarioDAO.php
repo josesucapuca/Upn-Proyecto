@@ -134,6 +134,28 @@ class UsuarioDAO {
         }
     }
 
+//COMPARAR CONTRASEÑA
+    public function CompararContra($Contra, $id_Usuario){
+        $link = new Conexion();
+        $conectar = $link->Conectar();
+        $consula1 = "select * from usuario where Contra = '$Contra' and id_Usuario ='$id_Usuario'";
+        $validacionu = mysqli_query($conectar, $consula1);
+        $fila = mysqli_num_rows($validacionu);
+        if ($fila == 1) {
+            echo 1;
+        } else {
+            echo 2;
+        }
+    }
+    
+//MODIFICAR CONTRASEÑA 
+     public function ModificarContra($Contra, $id_Usuario){
+//        $link = new Conexion();
+//        $conectar = $link->Conectar();
+        $consula1 = "update usuario set Contra ='$Contra' where id_Usuario ='$id_Usuario'";
+        return $this->sql($consula1);
+    }
+
 //    ACTUALIZAR DATOS
     public function ActualizarDatos($No_Persona, $AP_Persona, $Edad_Persona, $Se_Persona, $Es_Civil_Persona, $Ti_Persona, $dire_Persona, $tele_Persona, $correo_Persona, $id_Iglesia, $id_Usuario, $Contra) {
         $link = new Conexion();
@@ -142,9 +164,9 @@ class UsuarioDAO {
             p.Se_Persona='$Se_Persona',p.Es_Civil_Persona='$Es_Civil_Persona',p.Ti_Persona='$Ti_Persona',p.dire_Persona='$dire_Persona',p.tele_Persona='$tele_Persona',
             p.id_Iglesia='$id_Iglesia',p.correo_Persona='$correo_Persona' where u.id_Usuario='$id_Usuario' and u.id_Persona=p.id_persona";
         $resultado = mysqli_query($conectar, $consulta);
-        if($resultado){
+        if ($resultado) {
             echo 1;
-        }else{
+        } else {
             echo 0;
         }
     }

@@ -177,25 +177,6 @@ if ($_SESSION["Usuario"] !== null) {
                             <!-- fullscreen button -->
                         </div>
                     </div>
-
-
-                    <!-- RIBBON -->
-                    <!--                        <div id="ribbon">
-                    
-                                                <span class="ribbon-button-alignment"> 
-                                                    <span id="refresh" class="btn btn-ribbon" data-action="resetWidgets" data-title="refresh"  rel="tooltip" data-placement="bottom" data-original-title="<i class='text-warning fa fa-warning'></i> Warning! This will reset all your widget settings." data-html="true">
-                                                        <i class="fa fa-refresh"></i>
-                                                    </span> 
-                                                </span>
-                    
-                                                 breadcrumb 
-                                                <ol class="breadcrumb">
-                                                    <li>Jose Sucapuca</li><li>Cursos Bíblicos Adultos y Jóvenes</li>
-                                                </ol>
-                    
-                                            </div>-->
-                    <!-- END RIBBON -->
-
                     <!-- MAIN CONTENT -->
                     <div id="content" style="margin-bottom: 0px;display: flow-root;height: 100%;">
 
@@ -209,38 +190,27 @@ if ($_SESSION["Usuario"] !== null) {
             <!--<h1 class="page-title txt-color-blueDark" style="font-weight: 600"><i class="fa fa-book"></i> Cursos Bíblicos Adultos y Jóvenes</h1>-->
                             </div>
                         </div>
-
                         <!-- widget grid -->
                         <section id="widget-grid" class="">
-
                             <!-- row -->
                             <div class="row">
-
                                 <!-- NEW WIDGET START -->
                                 <article class="col-xs-12 col-sm-5 col-md-5 col-lg-5" style="margin-bottom: 30px">
-
                                     <!-- Widget ID (each widget will need unique ID)-->
-                                    <div class="jarviswidget jarviswidget-color-blueLight" id="wid-id-10" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-togglebutton="false" data-widget-deletebutton="false" data-widget-fullscreenbutton="false" data-widget-custombutton="false" data-widget-sortable="false">
-                                        
+                                    <div class="jarviswidget jarviswidget-color-blueLight" id="wid-id-10" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-togglebutton="false" data-widget-deletebutton="false" data-widget-fullscreenbutton="false" data-widget-custombutton="false" data-widget-sortable="false">                                      
                                         <header>
                                             <span class="widget-icon"> <i class="fa fa-book"></i> </span>
                                             <h2>Cursos Bíblicos Adolescentes y Niños </h2>
-
                                         </header>
-
                                         <!-- widget div-->
                                         <div>
-
                                             <!-- widget edit box -->
                                             <div class="jarviswidget-editbox">
                                                 <!-- This area used as dropdown edit box -->
-
                                             </div>
                                             <!-- end widget edit box -->
-
                                             <!-- widget content -->
                                             <div class="widget-body no-padding" style="min-height: 0px">
-
                                                 <div class="panel-group smart-accordion-default" id="verFav" >
                                                     <div class="panel panel-default">
                                                         <div class="panel-heading">
@@ -422,13 +392,10 @@ if ($_SESSION["Usuario"] !== null) {
                                                         </div>
                                                     </div>
                                                 </div>
-
                                             </div>
                                             <!-- end widget content -->
-
                                         </div>
                                         <!-- end widget div -->
-
                                     </div>
                                     <!-- end widget -->
                                     <!-- Widget ID (each widget will need unique ID)-->
@@ -438,27 +405,21 @@ if ($_SESSION["Usuario"] !== null) {
                                             <h2>Biblia</h2>
 
                                         </header>
-
                                         <!-- widget div-->
                                         <div>
-
                                             <!-- widget edit box -->
                                             <div class="jarviswidget-editbox">
                                                 <!-- This area used as dropdown edit box -->
-
                                             </div>
                                             <!-- end widget edit box -->
-
                                             <!-- widget content -->
                                             <div class="widget-body no-padding">
                                                 <iframe src="Biblia.php" width="100%" height="486px"></iframe>
                                             </div>
                                             <!-- end widget content -->
-
                                         </div>
                                     </div>
                                     <!-- end widget -->
-
                                 </article>
                                 <!-- WIDGET END -->
                                 <article class="col-xs-12 col-sm-7 col-md-7 col-lg-7" style="margin-bottom: 30px">

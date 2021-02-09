@@ -72,7 +72,6 @@ function Restablecer_Contra() {
         }
     });
 }
-
 //CARGAR DATOS
 function cargardatos() {
     alert("en pruebas aún");

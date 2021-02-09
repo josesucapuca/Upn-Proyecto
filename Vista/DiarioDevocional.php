@@ -5,7 +5,7 @@ if ($_SESSION["Usuario"] !== null) {
     <!DOCTYPE html>
     <html lang="es" style="background-image: url('../images/diariodevocional/fodomatutina4.jpg');">
         <head>
-            
+
             <title>ceoadventista.org </title>
             <?php include_once './inc2/Estilos.php'; ?>
             <link rel="stylesheet" type="text/css" media="screen" href="css/fontAdventSans.css">
@@ -354,23 +354,24 @@ if ($_SESSION["Usuario"] !== null) {
                                 <div class=" col-xs-12 col-sm-12 col-md-12 col-lg-12 asi">
                                     <img src="../images/diariodevocional/pedidoOracion.png" alt="" style="width: 100%;"/>
                                 </div>
-                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                                     <div class="form-group">
-                                        <form name="add_name" id="add_name">
-                                            <div class="table-responsive">
-                                                <table class="table table-bordered" id="dynamic_field">
-                                                    <tr>
-                                                        <td><input type="text" name="name[]" placeholder="Nueva oración" class="form-control name_list" disabled/></td>
-                                                        <td><button type="button" name="add" id="add" class="btn btn-primary"><i class="fas fa-plus"></i></button></td>
-                                                    </tr>
-                                                </table>
-                                                <!--<input type="button" name="submit" id="submit" class="btn btn-success" value="Submit" />-->
-                                            </div>
-                                        </form>
-                                                                    <!--<textarea id="txtPedido" name="txtPedido" rows="3" class="form-control" required="" placeholder="Redacte sus pedidos de oraciones"></textarea>-->
+
+                                        <!--                                        <form name="add_name" id="add_name">
+                                                                                    <div class="table-responsive">
+                                                                                        <table class="table table-bordered" id="dynamic_field">
+                                                                                            <tr>
+                                                                                                <td><input type="text" name="name[]" placeholder="Nueva oración" class="form-control name_list" disabled/></td>
+                                                                                                <td><button type="button" name="add" id="add" class="btn btn-primary"><i class="fas fa-plus"></i></button></td>
+                                                                                            </tr>
+                                                                                        </table>
+                                                                                        <input type="button" name="submit" id="submit" class="btn btn-success" value="Submit" />
+                                                                                    </div>
+                                                                                </form>-->
+                                        <textarea id="txtPedido" name="txtPedido" rows="3" class="form-control" required="" placeholder="Redacte sus pedidos de oraciones"></textarea>
                                     </div>
                                 </div>
-                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                                     <div class="form-group">
                                         <textarea id="txtContestado" name="txtContestado" rows="3" class="form-control" disabled placeholder="Aún no tiene oraciones contestadas"></textarea>
                                     </div>
@@ -400,12 +401,40 @@ if ($_SESSION["Usuario"] !== null) {
                     </div>
                 </div>
             </div>
-
-            <script src="../js/jquery-3.4.1.min.js" type="text/javascript"></script>
+            <div id="modalcrud" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <form method="post" id="menu_form">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="titulo_crud">CRUD</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <input type="hidden" id="id_Pedido_Oracion" name="id_Pedido_Oracion">
+                                <div class="form-group row">
+                                    <label class="col-12" for="Pedido_Oracion">Nuevo pedido de Oración</label>
+                                    <div class="col-md-12">
+                                        <input type="text" class="form-control" id="Pedido_Oracion" name="Pedido_Oracion" placeholder="" required>
+                                    </div>
+                                </div>                                                      
+                            </div>
+                            <div class="modal-footer">
+                                <button type="submit" name="action" id="#" value="add" class="btn btn-primary">Guardar</button>
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+         
+           <script src="../js/jquery-3.4.1.min.js" type="text/javascript"></script>
             <script src="../js/jquery.min.js" type="text/javascript"></script>
             <script src="../js/moment.min.js" type="text/javascript"></script>
             <script src="../js/DevocionesMatutinas/DiarioDevocional.js" type="text/javascript"></script>
             <script src="../plugins/sweetAlert2/sweetalert2.all.min.js" type="text/javascript"></script>
+
             <!-- Cerrar sesion-->
             <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>          
             <script src="js/app.config.js"></script>
@@ -426,7 +455,7 @@ if ($_SESSION["Usuario"] !== null) {
                     $('#add').click(function () {
                         i++;
                         $('#dynamic_field').append('<tr id="row' + i + '">' +
-    //                                '<td><textarea id="txtPedido" name="txtPedido" rows="3" class="form-control" required="" placeholder="Redacte sus pedidos de oraciones"></textarea></td>' +
+                                //                                '<td><textarea id="txtPedido" name="txtPedido" rows="3" class="form-control" required="" placeholder="Redacte sus pedidos de oraciones"></textarea></td>' +
                                 '<td><input type="text" name="name[]" placeholder="Ingrese la nueva oración" class="form-control name_list" id="txtPedido"/></td>' +
                                 //                                '<td><button type="button" name="remove" id="' + i + '" class="btn btn-danger btn_remove btn-group btn-group-xs"><i class="fas fa-times"></i></i></button> <br>' +
                                 //                                '<button type="button" name="remove" id="' + i + '" class="btn btn-success btn_remove btn-group btn-group-xs"><i class="fas fa-check"></i></i></button></td>' +

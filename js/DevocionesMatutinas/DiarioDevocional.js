@@ -6,16 +6,19 @@ $(document).ready(function () {
             center: 'title',
             right: 'month,basicweek, basicDay, agendaWeek'
         },
-        dayClick: function (date, jsEvent, view) {
-
+        dayClick: function (date, allDay, jsEvent, view) {
+//bloqeuar los días pasados y futuros
             var myDate = new Date();
-            //Cuantos días se agregarán desde hoy?
+            var myDateF = new Date();
             var diasAdicionales = -1;
+            var diasFuturos = 0;
             myDate.setDate(myDate.getDate() + diasAdicionales);
-            if (date < myDate)
+            myDateF.setDate(myDateF.getDate() + diasFuturos);
+            if (date < myDate || date > myDateF)
             {
                 Swal.fire({
-                    type: 'error',
+//                    type: 'error',
+                    imageUrl: 'https://cdn-0.emojis.wiki/emoji-pics/facebook/pensive-face-facebook.png',
                     title: '¡No se puede crear un diario devocional!',
                     text: 'en días anteriores!',
                     showConfirmButton: false,

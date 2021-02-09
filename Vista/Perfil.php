@@ -164,6 +164,7 @@ if ($_SESSION["Usuario"] !== null) {
                                 </div
                                 <div class="card-body">
                                     <form action="" class="formulario" id="formulario">
+                                        <input id="id_Usuario" type="text" value="<?php echo $_SESSION["id_Usuario"] ?>">
                                         <!--<div class="form-row">-->
                                         <div class=" col-xs-12 col-sm-12 col-md-12 col-lg-12 formulario__grupo " id="grupo__usuario">
                                             <div class="input-group-prepend">
@@ -171,7 +172,7 @@ if ($_SESSION["Usuario"] !== null) {
                                             </div>
                                             <div class="formulario__grupo" id="grupo__usuario">
                                                 <div class="formulario__grupo-input">
-                                                    <input type="password" class="formulario__input" name="usuario" id="usuario">
+                                                    <input type="password" class="formulario__input" name="oldpassword" id="oldpassword">
                                                     <i class="formulario__validacion-estado far fa-check-circle"></i>
                                                 </div>
                                                 <p class="formulario__input-error" style="color: white">Dígite una contraseña valida.</p>
@@ -215,7 +216,7 @@ if ($_SESSION["Usuario"] !== null) {
                                         <div class="row">                                            
                                             <div class=" col-xs-3 col-sm-3 col-md-3 col-lg-3 asi"></div>
                                             <div class=" col-xs-3 col-sm-3 col-md-3 col-lg-3 asi">
-                                                <button type="button" id="btnAgregar" class="btn btn-warning">Actualizar</button>
+                                                <button type="submit" onclick="CompararContra()" class="btn btn-warning">Actualizar</button>
                                             </div>
                                             <div class=" col-xs-3 col-sm-3 col-md-3 col-lg-3 asi">
                                                 <button type="button" class="btn btn-default" data-dismiss="modal">cancelar</button>
@@ -340,7 +341,7 @@ if ($_SESSION["Usuario"] !== null) {
                                                                 <a href="Principal.php"><div class="text-center"><button class="btn login_btn" type="button">Cancelar</button></div></a>
                                                             </div>
                                                             <div class="col-xs-3 col-sm-5 col-md-5 col-lg-5" style="align-items: center;">                                    
-                                                                <div class="text-center"><button class="btn login_btn" type="submit" name="edituser" id="edituser" onclick="cargardatos()">Actualizar</button></div>
+                                                                <div class="text-center"><button class="btn login_btn" type="submit" name="edituser" id="edituser" onclick="resgitarusuario()">Actualizar</button></div>
                                                             </div>
                                                         </div>
                                                     </form>
@@ -356,7 +357,13 @@ if ($_SESSION["Usuario"] !== null) {
                 </div>             
             </div>
             <!--FORMULARIO-->
+            <script src="../js/jquery-3.3.1.min.js" type="text/javascript"></script>
+            <!--<script src="../js/jquery-1.12.3.min.js" type="text/javascript"></script>-->
+            <!--<script src="../js/jquery-1.10.2.min.js" type="text/javascript"></script>-->
             <!--<script src="../js/jquery-3.4.1.min.js" type="text/javascript"></script>-->
+            <script src="../js/popper.min.js" type="text/javascript"></script>
+            <!--<script src="../js/bootstrap.min.js" type="text/javascript"></script>-->
+            <script src="../plugins/sweetAlert2/sweetalert2.all.min.js" type="text/javascript"></script>
             <script src="../js/Logueo/perfilusuario.js" type="text/javascript"></script>
             <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
             <!--FINAL DEL FORMULARIO-->           

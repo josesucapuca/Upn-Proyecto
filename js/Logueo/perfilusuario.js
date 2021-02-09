@@ -1,3 +1,74 @@
+//MODIFICAR CONTRASEÑA
+
+function ModificarContra() {
+    alert("entro modificar");
+    var id_Usuario = $("#id_Usuario").val();
+    var Contra = $("#password").val();
+    if ( Contra.length > 0) {
+        if (campos.password) {
+            $.ajax({              
+                type: "POST",
+                url: '../Controlador/Logueo.php',
+                data: {
+                    opc: "ModificarContra", 
+                    id_Usuario:id_Usuario,
+                    Contra: Contra
+                },
+                success: function (response)
+                {
+                    alert(response);
+                    var validar = 1;
+                    if (response == validar) {
+                        Swal.fire({
+                            type: 'success',
+                            title: '¡modificado!',
+                            showConfirmButton: false,
+                            timer: 2000
+                        }).then(function () {
+                            window.location = "Perfil.php";
+                        });
+                    } else {
+                       alert("nose actualizo");
+                    }                   
+                }
+            });
+        } else {
+            $("#result").html("<div class='formulario__mensaje' id='formulario__mensaje'>\n\
+<p><i class='fas fa-exclamation-triangle'></i> <b>Error:</b> Por favor rellena el formulario correctamente. </p></div>");
+            document.getElementById('formulario__mensaje').classList.add('formulario__mensaje-activo');
+        }
+    } else {
+        $("#result").html("<div class='alert .alert-dismissable alert-danger'><button type='button'\n\
+                                               class='close' data-dismiss='alert'>&times;</button><strong>¡Ingrese! </strong> todos \n\
+                                               los campos por favor</div>");
+    }
+}
+
+function CompararContra() {
+    var Contra = $("#oldpassword").val();
+    var id_Usuario = $("#id_Usuario").val();
+    $.ajax({
+        type: "POST",
+        url: '../Controlador/Logueo.php',
+        data: {opc: "CompararContra", Contra: Contra, id_Usuario:id_Usuario},
+        success: function (response)
+        {
+            if (response == 1) {
+                ModificarContra();
+                echo = 1;
+            } else {
+                $('#oldpassword').val("");
+                $("#result").html("<div class='alert .alert-dismissable alert-warning'><button type='button'\n\
+                                               class='close' data-dismiss='alert'>&times;</button><strong>¡Contraseña actual incorrecta!</strong>  \n\
+                                               </div>");
+                echo = 0;
+            }
+        }
+    });
+}
+
+
+
 const formulario = document.getElementById('formulario');
 const inputs = document.querySelectorAll('#formulario input');
 

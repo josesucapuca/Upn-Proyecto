@@ -108,6 +108,24 @@ if ($opc === "ValidarCorreoR") {
     $var = $objs->ValidarCorreoR($correo_Persona);
     echo $var;
 }
+//COMPARAR CONTRA
+if ($opc === "CompararContra") {
+    $id_Usuario = strtoupper($_POST['id_Usuario']);
+    $Contra = strtoupper($_POST['Contra']);
+    $objs = new UsuarioDAO();
+    $var = $objs->CompararContra($Contra, $id_Usuario);
+    echo $var;
+//    echo json_encode($var);
+}
+//MODIFICAR CONTRA
+if ($opc === "ModificarContra") {
+    $id_Usuario = strtoupper($_POST['id_Usuario']);
+    $Contra = strtoupper($_POST['Contra']);
+    $objs = new UsuarioDAO();
+    $var = $objs->ModificarContra($Contra, $id_Usuario);
+    echo $var;
+//    echo json_encode($var);
+}
 //ACTUALIZAR DATOS
 if ($opc === "ActualizarDatos") {
     $id_Usuario = strtoupper($_POST['id_Usuario']);

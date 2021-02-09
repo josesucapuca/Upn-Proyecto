@@ -1,4 +1,5 @@
-var Biblia = '0', Himinario = '0', Musica = '0', video = '0', BibliaR = '0', HiminarioR = '0', MusicaR = '0', videoR = '0', BibliaM = '0', HiminarioM = '0', MusicaM = '0', videoM = '0', BibliaRM = '0', HiminarioRM = '0', MusicaRM = '0', videoRM = '0';
+var Biblia = '0', Himinario = '0', Musica = '0', video = '0', BibliaR = '0', HiminarioR = '0', MusicaR = '0', videoR = '0', BibliaM = '0', HiminarioM = '0', MusicaM = '0', videoM = '0', BibliaRM = '0', HiminarioRM = '0', MusicaRM = '0', videoRM = '0',
+        NA = '0', JA = '0', AC = '0', NAM = '0', JAM = '0', ACM = '0';
 Actualizardate();
 ListarEstudioBiblico();
 ListarEstudioBiblicoModificar();
@@ -11,11 +12,13 @@ $("#UrlVideoConferencia").keypress(function (e) {
     }
 });
 $("#AgregarCampana").on("click", function () {
+
     var validacion = ValidarFormulario();
     if (validacion === 1) {
 
-    } else {
         ValidarCod_Camp(validacion);
+    } else {
+
     }
 });
 $("#ModificarCampana").on("click", function () {
@@ -270,7 +273,7 @@ function ValidarFormulario() {
                             $(".LD").removeClass("state-error").addClass("state-success");
                             $(".LIN").removeClass("state-error").addClass("state-success");
                             $(".LFI").removeClass("state-error").addClass("state-success");
-                            $("#valu").css("display","none");
+                            $("#valu").css("display", "none");
                             return 1;
                         } else {
                             $(".LU").removeClass("state-success").addClass("state-error");
@@ -281,7 +284,7 @@ function ValidarFormulario() {
                             $(".LD").removeClass("state-error").addClass("state-success");
                             $(".LIN").removeClass("state-error").addClass("state-success");
                             $(".LFI").removeClass("state-error").addClass("state-success");
-                            $("#valu").css("display","block");
+                            $("#valu").css("display", "block");
                             return 0;
                         }
                     } else {
@@ -317,7 +320,7 @@ function ValidarFormulario() {
                             if (regexp.test(UrlVideoConferencia)) {
                                 $(".LU").removeClass("state-error").addClass("state-success");
                             } else {
-                                $("#valu").css("display","none");
+                                $("#valu").css("display", "none");
                                 $(".LU").removeClass("state-success").addClass("state-error");
                             }
                         } else {
@@ -753,7 +756,7 @@ function ListarCampanas(id_Per) {
                     } else {
                         html += '<i class="fa fa-check text-success"></i> ';
                     }
-                    html += '<a href="Campana_Evangelistica.php?id=' + jsonData[i].id_Campana_Evangelistica + '">' + jsonData[i].No_Campana_Evangelistica + '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a ><a onclick="LLenarModificar(' + jsonData[i].id_Campana_Evangelistica + ')" data-toggle="modal" data-target="#ModalModificarCampana"><i class="fa fa-edit text-success" style="font-size:18px"></i></a></li>'
+                    html += '<a onclick="AbrirCamp(' + jsonData[i].id_Campana_Evangelistica + ')"> ' + jsonData[i].No_Campana_Evangelistica + '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a ><a onclick="LLenarModificar(' + jsonData[i].id_Campana_Evangelistica + ')" data-toggle="modal" data-target="#ModalModificarCampana"><i class="fa fa-edit text-success" style="font-size:18px"></i></a></li>'
                 }
                 $("#Encargado").empty();
                 $("#Encargado").append(html);
@@ -765,6 +768,20 @@ function ListarCampanas(id_Per) {
             }
 
 
+        }
+    });
+}
+function AbrirCamp(a) {
+    $.ajax({
+        type: "POST",
+        url: '../Controlador/CampanaEvangelistica.php',
+        data: {opc: "ACE", a: a},
+        success: function (response)
+        {
+            if (response) {
+                location.href = 'Campana_Evangelistica.php';
+            } else {
+            }
         }
     });
 }
@@ -785,7 +802,7 @@ function ListarReunionesEstudio(id_Per) {
                     } else {
                         html += '<i class="fa fa-check text-success"></i> ';
                     }
-                    html += '<a href="EstudioBiblico.php?id=' + jsonData[i].id_Campana_Evangelistica + '">' + jsonData[i].No_Campana_Evangelistica + '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a ><a onclick="LLenarModificarReunionEstudio(' + jsonData[i].id_Campana_Evangelistica + ')" data-toggle="modal" data-target="#ModalModifcarEstudioBiblico"><i class="fa fa-edit text-success" style="font-size:18px"></i></a></li>'
+                    html += '<a onclick="AbrirEstudio(' + jsonData[i].id_Campana_Evangelistica + ')" >' + jsonData[i].No_Campana_Evangelistica + '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a ><a onclick="LLenarModificarReunionEstudio(' + jsonData[i].id_Campana_Evangelistica + ')" data-toggle="modal" data-target="#ModalModifcarEstudioBiblico"><i class="fa fa-edit text-success" style="font-size:18px"></i></a></li>'
                 }
                 $("#EncargadoReunion").empty();
                 $("#EncargadoReunion").append(html);
@@ -795,8 +812,20 @@ function ListarReunionesEstudio(id_Per) {
                 $("#EncargadoReunion").empty();
                 $("#EncargadoReunion").append(html);
             }
-
-
+        }
+    });
+}
+function AbrirEstudio(a){
+     $.ajax({
+        type: "POST",
+        url: '../Controlador/CampanaEvangelistica.php',
+        data: {opc: "AEB", a: a},
+        success: function (response)
+        {
+            if (response) {
+                location.href = 'EstudioBiblico.php';
+            } else {
+            }
         }
     });
 }
@@ -818,7 +847,7 @@ function ListarCampanaParticipante(id_Per) {
                     } else {
                         html += '<i class="fa fa-check text-success"></i> ';
                     }
-                    html += '<a href="Campana_Evangelistica.php?id=' + jsonData[i].id_Campana_Evangelistica + '">' + jsonData[i].No_Campana_Evangelistica + '</a></li>'
+                    html += '<a onclick="AbrirCamp(' + jsonData[i].id_Campana_Evangelistica + ')">' + jsonData[i].No_Campana_Evangelistica + '</a></li>'
                 }
                 $("#Participando").empty();
                 $("#Participando").append(html);
@@ -849,7 +878,7 @@ function ListarReunionesParticipantes(id_Per) {
                     } else {
                         html += '<i class="fa fa-check text-success"></i> ';
                     }
-                    html += '<a href="Campana_Evangelistica.php?id=' + jsonData[i].id_Campana_Evangelistica + '">' + jsonData[i].No_Campana_Evangelistica + '</a></li>'
+                    html += '<a onclick="AbrirEstudio(' + jsonData[i].id_Campana_Evangelistica + ')" >' + jsonData[i].No_Campana_Evangelistica + '</a></li>'
                 }
                 $("#ParticipandoReunion").empty();
                 $("#ParticipandoReunion").append(html);
@@ -1396,19 +1425,7 @@ $("#panHeadEsSab").on("click", function () {
         $(".pan-bod-escu").hide("slow");
     }
 });
-$(".liespe").on("click", function () {
-    if ($("#EsPersonal").css("display") === "none") {
-        $("#EsPersonal").show("slow");
-        $("#MusicaPe").hide("slow");
-        $("#VideoPe").hide("slow");
-        $(".icEsp").removeClass("fa-plus").addClass("fa-minus");
-        $(".icvi").removeClass("fa-minus").addClass("fa-plus");
-        $(".ismu").removeClass("fa-minus").addClass("fa-plus");
-    } else {
-        $("#EsPersonal").hide("slow");
-        $(".icEsp").removeClass("fa-minus").addClass("fa-plus");
-    }
-});
+
 $(".limu").on("click", function () {
     if ($("#MusicaPe").css("display") === "none") {
         $("#MusicaPe").show("slow");
@@ -1420,6 +1437,15 @@ $(".limu").on("click", function () {
     } else {
         $("#MusicaPe").hide("slow");
         $(".ismu").removeClass("fa-minus").addClass("fa-plus");
+    }
+});
+$(".UnidAction").on("click", function () {
+    if ($("#UnidadAccion").css("display") === "none") {
+        $("#UnidadAccion").show("slow");
+        $(".iact").removeClass("fa-plus").addClass("fa-minus");
+    } else {
+        $("#UnidadAccion").hide("slow");
+        $(".iact").removeClass("fa-minus").addClass("fa-plus");
     }
 });
 $(".livi").on("click", function () {
@@ -1477,6 +1503,26 @@ $(".lipartRe").on("click", function () {
     } else {
         $("#ParticipandoReunion").hide("slow");
         $(".icPartR").removeClass("fa-minus").addClass("fa-plus");
+    }
+});
+$(".UnidActionMa").on("click", function () {
+    if ($("#liUAM").css("display") === "none") {
+        $("#liUAM").show("slow");
+        $("#GrupoPeque").hide("slow");
+        $(".iuam").removeClass("fa-plus").addClass("fa-minus");
+    } else {
+        $("#liUAM").hide("slow");
+        $(".iuam").removeClass("fa-minus").addClass("fa-plus");
+    }
+});
+$(".GrupPeque").on("click", function () {
+    if ($("#GrupoPeque").css("display") === "none") {
+        $("#GrupoPeque").show("slow");
+        $("#liUAM").hide("slow");
+        $(".iuam").removeClass("fa-plus").addClass("fa-minus");
+    } else {
+        $("#GrupoPeque").hide("slow");
+        $(".iuam").removeClass("fa-minus").addClass("fa-plus");
     }
 });
 
@@ -1560,6 +1606,68 @@ $(document).on('change', 'input[type="checkbox"]', function (e) {
         videoRM = '1';
     } else {
         videoRM = '0';
+    }
+});
+$(document).on('click', 'input[type="radio"]', function (e) {
+    if ($('#EsGrupoNA').prop('checked') === true) {
+        if (NA === '1') {
+            $('#EsGrupoNA').removeAttr('checked');
+            NA = '0';
+        } else {
+            NA = '1';
+        }
+    } else {
+        NA = '0';
+    }
+    if ($('#EsGrupoJA').prop('checked') === true) {
+        if (JA === '1') {
+            $('#EsGrupoJA').removeAttr('checked');
+            JA = '0';
+        } else {
+            JA = '1';
+        }
+    } else {
+        JA = '0';
+    }
+    if ($('#EsGrupoAC').prop('checked') === true) {
+        if ($('#EsGrupoAC').prop('checked') === true && AC === '1') {
+            $('#EsGrupoAC').removeAttr('checked');
+            AC = '0';
+        } else {
+            AC = '1';
+        }
+    } else {
+        AC = '0';
+    }
+    if ($('#EsGrupoNAM').prop('checked') === true) {
+        if ($('#EsGrupoNAM').prop('checked') === true && NAM === '1') {
+            $('#EsGrupoNAM').removeAttr('checked');
+            NAM = '0';
+        } else {
+            NAM = '1';
+        }
+    } else {
+        NAM = '0';
+    }
+    if ($('#EsGrupoJAM').prop('checked') === true) {
+        if ($('#EsGrupoJAM').prop('checked') === true && JAM === '1') {
+            $('#EsGrupoJAM').removeAttr('checked');
+            JAM = '0';
+        } else {
+            JAM = '1';
+        }
+    } else {
+        JAM = '0';
+    }
+    if ($('#EsGrupoACM').prop('checked') === true) {
+        if ($('#EsGrupoACM').prop('checked') === true && ACM === '1') {
+            $('#EsGrupoACM').removeAttr('checked');
+            ACM = '0';
+        } else {
+            ACM = '1';
+        }
+    } else {
+        ACM = '0';
     }
 });
 function LimpiarIngresarCE() {
@@ -1648,7 +1756,7 @@ function LimpiarModificarEB() {
 }
 function ValidarCod_Camp(a) {
     if ($("#Cod_Campana").val() === "") {
-        return "0";
+        alert("Ingresar Codigo de Campaña");
     } else {
         $.ajax({
             type: "POST",
@@ -1669,6 +1777,7 @@ function ValidarCod_Camp(a) {
                                 $("#CancelarAgreegCamp").click();
                                 refreshSelectopcCE();
                                 refreshSelectPlatCE();
+                                LimpiarIngresarCE();
                             } else {
                                 $("#valcod").css("display", "none");
                             }

@@ -131,7 +131,7 @@ if ($_SESSION["Usuario"] !== null) {
                                 <!--                                <div class="row">
                                                                     <img src="../images/LETRASESTUDIONIÑOS.png" alt="" style="width: 100%"/>
                                                                 </div>-->
-                                <h1 class="page-title txt-color-blueDark" style="font-weight: 600"><i class="fa fa-book"></i> Repaso de la Lección - Escuela sabática</h1>
+                                <h1 class="page-title txt-color-blueDark" style="font-weight: 600"><i class="fa fa-book"></i> Desarrollo de la Lección - Escuela sabática</h1>
                             </div>
                         </div>
                         <!-- widget grid -->
@@ -144,7 +144,7 @@ if ($_SESSION["Usuario"] !== null) {
                                     <div class="jarviswidget jarviswidget-color-blueLight" id="wid-id-10" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-togglebutton="false" data-widget-deletebutton="false" data-widget-fullscreenbutton="false" data-widget-custombutton="false" data-widget-sortable="false">
                                         <header>
                                             <span class="widget-icon"> <i class="fa fa-book"></i> </span>
-                                            <h2> Repaso de la Lección</h2>
+                                            <h2> Desarrollo de la Lección</h2>
                                         </header>
                                         <!-- widget div-->
                                         <div>
@@ -198,47 +198,7 @@ if ($_SESSION["Usuario"] !== null) {
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="panel panel-default">
-                                                        <div class="panel-heading">
-                                                            <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion-2" href="#collapseFor-1" class="collapsed"> <i class="fa fa-fw fa-plus-circle txt-color-green"></i> <i class="fa fa-fw fa-minus-circle txt-color-red"></i>Repaso de la Lección – Alumno</a></h4>
-                                                        </div>
-                                                        <div id="collapseFor-1" class="panel-collapse collapse">
-                                                            <div class="">
-                                                                <div class="panel">
-                                                                    <div class="panel-heading">
-                                                                        <div class="col-xs-8 col-sm-9 col-md-9 col-lg-9">
-                                                                            <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion-2" href="#collapseThree1" class="collapsed"> <i class="fa fa-fw fa-plus-circle txt-color-green"></i> <i class="fa fa-fw fa-minus-circle txt-color-red"></i>Comentarios de la Lección</a></h4>
-                                                                        </div>
-                                                                        <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3 estudio-img">
-                                                                            <div class="row">
-                                                                                <br>
-                                                                                <img src="../images/estudios/es-escuelasabatica.PNG" alt="" style="width: 60%"/>
-                                                                            </div>                                 
-                                                                        </div>                                                                      
-                                                                    </div>
-                                                                    <div id="collapseThree1" class="panel-collapse collapse">
-                                                                        <div class="panel-body">
-                                                                            <ul id="estudios">
-                                                                                <li><a id="SA1" href="" >Comentarios de la Lección - S1</a></li>
-                                                                                <li><a id="SA2" href="" >Comentarios de la Lección - S2</a></li>
-                                                                                <li><a id="SA3" href="" >Comentarios de la Lección - S3</a></li>
-                                                                                <li><a id="SA4" href="" >Comentarios de la Lección - S4</a></li>
-                                                                                <li><a id="SA5" href="" >Comentarios de la Lección - S5</a></li>
-                                                                                <li><a id="SA6" href="" >Comentarios de la Lección - S6</a></li>
-                                                                                <li><a id="SA7" href="" >Comentarios de la Lección - S7</a></li>
-                                                                                <li><a id="SA8" href="" >Comentarios de la Lección - S8</a></li>
-                                                                                <li><a id="SA9" href="" >Comentarios de la Lección - S9</a></li> 
-                                                                                <li><a id="SA10" href="" >Comentarios de la Lección - S10</a></li>
-                                                                                <li><a id="SA11" href="" >Comentarios de la Lección - S11</a></li>
-                                                                                <li><a id="SA12" href="" >Comentarios de la Lección - S12</a></li> 
-                                                                                <li><a id="SA13" href="" >Comentarios de la Lección - S13</a></li> 
-                                                                            </ul>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>                                                                                                                             
-                                                            </div>
-                                                        </div>
-                                                    </div>
+                                                   
                                                 </div>
                                             </div>
                                             <!-- end widget content -->
@@ -250,7 +210,7 @@ if ($_SESSION["Usuario"] !== null) {
                                     <div class="jarviswidget" id="wid-id-1" data-widget-editbutton="true">
                                         <header>
                                             <span class="widget-icon"> <i class="fas fa-volume-up"></i> </span>
-                                            <h2>Comentarios de la lección en Audio</h2>
+                                            <h2>Repaso de la lección en Audio</h2>
                                         </header>
                                         <!-- widget div-->
                                         <div>
@@ -358,76 +318,18 @@ if ($_SESSION["Usuario"] !== null) {
                 <!-- END PAGE FOOTER -->
             </div>
             <!-- PACE LOADER - turn this on if you want ajax loading to show (caution: uses lots of memory on iDevices)-->
-            <script data-pace-options='{ "restartOnRequestAfter": true }' src="js/plugin/pace/pace.min.js"></script>
-            <!-- Link to Google CDN's jQuery + jQueryUI; fall back to local -->
-            <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-            <script>
-                if (!window.jQuery) {
-                    document.write('<script src="js/libs/jquery-2.1.1.min.js"><\/script>');
-                }
-            </script>
-            <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
-            <script>
-                if (!window.jQuery.ui) {
-                    document.write('<script src="js/libs/jquery-ui-1.10.3.min.js"><\/script>');
-                }
-            </script>
-            <!-- IMPORTANT: APP CONFIG -->
-            <script src="js/app.config.js"></script>
-            <!-- JS TOUCH : include this plugin for mobile drag / drop touch events-->
-            <script src="js/plugin/jquery-touch/jquery.ui.touch-punch.min.js"></script> 
-            <!-- BOOTSTRAP JS -->
-            <script src="js/bootstrap/bootstrap.min.js"></script>
-            <!-- CUSTOM NOTIFICATION -->
-            <script src="js/notification/SmartNotification.min.js"></script>
-            <!-- JARVIS WIDGETS -->
-            <script src="js/smartwidgets/jarvis.widget.min.js"></script>
-            <!-- EASY PIE CHARTS -->
-            <script src="js/plugin/easy-pie-chart/jquery.easy-pie-chart.min.js"></script>
-            <!-- SPARKLINES -->
-            <script src="js/plugin/sparkline/jquery.sparkline.min.js"></script>
-            <!-- JQUERY VALIDATE -->
-            <script src="js/plugin/jquery-validate/jquery.validate.min.js"></script>
-            <!-- JQUERY MASKED INPUT -->
-            <script src="js/plugin/masked-input/jquery.maskedinput.min.js"></script>
-            <!-- JQUERY SELECT2 INPUT -->
-            <script src="js/plugin/select2/select2.min.js"></script>
-            <!-- JQUERY UI + Bootstrap Slider -->
-            <script src="js/plugin/bootstrap-slider/bootstrap-slider.min.js"></script>
-            <!-- browser msie issue fix -->
-            <script src="js/plugin/msie-fix/jquery.mb.browser.min.js"></script>
-            <!-- FastClick: For mobile devices -->
-            <script src="js/plugin/fastclick/fastclick.min.js"></script>
-            <!-- Demo purpose only -->
-            <script src="js/demo.min.js"></script>
-            <!-- MAIN APP JS FILE -->
-            <script src="js/app.min.js"></script>
-            <!-- ENHANCEMENT PLUGINS : NOT A REQUIREMENT -->
-            <!-- Voice command : plugin -->
-            <script src="js/speech/voicecommand.min.js"></script>
-            <!-- SmartChat UI : plugin -->
-            <script src="js/smart-chat-ui/smart.chat.ui.min.js"></script>
-            <script src="js/smart-chat-ui/smart.chat.manager.min.js"></script>
-            <!-- PAGE RELATED PLUGIN(S) -->
-            <!-- Morris Chart Dependencies -->
-            <script src="js/plugin/morris/raphael.min.js"></script>
-            <script src="js/plugin/morris/morris.min.js"></script>
+            
             <script src="../js/DevocionesMatutinas/DevocionesMatutinas.js"></script>
-            <!-- Your GOOGLE ANALYTICS CODE Below -->
-            <script type="text/javascript">
-                var _gaq = _gaq || [];
-                _gaq.push(['_setAccount', 'UA-XXXXXXXX-X']);
-                _gaq.push(['_trackPageview']);
-                (function () {
-                    var ga = document.createElement('script');
-                    ga.type = 'text/javascript';
-                    ga.async = true;
-                    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-                    var s = document.getElementsByTagName('script')[0];
-                    s.parentNode.insertBefore(ga, s);
-                })();
-            </script>
+            
             <script src="../js/EstudiosBiblicos/estudiosbiblicos.js" type="text/javascript"></script>
+            <!-- Cerrar sesion-->
+            <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>          
+            <script src="js/app.config.js"></script>
+            <script src="js/plugin/jquery-touch/jquery.ui.touch-punch.min.js"></script>
+            <script src="js/bootstrap/bootstrap.min.js"></script>
+            <script src="js/notification/SmartNotification.min.js"></script>
+            <script src="js/app.min.js"></script>
+            <!--FINAL DE CERRAR SESION-->
         </body>
     </html><?php
 } else {
