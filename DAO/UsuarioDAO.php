@@ -150,25 +150,46 @@ class UsuarioDAO {
     
 //MODIFICAR CONTRASEÑA 
      public function ModificarContra($Contra, $id_Usuario){
-//        $link = new Conexion();
-//        $conectar = $link->Conectar();
         $consula1 = "update usuario set Contra ='$Contra' where id_Usuario ='$id_Usuario'";
         return $this->sql($consula1);
     }
 
 //    ACTUALIZAR DATOS
-    public function ActualizarDatos($No_Persona, $AP_Persona, $Edad_Persona, $Se_Persona, $Es_Civil_Persona, $Ti_Persona, $dire_Persona, $tele_Persona, $correo_Persona, $id_Iglesia, $id_Usuario, $Contra) {
-        $link = new Conexion();
-        $conectar = $link->Conectar();
-        $consulta = "update persona p, usuario u set u.Contra ='$Contra', p.No_Persona='$No_Persona', p.AP_Persona='$AP_Persona',p.Edad_Persona='$Edad_Persona',
-            p.Se_Persona='$Se_Persona',p.Es_Civil_Persona='$Es_Civil_Persona',p.Ti_Persona='$Ti_Persona',p.dire_Persona='$dire_Persona',p.tele_Persona='$tele_Persona',
-            p.id_Iglesia='$id_Iglesia',p.correo_Persona='$correo_Persona' where u.id_Usuario='$id_Usuario' and u.id_Persona=p.id_persona";
-        $resultado = mysqli_query($conectar, $consulta);
-        if ($resultado) {
-            echo 1;
-        } else {
-            echo 0;
+    public function ActualizarDatos($No_Persona, $AP_Persona, $Edad_Persona, $Se_Persona, $Es_Civil_Persona, $Ti_Persona, $dire_Persona, $tele_Persona, $correo_Persona, $id_Iglesia, $id_Persona) {
+        $consulta = "call ModificarPerfil ('$No_Persona','$AP_Persona','$Edad_Persona','$Se_Persona','$Es_Civil_Persona','$Ti_Persona','$dire_Persona','$tele_Persona','$correo_Persona','$id_Iglesia','$id_Persona')";
+        return $this->sql($consulta);
+    }
+    
+  //COMBOX 2
+    public function ComboMision2(){
+        $sql = "select id_Mision, No_Mision from mision";
+        $arreglo = array();
+        if($consula = $this->sql($sql)){
+            while ($consulta_VU = mysqli_fetch_array($consula)){
+                $arreglo[] = $consulta_VU;
+            }
         }
+        return $arreglo;
+    }
+    public function ComboDistrito2($id_Mision){
+        $sql = "select id_Distrito, No_Distrito from distrito where id_Mision = '$id_Mision'";
+        $arreglo = array();
+        if($consula = $this->sql($sql)){
+            while ($consulta_VU = mysqli_fetch_array($consula)){
+                $arreglo[] = $consulta_VU;
+            }
+        }
+        return $arreglo;
+    }
+    public function ComboIglesia2($id_Distrito){
+        $sql = "select id_Iglesia, Nombre_Iglesia from iglesia where id_Distrito = '$id_Distrito'";
+        $arreglo = array();
+        if($consula = $this->sql($sql)){
+            while ($consulta_VU = mysqli_fetch_array($consula)){
+                $arreglo[] = $consulta_VU;
+            }
+        }
+        return $arreglo;
     }
 
 }

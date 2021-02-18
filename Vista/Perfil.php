@@ -6,6 +6,7 @@ if ($_SESSION["Usuario"] !== null) {
         <head>
             <!--<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">-->
             <title>ceoadventista.org</title>
+            <meta charset="UTF-8">
             <?php include_once './inc2/Estilos.php'; ?>
             <link rel="stylesheet" type="text/css" media="screen" href="css/fontAdventSans.css">
             <link rel="stylesheet" type="text/css" media="screen" href="css/header.css">
@@ -164,7 +165,7 @@ if ($_SESSION["Usuario"] !== null) {
                                 </div
                                 <div class="card-body">
                                     <form action="" class="formulario" id="formulario">
-                                        <input id="id_Usuario" type="text" value="<?php echo $_SESSION["id_Usuario"] ?>">
+                                        <input id="id_Usuario" type="hidden" value="<?php echo $_SESSION["id_Usuario"] ?>">
                                         <!--<div class="form-row">-->
                                         <div class=" col-xs-12 col-sm-12 col-md-12 col-lg-12 formulario__grupo " id="grupo__usuario">
                                             <div class="input-group-prepend">
@@ -222,6 +223,7 @@ if ($_SESSION["Usuario"] !== null) {
                                                 <button type="button" class="btn btn-default" data-dismiss="modal">cancelar</button>
                                             </div>                                            
                                         </div>
+                                        <br>
                                         <span id="result"></span>
                                     </div>
                                     <br>
@@ -229,568 +231,190 @@ if ($_SESSION["Usuario"] !== null) {
                             </div>
                         </div>
                     </div>
-                    <!--emepzando-->
-                    <div id="content" style="margin-bottom: 0px;display: flow-root;height: 100%;">
-                        <!-- widget grid -->
-                        <section id="widget-grid" class="">
-                            <!-- row -->
-                            <div class="row">
-                                <!-- NEW COL START -->
-                                <article class="col-xs-12 col-sm-6 col-md-8 col-lg-12" style="margin-bottom: 30px">
-                                    <!-- Widget ID (each widget will need unique ID)-->
-                                    <div class="jarviswidget  jarviswidget-color-green" id="wid-id-11" data-widget-colorbutton="false" data-widget-fullscreenbutton="false" data-widget-editbutton="false" data-widget-sortable="false" data-widget-attstyle="jarviswidget-color-teal">
-                                        <header>
-                                            <span class="widget-icon"> <i class="fa fa-edit"></i> </span>
-                                            <h2>Datos generales</h2>
-                                        </header>
-                                        <!-- widget div-->
-                                        <div>
-                                            <!-- end widget edit box -->
-                                            <!-- widget content -->
-                                            <div class="widget-body no-padding">
-                                                <div id="content" style="margin-bottom: 20px;">
-                                                    <div class="row">
-                                                        <br><br>
-                                                        <div class="col-xs-12 col-sm-6 col-md-8 col-lg-12">
-                                                            <div class="row">
-                                                                <div class="col-sm-4 profile-pic">
-                                                                    <img src="../images/users.png" style="width: 30%;">                                                     
-                                                                </div>
-                                                                <div class="col-sm-8">
-                                                                    <h1><?php echo $_SESSION["Persona"]; ?> <span class="semi-bold"></span>
-                                                                        <br>
-                                                                        <small><?php echo $_SESSION["Usuario"]; ?></small></h1>
-                                                                    <br>                  
-                                                                </div>                                                 
-                                                            </div>
-                                                        </div>
-                                                    </div> 
-                                                    <form method="POST">
-                                                        <table id="user" class="table table-bordered table-striped" style="clear: both">                                                        
-                                                            <tbody>
-                                                            <input id="idediuser" type="hidden" value="<?php echo $_SESSION["id_Usuario"] ?>">
-                                                            <input id="idediper" type="hidden" value="<?php echo $_SESSION["id_Persona"] ?>">
-                                                            <tr>
-                                                                <td style="width:35%;">Contraseña:</td>
-                                                                <td style="width:65%">
-                                                                    <input data-toggle="modal" data-target="#myModal" placeholder="Password field" type="password" value="<?php echo $_SESSION["Contra"]; ?>" style="border: #F8F8F8; background: #F8F8F8">                                                                  
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td style="width:35%;">Nombres:</td>
-                                                                <td style="width:65%"><a href="form-x-editable.html#" id="edinombre" data-type="text" data-pk="1" data-original-title="Enter edinombre"><?php echo $_SESSION["No_Persona"]; ?></a></td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td style="width:35%;">Apellidos:</td>
-                                                                <td style="width:65%"><a href="form-x-editable.html#" id="ediapellido" data-type="text" data-pk="1" data-original-title="Enter ediapellido" ><?php echo $_SESSION["AP_Persona"]; ?></a></td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td style="width:35%;">Edad:</td>
-                                                                <td style="width:65%"><a href="form-x-editable.html#" id="ediedad" data-type="text" data-pk="1" data-original-title="Enter ediedad"><?php echo $_SESSION["Edad_Persona"]; ?></a></td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>Sexo:</td>
-                                                                <td><a href="form-x-editable.html#" id="edisexo" data-type="select" data-pk="1" data-value="5" data-source="/sexos" data-original-title="Select edisexo"><?php echo $_SESSION["Se_Persona"]; ?></a></td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>Estado civil:</td>
-                                                                <td><a href="form-x-editable.html#" id="ediestadocivil" data-type="select" data-pk="1" data-value="5" data-source="/estadociviles" data-original-title="Select ediestadocivil"><?php echo $_SESSION["Es_Civil_Persona"]; ?></a></td>
-                                                            </tr> 
-                                                            <tr>
-                                                                <td>Tipo de usuario:</td>
-                                                                <td><a href="form-x-editable.html#" id="editipouser" data-type="select" data-pk="1" data-value="5" data-value="LI" data-source="/tipousers" data-original-title="Select editipouser"><?php echo $_SESSION["Ti_Persona"]; ?></a></td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>Dirección:</td>
-                                                                <td><a href="form-x-editable.html#" id="edidireccion" data-type="textarea" data-pk="1" data-placeholder="Your comments here..." data-original-title="Enter edidireccion"><?php echo $_SESSION["dire_Persona"]; ?></a></td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td style="width:35%;">Teléfono:</td>
-                                                                <td style="width:65%"><a href="form-x-editable.html#" id="editelefono" data-type="text" data-pk="1" data-original-title="Enter editelefono"><?php echo $_SESSION["tele_Persona"]; ?></a></td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>Misión:</td>
-                                                                <!--<td><a href="form-x-editable.html#" id="sel_mision" data-type="select2" data-pk="1" data-select-search="true" data-value="BS" data-original-title="Select sel_mision"><?php echo $_SESSION["No_Mision"]; ?></a></td>-->
-                                                                <td><select class="form-control" name="state" id="sel_mision" required="">
-                                                                        <option value="0"><?php echo $_SESSION["No_Mision"]; ?></option>                                                                                                                          
-                                                                    </select></td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>Distrito:</td>
-                                                                <!--<td><a href="form-x-editable.html#" id="sel_distrito" data-type="select2" data-pk="1" data-select-search="true" data-value="BS" data-original-title="Select sel_distrito"><?php echo $_SESSION["No_Distrito"]; ?></a></td>-->
-                                                                <td><select class="form-control" name="state" id="sel_distrito">
-                                                                        <option value="0"><?php echo $_SESSION["No_Distrito"]; ?></option>
-                                                                    </select></td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>Iglesia:</td>
-                                                                <!--<td><a href="form-x-editable.html#" id="sel_iglesia" data-type="select2" data-pk="1" data-select-search="true" data-value="BS" data-original-title="Select sel_iglesia"><?php echo $_SESSION["Nombre_Iglesia"]; ?></a></td>-->
-                                                                <td><select class="form-control" name="state" id="sel_iglesia">
-                                                                        <option value="0"><?php echo $_SESSION["Nombre_Iglesia"]; ?></option>
-                                                                    </select></td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td style="width:35%;">Correo:</td>
-                                                                <td style="width:65%"><a href="form-x-editable.html#" id="edicorreo" data-type="text" data-pk="1" data-original-title="Enter edicorreo"><?php echo $_SESSION["correo_Persona"]; ?></a></td>
-                                                            </tr>                                                                
-                                                            </tbody>
-                                                        </table>
-                                                        <div class="row"> 
-                                                            <div class="col-xs-5 col-sm-1 col-md-1 col-lg-1 asi"></div>
-                                                            <div class="col-xs-3 col-sm-5 col-md-5 col-lg-5 ">
-                                                                <a href="Principal.php"><div class="text-center"><button class="btn login_btn" type="button">Cancelar</button></div></a>
-                                                            </div>
-                                                            <div class="col-xs-3 col-sm-5 col-md-5 col-lg-5" style="align-items: center;">                                    
-                                                                <div class="text-center"><button class="btn login_btn" type="submit" name="edituser" id="edituser" onclick="resgitarusuario()">Actualizar</button></div>
-                                                            </div>
-                                                        </div>
-                                                    </form>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>										
-                                </article>
-                            </div>																
-                        </section>
+                </div>
+                <div class="row"> 
+                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 asi">
+                        <!--<img src="../images/logo.png" width="60" height="60" >-->
                     </div>
-                    <!-- END MAIN PANEL -->
-                </div>             
-            </div>
-            <!--FORMULARIO-->
-            <script src="../js/jquery-3.3.1.min.js" type="text/javascript"></script>
-            <!--<script src="../js/jquery-1.12.3.min.js" type="text/javascript"></script>-->
-            <!--<script src="../js/jquery-1.10.2.min.js" type="text/javascript"></script>-->
-            <!--<script src="../js/jquery-3.4.1.min.js" type="text/javascript"></script>-->
-            <script src="../js/popper.min.js" type="text/javascript"></script>
-            <!--<script src="../js/bootstrap.min.js" type="text/javascript"></script>-->
-            <script src="../plugins/sweetAlert2/sweetalert2.all.min.js" type="text/javascript"></script>
-            <script src="../js/Logueo/perfilusuario.js" type="text/javascript"></script>
-            <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
-            <!--FINAL DEL FORMULARIO-->           
-            <!-- Cerrar sesion-->
-            <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>          
-            <script src="js/app.config.js"></script>
-            <script src="js/plugin/jquery-touch/jquery.ui.touch-punch.min.js"></script>
-            <script src="js/bootstrap/bootstrap.min.js"></script>
-            <script src="js/notification/SmartNotification.min.js"></script>
-            <script src="js/app.min.js"></script>
-            <!--FINAL DE CERRAR SESION--> 
-            <!--tabla-->
-            <script src="js/plugin/select2/select2.min.js"></script>
-            <!--<script src="js/app.min.js"></script>-->
-            <script src="js/plugin/x-editable/moment.min.js"></script>
-            <script src="js/plugin/x-editable/jquery.mockjax.min.js"></script>
-            <script src="js/plugin/x-editable/x-editable.min.js"></script>
-            <script type="text/javascript">
-
-                                                                    // DO NOT REMOVE : GLOBAL FUNCTIONS!
-
-                                                                    $(document).ready(function () {
-
-                                                                        pageSetUp();
-                                                                        //                                                                        Mision();
-
-                                                                        /*
-                                                                         * X-Ediable
-                                                                         */
-
-
-                                                                        (function (e) {
-                                                                            "use strict";
-                                                                            var t = function (e) {
-                                                                                this.init("address", e, t.defaults)
-                                                                            };
-                                                                            e.fn.editableutils.inherit(t, e.fn.editabletypes.abstractinput);
-                                                                            e.extend(t.prototype, {
-                                                                                render: function () {
-                                                                                    this.$input = this.$tpl.find("input")
-                                                                                },
-                                                                                value2html: function (t, n) {
-                                                                                    if (!t) {
-                                                                                        e(n).empty();
-                                                                                        return
-                                                                                    }
-                                                                                    var r = e("<div>").text(t.city).html() + ", " + e("<div>").text(t.street).html() +
-                                                                                            " st., bld. " + e("<div>").text(t.building).html();
-                                                                                    e(n).html(r)
-                                                                                },
-                                                                                html2value: function (e) {
-                                                                                    return null
-                                                                                },
-                                                                                value2str: function (e) {
-                                                                                    var t = "";
-                                                                                    if (e)
-                                                                                        for (var n in e)
-                                                                                            t = t + n + ":" + e[n] + ";";
-                                                                                    return t
-                                                                                },
-                                                                                str2value: function (e) {
-                                                                                    return e
-                                                                                },
-                                                                                value2input: function (e) {
-                                                                                    if (!e)
-                                                                                        return;
-                                                                                    this.$input.filter('[name="city"]').val(e.city);
-                                                                                    this.$input.filter('[name="street"]').val(e.street);
-                                                                                    this.$input.filter('[name="building"]').val(e.building)
-                                                                                },
-                                                                                input2value: function () {
-                                                                                    return {
-                                                                                        city: this.$input.filter('[name="city"]').val(),
-                                                                                        street: this.$input.filter('[name="street"]').val(),
-                                                                                        building: this.$input.filter('[name="building"]').val()
-                                                                                    }
-                                                                                },
-                                                                                activate: function () {
-                                                                                    this.$input.filter('[name="city"]').focus()
-                                                                                },
-                                                                                autosubmit: function () {
-                                                                                    this.$input.keydown(function (t) {
-                                                                                        t.which === 13 && e(this).closest("form").submit()
-                                                                                    })
-                                                                                }
-                                                                            });
-                                                                            t.defaults = e.extend({}, e.fn.editabletypes.abstractinput.defaults, {
-                                                                                tpl: '<div class="editable-address"><label><span>City: </span><input type="text" name="city" class="input-small"></label></div><div class="editable-address"><label><span>Street: </span><input type="text" name="street" class="input-small"></label></div><div class="editable-address"><label><span>Building: </span><input type="text" name="building" class="input-mini"></label></div>',
-                                                                                inputclass: ""
-                                                                            });
-                                                                            e.fn.editabletypes.address = t
-                                                                        })(window.jQuery);
-
-                                                                        //ajax mocks
-                                                                        $.mockjaxSettings.responseTime = 500;
-
-                                                                        $.mockjax({
-                                                                            url: '/post',
-                                                                            response: function (settings) {
-                                                                                log(settings, this);
-                                                                            }
-                                                                        });
-
-                                                                        $.mockjax({
-                                                                            url: '/error',
-                                                                            status: 400,
-                                                                            statusText: 'Bad Request',
-                                                                            response: function (settings) {
-                                                                                this.responseText = 'Please input correct value';
-                                                                                log(settings, this);
-                                                                            }
-                                                                        });
-
-                                                                        $.mockjax({
-                                                                            url: '/status',
-                                                                            status: 500,
-                                                                            response: function (settings) {
-                                                                                this.responseText = 'Internal Server Error';
-                                                                                log(settings, this);
-                                                                            }
-                                                                        });
-                                                                        //INICIO DE COMBOS
-                                                                        $.mockjax({
-                                                                            url: '/sexos',
-                                                                            response: function (settings) {
-                                                                                this.responseText = [{
-                                                                                        value: 0,
-                                                                                        text: 'Masculino'
-                                                                                    }, {
-                                                                                        value: 1,
-                                                                                        text: 'Femenino'
-                                                                                    }];
-                                                                                log(settings, this);
-                                                                            }
-                                                                        });
-                                                                        $.mockjax({
-                                                                            url: '/estadociviles',
-                                                                            response: function (settings) {
-                                                                                this.responseText = [{
-                                                                                        value: 0,
-                                                                                        text: 'Soltero'
-                                                                                    }, {
-                                                                                        value: 1,
-                                                                                        text: 'Casado'
-                                                                                    }, {
-                                                                                        value: 2,
-                                                                                        text: 'Viudo'
-                                                                                    }, {
-                                                                                        value: 3,
-                                                                                        text: 'Divorciado'
-                                                                                    }];
-                                                                                log(settings, this);
-                                                                            }
-                                                                        });
-                                                                        $.mockjax({
-                                                                            url: '/tipousers',
-                                                                            response: function (settings) {
-                                                                                this.responseText = [{
-                                                                                        value: 0,
-                                                                                        text: 'Líder'
-                                                                                    }, {
-                                                                                        value: 1,
-                                                                                        text: 'Estudiante'
-                                                                                    }, {
-                                                                                        value: 2,
-                                                                                        text: 'Miembro'
-                                                                                    }, {
-                                                                                        value: 3,
-                                                                                        text: 'Pastor'
-                                                                                    }];
-                                                                                log(settings, this);
-                                                                            }
-                                                                        });
-                                                                        //FIN DE COMBOS
-
-                                                                        //TODO: add this div to page
-                                                                        function log(settings, response) {
-                                                                            var s = [],
-                                                                                    str;
-                                                                            s.push(settings.type.toUpperCase() + ' url = "' + settings.url + '"');
-                                                                            for (var a in settings.data) {
-                                                                                if (settings.data[a] && typeof settings.data[a] === 'object') {
-                                                                                    str = [];
-                                                                                    for (var j in settings.data[a]) {
-                                                                                        str.push(j + ': "' + settings.data[a][j] + '"');
-                                                                                    }
-                                                                                    str = '{ ' + str.join(', ') + ' }';
-                                                                                } else {
-                                                                                    str = '"' + settings.data[a] + '"';
-                                                                                }
-                                                                                s.push(a + ' = ' + str);
-                                                                            }
-                                                                            s.push('RESPONSE: status = ' + response.status);
-
-                                                                            if (response.responseText) {
-                                                                                if ($.isArray(response.responseText)) {
-                                                                                    s.push('[');
-                                                                                    $.each(response.responseText, function (i, v) {
-                                                                                        s.push('{value: ' + v.value + ', text: "' + v.text + '"}');
-                                                                                    });
-                                                                                    s.push(']');
-                                                                                } else {
-                                                                                    s.push($.trim(response.responseText));
-                                                                                }
-                                                                            }
-                                                                            s.push('--------------------------------------\n');
-                                                                            $('#console').val(s.join('\n') + $('#console').val());
-                                                                        }
-
-                                                                        /*
-                                                                         * X-EDITABLES
-                                                                         */
-
-                                                                        $('#inline').on('change', function (e) {
-                                                                            if ($(this).prop('checked')) {
-                                                                                window.location.href = '?mode=inline#ajax/plugins.html';
-                                                                            } else {
-                                                                                window.location.href = '?#ajax/plugins.html';
-                                                                            }
-                                                                        });
-
-                                                                        if (window.location.href.indexOf("?mode=inline") > -1) {
-                                                                            $('#inline').prop('checked', true);
-                                                                            $.fn.editable.defaults.mode = 'inline';
-                                                                        } else {
-                                                                            $('#inline').prop('checked', false);
-                                                                            $.fn.editable.defaults.mode = 'popup';
-                                                                        }
-
-                                                                        //defaults
-                                                                        $.fn.editable.defaults.url = '/post';
-                                                                        //$.fn.editable.defaults.mode = 'inline'; use this to edit inline
-
-                                                                        //enable / disable
-                                                                        $('#enable').click(function () {
-                                                                            $('#user .editable').editable('toggleDisabled');
-                                                                        });
-                                                                        //INICIO DE CAMPOS EDITABLES
-                                                                        //editables
-
-                                                                        $('#edidUsuario').editable({
-                                                                            url: '/post',
-                                                                            type: 'text',
-                                                                            pk: 1,
-                                                                            name: 'edidUsuario',
-                                                                            title: 'Enter edidUsuario'
-                                                                        });
-                                                                        $('#edicontra').editable({
-                                                                            url: '/post',
-                                                                            type: 'text',
-                                                                            pk: 1,
-                                                                            name: 'edicontra',
-                                                                            title: 'Enter edicontra'
-                                                                        });
-                                                                        $('#edinombre').editable({
-                                                                            url: '/post',
-                                                                            type: 'text',
-                                                                            pk: 1,
-                                                                            name: 'edinombre',
-                                                                            title: 'Enter edinombre'
-                                                                        });
-                                                                        $('#ediapellido').editable({
-                                                                            url: '/post',
-                                                                            type: 'text',
-                                                                            pk: 1,
-                                                                            name: 'ediapellido',
-                                                                            title: 'Enter ediapellido'
-                                                                        });
-                                                                        $('#ediedad').editable({
-                                                                            url: '/post',
-                                                                            type: 'text',
-                                                                            pk: 1,
-                                                                            name: 'ediedad',
-                                                                            title: 'Enter ediedad'
-                                                                        });
-                                                                        $('#editelefono').editable({
-                                                                            url: '/post',
-                                                                            type: 'text',
-                                                                            pk: 1,
-                                                                            name: 'editelefono',
-                                                                            title: 'Enter editelefono'
-                                                                        });
-                                                                        $('#edicorreo').editable({
-                                                                            url: '/post',
-                                                                            type: 'text',
-                                                                            pk: 1,
-                                                                            name: 'correo',
-                                                                            title: 'Enter edicorreo'
-                                                                        });
-
-                                                                        $('#status').editable();
-
-                                                                        $('#edisexo').editable({
-                                                                            showbuttons: false
-                                                                        });
-                                                                        $('#ediestadocivil').editable({
-                                                                            showbuttons: false
-                                                                        });
-                                                                        $('#editipouser').editable({
-                                                                            showbuttons: false
-                                                                        });
-
-
-                                                                        $('#vacation').editable({
-                                                                            datepicker: {
-                                                                                todayBtn: 'linked'
-                                                                            }
-                                                                        });
-
-                                                                        $('#dob').editable();
-
-                                                                        $('#event').editable({
-                                                                            placement: 'right',
-                                                                            combodate: {
-                                                                                firstItem: 'name'
-                                                                            }
-                                                                        });
-
-                                                                        $('#edidireccion').editable({
-                                                                            showbuttons: 'bottom'
-                                                                        });
-                                                                        //                                                                        var countries = [];
-                                                                        //                                                                        $.each({
-                                                                        //                                                                            "BD": "lall",
-                                                                        //                                                                            "BE": "nuevo",
-                                                                        //                                                                            "BF": "tut Faso",
-                                                                        //                                                                            "BG": "Bulgaria",
-                                                                        //                                                                            "BA": "Bosnia and Herzegovina",
-                                                                        //                                                                            "BB": "Barbados",
-                                                                        //                                                                            "WF": "Wallis and Futuna",
-                                                                        //                                                                            "BL": "Saint Bartelemey",
-                                                                        //                                                                            "BM": "Bermuda",
-                                                                        //                                                                            "BN": "Brunei Darussalam",
-                                                                        //                                                                            "BS": "Bahamas"
-                                                                        //                                                                        }, function (k, v) {
-                                                                        //                                                                            countries.push({
-                                                                        //                                                                                id: k,
-                                                                        //                                                                                text: v
-                                                                        //                                                                            });
-                                                                        //                                                                        });
-                                                                        //
-                                                                        //
-                                                                        //                                                                        var mision = [];
-                                                                        //                                                                        $.each({
-                                                                        //                                                                            "BD": "lall",
-                                                                        //                                                                            "BE": "nuevo",
-                                                                        //                                                                            "BF": "tut Faso",
-                                                                        //                                                                            "BG": "Bulgaria",
-                                                                        //                                                                            "BA": "Bosnia and Herzegovina",
-                                                                        //                                                                            "BB": "Barbados",
-                                                                        //                                                                            "WF": "Wallis and Futuna",
-                                                                        //                                                                            "BL": "Saint Bartelemey",
-                                                                        //                                                                            "BM": "Bermuda",
-                                                                        //                                                                            "BN": "Brunei Darussalam",
-                                                                        //                                                                            "BS": "Bahamas"
-                                                                        //                                                                        }, function (k, v) {
-                                                                        //                                                                            mision.push({
-                                                                        //                                                                                id: k,
-                                                                        //                                                                                text: v
-                                                                        //                                                                            });
-                                                                        //                                                                        });
-
-
-
-                                                                        //                                                                        $('#sel_mision').editable({
-                                                                        //                                                                            source: mision,
-                                                                        //                                                                            select2: {
-                                                                        //                                                                                width: 200
-                                                                        //                                                                            }
-                                                                        //                                                                        });
-                                                                        //                                                                        $('#sel_distrito').editable({
-                                                                        //                                                                            source: countries,
-                                                                        //                                                                            select2: {
-                                                                        //                                                                                width: 200
-                                                                        //                                                                            }
-                                                                        //                                                                        });
-                                                                        //                                                                        $('#sel_iglesia').editable({
-                                                                        //                                                                            source: countries,
-                                                                        //                                                                            select2: {
-                                                                        //                                                                                width: 200
-                                                                        //                                                                            }
-                                                                        //                                                                        });
-
-                                                                        $('#user .editable').on('hidden', function (e, reason) {
-                                                                            if (reason === 'save' || reason === 'nochange') {
-                                                                                var $next = $(this).closest('tr').next().find('.editable');
-                                                                                if ($('#autoopen').is(':checked')) {
-                                                                                    setTimeout(function () {
-                                                                                        $next.editable('show');
-                                                                                    }, 300);
-                                                                                } else {
-                                                                                    $next.focus();
-                                                                                }
-                                                                            }
-                                                                        });
-
-                                                                    });
-
-            </script>
-            <script type="text/javascript">
-                function Mision() {
-                    $.ajax({
-                        type: "POST",
-                        url: 'Controlador/Logueo.php',
-                        data: {opc: "ListarMision"},
-                        success: function (response)
-                        {
-                            var data = JSON.parse(response);
-                            var cadena = "<option value=''>SELECCIONAR MISIÓN</option>";
-                            if (data.length > 0) {
-                                for (var i = 0; i < data.length; i++) {
-                                    // alert(data[i].id_Mision);
-                                    cadena += "<option value='" + data[i].id_Mision + "'>" + data[i].No_Mision + "</option>";
-                                }
-                                $("#sel_mision").html(cadena);
-                                var id_Mision = $("#sel_mision").val();
-                                Distrito(id_Mision);
-                            } else {
-                                cadena += "<option value=''>No hay datos</option>";
-                                $("#sel_mision").html(cadena);
-                            }
-                        }
-                    });
-                }
-            </script>
-            <!--fin de la tabla-->
-        </body>
+                    <div class="col-md-8 col-xs-8 col-sm-8 col-md-8 col-lg-8 abs-center" style="margin-bottom: 40px">
+                        <div class="row"><h2 style="color: white"><i class="fa fa-edit"></i> Datos Generales</h2> </div>                                                                
+                    </div>
+                </div>
+                <div class="row"> 
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <div class="row">
+                            <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4 profile-pic">
+                                <img src="../images/users.png" style="width: 30%;">                                                     
+                            </div>
+                            <div class="col-xs-5 col-sm-8 col-md-8 col-lg-8">
+                                <h1><?php echo $_SESSION["Persona"]; ?> <span class="semi-bold"></span>
+                                    <br>
+                                    <small style="color: white"><?php echo $_SESSION["Usuario"]; ?></small></h1>
+                                <br>                  
+                            </div>                                                 
+                        </div>
+                    </div>
+                </div>
+                <!--<div class="margin-top-10">-->
+                <main>
+                    <form action="" class="formulario" id="formulario">
+                        <input id="id_Persona" type="hidden" value="<?php echo $_SESSION["id_Persona"] ?>">
+                        <div class="formulario__grupo" id="grupo__password">
+                            <i class="fas fa-user"></i> <label for="password" class="input-group-text texto "> Contraseña:</label>
+                            <div class="formulario__grupo-input">
+                                <input data-toggle="modal" data-target="#myModal" placeholder="Password field" type="password" class="formulario__input" value="<?php echo $_SESSION["Contra"]; ?>">
+                               <!--<input type="text" class="formulario__input" name="nombre" id="edinombre" placeholder="Nombres">-->
+                                <i class="formulario__validacion-estado fas fa-check-circle"></i>
+                            </div>
+                            <p class="formulario__input-error">este campo no puede estar vacio.</p>
+                        </div>
+                        <div class="formulario__grupo" id="grupo__nombre">
+                            <i class="fas fa-user"></i> <label for="nombre" class="input-group-text texto "> Nombres:</label>
+                            <div class="formulario__grupo-input">
+                                <input type="text" class="formulario__input" name="nombre" id="edinombre" placeholder="Nombres" value="<?php echo $_SESSION["No_Persona"] ?>">
+                                <i class="formulario__validacion-estado fas fa-check-circle"></i>
+                            </div>
+                            <p class="formulario__input-error">Colocar los nombres de manera correcta.</p>
+                        </div>
+                        <div class="formulario__grupo" id="grupo__apellido">
+                            <i class="fas fa-user"></i> <label for="apellido" class="input-group-text texto "> Apellidos:</label>
+                            <div class="formulario__grupo-input">
+                                <input type="text" class="formulario__input" name="apellido" id="ediape" placeholder="Apellidos" value="<?php echo $_SESSION["AP_Persona"] ?>">
+                                <i class="formulario__validacion-estado fas fa-check-circle"></i>
+                            </div>
+                            <p class="formulario__input-error">Colocar los apellidos de manera correcta.</p>
+                        </div>
+                        <div class="formulario__grupo" id="grupo__direccion">
+                            <i class="fas fa-map-marker-alt"></i> <label for="direccion" class="input-group-text texto "> Dirección:</label>
+                            <div class="formulario__grupo-input">
+                                <input type="text" class="formulario__input" name="direccion" id="edidireccion" placeholder="Dirección" value="<?php echo $_SESSION["dire_Persona"] ?>">
+                                <i class="formulario__validacion-estado fas fa-check-circle"></i>
+                            </div>
+                            <p class="formulario__input-error">Colocar tu dirección actual.</p>
+                        </div>
+                        <div class="formulario__grupo" id="grupo__telefono">
+                            <i class="fas fa-mobile-alt"></i> <label for="telefono" class="input-group-text texto "> Teléfono:</label>
+                            <div class="formulario__grupo-input">
+                                <input type="text" class="formulario__input" name="telefono" id="editelefono" placeholder="Teléfono" value="<?php echo $_SESSION["tele_Persona"] ?>">
+                                <i class="formulario__validacion-estado fas fa-check-circle"></i>
+                            </div>
+                            <p class="formulario__input-error">El número de teléfono/celular debe ser de 7 a 9 dígitos.</p>
+                        </div>
+                        <div class="formulario__grupo" id="grupo__correo">
+                            <i class="fas fa-envelope-open-text"></i> <label for="correo" class="input-group-text texto "> Correo:</label>
+                            <div class="formulario__grupo-input">
+                                <input type="text" class="formulario__input" name="correo" id="edicorreo" placeholder="Correo" value="<?php echo $_SESSION["correo_Persona"] ?>">
+                                <i class="formulario__validacion-estado fas fa-check-circle"></i>
+                            </div>
+                            <p class="formulario__input-error">El correo solo puede contener letras, números, puntos, guiones y guion bajo.</p>
+                        </div>
+                        <div class="formulario__grupo">
+                            <i class="fas fa-envelope-open-text"></i> <label for="cbocivil" class="input-group-text texto "> Estado Civil:</label>
+                            <div class="formulario__grupo-input">                                              
+                                <select class="form-control" id="cbocivil" name="asunto" value="">
+                                    <option selected><?php echo $_SESSION["Es_Civil_Persona"] ?></option>
+                                    <option>Soltero</option>
+                                    <option>Casado</option>
+                                    <option>Viudo</option>
+                                    <option>Divorciado</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="formulario__grupo" id="grupo__edad">
+                            <i class="fas fa-calendar-alt"></i> <label for="edad" class="input-group-text texto "> Edad:</label>
+                            <div class="formulario__grupo-input">
+                                <input type="text" class="formulario__input" name="edad" id="ediedad" placeholder="Edad" value="<?php echo $_SESSION["Edad_Persona"] ?>">
+                                <i class="formulario__validacion-estado fas fa-check-circle"></i>
+                            </div>
+                            <p class="formulario__input-error">Ingrese una edad valida.</p>
+                        </div>
+                        <div class="formulario__grupo">
+                            <i class="fas fa-envelope-open-text"></i> <label for="cbotipo" class="input-group-text texto "> Tipo de Usuario:</label>
+                            <div class="formulario__grupo-input">                                              
+                                <select class="form-control" id="cbotipo" name="state" required="" value="">
+                                    <option value="<?php echo $_SESSION["Ti_Persona"] ?>"><?php echo $_SESSION["Ti_Persona"] ?></option>
+                                    <option>Líder</option>
+                                    <option>Estudiante</option>
+                                    <option>Miembro</option>
+                                    <option>Pastor</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="formulario__grupo">
+                            <i class="fas fa-envelope-open-text"></i> <label for="cbosexo" class="input-group-text texto "> Género:</label>
+                            <div class="formulario__grupo-input">                                              
+                                <select class="form-control" id="cbosexo" name="asunto" value="">
+                                    <option selected><?php echo $_SESSION["Se_Persona"] ?></option>
+                                    <option>Masculino</option>
+                                    <option>Femenino</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="formulario__grupo">
+                            <i class="fas fa-envelope-open-text"></i> <label for="sel_distrito" class="input-group-text texto "> Escoja su Misión:</label>
+                            <div class="formulario__grupo-input">                                              
+                                <select class="form-control" name="state" id="sel_mision" >
+                                    <option value="0" ><?php echo $_SESSION["No_Mision"] ?></option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="formulario__grupo">
+                            <i class="fas fa-envelope-open-text"></i> <label for="sel_distrito" class="input-group-text texto "> Distrito Misionero:</label>
+                            <div class="formulario__grupo-input">                                              
+                                <select class="form-control" name="state" id="sel_distrito" value="">
+                                    <option><a><?php echo $_SESSION["No_Distrito"] ?></a></option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="formulario__grupo">
+                            <i class="fas fa-envelope-open-text"></i> <label for="sel_iglesia" class="input-group-text texto "> Iglesia:</label>
+                            <div class="formulario__grupo-input">                                              
+                                <select class="form-control" name="state" id="sel_iglesia" value="">
+                                    <option value="<?php echo $_SESSION["id_Iglesia"] ?>" ><?php echo $_SESSION["Nombre_Iglesia"] ?></option>
+                                </select>
+                            </div>
+                        </div>                                              
+                    </form>
+                </main>
+                <br>
+                <div class="row">                                            
+                    <div class=" col-xs-3 col-sm-3 col-md-3 col-lg-3 asi"></div>
+                    <div class=" col-xs-3 col-sm-3 col-md-3 col-lg-3 asi">
+                        <button type="submit" onclick="ActualizarDatos()" class="btn btn-warning">Actualizar</button>
+                    </div>
+                    <div class=" col-xs-3 col-sm-3 col-md-3 col-lg-3 asi">
+                        <a href="Principal.php"><button type="button" class="btn btn-default" data-dismiss="modal">cancelar</button></a>
+                    </div>                                            
+                </div>
+                <br>
+                <div class=" col-xs-12 col-sm-12 col-md-12 col-lg-12 asi">
+                        <span id="resultado"></span> 
+                    </div> 
+                                 
+        <br>
+    </div>
+    <!--FORMULARIO-->
+    <script src="../js/jquery-3.3.1.min.js" type="text/javascript"></script>
+    <script src="../js/popper.min.js" type="text/javascript"></script>
+    <script src="../plugins/sweetAlert2/sweetalert2.all.min.js" type="text/javascript"></script>
+    <script src="../js/Logueo/perfilusuario.js" type="text/javascript"></script>
+    <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+    <!--FINAL DEL FORMULARIO-->           
+    <!-- Cerrar sesion-->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>          
+    <script src="js/app.config.js"></script>
+    <script src="js/plugin/jquery-touch/jquery.ui.touch-punch.min.js"></script>
+    <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script src="js/notification/SmartNotification.min.js"></script>
+    <script src="js/app.min.js"></script>
+    <!--FINAL DE CERRAR SESION--> 
+    <!--tabla-->
+    <!--            <script src="js/plugin/select2/select2.min.js"></script>
+    <script src="js/plugin/x-editable/moment.min.js"></script>
+    <script src="js/plugin/x-editable/jquery.mockjax.min.js"></script>
+    <script src="js/plugin/x-editable/x-editable.min.js"></script>-->           
+    <!--fin de la tabla-->
+    </body>
     </html><?php
 } else {
     include_once './inc2/Redireccionar.php';

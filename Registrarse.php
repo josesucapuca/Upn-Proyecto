@@ -208,7 +208,7 @@
                                                     <span class="input-group-text"><i class="fas fa-users"></i></span>
                                                 </div>
                                                 <select class="form-control" id="cbosexo" name="asunto">
-                                                    <option selected>Genero</option>
+                                                    <option selected>Género</option>
                                                     <option>Masculino</option>
                                                     <option>Femenino</option>
                                                 </select>

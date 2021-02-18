@@ -22,6 +22,8 @@ if ($opc === "ValidarUsuario") {
     }
     echo json_encode($arr);
 }
+
+//SESIÓN PARA PERFIL Y CAMPOS EXTRAS
 if ($opc === "CrearSesion") {
     $usuario = $_POST["a"];
     $password = $_POST["b"];
@@ -60,6 +62,7 @@ if ($opc === "SalirSesion") {
     session_destroy();
 }
 
+//LLENAR COMBOX DINÁMICOS
 if ($opc === "ListarMision") {
 
     $objs = new UsuarioDAO();
@@ -78,6 +81,8 @@ if ($opc === "ListarIglesia") {
     $var = $objs->ComboIglesia($id_Distrito);
     echo json_encode($var);
 }
+
+//REGISTRAR USUARIO Y PERSONA
 if ($opc === "RegistrarUsuario") {
     $No_Persona = strtoupper($_POST['No_Persona']);
     $AP_Persona = strtoupper($_POST['AP_Persona']);
@@ -96,12 +101,16 @@ if ($opc === "RegistrarUsuario") {
     $var = $objs->RegistrarUsuario($No_Persona, $AP_Persona, $Edad_Persona, $Se_Persona, $Es_Civil_Persona, $Ti_Persona, $dire_Persona, $tele_Persona, $correo_Persona, $id_Iglesia, $Usuario, $Contra);
     echo $var;
 }
+
+//VALIDAR USUARIO EXISTENTE
 if ($opc === "ValidarUsuarioR") {
     $Usuario = strtoupper($_POST['Usuario']);
     $objs = new UsuarioDAO();
     $var = $objs->ValidarUsuarioR($Usuario);
     echo $var;
 }
+
+//VALIDAR CORREO EXISTENTE
 if ($opc === "ValidarCorreoR") {
     $correo_Persona = strtoupper($_POST['correo_Persona']);
     $objs = new UsuarioDAO();
@@ -115,8 +124,8 @@ if ($opc === "CompararContra") {
     $objs = new UsuarioDAO();
     $var = $objs->CompararContra($Contra, $id_Usuario);
     echo $var;
-//    echo json_encode($var);
 }
+
 //MODIFICAR CONTRA
 if ($opc === "ModificarContra") {
     $id_Usuario = strtoupper($_POST['id_Usuario']);
@@ -124,11 +133,10 @@ if ($opc === "ModificarContra") {
     $objs = new UsuarioDAO();
     $var = $objs->ModificarContra($Contra, $id_Usuario);
     echo $var;
-//    echo json_encode($var);
 }
+
 //ACTUALIZAR DATOS
 if ($opc === "ActualizarDatos") {
-    $id_Usuario = strtoupper($_POST['id_Usuario']);
     $No_Persona = strtoupper($_POST['No_Persona']);
     $AP_Persona = strtoupper($_POST['AP_Persona']);
     $Edad_Persona = strtoupper($_POST['Edad_Persona']);
@@ -138,14 +146,33 @@ if ($opc === "ActualizarDatos") {
     $dire_Persona = strtoupper($_POST['dire_Persona']);
     $tele_Persona = strtoupper($_POST['tele_Persona']);
     $correo_Persona = strtoupper($_POST['correo_Persona']);
-    $id_Iglesia = strtoupper($_POST['id_Iglesia']);
-//    $id_Usuario = strtoupper($_POST['id_Usuario']);
-    $Contra = strtoupper($_POST['Contra']);   
-//    $id_Persona = strtoupper($_POST['id_Persona']);
+    $id_Iglesia = strtoupper($_POST['id_Iglesia']);  
+    $id_Persona = strtoupper($_POST['id_Persona']);
     $objs = new UsuarioDAO();
-    $var = $objs->ActualizarDatos($No_Persona, $AP_Persona, $Edad_Persona, $Se_Persona, $Es_Civil_Persona, $Ti_Persona, $dire_Persona, $tele_Persona, $correo_Persona, $id_Iglesia, $id_Usuario, $Contra);
+    $var = $objs->ActualizarDatos($No_Persona, $AP_Persona, $Edad_Persona, $Se_Persona, $Es_Civil_Persona, $Ti_Persona, $dire_Persona, $tele_Persona, $correo_Persona, $id_Iglesia, $id_Persona);
     echo $var;
 }
+//LLENAR COMBOX DINÁMICOS
+if ($opc === "ListarMision2") {
+
+    $objs = new UsuarioDAO();
+    $var = $objs->ComboMision2();
+    echo json_encode($var);
+}
+if ($opc === "ListarDistrito2") {
+    $objs = new UsuarioDAO();
+    $id_Mision = $_POST["id_Mision"];
+    $var = $objs->ComboDistrito2($id_Mision);
+    echo json_encode($var);
+}
+if ($opc === "ListarIglesia2") {
+    $objs = new UsuarioDAO();
+    $id_Distrito = $_POST["id_Distrito"];
+    $var = $objs->ComboIglesia2($id_Distrito);
+    echo json_encode($var);
+}
+
+//RECUPERAR CONTRASEÑA
 if ($opc === "RecuperarContra") {
     $correo_Persona = strtoupper($_POST['correo_Persona']);
     $contraactual = strtoupper($_POST['Contra']);

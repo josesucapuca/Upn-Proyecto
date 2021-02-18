@@ -8,10 +8,10 @@ body {
 }
 
 main {
-	max-width: 800px;
+	/*max-width: 800px;*/
 	width: 90%;
 	margin: auto;
-	padding: 40px;
+	padding: 10px;
 }
 
 .formulario {
@@ -162,4 +162,22 @@ main {
 	.formulario__btn {
 		width: 100%;
 	}
+}
+.abs-center {
+  display: flex;
+  align-items: center;
+  /*justify-content: center;*/
+  /*min-height: 100vh;*/
+}
+/*CARD*/
+.card{
+    height: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: auto;
+    
+    /*background-color: rgba(0,0,0,0.5) !important;*/
+}
+.card-header h3{
+    color: #ffffff;
 }

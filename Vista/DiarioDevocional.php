@@ -5,7 +5,6 @@ if ($_SESSION["Usuario"] !== null) {
     <!DOCTYPE html>
     <html lang="es" style="background-image: url('../images/diariodevocional/fodomatutina4.jpg');">
         <head>
-
             <title>ceoadventista.org </title>
             <?php include_once './inc2/Estilos.php'; ?>
             <link rel="stylesheet" type="text/css" media="screen" href="css/fontAdventSans.css">
@@ -17,12 +16,10 @@ if ($_SESSION["Usuario"] !== null) {
             <link rel="icon" href=".../images/iconoweb.png" type="image/x-icon">
             <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
             <!--NUEVO-->
-            <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">-->
             <link href="../css/fullcalendar.min.css" rel="stylesheet" type="text/css"/>
             <link href="../css/icomoon.css" rel="stylesheet" type="text/css"/>
             <link href="../plugins/animate.css/animate.css" rel="stylesheet" type="text/css"/>
             <link href="../plugins/sweetAlert2/sweetalert2.min.css" rel="stylesheet" type="text/css"/>
-    <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>-->
             <style>
                 @media(max-width:750px){
                     .sortable-grid{
@@ -108,13 +105,6 @@ if ($_SESSION["Usuario"] !== null) {
                 .fc-past {
                     background-color: #F1F1F1;
                 }
-
-                /*                hr {
-                                        margin-top: 55rem;
-                                        margin-bottom: 1rem;
-                                        border: 0;
-                                        border-top: 1px solid rgba(0, 0, 0, 0.1);
-                                    }*/
             </style>
         </head>     
         <body class="conta2 bod">
@@ -123,11 +113,9 @@ if ($_SESSION["Usuario"] !== null) {
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="margin-left: 0px;margin-right: 0px;padding-left: 0px;padding-right: 0px;height: 90%;">
                     <div id="header" style="background: none;">
                         <div id="logo-group">
-                            <!-- PLACE YOUR LOGO HERE -->
                             <span id="logo"> <img class="imglog" src="../images/img_logo/adventist-es--white.png" alt="" > </span>                 
                         </div>
                         <div class="pull-right">
-                            <!-- Top menu profile link : this shows only when top menu is active -->
                             <ul id="mobile-profile-img" class="header-dropdown-list padding-5">
                                 <li class="LiReporte" style="display: none">
                                     <a id="Reporte" href="Trabajando.php" class="btn btn-primary" style="font-size: 13px;text-align: center;align-items: center;"> 
@@ -198,19 +186,14 @@ if ($_SESSION["Usuario"] !== null) {
                                     </li>
                                 </ul>
                             </div>
-                            <!-- fullscreen button -->
                         </div>
                     </div>
                     <!-- MAIN CONTENT -->
                     <br>
                     <div id="content" style="margin-bottom: 0px;display: flow-root;height: 100%;">
-                        <!-- widget grid -->
                         <section id="widget-grid" class="">
-                            <!-- row -->
                             <div class="row">
-                                <!-- NEW COL START -->
                                 <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="margin-bottom: 30px">
-                                    <!-- Widget ID (each widget will need unique ID)-->
                                     <div class="jarviswidget jarviswidget-color-blueLight" id="wid-id-10" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-togglebutton="false" data-widget-deletebutton="false" data-widget-fullscreenbutton="false" data-widget-custombutton="false" data-widget-sortable="false">
                                         <header>
                                             <span class="widget-icon"> <i class="fa fa-edit"></i> </span>
@@ -219,15 +202,12 @@ if ($_SESSION["Usuario"] !== null) {
                                         <div class="widget-grid no-padding" style="min-height: 0px">
                                             <div id="content" style="margin-bottom: 100px;">
                                                 <div class="row">
-                                                    <!--<div class="col"></div>--> 
                                                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">                                                      
                                                         <div id="CalendarioWeb"></div>                                                                                                               
                                                     </div>
-                                                    <!--<div class="col"></div>-->
                                                 </div>  
                                             </div>
                                         </div>
-                                        <!--</div>-->
                                     </div>                                  
                                 </article>
                             </div>																
@@ -238,27 +218,16 @@ if ($_SESSION["Usuario"] !== null) {
             <div class="modal fade" id="ModalDevocional" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content" style="background-image:url(../images/diariodevocional/fondodiariodevocional.png);background-repeat: no-repeat;background-size: cover;background-position: top center;position: relative;">
-                        <!--<div class="">-->
-                        <!--                        <div class="modal-header">
-                                                    <h5 class="modal-title" id="tituloEvento"></h5>
-                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                        <span aria-hidden="true">&times;</span>
-                                                    </button>
-                                                </div>-->
                         <div class=" col-xs-12 col-sm-12 col-md-12 col-lg-12 asi">
-                            <img src="../images/diariodevocional/logo-adventista.png" alt="" style="width: 15%;"/>
+                            <img id="imglogo" src="../images/diariodevocional/logo-adventista.png" alt="" style="width: 15%;"/>
                         </div>
                         <div class=" col-xs-12 col-sm-12 col-md-12 col-lg-12 asi">
                             <img src="../images/diariodevocional/letradiariodevocional.png" alt="" style="width: 70%;"/>
-                            <!--<h1 style="color: white">Mi Diario Devocional</h1>-->
                         </div>
                         <div class="modal-body">
                             <input type="hidden" id="txtID_devocional" name="txtID_devocional">
-                            <!--<input type="hidden" id="txtdetalle_devocional" name="txtdetalle_devocional">-->
-                            <!--<input type="text" id="txtFecha" name="txtFecha" />--> 
                             <input type="hidden" id="txtID_persona" name="txtID_persona" value="<?php echo $_SESSION["id_Persona"] ?>"/>
                             <div class="form-row">
-                                <!--<fieldset disabled>-->
                                 <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12">
                                     <div class="form-group has-success">                                
                                         <div class="input-group">
@@ -322,8 +291,7 @@ if ($_SESSION["Usuario"] !== null) {
                                     <img src="../images/diariodevocional/mayordomia2.png" width="100" height="100">
                                 </div>
                                 <div class="col-xs-8 col-sm-6 col-md-6 col-lg-6 abs-center">
-                                    <img src="../images/diariodevocional/letradiariodevocional.png" alt="" style="width: 80%;"/>
-                                    <!--<div class="row"><h1 style="color: white">Mi Diario Devocional</h1> </div>-->                                                                
+                                    <img src="../images/diariodevocional/letradiariodevocional.png" alt="" style="width: 80%;"/>                                                                
                                 </div>
                             </div>
                             <div class="form-row">
@@ -354,24 +322,12 @@ if ($_SESSION["Usuario"] !== null) {
                                 <div class=" col-xs-12 col-sm-12 col-md-12 col-lg-12 asi">
                                     <img src="../images/diariodevocional/pedidoOracion.png" alt="" style="width: 100%;"/>
                                 </div>
-                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                                     <div class="form-group">
-
-                                        <!--                                        <form name="add_name" id="add_name">
-                                                                                    <div class="table-responsive">
-                                                                                        <table class="table table-bordered" id="dynamic_field">
-                                                                                            <tr>
-                                                                                                <td><input type="text" name="name[]" placeholder="Nueva oración" class="form-control name_list" disabled/></td>
-                                                                                                <td><button type="button" name="add" id="add" class="btn btn-primary"><i class="fas fa-plus"></i></button></td>
-                                                                                            </tr>
-                                                                                        </table>
-                                                                                        <input type="button" name="submit" id="submit" class="btn btn-success" value="Submit" />
-                                                                                    </div>
-                                                                                </form>-->
                                         <textarea id="txtPedido" name="txtPedido" rows="3" class="form-control" required="" placeholder="Redacte sus pedidos de oraciones"></textarea>
                                     </div>
                                 </div>
-                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                                     <div class="form-group">
                                         <textarea id="txtContestado" name="txtContestado" rows="3" class="form-control" disabled placeholder="Aún no tiene oraciones contestadas"></textarea>
                                     </div>
@@ -385,7 +341,7 @@ if ($_SESSION["Usuario"] !== null) {
                                     </div>
                                 </div>
                                 <div class=" col-xs-6 col-sm-6 col-md-6 col-lg-6 asi">
-                                    <button type="button" id="btnAgregar" class="btn btn-success">Agregar</button>
+                                    <button type="button" id="btnAgregar" class="btn btn-success">Guardar</button>
                                 </div>
                                 <!--                                <div class=" col-xs-4 col-sm-4 col-md-4 col-lg-4 asi">
                                                                     <button type="button" id="btnModificar" class="btn btn-warning">Modificar</button>
@@ -394,47 +350,19 @@ if ($_SESSION["Usuario"] !== null) {
                                 <!--<button type="button" id="btnEliminar" class="btn btn-danger">Borrar</button>-->
                                 <!--</div>-->
                                 <div class=" col-xs-6 col-sm-6 col-md-6 col-lg-6 asi">
-                                    <button type="button" class="btn btn-default" data-dismiss="modal">cancelar</button>
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
                                 </div>                             
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div id="modalcrud" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                    <form method="post" id="menu_form">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="titulo_crud">CRUD</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                <input type="hidden" id="id_Pedido_Oracion" name="id_Pedido_Oracion">
-                                <div class="form-group row">
-                                    <label class="col-12" for="Pedido_Oracion">Nuevo pedido de Oración</label>
-                                    <div class="col-md-12">
-                                        <input type="text" class="form-control" id="Pedido_Oracion" name="Pedido_Oracion" placeholder="" required>
-                                    </div>
-                                </div>                                                      
-                            </div>
-                            <div class="modal-footer">
-                                <button type="submit" name="action" id="#" value="add" class="btn btn-primary">Guardar</button>
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
+            </div>            
          
            <script src="../js/jquery-3.4.1.min.js" type="text/javascript"></script>
             <script src="../js/jquery.min.js" type="text/javascript"></script>
             <script src="../js/moment.min.js" type="text/javascript"></script>
             <script src="../js/DevocionesMatutinas/DiarioDevocional.js" type="text/javascript"></script>
             <script src="../plugins/sweetAlert2/sweetalert2.all.min.js" type="text/javascript"></script>
-
             <!-- Cerrar sesion-->
             <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>          
             <script src="js/app.config.js"></script>
@@ -447,44 +375,6 @@ if ($_SESSION["Usuario"] !== null) {
             <script src="../js/fullcalendar.min.js" type="text/javascript"></script>
             <script src="../js/es.js" type="text/javascript"></script>                       
             <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>          
-            <script>
-
-                $(document).ready(function () {
-                    var i = 1;
-
-                    $('#add').click(function () {
-                        i++;
-                        $('#dynamic_field').append('<tr id="row' + i + '">' +
-                                //                                '<td><textarea id="txtPedido" name="txtPedido" rows="3" class="form-control" required="" placeholder="Redacte sus pedidos de oraciones"></textarea></td>' +
-                                '<td><input type="text" name="name[]" placeholder="Ingrese la nueva oración" class="form-control name_list" id="txtPedido"/></td>' +
-                                //                                '<td><button type="button" name="remove" id="' + i + '" class="btn btn-danger btn_remove btn-group btn-group-xs"><i class="fas fa-times"></i></i></button> <br>' +
-                                //                                '<button type="button" name="remove" id="' + i + '" class="btn btn-success btn_remove btn-group btn-group-xs"><i class="fas fa-check"></i></i></button></td>' +
-                                '<td><div class="btn-group btn-group-block" role="group">' +
-                                '<button type="button" name="remove" id="' + i + '" class="btn btn-danger btn-xs btn_remove"><i class="fas fa-times"></i></button>' +
-                                '<button type="button" name="remove" id="' + i + '" class="btn btn-success btn-xs btn_remove"><i class="fas fa-check"></i></button>' +
-                                '</div></td>' +
-                                '</tr>');
-                    });
-
-                    $(document).on('click', '.btn_remove', function () {
-                        var id = $(this).attr('id');
-                        $('#row' + id).remove();
-                    });
-
-                    $('#submit').click(function () {
-                        $.ajax({
-                            url: "name.php",
-                            method: "POST",
-                            data: $('#add_name').serialize(),
-                            success: function (data)
-                            {
-                                alert(data);
-                                $('#add_name')[0].reset();
-                            }
-                        });
-                    });
-                })
-            </script>
         </body>
     </html><?php
 } else {

@@ -1,4 +1,18 @@
 $(document).ready(function () {
+//    $("#txtContestado").dblclick(function () {
+//        Swal.fire({
+//            title: 'Are you sure?',
+//            text: "You won't be able to revert this!",
+//            type: 'warning',
+//            showCancelButton: true,
+//            confirmButtonColor: '#3085d6',
+//            cancelButtonColor: '#d33',
+//            confirmButtonText: 'Yes, delete it!'
+////  })
+//        }).then(function () {
+//            $('#txtContestado').prop("readonly", false);
+//        });
+//    });
 //    alert("entrando calendario otra vez");
     $('#CalendarioWeb').fullCalendar({
         header: {
@@ -6,8 +20,8 @@ $(document).ready(function () {
             center: 'title',
             right: 'month,basicweek, basicDay, agendaWeek'
         },
-        dayClick: function (date, allDay, jsEvent, view) {
-//bloqeuar los días pasados y futuros
+        dayClick: function (date, jsEvent, view) {
+            //bloqeuar los días pasados y futuros
             var myDate = new Date();
             var myDateF = new Date();
             var diasAdicionales = -1;
@@ -19,8 +33,8 @@ $(document).ready(function () {
                 Swal.fire({
 //                    type: 'error',
                     imageUrl: 'https://cdn-0.emojis.wiki/emoji-pics/facebook/pensive-face-facebook.png',
-                    title: '¡No se puede crear un diario devocional!',
-                    text: 'en días anteriores!',
+                    title: '¡No se puede desarrollar el diario devocional!',
+                    text: 'Ingresa al día actual!',
                     showConfirmButton: false,
                     timer: 3000
                 });
@@ -37,6 +51,7 @@ $(document).ready(function () {
                 $('#txtAplica').prop("disabled", false);
                 $('#txtPedido').prop("disabled", false);
                 $('#txtMeta').prop("disabled", false);
+                $('#txtContestado').attr('readonly', 'readonly');
                 limpiar();
                 $('#txtFecha').val(date.format());
 //            $('#txtID_persona').val(jsEvent.format());           
@@ -58,6 +73,7 @@ $(document).ready(function () {
             $('#txtMeta').prop("disabled", true);
 // Mostrar información breve en el calendario
             $('#txtTexto').html(calEvent.title);
+            $('#imglogo').html(calEvent.imageurl);
             $('#txtTexto').val(calEvent.title);
 //            //Mostrar información en el modal
             $('#txtID_devocional').val(calEvent.id_Devocional_Diario);
@@ -75,8 +91,13 @@ $(document).ready(function () {
             $('#txtMeta').val(calEvent.Meta);
             FechaHora = calEvent.start._i.split(" ");
             $('#txtFecha').val(FechaHora[0]);
-            $('#txtHora').val(FechaHora[1]);           
-            $("#ModalDevocional").modal();        
+            $('#txtHora').val(FechaHora[1]);
+            $("#ModalDevocional").modal();
+        },
+        eventRender: function (event, eventElement) {
+            if (event.imageurl) {
+                eventElement.find("div.fc-content").prepend("<div align='center'><img src='" + event.imageurl + "' width='80' height='80'></div><br>");
+            }
         }
     });
 });
@@ -84,20 +105,8 @@ $(document).ready(function () {
 //Lista de botones
 var NuevoEvento;
 $('#btnAgregar').click(function () {
-//    $.ajax({
-//        url: "../name.php",
-//        method: "POST",
-//        data: $('#add_name').serialize(),
-//        success: function (data)
-//        {
-//            alert(data);
-            RecolectarDatos();
-//            $('#add_name')[0].reset();
-//
-            EnviarInformacion('agregar', NuevoEvento);
-//        }
-//    });
-
+    RecolectarDatos();
+    EnviarInformacion('agregar', NuevoEvento);
 });
 
 $('#btnEliminar').click(function () {
