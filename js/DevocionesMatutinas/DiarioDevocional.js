@@ -1,18 +1,7 @@
 $(document).ready(function () {
-//    $("#txtContestado").dblclick(function () {
-//        Swal.fire({
-//            title: 'Are you sure?',
-//            text: "You won't be able to revert this!",
-//            type: 'warning',
-//            showCancelButton: true,
-//            confirmButtonColor: '#3085d6',
-//            cancelButtonColor: '#d33',
-//            confirmButtonText: 'Yes, delete it!'
-////  })
-//        }).then(function () {
-//            $('#txtContestado').prop("readonly", false);
-//        });
-//    });
+    $("#txtContestado").dblclick(function () {      
+            $('#txtContestado').prop("readonly", false);
+    });
 //    alert("entrando calendario otra vez");
     $('#CalendarioWeb').fullCalendar({
         header: {
@@ -51,7 +40,7 @@ $(document).ready(function () {
                 $('#txtAplica').prop("disabled", false);
                 $('#txtPedido').prop("disabled", false);
                 $('#txtMeta').prop("disabled", false);
-                $('#txtContestado').attr('readonly', 'readonly');
+                $('#txtContestado').prop('readonly', true);
                 limpiar();
                 $('#txtFecha').val(date.format());
 //            $('#txtID_persona').val(jsEvent.format());           
@@ -71,6 +60,7 @@ $(document).ready(function () {
             $('#txtAplica').prop("disabled", true);
             $('#txtPedido').prop("disabled", true);
             $('#txtMeta').prop("disabled", true);
+            $('#txtContestado').prop("disabled", true);
 // Mostrar información breve en el calendario
             $('#txtTexto').html(calEvent.title);
             $('#imglogo').html(calEvent.imageurl);
@@ -87,7 +77,7 @@ $(document).ready(function () {
             $('#txtResumen').val(calEvent.Resumen_Personal);
             $('#txtAplica').val(calEvent.Aplicacion_Diaria);
             $('#txtPedido').val(calEvent.Pedido_Oracion);
-            $('#txtContestado').val(calEvent.id_Pedido_Oracion);
+            $('#txtContestado').val(calEvent.pedido_contestado);
             $('#txtMeta').val(calEvent.Meta);
             FechaHora = calEvent.start._i.split(" ");
             $('#txtFecha').val(FechaHora[0]);
@@ -130,7 +120,8 @@ function RecolectarDatos() {
         Resumen_Personal: $('#txtResumen').val(),
         Aplicacion_Diaria: $('#txtAplica').val(),
         Meta: $('#txtMeta').val(),
-        Pedido_Oracion: $('#txtPedido').val()
+        Pedido_Oracion: $('#txtPedido').val(),
+        pedido_contestado: $('#txtContestado').val()
 //        Fe_Detalle_Devocional_Diario: $('#txtFecha').val() + " " + $('#txtHora').val(),
 
     };

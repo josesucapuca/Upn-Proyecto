@@ -1,5 +1,5 @@
-var Biblia = '0', Himinario = '0', Musica = '0', video = '0', BibliaR = '0', HiminarioR = '0', MusicaR = '0', videoR = '0', BibliaM = '0', HiminarioM = '0', MusicaM = '0', videoM = '0', BibliaRM = '0', HiminarioRM = '0', MusicaRM = '0', videoRM = '0',
-        NA = '0', JA = '0', AC = '0', NAM = '0', JAM = '0', ACM = '0';
+var  OGE = '0', OGEM = '0', camPro = '', EsPers = '', cant_url = 0;
+var contadurling = 0;
 Actualizardate();
 ListarEstudioBiblico();
 ListarEstudioBiblicoModificar();
@@ -12,14 +12,85 @@ $("#UrlVideoConferencia").keypress(function (e) {
     }
 });
 $("#AgregarCampana").on("click", function () {
+    if (camPro !== "") {
+        if (camPro === "1") {
+            if (OGE !== "0") {
+                var validacion = ValidarFormulario();
+                if (validacion === 1) {
+                    ValidarCod_Camp(validacion);
+                }
+            } else {
+                $.smallBox({
+                    title: "Seleccionar un Grupo de Edad",
+                    content: "<i class='fa fa-times'></i> Seleccionar Grupo de Edad<i></i>",
+                    color: "#C46A69",
+                    iconSmall: "fa fa-times fa-2x fadeInRight animated",
+                    timeout: 2000
+                });
+            }
+        } else if (camPro === "0") {
+            if (EsPers !== '') {
+                if (EsPers === '1') {
+                    if (cant_url > 0) {
+                        var valiurl = 0;
+                        for (var i = 0; i < cant_url; i++) {
+                            if ($("#URLHerramienta" + (i + 1)).val() !== "" && $("#Tit_Url" + (i + 1)).val() !== "" && $("#Fe_Muestra" + (i + 1)).val() !== "") {
 
-    var validacion = ValidarFormulario();
-    if (validacion === 1) {
+                            } else {
+                                valiurl = valiurl + 1;
+                            }
+                        }
+                        if (valiurl > 0) {
+                            $.smallBox({
+                                title: "Ingresar los Datos de URLs",
+                                content: "<i class='fa fa-times'></i> Ingresar Datos Completos<i></i>",
+                                color: "#C46A69",
+                                iconSmall: "fa fa-times fa-2x fadeInRight animated",
+                                timeout: 2000
+                            });
+                        } else {
+                            var validacion = ValidarFormulario();
+                            if (validacion === 1) {
+                                ValidarCod_Camp(validacion);
+                            }
+                        }
+                    } else {
+                        $.smallBox({
+                            title: "Agregar URLs Personalizados",
+                            content: "<i class='fa fa-times'></i> Agregar URLs Personalizados<i></i>",
+                            color: "#C46A69",
+                            iconSmall: "fa fa-times fa-2x fadeInRight animated",
+                            timeout: 2000
+                        });
 
-        ValidarCod_Camp(validacion);
+                    }
+                } else if (EsPers === '0') {
+                    var validacion = ValidarFormulario();
+                    if (validacion === 1) {
+                        ValidarCod_Camp(validacion);
+                    }
+                }
+            } else {
+                $.smallBox({
+                    title: "Seleccionar si es Personalizado",
+                    content: "<i class='fa fa-times'></i> Seleccionar si es Personalizado<i></i>",
+                    color: "#C46A69",
+                    iconSmall: "fa fa-times fa-2x fadeInRight animated",
+                    timeout: 2000
+                });
+            }
+
+        }
     } else {
-
+        $.smallBox({
+            title: "Seleccionar Si es Campaña Programada",
+            content: "<i class='fa fa-times'></i> Seleccionar si es Personalizado<i></i>",
+            color: "#C46A69",
+            iconSmall: "fa fa-times fa-2x fadeInRight animated",
+            timeout: 2000
+        });
     }
+
 });
 $("#ModificarCampana").on("click", function () {
     var validacion = ValidarFormularioModificar();
@@ -50,7 +121,9 @@ $("#AgregarEstudioBiblico").on("click", function () {
 $("#SuscribirteCampana").on("click", function () {
     SuscribiseCampana($("#id_Persona").val(), $("#Cod_Camp_Eva").val());
 });
-
+$("#SuscribirteReunion").on("click", function () {
+    SuscribiseCampana($("#id_Persona").val(), $("#cod_Reu_Est").val());
+});
 $("#CancelModificarCampana").on("click", function () {
     refreshSelectopcCE();
     refreshSelectPlatCE();
@@ -762,7 +835,7 @@ function ListarCampanas(id_Per) {
                 $("#Encargado").append(html);
             } else {
                 html = "";
-                html += '<li class="list-unstyled lipri"><i class="fa fa-fw fa-exclamation text-danger"></i> <a >No hay Campañas Registradas! </a></li>';
+                html += '<li class="list-unstyled lipri"><i class="fa fa-fw fa-exclamation text-danger"></i> <a >No hay Campaña registrada </a></li>';
                 $("#Encargado").empty();
                 $("#Encargado").append(html);
             }
@@ -808,15 +881,15 @@ function ListarReunionesEstudio(id_Per) {
                 $("#EncargadoReunion").append(html);
             } else {
                 html = "";
-                html += '<li class="list-unstyled lipri"><i class="fa fa-fw fa-exclamation text-danger"></i> <a >No hay Campañas Registradas! </a></li>';
+                html += '<li class="list-unstyled lipri"><i class="fa fa-fw fa-exclamation text-danger"></i> <a > No hay Estudio Bíblico registrado </a></li>';
                 $("#EncargadoReunion").empty();
                 $("#EncargadoReunion").append(html);
             }
         }
     });
 }
-function AbrirEstudio(a){
-     $.ajax({
+function AbrirEstudio(a) {
+    $.ajax({
         type: "POST",
         url: '../Controlador/CampanaEvangelistica.php',
         data: {opc: "AEB", a: a},
@@ -853,7 +926,7 @@ function ListarCampanaParticipante(id_Per) {
                 $("#Participando").append(html);
             } else {
                 html = "";
-                html += '<li class="list-unstyled lipri"><i class="fa fa-fw fa-exclamation text-danger"></i> <a >No Participan en Ninguna Campaña! </a></li>';
+                html += '<li class="list-unstyled lipri"><i class="fa fa-fw fa-exclamation text-danger"></i> <a > No hay Campaña registrada </a></li>';
                 $("#Participando").empty();
                 $("#Participando").append(html);
             }
@@ -884,7 +957,7 @@ function ListarReunionesParticipantes(id_Per) {
                 $("#ParticipandoReunion").append(html);
             } else {
                 html = "";
-                html += '<li class="list-unstyled lipri"><i class="fa fa-fw fa-exclamation text-danger"></i> <a >No Participan en Ninguna Campaña! </a></li>';
+                html += '<li class="list-unstyled lipri"><i class="fa fa-fw fa-exclamation text-danger"></i> <a > No hay Estudio Bíblico registrado </a></li>';
                 $("#ParticipandoReunion").empty();
                 $("#ParticipandoReunion").append(html);
             }
@@ -901,7 +974,7 @@ function ListarEstudioBiblico() {
             var jsonData = JSON.parse(response);
             if (jsonData.length > 0) {
                 html = "";
-                html += '<option value="">Seleccionar Estudio Biblico</option>';
+                html += '<option value="">Seleccionar Estudio Bíblico</option>';
                 for (var i = 0; i < jsonData.length; i++) {
 
                     html += '<option value="' + jsonData[i].id_Estudio_Biblico + '">' + jsonData[i].No_Estudio_Biblico + '</option>';
@@ -910,7 +983,7 @@ function ListarEstudioBiblico() {
                 $("#EstudioBiblicoReunion").append(html);
             } else {
                 html = "";
-                html += '<option value="">No Hay Estudios</option>';
+                html += '<option value="">No Hay Estudios Bíblico</option>';
                 $("#EstudioBiblicoReunion").empty();
                 $("#EstudioBiblicoReunion").append(html);
             }
@@ -927,7 +1000,7 @@ function ListarEstudioBiblicoModificar() {
             var jsonData = JSON.parse(response);
             if (jsonData.length > 0) {
                 html = "";
-                html += '<option value="">Seleccionar Estudio Biblico</option>';
+                html += '<option value="">Seleccionar Estudio Bíblico</option>';
                 for (var i = 0; i < jsonData.length; i++) {
 
                     html += '<option value="' + jsonData[i].id_Estudio_Biblico + '">' + jsonData[i].No_Estudio_Biblico + '</option>';
@@ -944,6 +1017,7 @@ function ListarEstudioBiblicoModificar() {
     });
 }
 function IngresarCampana() {
+    var deferred = $.Deferred();
     $.ajax({
         type: "POST",
         url: '../Controlador/CampanaEvangelistica.php',
@@ -951,27 +1025,59 @@ function IngresarCampana() {
             id_peC: $("#id_peC").val(), OpcVideo: $("#OpcVideo").val(), PlataformaVideoLLamada: $("#PlataformaVideoLLamada").val(),
             UrlVideoConferencia: $("#UrlVideoConferencia").val(), Cod_Campana: $("#Cod_Campana").val(),
             Descripcion: $("#Descripcion").val(), Fe_Inicio: $("#Fe_Inicio").val(),
-            Fe_Fin: $("#Fe_Fin").val(), Biblia: Biblia,
-            Himinario: Himinario, Musica: Musica, video: video
+            Fe_Fin: $("#Fe_Fin").val(), Es_Campana_Programada: camPro, GrupoEdad: OGE
         },
         success: function (response)
         {
-            if (response === "true") {
+            var jsonData = JSON.parse(response);
+            if (EsPers === "") {
                 $.smallBox({
-                    title: "Campaña Resgistrado Correctamente!",
+                    title: "Campaña Evangelistica Resgistrado Correctamente!",
                     content: "<i class='fa fa-check'></i> Registrado Correctamente...<i></i>",
                     color: "#659265",
                     iconSmall: "fa fa-check fa-2x fadeInRight animated",
                     timeout: 2000
                 });
+                return deferred.resolve();
             } else {
-                $.smallBox({
-                    title: "Error al Registrar Campaña Evangelistica",
-                    content: "<i class='fa fa-times'></i> Error al Registrar...<i></i>",
-                    color: "#C46A69",
-                    iconSmall: "fa fa-times fa-2x fadeInRight animated",
-                    timeout: 2000
-                });
+                if (EsPers === "1") {
+                    var j = 0;
+                    if (cant_url > 0) {
+                        contadurling = 0;
+                        for (var i = 0; i < cant_url; i++) {
+                            IngresarUrlPer($("#Tit_Url" + (i + 1)).val(), $("#URLHerramienta" + (i + 1)).val(), $("#Fe_Muestra" + (i + 1)).val(), jsonData[0].id);
+                            if ((i + 1) !== cant_url) {
+                                contadurling = contadurling + 1;
+                            } else {
+                                contadurling = contadurling + 1;
+                                return deferred.resolve();
+                            }
+                        }
+                    }
+                } else if (EsPers === "0") {
+                    $.smallBox({
+                        title: "Campaña Evangelistica Resgistrado Correctamente!",
+                        content: "<i class='fa fa-check'></i> Registrado Correctamente...<i></i>",
+                        color: "#659265",
+                        iconSmall: "fa fa-check fa-2x fadeInRight animated",
+                        timeout: 2000
+                    });
+                    return deferred.resolve();
+                }
+            }
+        }
+    });
+}
+function IngresarUrlPer(a, b, c, d) {
+    var deferred = $.Deferred();
+    $.ajax({
+        type: "POST",
+        url: '../Controlador/CampanaEvangelistica.php',
+        data: {opc: "IURLPCE", a: a, b: b, c: c, d: d},
+        success: function (response)
+        {
+            if (response) {
+                return deferred.resolve();
             }
         }
     });
@@ -984,14 +1090,13 @@ function IngresarEstudioBiblico() {
             id_peR: $("#id_peR").val(), OpcVideo: $("#OpcVideoReunion").val(), PlataformaVideoLLamada: $("#PlataformaVideoLLamadaReunion").val(),
             UrlVideoConferencia: $("#UrlVideoConferenciaReunion").val(), Cod_Campana: $("#Cod_Reunion").val(),
             Descripcion: $("#DescripcionReunion").val(), Fe_Inicio: $("#Fe_InicioReunion").val(),
-            Fe_Fin: $("#Fe_FinReunion").val(), Biblia: BibliaR,
-            Himinario: HiminarioR, Musica: MusicaR, video: videoR, id_Estudio: $("#EstudioBiblicoReunion").val()
+            Fe_Fin: $("#Fe_FinReunion").val(),  id_Estudio: $("#EstudioBiblicoReunion").val()
         },
         success: function (response)
         {
             if (response === "true") {
                 $.smallBox({
-                    title: "Reunion de Estudio Biblico Resgistrado Correctamente!",
+                    title: "Reunion de Estudio Bíblico Resgistrado Correctamente!",
                     content: "<i class='fa fa-check'></i> Registrado Correctamente...<i></i>",
                     color: "#659265",
                     iconSmall: "fa fa-check fa-2x fadeInRight animated",
@@ -1000,7 +1105,7 @@ function IngresarEstudioBiblico() {
                 //setTimeout(location.reload(), 3000);
             } else {
                 $.smallBox({
-                    title: "Error al Registrar Reunion de Estudio Biblico",
+                    title: "Error al Registrar Reunion de Estudio Bíblico",
                     content: "<i class='fa fa-times'></i> Error al Registrar...<i></i>",
                     color: "#C46A69",
                     iconSmall: "fa fa-times fa-2x fadeInRight animated",
@@ -1025,7 +1130,7 @@ function ModificarCampana() {
         {
             if (response === "true") {
                 $.smallBox({
-                    title: "Campaña Modificado Correctamente!",
+                    title: "Campaña de Evangelismo Modificado Correctamente!",
                     content: "<i class='fa fa-check'></i> Registrado Correctamente...<i></i>",
                     color: "#659265",
                     iconSmall: "fa fa-check fa-2x fadeInRight animated",
@@ -1033,7 +1138,7 @@ function ModificarCampana() {
                 });
             } else {
                 $.smallBox({
-                    title: "Error al Modificar Campaña Evangelistica",
+                    title: "Error al Modificar Campaña de Evangelismo",
                     content: "<i class='fa fa-times'></i> Error al Registrar...<i></i>",
                     color: "#C46A69",
                     iconSmall: "fa fa-times fa-2x fadeInRight animated",
@@ -1058,7 +1163,7 @@ function ModificarEstudio() {
         {
             if (response === "true") {
                 $.smallBox({
-                    title: "Reunión Estudio Biblico Modificado Correctamente!",
+                    title: "Reunión Estudio Bíblico Modificado Correctamente!",
                     content: "<i class='fa fa-check'></i> Modificado Correctamente...<i></i>",
                     color: "#659265",
                     iconSmall: "fa fa-check fa-2x fadeInRight animated",
@@ -1096,7 +1201,7 @@ function SuscribiseCampana(id_Per, Cod) {
                 setTimeout(location.reload(), 3000);
             } else if (jsonData[0].res === "2") {
                 $.smallBox({
-                    title: "Eres Encargado de la Campaña Evangelistica",
+                    title: "Eres Encargado de la Campaña de Evangelismo",
                     content: "<i class='fa fa-times'></i> Error al Registrar...<i></i>",
                     color: "#C46A69",
                     iconSmall: "fa fa-times fa-2x fadeInRight animated",
@@ -1104,7 +1209,7 @@ function SuscribiseCampana(id_Per, Cod) {
                 });
             } else if (jsonData[0].res === "3") {
                 $.smallBox({
-                    title: "La Campana no esta Activo o No existe",
+                    title: "La Campaña de Evangelismo no esta Activo o No existe",
                     content: "<i class='fa fa-times'></i> Error al Registrar...<i></i>",
                     color: "#C46A69",
                     iconSmall: "fa fa-times fa-2x fadeInRight animated",
@@ -1340,12 +1445,28 @@ function Actualizardate() {
 }
 $("#Fe_Inicio").on("change", function () {
     $("#Fe_Fin").attr("min", $("#Fe_Inicio").val());
+    if (cant_url > 0) {
+        for (var i = 0; i < cant_url; i++) {
+            if ($("#Fe_Muestra" + (i + 1)).val() < $("#Fe_Inicio").val()) {
+                $("#Fe_Muestra" + (i + 1)).val("");
+            }
+            $("#Fe_Muestra" + (i + 1)).attr("min", $("#Fe_Inicio").val());
+        }
+    }
 });
 $("#Fe_InicioM").on("change", function () {
     $("#Fe_Fin").attr("min", $("#Fe_Inicio").val());
 });
 $("#Fe_Fin").on("change", function () {
     $("#Fe_Inicio").attr("max", $("#Fe_Fin").val());
+    if (cant_url > 0) {
+        for (var i = 0; i < cant_url; i++) {
+            if ($("#Fe_Muestra" + (i + 1)).val() > $("#Fe_Fin").val()) {
+                $("#Fe_Muestra" + (i + 1)).val("//");
+            }
+            $("#Fe_Muestra" + (i + 1)).attr("max", $("#Fe_Fin").val());
+        }
+    }
 });
 $("#Fe_FinM").on("change", function () {
     $("#Fe_InicioM").attr("max", $("#Fe_FinM").val());
@@ -1508,166 +1629,88 @@ $(".lipartRe").on("click", function () {
 $(".UnidActionMa").on("click", function () {
     if ($("#liUAM").css("display") === "none") {
         $("#liUAM").show("slow");
-        $("#GrupoPeque").hide("slow");
         $(".iuam").removeClass("fa-plus").addClass("fa-minus");
     } else {
         $("#liUAM").hide("slow");
         $(".iuam").removeClass("fa-minus").addClass("fa-plus");
     }
 });
-$(".GrupPeque").on("click", function () {
-    if ($("#GrupoPeque").css("display") === "none") {
-        $("#GrupoPeque").show("slow");
-        $("#liUAM").hide("slow");
-        $(".iuam").removeClass("fa-plus").addClass("fa-minus");
+$(".GrupPequetA").on("click", function () {
+    if ($("#GrupoPequeLA").css("display") === "none") {
+        $("#GrupoPequeLA").show("slow");
+        $(".igpta").removeClass("fa-plus").addClass("fa-minus");
     } else {
-        $("#GrupoPeque").hide("slow");
-        $(".iuam").removeClass("fa-minus").addClass("fa-plus");
+        $("#GrupoPequeLA").hide("slow");
+        $(".igpta").removeClass("fa-minus").addClass("fa-plus");
+    }
+});
+$(".GrupPequetJ").on("click", function () {
+    if ($("#GrupoPequeLJ").css("display") === "none") {
+        $("#GrupoPequeLJ").show("slow");
+        $(".igptj").removeClass("fa-plus").addClass("fa-minus");
+    } else {
+        $("#GrupoPequeLJ").hide("slow");
+        $(".igptj").removeClass("fa-minus").addClass("fa-plus");
+    }
+});
+$(".CapGPB").on("click", function () {
+    if ($("#CapGPBL").css("display") === "none") {
+        $("#CapGPBL").show("slow");
+        $(".icgpb").removeClass("fa-plus").addClass("fa-minus");
+    } else {
+        $("#CapGPBL").hide("slow");
+        $(".icgpb").removeClass("fa-minus").addClass("fa-plus");
     }
 });
 
-$(document).on('change', 'input[type="checkbox"]', function (e) {
-    if ($('#EsBiblia').prop('checked') === true) {
-        Biblia = '1';
-    } else {
-        Biblia = '0';
-    }
-    if ($('#EsHiminario').prop('checked') === true) {
-        Himinario = '1';
-    } else {
-        Himinario = '0';
-    }
-    if ($('#EsMusica').prop('checked') === true) {
-        Musica = '1';
-    } else {
-        Musica = '0';
-    }
-    if ($('#EsVideo').prop('checked') === true) {
-        video = '1';
-    } else {
-        video = '0';
-    }
-    if ($('#EsBibliaR').prop('checked') === true) {
-        BibliaR = '1';
-    } else {
-        BibliaR = '0';
-    }
-    if ($('#EsHiminarioR').prop('checked') === true) {
-        HiminarioR = '1';
-    } else {
-        HiminarioR = '0';
-    }
-    if ($('#EsMusicaR').prop('checked') === true) {
-        MusicaR = '1';
-    } else {
-        MusicaR = '0';
-    }
-    if ($('#EsVideoR').prop('checked') === true) {
-        videoR = '1';
-    } else {
-        videoR = '0';
-    }
-    if ($('#EsBibliaM').prop('checked') === true) {
-        BibliaM = '1';
-    } else {
-        BibliaM = '0';
-    }
-    if ($('#EsHiminarioM').prop('checked') === true) {
-        HiminarioM = '1';
-    } else {
-        HiminarioM = '0';
-    }
-    if ($('#EsMusicaM').prop('checked') === true) {
-        MusicaM = '1';
-    } else {
-        MusicaM = '0';
-    }
-    if ($('#EsVideoM').prop('checked') === true) {
-        videoM = '1';
-    } else {
-        videoM = '0';
-    }
-    if ($('#EsBibliaRM').prop('checked') === true) {
-        BibliaRM = '1';
-    } else {
-        BibliaRM = '0';
-    }
-    if ($('#EsHiminarioRM').prop('checked') === true) {
-        HiminarioRM = '1';
-    } else {
-        HiminarioRM = '0';
-    }
-    if ($('#EsMusicaRM').prop('checked') === true) {
-        MusicaRM = '1';
-    } else {
-        MusicaRM = '0';
-    }
-    if ($('#EsVideoRM').prop('checked') === true) {
-        videoRM = '1';
-    } else {
-        videoRM = '0';
-    }
-});
 $(document).on('click', 'input[type="radio"]', function (e) {
     if ($('#EsGrupoNA').prop('checked') === true) {
-        if (NA === '1') {
+        if (OGE === '1') {
             $('#EsGrupoNA').removeAttr('checked');
-            NA = '0';
+            OGE = '0';
         } else {
-            NA = '1';
+            OGE = '1';
         }
-    } else {
-        NA = '0';
     }
     if ($('#EsGrupoJA').prop('checked') === true) {
-        if (JA === '1') {
+        if (OGE === '3') {
             $('#EsGrupoJA').removeAttr('checked');
-            JA = '0';
+            OGE = '0';
         } else {
-            JA = '1';
+            OGE = '3';
         }
-    } else {
-        JA = '0';
     }
     if ($('#EsGrupoAC').prop('checked') === true) {
-        if ($('#EsGrupoAC').prop('checked') === true && AC === '1') {
+        if (OGE === '2') {
             $('#EsGrupoAC').removeAttr('checked');
-            AC = '0';
+            OGE = '0';
         } else {
-            AC = '1';
+            OGE = '2';
         }
-    } else {
-        AC = '0';
     }
     if ($('#EsGrupoNAM').prop('checked') === true) {
-        if ($('#EsGrupoNAM').prop('checked') === true && NAM === '1') {
+        if (OGEM === '1') {
             $('#EsGrupoNAM').removeAttr('checked');
-            NAM = '0';
+            OGEM = '0';
         } else {
-            NAM = '1';
+            OGEM = '1';
         }
-    } else {
-        NAM = '0';
     }
     if ($('#EsGrupoJAM').prop('checked') === true) {
-        if ($('#EsGrupoJAM').prop('checked') === true && JAM === '1') {
+        if (OGEM === '3') {
             $('#EsGrupoJAM').removeAttr('checked');
-            JAM = '0';
+            OGEM = '0';
         } else {
-            JAM = '1';
+            OGEM = '3';
         }
-    } else {
-        JAM = '0';
     }
     if ($('#EsGrupoACM').prop('checked') === true) {
-        if ($('#EsGrupoACM').prop('checked') === true && ACM === '1') {
+        if (OGEM === '2') {
             $('#EsGrupoACM').removeAttr('checked');
-            ACM = '0';
+            OGEM = '0';
         } else {
-            ACM = '1';
+            OGEM = '2';
         }
-    } else {
-        ACM = '0';
     }
 });
 function LimpiarIngresarCE() {
@@ -1681,6 +1724,7 @@ function LimpiarIngresarCE() {
     $("#EsHiminario").prop("checked", false);
     $("#EsMusica").prop("checked", false);
     $("#EsVideo").prop("checked", false);
+    $("#CampPLat").hide();
     $(".LN").removeClass("state-error state-success");
     $(".LO").removeClass("state-error state-success");
     $(".LP").removeClass("state-error state-success");
@@ -1689,6 +1733,8 @@ function LimpiarIngresarCE() {
     $(".LD").removeClass("state-error state-success");
     $(".LIN").removeClass("state-error state-success");
     $(".LFI").removeClass("state-error state-success");
+
+    
 }
 function LimpiarModificarCE() {
     $("#NombreCampanaM").val("");
@@ -1772,12 +1818,36 @@ function ValidarCod_Camp(a) {
                             $("#valcod").css("display", "block");
                         } else {
                             if (a === 1) {
-                                IngresarCampana();
-                                ListarCampanas($("#id_Persona").val());
-                                $("#CancelarAgreegCamp").click();
-                                refreshSelectopcCE();
-                                refreshSelectPlatCE();
-                                LimpiarIngresarCE();
+                                $.when(IngresarCampana()).then(function j() {
+                                    window.setTimeout(function () {
+                                        if (cant_url === contadurling) {
+                                            $.smallBox({
+                                                title: "URL's Registrados Correctamente!",
+                                                content: "<i class='fa fa-check'></i> Registrado Correctamente...<i></i>",
+                                                color: "#659265",
+                                                iconSmall: "fa fa-check fa-2x fadeInRight animated",
+                                                timeout: 2000
+                                            });
+                                        } else {
+                                            $.smallBox({
+                                                title: "Error al Registrar URL's",
+                                                content: "<i class='fa fa-times'></i> Error al Registrar...<i></i>",
+                                                color: "#C46A69",
+                                                iconSmall: "fa fa-times fa-2x fadeInRight animated",
+                                                timeout: 2000
+                                            });
+                                        }
+                                        ListarCampanas($("#id_Persona").val());
+                                        $("#CancelarAgreegCamp").click();
+                                        refreshSelectopcCE();
+                                        refreshSelectPlatCE();
+                                        LimpiarIngresarCE();
+                                        EsconderUrl();
+                                        EsconderPersonalizado();
+                                        EsconderProgramada();
+                                    }
+                                    , 2000);
+                                });
                             } else {
                                 $("#valcod").css("display", "none");
                             }
@@ -1788,4 +1858,221 @@ function ValidarCod_Camp(a) {
         });
     }
 
+}
+$('#ModalLeccionDRMINISTRIES').each(function () {
+
+    $this = $(this);
+    //al abrir play video
+    $this.on('shown.bs.modal', function () {
+        toggleVideo('playVideo', $(this));
+    });
+    //al cerrar modal pause video
+    $this.on('hidden.bs.modal', function () {
+        toggleVideo('pauseVideo', $(this));
+    })
+});
+$('#ModalLeccionAIDPA').each(function () {
+
+    $this = $(this);
+    //al abrir play video
+    $this.on('shown.bs.modal', function () {
+        toggleVideo('playVideo', $(this));
+    });
+    //al cerrar modal pause video
+    $this.on('hidden.bs.modal', function () {
+        toggleVideo('pauseVideo', $(this));
+    })
+});
+$('#ModalResumenBullon').each(function () {
+
+    $this = $(this);
+    //al abrir play video
+    $this.on('shown.bs.modal', function () {
+        toggleVideo('playVideo', $(this));
+    });
+    //al cerrar modal pause video
+    $this.on('hidden.bs.modal', function () {
+        toggleVideo('pauseVideo', $(this));
+    })
+});
+$('#ModalLeccionDaniel').each(function () {
+
+    $this = $(this);
+    //al abrir play video
+    $this.on('shown.bs.modal', function () {
+        toggleVideo('playVideo', $(this));
+    });
+    //al cerrar modal pause video
+    $this.on('hidden.bs.modal', function () {
+        toggleVideo('pauseVideo', $(this));
+    })
+});
+$('#ModalIngresarCampana').each(function () {
+   
+    $(".modal-dialog").resize(function (){
+        $(".modal-backdrop .fade .in").height($('.modal-dialog').height());
+    });
+});
+function toggleVideo(state, div) {
+    var iframe = div.find("iframe")[0].contentWindow;
+    iframe.postMessage('{"event":"command","func":"' + state + '","args":""}', '*');
+}
+$("#DivProgramada").on('click', 'input[type="radio"]', function (e) {
+    if ($('#EsProgramada').prop('checked') === true) {
+        camPro = '1';
+        $("#TitPersonalizada").hide("slow");
+        $("#divPersonalizada").hide("slow");
+        $("#TitGrupoEdad").show("slow");
+        $("#divGrupoEdad").show("slow");
+
+        $("#titUrl").hide("slow");
+        $("#divbtnurl").hide("slow");
+        $("#url_Programados").hide("slow");
+        EsPers = '';
+        $("#Es_Personalizar").prop("checked", false);
+        $("#NO_Personalizar").prop("checked", false);
+        ingresarCamProgramada();
+        for (var i = 0; i < (cant_url); i++) {
+            $("#divurl" + (i + 1)).remove();
+        }
+        cant_url = 0;
+    }
+    if ($('#NoProgramada').prop('checked') === true) {
+        camPro = '0';
+        EsPers = '';
+        $("#TitPersonalizada").show("slow");
+        $("#divPersonalizada").show("slow");
+        $("#TitGrupoEdad").hide("slow");
+        $("#divGrupoEdad").hide("slow");
+        LimpiarIngresarCE();
+    }
+});
+
+function EsconderUrl() {
+    $("#titUrl").hide();
+    $("#divbtnurl").hide();
+    $("#url_Programados").hide();
+    
+}
+function EsconderPersonalizado() {
+    $("#TitPersonalizada").hide();
+    $("#divPersonalizada").hide();
+    $("#Es_Personalizar").prop("checked", false);
+    $("#NO_Personalizar").prop("checked", false);
+    for (var i = 0; i < (cant_url); i++) {
+        $("#divurl" + (i + 1)).remove();
+    }
+    EsPers = '';
+    cant_url = 0;
+    OGE = '0';
+}
+function EsconderProgramada() {
+    $("#TitGrupoEdad").hide();
+    $("#divGrupoEdad").hide();
+    $("#NoProgramada").prop("checked", false);
+    $("#EsProgramada").prop("checked", false);
+    camPro = '';
+}
+$("#divPersonalizada").on('click', 'input[type="radio"]', function (e) {
+    if ($('#Es_Personalizar').prop('checked') === true) {
+        EsPers = '1';
+        $("#titUrl").show("slow");
+        $("#divbtnurl").show("slow");
+        $("#url_Programados").show("slow");
+    }
+    if ($('#NO_Personalizar').prop('checked') === true) {
+        EsPers = '0';
+        $("#titUrl").hide("slow");
+        $("#divbtnurl").hide("slow");
+        $("#url_Programados").hide("slow");
+        for (var i = 0; i < (cant_url); i++) {
+            $("#divurl" + (i + 1)).remove();
+        }
+        cant_url = 0;
+    }
+});
+$("#btnAgregarurl").on("click", function () {
+    cant_url = cant_url + 1;
+    var htmlur = '';
+    htmlur += '<div id="divurl' + cant_url + '" style="margin-bottom: 10px;">';
+    htmlur += '<hr><div class="col-md-4 ">';
+    htmlur += '<div class="form-group">';
+    htmlur += '<section style="padding-right: 5px;">';
+    htmlur += '<label class="label">URL</label>';
+    htmlur += '<label class="input foring LNM">';
+    htmlur += '<input type="text" id="URLHerramienta' + cant_url + '" name="URLHerramienta' + cant_url + '" class="form-control" placeholder="Nombre de Campaña Evangelistica" required="">';
+    htmlur += '</label>';
+    htmlur += '</section>';
+    htmlur += '</div>';
+    htmlur += '</div>';
+    htmlur += '<div class="col-md-4 ">';
+    htmlur += '<div class="form-group">';
+    htmlur += '<section style="padding-right: 5px;">';
+    htmlur += '<label class="label">Titulo de URL</label>';
+    htmlur += '<label class="input foring LNM">';
+    htmlur += '<input type="text" id="Tit_Url' + cant_url + '" name="Tit_Url' + cant_url + '" class="form-control" placeholder="Nombre de Campaña Evangelistica" required="">';
+    htmlur += '</label>';
+    htmlur += '</section>';
+    htmlur += '</div> ';
+    htmlur += '</div>';
+    htmlur += '<div class="col-md-3 ">';
+    htmlur += '<div class="form-group">';
+    htmlur += '<section style="padding-right: 5px;">';
+    htmlur += '<label class="label">Fecha</label>';
+    htmlur += '<label class="input foring LNM">';
+    htmlur += '<input type="date" id="Fe_Muestra' + cant_url + '" name="Fe_Muestra' + cant_url + '" class="form-control" placeholder="Nombre de Campaña Evangelistica" required="" min="' + $("#Fe_Inicio").val() + '" max="' + $("#Fe_Fin").val() + '">';
+    htmlur += '</label>';
+    htmlur += '</section>';
+    htmlur += '</div>';
+    htmlur += '</div>';
+    htmlur += '<div class="col-md-1">';
+    htmlur += '<div class="form-group" style="text-align: center;">';
+    htmlur += '<section style="margin-bottom: 0px;height: 100%;">';
+    htmlur += '<label class="label" style="text-align: center;">Eliminar</label>';
+    htmlur += '<label class="input foring LNM" style="">';
+    htmlur += '<button id="btn_Agregarurl' + cant_url + '" onclick="EliminarUrlPer(' + cant_url + ')" type="button" class="btn btn-danger" style="padding: 6px 12px;width: 100%;"><i class="fa fa-minus"></i></button>';
+    htmlur += '</label>';
+    htmlur += '</section>';
+    htmlur += '</div>';
+    htmlur += '</div>';
+    htmlur += '</div>';
+    $("#url_Programados").append(htmlur);
+    for (var i = 0; i < (cant_url - 1); i++) {
+        $("#btn_Agregarurl" + (i + 1)).attr("disabled", true);
+    }
+});
+function EliminarUrlPer(a) {
+    cant_url = cant_url - 1;
+    $("#divurl" + a).remove();
+    for (var i = 0; i < (cant_url); i++) {
+        $("#btn_Agregarurl" + (i + 1)).attr("disabled", false);
+    }
+    for (var i = 0; i < (cant_url - 1); i++) {
+        $("#btn_Agregarurl" + (i + 1)).attr("disabled", true);
+    }
+}
+function validarcampro(a) {
+    if (a > 0) {
+        camPro = '';
+    } else {
+        camPro = '0';
+    }
+}
+function ingresarCamProgramada() {
+    $.ajax({
+        type: "POST",
+        url: '../Controlador/CampanaEvangelistica.php',
+        data: {opc: "LCEP"},
+        success: function (response)
+        {
+            var jsonData = JSON.parse(response);
+            if (jsonData.length > 0) {
+                for (var i = 0; i < jsonData.length; i++) {
+                    $("#NombreCampana").val(jsonData[i].No_Campama_Programada);
+                    $("#Fe_Inicio").val(jsonData[i].Fe_Inicio);
+                    $("#Fe_Fin").val(jsonData[i].Fe_Final);
+                }
+            }
+        }
+    });
 }

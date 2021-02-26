@@ -40,109 +40,39 @@ if ($_SESSION["Usuario"] !== null) {
                 }
             </style>
         </head>
-
-        <!--
-
-        TABLE OF CONTENTS.
-        
-        Use search to find needed section.
-        
-        ===================================================================
-        
-        |  01. #CSS Links                |  all CSS links and file paths  |
-        |  02. #FAVICONS                 |  Favicon links and file paths  |
-        |  03. #GOOGLE FONT              |  Google font link              |
-        |  04. #APP SCREEN / ICONS       |  app icons, screen backdrops   |
-        |  05. #BODY                     |  body tag                      |
-        |  06. #HEADER                   |  header tag                    |
-        |  07. #PROJECTS                 |  project lists                 |
-        |  08. #TOGGLE LAYOUT BUTTONS    |  layout buttons and actions    |
-        |  09. #MOBILE                   |  mobile view dropdown          |
-        |  10. #SEARCH                   |  search field                  |
-        |  11. #NAVIGATION               |  left panel & navigation       |
-        |  12. #RIGHT PANEL              |  right panel userlist          |
-        |  13. #MAIN PANEL               |  main panel                    |
-        |  14. #MAIN CONTENT             |  content holder                |
-        |  15. #PAGE FOOTER              |  page footer                   |
-        |  16. #SHORTCUT AREA            |  dropdown shortcuts area       |
-        |  17. #PLUGINS                  |  all scripts and plugins       |
-        
-        ===================================================================
-        
-        -->
-
-        <!-- #BODY -->
-        <!-- Possible Classes
-
-                * 'smart-style-{SKIN#}'
-                * 'smart-rtl'         - Switch theme mode to RTL
-                * 'menu-on-top'       - Switch to top navigation (no DOM change required)
-                * 'no-menu'			  - Hides the menu completely
-                * 'hidden-menu'       - Hides the main menu but still accessable by hovering over left edge
-                * 'fixed-header'      - Fixes the header
-                * 'fixed-navigation'  - Fixes the main menu
-                * 'fixed-ribbon'      - Fixes breadcrumb
-                * 'fixed-page-footer' - Fixes footer
-                * 'container'         - boxed layout mode (non-responsive: will not work with fixed-navigation & fixed-ribbon)
-        -->
         <body class="conta bod">
-            <input id="PersonaUsuario" type="hidden" value="<?php echo $_SESSION["Persona"] ?>">
+            <input id="PersonaUsuario" type="hidden" value="<?php echo utf8_encode ($_SESSION["Persona"]) ?>">
             <div class="row" style=" margin-left: 0px;margin-right: 0px;height: 100%;">
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="margin-left: 0px;margin-right: 0px;padding-left: 0px;padding-right: 0px;height: 90%;">
                     <!-- HEADER -->
                     <div id="header" style="background: none;">
                         <div id="logo-group">
-
-                            <!-- PLACE YOUR LOGO HERE -->
                             <span id="logo"> <img class="imglog" src="../images/img_logo/adventist-es--white.png" alt="SmartAdmin" > </span>
-                            <!-- END LOGO PLACEHOLDER -->
-
-                            <!-- Note: The activity badge color changes when clicked and resets the number to 0
-                            Suggestion: You may want to set a flag when this happens to tick off all checked messages / notifications -->
                         </div>
                         <div class="pull-right">
-
-                            <!-- Top menu profile link : this shows only when top menu is active -->
-                            <ul id="mobile-profile-img" class="header-dropdown-list padding-5">
-                                <li class="LiReporte" style="display: none">
-                                    <a id="Reporte" href="Trabajando.php" class="btn btn-primary" style="font-size: 13px;text-align: center;align-items: center;"> 
-                                        <i class="fa fa-bar-chart-o"></i>
-                                    </a>
-                                </li>
+                            <ul id="mobile-profile-img" class="header-dropdown-list padding-5">                               
                                 <li class="">
                                     <a href="#" class="btn btn-circle btn-primary"  data-toggle="dropdown" style="font-size: 15px;text-align: center;align-items: center;padding-top: 2px;"> 
                                         <i class="fa fa-sort-desc"></i>
                                     </a>
-                                    <ul class="dropdown-menu pull-right">
-                                        <li>
-                                            <a href="javascript:void(0);" class="padding-10 padding-top-0 padding-bottom-0"><i class="fa fa-cog"></i> <u>C</u>onfiguración</a>
-                                        </li>
-                                        <li class="divider"></li>
+                                    <ul class="dropdown-menu pull-right">                                      
                                         <li>
                                             <a href="Perfil.php" class="padding-10 padding-top-0 padding-bottom-0"> <i class="fa fa-user"></i> <u>P</u>erfil</a>
-                                        </li>
-                                        <li class="divider"></li>
-
+                                        </li>                                      
                                         <li class="divider"></li>
                                         <li>
                                             <a href="javascript:void(0);" class="padding-10 padding-top-0 padding-bottom-0" data-action="launchFullscreen"><i class="fa fa-arrows-alt"></i> <u>P</u>antalla <u>C</u>ompleta</a>
                                         </li>
                                         <li class="divider"></li>
                                         <li>
-                                            <a href="../CerrarSesion.php" class="padding-10 padding-top-5 padding-bottom-5" data-action="userLogout"  data-logout-msg="¿Estás seguro de salir de sesión?"><i class="fa fa-sign-out fa-lg"></i> <strong><u>C</u>errar Sesión</strong></a>
+                                            <a href="../CerrarSesion.php" class="padding-10 padding-top-5 padding-bottom-5" data-action="userLogout"  data-logout-msg="Estas Seguro de Salir de Sesión"><i class="fa fa-sign-out fa-lg"></i> <strong><u>C</u>errar Sesión</strong></a>
                                         </li>
                                     </ul>
                                 </li>
                             </ul>
-
                             <!-- logout button -->
                             <div id="" class="transparent pull-right">
-                                <ul id="" class="header-dropdown-list ">
-                                    <li class="LiReporte2" style="display: none">
-                                        <a id="Reporte2" href="Trabajando.php" class="btn1 btn-primary1" style="font-size: 13px;text-align: center;align-items: center;"> 
-                                            <i class="fa fa-bar-chart-o"></i>
-                                        </a>
-                                    </li>
+                                <ul id="" class="header-dropdown-list ">                                  
                                     <li class="volver" >
                                         <a id="volver" href="Principal.php" class="btn1 btn-primary1" style="font-size: 13px;text-align: center;align-items: center;"> 
                                             <i class="fa fa-home "></i> Inicio
@@ -154,73 +84,44 @@ if ($_SESSION["Usuario"] !== null) {
                                         </a>
                                         <ul class="dropdown-menu pull-right">
                                             <li>
-                                                <a href="Configuracion.php" class="padding-10 padding-top-0 padding-bottom-0"><i class="fa fa-cog"></i> <u>C</u>onfiguración</a>
-                                            </li>
-                                            <li class="divider"></li>
-                                            <li>
                                                 <a href="Perfil.php" class="padding-10 padding-top-0 padding-bottom-0"> <i class="fa fa-user"></i> <u>P</u>erfil</a>
                                             </li>
-                                            <li class="divider"></li>
-
                                             <li class="divider"></li>
                                             <li>
                                                 <a href="javascript:void(0);" class="padding-10 padding-top-0 padding-bottom-0" data-action="launchFullscreen"><i class="fa fa-arrows-alt"></i> <u>P</u>antalla <u>C</u>ompleta</a>
                                             </li>
                                             <li class="divider"></li>
                                             <li>
-                                                <a href="../CerrarSesion.php" class="padding-10 padding-top-5 padding-bottom-5" data-action="userLogout"  data-logout-msg="¿Estás seguro de salir de sesión?"><i class="fa fa-sign-out fa-lg"></i> <strong><u>C</u>errar Sesión</strong></a>
+                                                <a href="../CerrarSesion.php" class="padding-10 padding-top-5 padding-bottom-5" data-action="userLogout"  data-logout-msg="Estas Seguro de Salir de Sesión"><i class="fa fa-sign-out fa-lg"></i> <strong><u>C</u>errar Sesión</strong></a>
                                             </li>
                                         </ul>
                                     </li>
                                 </ul>
                             </div>
-                            <!-- fullscreen button -->
                         </div>
-                    </div>                
-                    <!-- MAIN CONTENT -->
+                    </div>
                     <div id="content" style="margin-bottom: 0px;display: flow-root;height: 100%;">
-
                         <div class="row" style="display: flex;justify-content: center;">
                             <div class="col-xs-10 col-sm-7 col-md-7 col-lg-4 abs-center" style="text-align: center;">
                                 <!--<div class="row"></div>-->
                                 <div class="row">
                                     <img src="../images/estudios/letrajoveadul.png" alt="" style="width: 100%"/>
                                 </div>
-
                         <!--<h1 class="page-title txt-color-blueDark" style="font-weight: 600"><i class="fa fa-book"></i> Cursos Bíblicos Adultos y Jóvenes</h1>-->
                             </div>
                         </div>
-
-                        <!-- widget grid -->
                         <section id="widget-grid" class="">
-
-                            <!-- row -->
                             <div class="row">
-
-                                <!-- NEW WIDGET START -->
                                 <article class="col-xs-12 col-sm-5 col-md-5 col-lg-5" style="margin-bottom: 30px">
-
-                                    <!-- Widget ID (each widget will need unique ID)-->
-                                    <div class="jarviswidget jarviswidget-color-blueLight" id="wid-id-10" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-togglebutton="false" data-widget-deletebutton="false" data-widget-fullscreenbutton="false" data-widget-custombutton="false" data-widget-sortable="false">                                      
+                                    <div class="jarviswidget jarviswidget-color-darken"  data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-togglebutton="false" data-widget-deletebutton="false" data-widget-fullscreenbutton="false" data-widget-custombutton="false" data-widget-sortable="false">                                      
                                         <header>
                                             <span class="widget-icon"> <i class="fa fa-book"></i> </span>
                                             <h2>Cursos Bíblicos Adultos y Jóvenes </h2>
-
                                         </header>
-
-                                        <!-- widget div-->
                                         <div>
-
-                                            <!-- widget edit box -->
                                             <div class="jarviswidget-editbox">
-                                                <!-- This area used as dropdown edit box -->
-
                                             </div>
-                                            <!-- end widget edit box -->
-
-                                            <!-- widget content -->
                                             <div class="widget-body no-padding" style="min-height: 0px">
-
                                                 <div class="panel-group smart-accordion-default" id="verFav" >
                                                     <div class="panel panel-default">
                                                         <div class="panel-heading">
@@ -229,9 +130,121 @@ if ($_SESSION["Usuario"] !== null) {
                                                         <div id="collapseOne-1" class="panel-collapse collapse in">
                                                             <div class="">
                                                                 <div class="panel ">
+                                                                    <div class="">
+                                                                        <div class="col-xs-8 col-sm-9 col-md-9 col-lg-9">
+                                                                            <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion-2" href="#collapseThree-6" class="collapsed"> <i class="fa fa-fw fa-plus-circle txt-color-green"></i> <i class="fa fa-fw fa-minus-circle txt-color-red"></i>Fe De Jesús (edición estándar)</a></h4>
+                                                                        </div>
+                                                                        <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3 estudio-img">
+                                                                            <div class="row">
+                                                                                <img src="../images/estudios/es-fedejesus.PNG" alt="" style="width: 60%"/>
+                                                                            </div>                                 
+                                                                        </div>                                                                        
+                                                                    </div>
+                                                                    <div id="collapseThree-6" class="panel-collapse collapse">
+                                                                        <div class="panel-body">
+                                                                            <ul id="estudios">
+                                                                                <li><a id="fj1" href="https://drive.google.com/file/d/1xMOF5I9mvGaqAo0tsS4uiaJQ35P4K_RI/preview" >FJ - Lección:1</a></li>
+                                                                                <li><a id="fj2" href="https://drive.google.com/file/d/1xoiVlGQKkTTVEYWhAXDAdW21ct5KHIce/preview" >FJ - Lección:2</a></li>
+                                                                                <li><a id="fj3" href="https://drive.google.com/file/d/1I8QJILvXMWC0Jjzg-Ay5dvD89DgFgJ4C/preview" >FJ - Lección:3</a></li>
+                                                                                <li><a id="fj4" href="https://drive.google.com/file/d/1e-JygzfDVPL4e56tKSVqaj971jv3oQDB/preview" >FJ - Lección:4</a></li>
+                                                                                <li><a id="fj5" href="https://drive.google.com/file/d/1T0bq4gmwJkT7V_TXqtGfZeYaJPod7hk3/preview" >FJ - Lección:5</a></li>
+                                                                                <li><a id="fj6" href="https://drive.google.com/file/d/1PubZRO-Nv7gvwiyVvIpkDyVEbRedgYdV/preview" >FJ - Lección:6</a></li>
+                                                                                <li><a id="fj7" href="https://drive.google.com/file/d/13QbSrbVpNUAHMRc5RzyTave0OvUk9mYt/preview" >FJ - Lección:7</a></li>
+                                                                                <li><a id="fj8" href="https://drive.google.com/file/d/1KcJmxGE8KXkLb-FppEz_lysE88XqlgYr/preview" >FJ - Lección:8</a></li>
+                                                                                <li><a id="fj9" href="https://drive.google.com/file/d/1RLtOQfCmIVgtiwR8RJkVAlwp3I1JU9Tt/preview" >FJ - Lección:9</a></li>
+                                                                                <li><a id="fj10" href="https://drive.google.com/file/d/1TxAd-GvHNhVQFsvTrWR26KXvLf2USyaN/preview" >FJ - Lección:10</a></li>
+                                                                                <li><a id="fj11" href="https://drive.google.com/file/d/1xrUkRquTYPbkhBOCr2VzVv3sdaVPHLGU/preview" >FJ - Lección:11</a></li>
+                                                                                <li><a id="fj12" href="https://drive.google.com/file/d/1XfEFT2GhbMsVTFr6T3M1Ow6tC8W7BU8K/preview" >FJ - Lección:12</a></li>
+                                                                                <li><a id="fj13" href="https://drive.google.com/file/d/1d2ovsij-S6zp_1-SDAts3rXRNQwko_td/preview" >FJ - Lección:13</a></li>
+                                                                                <li><a id="fj14" href="https://drive.google.com/file/d/1hyrE1Qq3559Zu-kJ8soJaopVHAZsCYVu/preview" >FJ - Lección:14</a></li>
+                                                                                <li><a id="fj15" href="https://drive.google.com/file/d/1zkrx3Zr72cj9JFgUrAUN0DY7DDbqunFn/preview" >FJ - Lección:15</a></li>
+                                                                                <li><a id="fj16" href="https://drive.google.com/file/d/1mUM3qP4FRHQ2uodKjFiB4-UMWhwFqgwK/preview" >FJ - Lección:16</a></li>
+                                                                                <li><a id="fj17" href="https://drive.google.com/file/d/1bGdVwJgbmJSAJPc94tE_qsTHv2bYGl3X/preview" >FJ - Lección:17</a></li>
+                                                                                <li><a id="fj18" href="https://drive.google.com/file/d/1fSRBfyWbKqY1YeqK8oU7LLYfeZGK8o3Z/preview" >FJ - Lección:18</a></li>
+                                                                                <li><a id="fj19" href="https://drive.google.com/file/d/1hnRU2k5AY0J5A8G6wwHbj4QYBi8jlG53/preview" >FJ - Lección:19</a></li>
+                                                                                <li><a id="fj20" href="https://drive.google.com/file/d/1PAhLJr7IUIgM7Q2_jkeAbpu5x6wYQXrD/preview" >FJ - Lección:20</a></li>
+                                                                                <li><a id="fj21" href="https://drive.google.com/file/d/1opys4sv2kNGdvaUYz-lt4YLDyQirCgCm/preview" >Respuestas de la "Fe de Jesús"</a></li>
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="panel ">
+                                                                    <div class="panel-heading">
+                                                                        <div class="col-xs-8 col-sm-9 col-md-9 col-lg-9">
+                                                                            <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion-2" href="#collapseThree-7" class="collapsed"> <i class="fa fa-fw fa-plus-circle txt-color-green"></i> <i class="fa fa-fw fa-minus-circle txt-color-red"></i> La Gran Esperanza</a></h4>
+                                                                        </div>
+                                                                        <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3 estudio-img">
+                                                                            <div class="row">
+                                                                                <img src="../images/estudios/es-lagranesperanza.PNG" alt="" style="width: 60%"/>
+                                                                            </div>                                 
+                                                                        </div>                                                                       
+                                                                    </div>
+                                                                    <div id="collapseThree-7" class="panel-collapse collapse">
+                                                                        <div class="panel-body">
+                                                                            <ul id="estudios">
+                                                                                <li><a id="ge1" href="https://drive.google.com/file/d/1szqoSnLfhRCzujIdAZHZ-tvuUIa24S0V/preview" >GE - Lección:1</a></li>
+                                                                                <li><a id="ge2" href="https://drive.google.com/file/d/1JRWhM5v7Lku-mrDa0RFNN1YPs3A15tQJ/preview" >GE - Lección:2</a></li>
+                                                                                <li><a id="ge3" href="https://drive.google.com/file/d/12i13D5fyrCNwO75n9YuVntWbZ-tS4ZC1/preview" >GE - Lección:3</a></li>
+                                                                                <li><a id="ge4" href="https://drive.google.com/file/d/1VP0BbBdOlHLHn32Ioa62W9NvmVsdXEeQ/preview" >GE - Lección:4</a></li>
+                                                                                <li><a id="ge5" href="https://drive.google.com/file/d/1Bnrf0Jrmr3iDQ4MPRHCf12wqkyZLcFJq/preview" >GE - Lección:5</a></li>
+                                                                                <li><a id="ge6" href="https://drive.google.com/file/d/1PeOFTrod8mp0GVBWHwyiuro1ZrMh1FFs/preview" >GE - Lección:6</a></li>
+                                                                                <li><a id="ge7" href="https://drive.google.com/file/d/1kJAFQ0Z0_QMGr-IkOKEUUqJYvb8WaDnd/preview" >GE - Lección:7</a></li>
+                                                                                <li><a id="ge8" href="https://drive.google.com/file/d/1tDCrDu13476waESsDqNkJgL_HH2sSuKw/preview" >GE - Lección:8</a></li>
+                                                                                <li><a id="ge9" href="https://drive.google.com/file/d/1sN2xTNHbHQh2gwNxr9KYQYdQGE-7LF4u/preview" >GE - Lección:9</a></li>
+                                                                                <li><a id="ge10" href="https://drive.google.com/file/d/1BJ9MJHopgiV2cd4NFFn-pW3a-IMjQ_Go/preview" >GE - Lección:10</a></li>
+                                                                                <li><a id="ge11" href="https://drive.google.com/file/d/1rSdXp9KlJ-ygHD2zJCdG6eHqP4ED635_/preview" >GE - Lección:11</a></li>
+                                                                                <li><a id="ge12" href="https://drive.google.com/file/d/1DjYixhT-wcI8gbEP3IRZpZW_JxgyxtN5/preview" >GE - Lección:12</a></li>
+                                                                                <li><a id="ge13" href="https://drive.google.com/file/d/1KWeJmQFQuinQPB2cruB9T09H0lApU2qt/preview" >GE - Lección:13</a></li>
+                                                                                <li><a id="ge14" href="https://drive.google.com/file/d/1HBE94yUXetUBdhhksNQCp2X6TD9jfmq3/preview" >GE - Lección:14</a></li>
+                                                                                <li><a id="ge15" href="https://drive.google.com/file/d/1Kvalh4HTu8-o7LnSOkcNsOapD1bRI7Zo/preview" >GE - Lección:15</a></li>
+                                                                                <li><a id="ge16" href="https://drive.google.com/file/d/1dQssqTC2RerxHXw0mur9J0i3b0ZfU9u7/preview" >GE - Lección:16</a></li>
+                                                                                <li><a id="ge17" href="https://drive.google.com/file/d/1Zv6J7_y_c_dWNXKsBORygxZ_DyCaFsQF/preview" >GE - Lección:17</a></li>
+                                                                                <li><a id="ge18" href="https://drive.google.com/file/d/1XvsHBZDYv3pIOL_vqBHyxY5B-XLWi1Wc/preview" >GE - Lección:18</a></li>
+                                                                                <li><a id="ge19" href="https://drive.google.com/file/d/1zH4ZoTRjl6PtcEW9qn5yx06HfKkQBbOU/preview" >Respuestas de "La gran esperanza" </a></li>
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="panel ">
+                                                                    <div class="panel-heading">
+                                                                        <div class="col-xs-8 col-sm-9 col-md-9 col-lg-9">
+                                                                            <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion-2" href="#collapseThree-3" class="collapsed"> <i class="fa fa-fw fa-plus-circle txt-color-green"></i> <i class="fa fa-fw fa-minus-circle txt-color-red"></i> El Gran Conflicto</a></h4>        
+                                                                        </div>
+                                                                        <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3 estudio-img">
+                                                                            <div class="row">
+                                                                                <img src="../images/estudios/es-conflicto.PNG" alt="" style="width: 60%"/>
+                                                                            </div>                                 
+                                                                        </div>                                                                        
+                                                                    </div>
+                                                                    <div id="collapseThree-3" class="panel-collapse collapse">
+                                                                        <div class="panel-body">
+                                                                            <ul id="estudios">
+                                                                                <li><a id="gc1" href="https://drive.google.com/file/d/1WgkJWWENlzvE7Z4VvuTF6R-Fh925B09k/preview" >GC - Lección:1</a></li>
+                                                                                <li><a id="gc2" href="https://drive.google.com/file/d/1MWUP86Nli1HjjkzKkHgIgtB77IaSZ04b/preview" >GC - Lección:2</a></li>
+                                                                                <li><a id="gc3" href="https://drive.google.com/file/d/1FjqTWjIu8BlTkTNSVo8hhtOKi0FGd3Cb/preview" >GC - Lección:3</a></li>
+                                                                                <li><a id="gc4" href="https://drive.google.com/file/d/1-Dr44mCGLArui-ZVVS1_99bMHw2-A7Kz/preview" >GC - Lección:4</a></li>
+                                                                                <li><a id="gc5" href="https://drive.google.com/file/d/1ULlS4QB2JpvNCLoGTJbfgfmFMiB3iAUb/preview" >GC - Lección:5</a></li>
+                                                                                <li><a id="gc6" href="https://drive.google.com/file/d/1ay8fvcWxiL3EMccKvJcOvGdrZ7ZdqCqr/preview" >GC - Lección:6</a></li>
+                                                                                <li><a id="gc7" href="https://drive.google.com/file/d/18twLBIIvaqsXh7EIz60CsgnnCw1gAnyb/preview" >GC - Lección:7</a></li>
+                                                                                <li><a id="gc8" href="https://drive.google.com/file/d/1m65DXKL9PnnV3Nm2qIIRcoOU2VxJe8AC/preview" >GC - Lección:8</a></li>
+                                                                                <li><a id="gc9" href="https://drive.google.com/file/d/1cdVLSsJLYPn1g2B2jPRB_9EBoAphjfkw/preview" >GC - Lección:9</a></li>
+                                                                                <li><a id="gc10" href="https://drive.google.com/file/d/18HSY5IHD4FM0WFJ01b14J1ECQTtSA0A7/preview" >GC - Lección:10</a></li>
+                                                                                <li><a id="gc11" href="https://drive.google.com/file/d/1ZiiNQKZ_LS6FjOvxM_HHK7OArTrZhHrh/preview" >GC - Lección:11</a></li>
+                                                                                <li><a id="gc12" href="https://drive.google.com/file/d/1m1p2NM0vVxtdYNRDJGxL1fU3pbk7iVN5/preview" >GC - Lección:12</a></li>
+                                                                                <li><a id="gc13" href="https://drive.google.com/file/d/1KQJVqgYFGO73b55WZjOuD46x-W27xYeF/preview" >GC - Lección:13</a></li>
+                                                                                <li><a id="gc14" href="https://drive.google.com/file/d/1NWoXDI1aqCvTX_fMA8AZYlKvNb-61f3K/preview" >GC - Lección:14</a></li>
+                                                                                <li><a id="gc15" href="https://drive.google.com/file/d/13xUYdRZxK291DFH7HCDBpaXNmOPSjnmp/preview" >GC - Lección:15</a></li>
+                                                                                <li><a id="gc16" href="https://drive.google.com/file/d/1PR_cZVkQJ9onlDf1pLy-a3Yq1Sbk1xXZ/preview" >GC - Lección:16</a></li>
+                                                                                <li><a id="gc17" href="https://drive.google.com/file/d/1NFikW8Bxdws4rITNJ3EyGKxysmxS-HrS/preview" >GC - Lección:17</a></li>
+                                                                                <li><a id="gc18" href="https://drive.google.com/file/d/1HTzRrbrOPIbKf47neuwAPpg7bfh4Mq5d/preview" >GC - Lección:18</a></li>
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="panel ">
                                                                     <div class="panel-heading">                                                                       
                                                                         <div class="col-xs-8 col-sm-9 col-md-9 col-lg-9">
-                                                                            <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion-2" href="#collapseThree-1" class="collapsed"> <i class="fa fa-fw fa-plus-circle txt-color-green"></i> <i class="fa fa-fw fa-minus-circle txt-color-red"></i> Apocalipsis – Revelaciones de Esperanza </a></h4>                                  
+                                                                            <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion-2" href="#collapseThree-1" class="collapsed"> <i class="fa fa-fw fa-plus-circle txt-color-green"></i> <i class="fa fa-fw fa-minus-circle txt-color-red"></i> Apocalipsis – Revelaciones De Esperanza </a></h4>                                  
                                                                         </div>
                                                                         <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3 estudio-img">
                                                                             <div class="row">
@@ -243,7 +256,6 @@ if ($_SESSION["Usuario"] !== null) {
                                                                     <div id="collapseThree-1" class="panel-collapse collapse">
                                                                         <div class="panel-body">
                                                                             <ul id="estudios">
-                                                                                <!--<li href="https://www.bufa.es">Link 1</li>-->
                                                                                 <li><a id="apo1" href="https://drive.google.com/file/d/1LYwuIIv5SRcU2ayRnqgWhqqHn2WgBav5/preview" >Apocalipsis - Lección:1</a></li>
                                                                                 <li><a id="apo2" href="https://drive.google.com/file/d/18NIL4VpJPcaI_U8_u8sBCKhkhv2VnoaD/preview" >Apocalipsis - Lección:2</a></li>
                                                                                 <li><a id="apo3" href="https://drive.google.com/file/d/1GWViiAeqVwZMoPwP5zlo6ifybPRQPYQu/preview" >Apocalipsis - Lección:3</a></li>
@@ -303,46 +315,10 @@ if ($_SESSION["Usuario"] !== null) {
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                                <div class="panel ">
-                                                                    <div class="panel-heading">
-                                                                        <div class="col-xs-8 col-sm-9 col-md-9 col-lg-9">
-                                                                            <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion-2" href="#collapseThree-3" class="collapsed"> <i class="fa fa-fw fa-plus-circle txt-color-green"></i> <i class="fa fa-fw fa-minus-circle txt-color-red"></i> El gran conflicto</a></h4>        
-                                                                        </div>
-                                                                        <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3 estudio-img">
-                                                                            <div class="row">
-                                                                                <img src="../images/estudios/es-conflicto.PNG" alt="" style="width: 60%"/>
-                                                                            </div>                                 
-                                                                        </div>                                                                        
-                                                                    </div>
-                                                                    <div id="collapseThree-3" class="panel-collapse collapse">
-                                                                        <div class="panel-body">
-                                                                            <ul id="estudios">
-                                                                                <li><a id="gc1" href="https://drive.google.com/file/d/1WgkJWWENlzvE7Z4VvuTF6R-Fh925B09k/preview" >GC - Lección:1</a></li>
-                                                                                <li><a id="gc2" href="https://drive.google.com/file/d/1MWUP86Nli1HjjkzKkHgIgtB77IaSZ04b/preview" >GC - Lección:2</a></li>
-                                                                                <li><a id="gc3" href="https://drive.google.com/file/d/1FjqTWjIu8BlTkTNSVo8hhtOKi0FGd3Cb/preview" >GC - Lección:3</a></li>
-                                                                                <li><a id="gc4" href="https://drive.google.com/file/d/1-Dr44mCGLArui-ZVVS1_99bMHw2-A7Kz/preview" >GC - Lección:4</a></li>
-                                                                                <li><a id="gc5" href="https://drive.google.com/file/d/1ULlS4QB2JpvNCLoGTJbfgfmFMiB3iAUb/preview" >GC - Lección:5</a></li>
-                                                                                <li><a id="gc6" href="https://drive.google.com/file/d/1ay8fvcWxiL3EMccKvJcOvGdrZ7ZdqCqr/preview" >GC - Lección:6</a></li>
-                                                                                <li><a id="gc7" href="https://drive.google.com/file/d/18twLBIIvaqsXh7EIz60CsgnnCw1gAnyb/preview" >GC - Lección:7</a></li>
-                                                                                <li><a id="gc8" href="https://drive.google.com/file/d/1m65DXKL9PnnV3Nm2qIIRcoOU2VxJe8AC/preview" >GC - Lección:8</a></li>
-                                                                                <li><a id="gc9" href="https://drive.google.com/file/d/1cdVLSsJLYPn1g2B2jPRB_9EBoAphjfkw/preview" >GC - Lección:9</a></li>
-                                                                                <li><a id="gc10" href="https://drive.google.com/file/d/18HSY5IHD4FM0WFJ01b14J1ECQTtSA0A7/preview" >GC - Lección:10</a></li>
-                                                                                <li><a id="gc11" href="https://drive.google.com/file/d/1ZiiNQKZ_LS6FjOvxM_HHK7OArTrZhHrh/preview" >GC - Lección:11</a></li>
-                                                                                <li><a id="gc12" href="https://drive.google.com/file/d/1m1p2NM0vVxtdYNRDJGxL1fU3pbk7iVN5/preview" >GC - Lección:12</a></li>
-                                                                                <li><a id="gc13" href="https://drive.google.com/file/d/1KQJVqgYFGO73b55WZjOuD46x-W27xYeF/preview" >GC - Lección:13</a></li>
-                                                                                <li><a id="gc14" href="https://drive.google.com/file/d/1NWoXDI1aqCvTX_fMA8AZYlKvNb-61f3K/preview" >GC - Lección:14</a></li>
-                                                                                <li><a id="gc15" href="https://drive.google.com/file/d/13xUYdRZxK291DFH7HCDBpaXNmOPSjnmp/preview" >GC - Lección:15</a></li>
-                                                                                <li><a id="gc16" href="https://drive.google.com/file/d/1PR_cZVkQJ9onlDf1pLy-a3Yq1Sbk1xXZ/preview" >GC - Lección:16</a></li>
-                                                                                <li><a id="gc17" href="https://drive.google.com/file/d/1NFikW8Bxdws4rITNJ3EyGKxysmxS-HrS/preview" >GC - Lección:17</a></li>
-                                                                                <li><a id="gc18" href="https://drive.google.com/file/d/1HTzRrbrOPIbKf47neuwAPpg7bfh4Mq5d/preview" >GC - Lección:18</a></li>
-                                                                            </ul>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
                                                                 <div class="panel">
                                                                     <div class="panel-heading">
                                                                         <div class="col-xs-8 col-sm-9 col-md-9 col-lg-9">
-                                                                            <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion-2" href="#collapseThree-4" class="collapsed"> <i class="fa fa-fw fa-plus-circle txt-color-green"></i> <i class="fa fa-fw fa-minus-circle txt-color-red"></i> Es tiempo de ver a Jesús </a></h4>
+                                                                            <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion-2" href="#collapseThree-4" class="collapsed"> <i class="fa fa-fw fa-plus-circle txt-color-green"></i> <i class="fa fa-fw fa-minus-circle txt-color-red"></i> Es Tiempo De Ver a Jesús </a></h4>
                                                                         </div>
                                                                         <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3 estudio-img">
                                                                             <div class="row">
@@ -372,7 +348,7 @@ if ($_SESSION["Usuario"] !== null) {
                                                                 <div class="panel ">
                                                                     <div class="panel-heading">
                                                                         <div class="col-xs-8 col-sm-9 col-md-9 col-lg-9">
-                                                                            <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion-2" href="#collapseThree-5" class="collapsed"> <i class="fa fa-fw fa-plus-circle txt-color-green"></i> <i class="fa fa-fw fa-minus-circle txt-color-red"></i> Esperanza para las familias </a></h4>
+                                                                            <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion-2" href="#collapseThree-5" class="collapsed"> <i class="fa fa-fw fa-plus-circle txt-color-green"></i> <i class="fa fa-fw fa-minus-circle txt-color-red"></i> Esperanza Para Las Familias </a></h4>
                                                                         </div>
                                                                         <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3 estudio-img">
                                                                             <div class="row">
@@ -402,85 +378,9 @@ if ($_SESSION["Usuario"] !== null) {
                                                                     </div>
                                                                 </div>
                                                                 <div class="panel ">
-                                                                    <div class="">
-                                                                        <div class="col-xs-8 col-sm-9 col-md-9 col-lg-9">
-                                                                            <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion-2" href="#collapseThree-6" class="collapsed"> <i class="fa fa-fw fa-plus-circle txt-color-green"></i> <i class="fa fa-fw fa-minus-circle txt-color-red"></i>Fe de Jesús </a></h4>
-                                                                        </div>
-                                                                        <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3 estudio-img">
-                                                                            <div class="row">
-                                                                                <img src="../images/estudios/es-fedejesus.PNG" alt="" style="width: 60%"/>
-                                                                            </div>                                 
-                                                                        </div>                                                                        
-                                                                    </div>
-                                                                    <div id="collapseThree-6" class="panel-collapse collapse">
-                                                                        <div class="panel-body">
-                                                                            <ul id="estudios">
-                                                                                <li><a id="fj1" href="https://drive.google.com/file/d/1xMOF5I9mvGaqAo0tsS4uiaJQ35P4K_RI/preview" >FJ - Lección:1</a></li>
-                                                                                <li><a id="fj2" href="https://drive.google.com/file/d/1xoiVlGQKkTTVEYWhAXDAdW21ct5KHIce/preview" >FJ - Lección:2</a></li>
-                                                                                <li><a id="fj3" href="https://drive.google.com/file/d/1I8QJILvXMWC0Jjzg-Ay5dvD89DgFgJ4C/preview" >FJ - Lección:3</a></li>
-                                                                                <li><a id="fj4" href="https://drive.google.com/file/d/1e-JygzfDVPL4e56tKSVqaj971jv3oQDB/preview" >FJ - Lección:4</a></li>
-                                                                                <li><a id="fj5" href="https://drive.google.com/file/d/1T0bq4gmwJkT7V_TXqtGfZeYaJPod7hk3/preview" >FJ - Lección:5</a></li>
-                                                                                <li><a id="fj6" href="https://drive.google.com/file/d/1PubZRO-Nv7gvwiyVvIpkDyVEbRedgYdV/preview" >FJ - Lección:6</a></li>
-                                                                                <li><a id="fj7" href="https://drive.google.com/file/d/13QbSrbVpNUAHMRc5RzyTave0OvUk9mYt/preview" >FJ - Lección:7</a></li>
-                                                                                <li><a id="fj8" href="https://drive.google.com/file/d/1KcJmxGE8KXkLb-FppEz_lysE88XqlgYr/preview" >FJ - Lección:8</a></li>
-                                                                                <li><a id="fj9" href="https://drive.google.com/file/d/1RLtOQfCmIVgtiwR8RJkVAlwp3I1JU9Tt/preview" >FJ - Lección:9</a></li>
-                                                                                <li><a id="fj10" href="https://drive.google.com/file/d/1TxAd-GvHNhVQFsvTrWR26KXvLf2USyaN/preview" >FJ - Lección:10</a></li>
-                                                                                <li><a id="fj11" href="https://drive.google.com/file/d/1xrUkRquTYPbkhBOCr2VzVv3sdaVPHLGU/preview" >FJ - Lección:11</a></li>
-                                                                                <li><a id="fj12" href="https://drive.google.com/file/d/1XfEFT2GhbMsVTFr6T3M1Ow6tC8W7BU8K/preview" >FJ - Lección:12</a></li>
-                                                                                <li><a id="fj13" href="https://drive.google.com/file/d/1d2ovsij-S6zp_1-SDAts3rXRNQwko_td/preview" >FJ - Lección:13</a></li>
-                                                                                <li><a id="fj14" href="https://drive.google.com/file/d/1hyrE1Qq3559Zu-kJ8soJaopVHAZsCYVu/preview" >FJ - Lección:14</a></li>
-                                                                                <li><a id="fj15" href="https://drive.google.com/file/d/1zkrx3Zr72cj9JFgUrAUN0DY7DDbqunFn/preview" >FJ - Lección:15</a></li>
-                                                                                <li><a id="fj16" href="https://drive.google.com/file/d/1mUM3qP4FRHQ2uodKjFiB4-UMWhwFqgwK/preview" >FJ - Lección:16</a></li>
-                                                                                <li><a id="fj17" href="https://drive.google.com/file/d/1bGdVwJgbmJSAJPc94tE_qsTHv2bYGl3X/preview" >FJ - Lección:17</a></li>
-                                                                                <li><a id="fj18" href="https://drive.google.com/file/d/1fSRBfyWbKqY1YeqK8oU7LLYfeZGK8o3Z/preview" >FJ - Lección:18</a></li>
-                                                                                <li><a id="fj19" href="https://drive.google.com/file/d/1hnRU2k5AY0J5A8G6wwHbj4QYBi8jlG53/preview" >FJ - Lección:19</a></li>
-                                                                                <li><a id="fj20" href="https://drive.google.com/file/d/1PAhLJr7IUIgM7Q2_jkeAbpu5x6wYQXrD/preview" >FJ - Lección:20</a></li>
-                                                                                <li><a id="fj21" href="https://drive.google.com/file/d/1opys4sv2kNGdvaUYz-lt4YLDyQirCgCm/preview" >Respuestas de la "Fe de Jesús"</a></li>
-                                                                            </ul>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="panel ">
                                                                     <div class="panel-heading">
                                                                         <div class="col-xs-8 col-sm-9 col-md-9 col-lg-9">
-                                                                            <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion-2" href="#collapseThree-7" class="collapsed"> <i class="fa fa-fw fa-plus-circle txt-color-green"></i> <i class="fa fa-fw fa-minus-circle txt-color-red"></i> La gran esperanza</a></h4>
-                                                                        </div>
-                                                                        <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3 estudio-img">
-                                                                            <div class="row">
-                                                                                <img src="../images/estudios/es-lagranesperanza.PNG" alt="" style="width: 60%"/>
-                                                                            </div>                                 
-                                                                        </div>                                                                       
-                                                                    </div>
-                                                                    <div id="collapseThree-7" class="panel-collapse collapse">
-                                                                        <div class="panel-body">
-                                                                            <ul id="estudios">
-                                                                                <li><a id="ge1" href="https://drive.google.com/file/d/1szqoSnLfhRCzujIdAZHZ-tvuUIa24S0V/preview" >GE - Lección:1</a></li>
-                                                                                <li><a id="ge2" href="https://drive.google.com/file/d/1JRWhM5v7Lku-mrDa0RFNN1YPs3A15tQJ/preview" >GE - Lección:2</a></li>
-                                                                                <li><a id="ge3" href="https://drive.google.com/file/d/12i13D5fyrCNwO75n9YuVntWbZ-tS4ZC1/preview" >GE - Lección:3</a></li>
-                                                                                <li><a id="ge4" href="https://drive.google.com/file/d/1VP0BbBdOlHLHn32Ioa62W9NvmVsdXEeQ/preview" >GE - Lección:4</a></li>
-                                                                                <li><a id="ge5" href="https://drive.google.com/file/d/1Bnrf0Jrmr3iDQ4MPRHCf12wqkyZLcFJq/preview" >GE - Lección:5</a></li>
-                                                                                <li><a id="ge6" href="https://drive.google.com/file/d/1PeOFTrod8mp0GVBWHwyiuro1ZrMh1FFs/preview" >GE - Lección:6</a></li>
-                                                                                <li><a id="ge7" href="https://drive.google.com/file/d/1kJAFQ0Z0_QMGr-IkOKEUUqJYvb8WaDnd/preview" >GE - Lección:7</a></li>
-                                                                                <li><a id="ge8" href="https://drive.google.com/file/d/1tDCrDu13476waESsDqNkJgL_HH2sSuKw/preview" >GE - Lección:8</a></li>
-                                                                                <li><a id="ge9" href="https://drive.google.com/file/d/1sN2xTNHbHQh2gwNxr9KYQYdQGE-7LF4u/preview" >GE - Lección:9</a></li>
-                                                                                <li><a id="ge10" href="https://drive.google.com/file/d/1BJ9MJHopgiV2cd4NFFn-pW3a-IMjQ_Go/preview" >GE - Lección:10</a></li>
-                                                                                <li><a id="ge11" href="https://drive.google.com/file/d/1rSdXp9KlJ-ygHD2zJCdG6eHqP4ED635_/preview" >GE - Lección:11</a></li>
-                                                                                <li><a id="ge12" href="https://drive.google.com/file/d/1DjYixhT-wcI8gbEP3IRZpZW_JxgyxtN5/preview" >GE - Lección:12</a></li>
-                                                                                <li><a id="ge13" href="https://drive.google.com/file/d/1KWeJmQFQuinQPB2cruB9T09H0lApU2qt/preview" >GE - Lección:13</a></li>
-                                                                                <li><a id="ge14" href="https://drive.google.com/file/d/1HBE94yUXetUBdhhksNQCp2X6TD9jfmq3/preview" >GE - Lección:14</a></li>
-                                                                                <li><a id="ge15" href="https://drive.google.com/file/d/1Kvalh4HTu8-o7LnSOkcNsOapD1bRI7Zo/preview" >GE - Lección:15</a></li>
-                                                                                <li><a id="ge16" href="https://drive.google.com/file/d/1dQssqTC2RerxHXw0mur9J0i3b0ZfU9u7/preview" >GE - Lección:16</a></li>
-                                                                                <li><a id="ge17" href="https://drive.google.com/file/d/1Zv6J7_y_c_dWNXKsBORygxZ_DyCaFsQF/preview" >GE - Lección:17</a></li>
-                                                                                <li><a id="ge18" href="https://drive.google.com/file/d/1XvsHBZDYv3pIOL_vqBHyxY5B-XLWi1Wc/preview" >GE - Lección:18</a></li>
-                                                                                <li><a id="ge19" href="https://drive.google.com/file/d/1zH4ZoTRjl6PtcEW9qn5yx06HfKkQBbOU/preview" >Respuestas de "La gran esperanza" </a></li>
-                                                                            </ul>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="panel ">
-                                                                    <div class="panel-heading">
-                                                                        <div class="col-xs-8 col-sm-9 col-md-9 col-lg-9">
-                                                                            <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion-2" href="#collapseThree-8" class="collapsed"> <i class="fa fa-fw fa-plus-circle txt-color-green"></i> <i class="fa fa-fw fa-minus-circle txt-color-red"></i>La Fe de Jesús </a></h4>
+                                                                            <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion-2" href="#collapseThree-8" class="collapsed"> <i class="fa fa-fw fa-plus-circle txt-color-green"></i> <i class="fa fa-fw fa-minus-circle txt-color-red"></i>La Fe De Jesús Nuevo Tiempo </a></h4>
                                                                         </div>
                                                                         <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3 estudio-img">
                                                                             <div class="row">
@@ -518,7 +418,7 @@ if ($_SESSION["Usuario"] !== null) {
                                                                 <div class="panel ">
                                                                     <div class="panel-heading">
                                                                         <div class="col-xs-8 col-sm-9 col-md-9 col-lg-9">
-                                                                            <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion-2" href="#collapseThree-9" class="collapsed"> <i class="fa fa-fw fa-plus-circle txt-color-green"></i> <i class="fa fa-fw fa-minus-circle txt-color-red"></i>Nunca es tarde</a></h4>
+                                                                            <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion-2" href="#collapseThree-9" class="collapsed"> <i class="fa fa-fw fa-plus-circle txt-color-green"></i> <i class="fa fa-fw fa-minus-circle txt-color-red"></i>Nunca Es Tarde</a></h4>
                                                                         </div>
                                                                         <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3 estudio-img">
                                                                             <div class="row">
@@ -544,14 +444,14 @@ if ($_SESSION["Usuario"] !== null) {
                                                     </div>
                                                     <div class="panel panel-default">
                                                         <div class="panel-heading">
-                                                            <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion-2" href="#collapseFor-1" class="collapsed"> <i class="fa fa-fw fa-plus-circle txt-color-green"></i> <i class="fa fa-fw fa-minus-circle txt-color-red"></i> Cursos Bíblicos para Jóvenes </a></h4>
+                                                            <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion-2" href="#collapseFor-1" class="collapsed"> <i class="fa fa-fw fa-plus-circle txt-color-green"></i> <i class="fa fa-fw fa-minus-circle txt-color-red"></i> Cursos Bíblicos Para Jóvenes </a></h4>
                                                         </div>
                                                         <div id="collapseFor-1" class="panel-collapse collapse">
                                                             <div class="">
                                                                 <div class="panel">
                                                                     <div class="panel-heading">
                                                                         <div class="col-xs-8 col-sm-9 col-md-9 col-lg-9">
-                                                                            <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion-2" href="#collapseThree1" class="collapsed"> <i class="fa fa-fw fa-plus-circle txt-color-green"></i> <i class="fa fa-fw fa-minus-circle txt-color-red"></i> Juventud con propósito </a></h4>                     
+                                                                            <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion-2" href="#collapseThree1" class="collapsed"> <i class="fa fa-fw fa-plus-circle txt-color-green"></i> <i class="fa fa-fw fa-minus-circle txt-color-red"></i> Juventud Con Propósito </a></h4>                     
                                                                         </div>
                                                                         <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3 estudio-img">
                                                                             <div class="row">
@@ -580,7 +480,7 @@ if ($_SESSION["Usuario"] !== null) {
                                                                 <div class="panel">
                                                                     <div class="panel-heading">
                                                                         <div class="col-xs-8 col-sm-9 col-md-9 col-lg-9">
-                                                                            <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion-2" href="#collapseThree2" class="collapsed"> <i class="fa fa-fw fa-plus-circle txt-color-green"></i> <i class="fa fa-fw fa-minus-circle txt-color-red"></i> La fe de Jesús</a></h4>        
+                                                                            <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion-2" href="#collapseThree2" class="collapsed"> <i class="fa fa-fw fa-plus-circle txt-color-green"></i> <i class="fa fa-fw fa-minus-circle txt-color-red"></i> La fe De Jesús</a></h4>        
                                                                         </div>
                                                                         <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3 estudio-img">
                                                                             <div class="row">
@@ -605,40 +505,12 @@ if ($_SESSION["Usuario"] !== null) {
                                                         </div>
                                                     </div>
                                                 </div>
-
                                             </div>
-                                            <!-- end widget content -->
-
-                                        </div>
-                                        <!-- end widget div -->
-
-                                    </div>
-                                    <!-- end widget -->
-                                    <!-- Widget ID (each widget will need unique ID)-->
-                                    <div class="jarviswidget" id="wid-id-1" data-widget-editbutton="true">                                 
-                                        <header>
-                                            <span class="widget-icon"> <i class="fa fa-book"></i> </span>
-                                            <h2>Biblia</h2>
-                                        </header>
-                                        <!-- widget div-->
-                                        <div>
-                                            <!-- widget edit box -->
-                                            <div class="jarviswidget-editbox">
-                                                <!-- This area used as dropdown edit box -->
-                                            </div>
-                                            <!-- end widget edit box -->
-                                            <!-- widget content -->
-                                            <div class="widget-body no-padding">
-                                                <iframe src="Biblia.php" width="100%" height="486px"></iframe>
-                                            </div>
-                                            <!-- end widget content -->
                                         </div>
                                     </div>
-                                    <!-- end widget -->
                                 </article>
-                                <!-- WIDGET END -->
                                 <article class="col-xs-12 col-sm-7 col-md-7 col-lg-7" style="margin-bottom: 30px">
-                                    <div class="jarviswidget" id="wid-id-2" data-widget-editbutton="true">
+                                    <div class="jarviswidget jarviswidget-color-darken"  data-widget-editbutton="true">
                                         <header>
                                             <span class="widget-icon"> <i class="fa fa-book"></i> </span>
                                             <h2>Material</h2>
@@ -646,15 +518,219 @@ if ($_SESSION["Usuario"] !== null) {
                                         <div>
                                             <div class="jarviswidget-editbox">
                                             </div>
-                                            <div class="widget-body no-padding" style="background-image: url('../images/la_fe_de_jesus.PNG');background-size: 100% 100%;height: 130vh" >
+                                            <div class="widget-body no-padding" style="background-image: url('../images/la_fe_de_jesus.PNG');background-size: 100% 100%;height: 99vh" >
                                                 <!--<iframe id="myframe" name="myframe" src="https://drive.google.com/file/d/15s6EFXtu8lSPtblLQ5YwkG16bggd2XgZ/view?usp=sharing" width="100%" style="height: 100vh"></iframe>-->
                                                 <!--<iframe id="myframe" name="myframe" src="" frameborder="0" width="100%" style="height: 100vh"></iframe>-->
-                                                <iframe id="estu" src="" width="100%" height="100%" frameborder="0" scrolling="yes" ></iframe>
+                                                <iframe id="estu" src="" width="100%" height="100%" frameborder="0" scrolling="yes" style="margin-bottom: -6px;"></iframe>
                                             </div>
                                         </div>
                                     </div>
                                 </article>
                             </div>
+                        </section>
+                        <section id="widget-grid" class="">
+                            <div class="row">
+                            <article class="col-xs-12 col-sm-5 col-md-5 col-lg-5" style="margin-bottom: 30px">
+                                    <div class="jarviswidget jarviswidget-color-darken"  data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-togglebutton="false" data-widget-deletebutton="false" data-widget-fullscreenbutton="false" data-widget-custombutton="false" data-widget-sortable="false">                                      
+                                        <header>
+                                            <span class="widget-icon"> <i class="fa fa-book"></i> </span>
+                                            <h2>Cursos Bíblicos Adultos y Jóvenes - PPT</h2>
+                                        </header>
+                                        <div>
+                                            <div class="jarviswidget-editbox">
+                                            </div>
+                                            <div class="widget-body no-padding" style="min-height: 0px;height: 60vh">
+                                                <div class="panel-group smart-accordion-default" id="verFav" >
+                                                    <div class="panel panel-default">
+                                                        <div class="panel-heading">
+                                                            <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion-2" href="#collapseOne-1"> <i class="fa fa-fw fa-plus-circle txt-color-green"></i> <i class="fa fa-fw fa-minus-circle txt-color-red"></i>Cursos Bíblicos Para Adultos - PPT</a></h4>
+                                                        </div>
+                                                        <div id="collapseOne-1" class="panel-collapse collapse in">
+                                                            <div class="">
+                                                                <div class="panel ">
+                                                                    <div class="">
+                                                                        <div class="col-xs-8 col-sm-9 col-md-9 col-lg-9">
+                                                                            <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion-2" href="#collapseThree-22" class="collapsed"> <i class="fa fa-fw fa-plus-circle txt-color-green"></i> <i class="fa fa-fw fa-minus-circle txt-color-red"></i>Fe de Jesús (edición estándar)</a></h4>
+                                                                        </div>
+                                                                        <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3 estudio-img">
+                                                                            <div class="row">
+                                                                                <img src="../images/estudios/es-fejesus-ppt.PNG" alt="" style="width: 60%"/>
+                                                                            </div>                                 
+                                                                        </div>                                                                        
+                                                                    </div>
+                                                                    <div id="collapseThree-22" class="panel-collapse collapse">
+                                                                        <div class="panel-body">
+                                                                            <ul id="estudiosppt">
+                                                                                <li><a id="fj1-ppt" href="https://onedrive.live.com/embed?resid=3D93D1C53B393AA8%21112&amp;authkey=%21AL6X1kLPX-fJIl4&amp;em=2&amp;wdAr=1.3333333333333333&amp;wdEaa=1" width="610px" height="481px" frameborder="0" >FJ - Lección:1</a></li>
+                                                                                <li><a id="fj2-ppt" href="https://onedrive.live.com/embed?cid=3D93D1C53B393AA8&amp;resid=3D93D1C53B393AA8%21120&amp;authkey=AMUqxhCPCaUxhA8&amp;em=2&amp;wdAr=1.3333333333333333&amp;wdEaa=1" width="610px" height="481px" frameborder="0">FJ - Lección:2</a></li>
+                                                                                <li><a id="fj3-ppt" href="https://onedrive.live.com/embed?cid=3D93D1C53B393AA8&amp;resid=3D93D1C53B393AA8%21119&amp;authkey=ADvA4b2Czpdc2uY&amp;em=2&amp;wdAr=1.3333333333333333&amp;wdEaa=1" width="610px" height="481px" frameborder="0">FJ - Lección:3</a></li>
+                                                                                <li><a id="fj4-ppt" href="https://onedrive.live.com/embed?cid=3D93D1C53B393AA8&amp;resid=3D93D1C53B393AA8%21121&amp;authkey=AK3x9KcsOIgGLiI&amp;em=2&amp;wdAr=1.3333333333333333&amp;wdEaa=1" width="610px" height="481px" frameborder="0">FJ - Lección:4</a></li>
+                                                                                <li><a id="fj5-ppt" href="https://onedrive.live.com/embed?cid=3D93D1C53B393AA8&amp;resid=3D93D1C53B393AA8%21137&amp;authkey=AIlcooqEFVhzkok&amp;em=2&amp;wdAr=1.3333333333333333&amp;wdEaa=1" width="610px" height="481px" frameborder="0">FJ - Lección:5</a></li>
+                                                                                <li><a id="fj6-ppt" href="https://onedrive.live.com/embed?cid=3D93D1C53B393AA8&amp;resid=3D93D1C53B393AA8%21132&amp;authkey=ADo4UKAPB4MxSgI&amp;em=2&amp;wdAr=1.3333333333333333&amp;wdEaa=1" width="610px" height="481px" frameborder="0">FJ - Lección:6</a></li>
+                                                                                <li><a id="fj7-ppt" href="https://onedrive.live.com/embed?cid=3D93D1C53B393AA8&amp;resid=3D93D1C53B393AA8%21122&amp;authkey=ANYBCN09WzjIzRc&amp;em=2&amp;wdAr=1.3333333333333333&amp;wdEaa=1" width="610px" height="481px" frameborder="0">FJ - Lección:7</a></li>
+                                                                                <li><a id="fj8-ppt" href="https://onedrive.live.com/embed?cid=3D93D1C53B393AA8&amp;resid=3D93D1C53B393AA8%21134&amp;authkey=AJVs3SVs4yOLGZ4&amp;em=2&amp;wdAr=1.3333333333333333&amp;wdEaa=1" width="610px" height="481px" frameborder="0">FJ - Lección:8</a></li>
+                                                                                <li><a id="fj9-ppt" href="https://onedrive.live.com/embed?cid=3D93D1C53B393AA8&amp;resid=3D93D1C53B393AA8%21138&amp;authkey=AMQj0cTypJ_rJLo&amp;em=2&amp;wdAr=1.3333333333333333&amp;wdEaa=1" width="610px" height="481px" frameborder="0">FJ - Lección:9</a></li>
+                                                                                <li><a id="fj10-ppt" href="https://onedrive.live.com/embed?cid=3D93D1C53B393AA8&amp;resid=3D93D1C53B393AA8%21124&amp;authkey=AFteYztPSTJ2neQ&amp;em=2&amp;wdAr=1.3333333333333333&amp;wdEaa=1" width="610px" height="481px" frameborder="0">FJ - Lección:10</a></li>
+                                                                                <li><a id="fj11-ppt" href="https://onedrive.live.com/embed?cid=3D93D1C53B393AA8&amp;resid=3D93D1C53B393AA8%21123&amp;authkey=ACGAKRU5hRlav7Q&amp;em=2&amp;wdAr=1.3333333333333333&amp;wdEaa=1" width="610px" height="481px" frameborder="0">FJ - Lección:11</a></li>
+                                                                                <li><a id="fj12-ppt" href="https://onedrive.live.com/embed?cid=3D93D1C53B393AA8&amp;resid=3D93D1C53B393AA8%21125&amp;authkey=ABhuyPmU_2vqUdo&amp;em=2&amp;wdAr=1.3333333333333333&amp;wdEaa=1" width="610px" height="481px" frameborder="0">FJ - Lección:12</a></li>
+                                                                                <li><a id="fj13-ppt" href="https://onedrive.live.com/embed?cid=3D93D1C53B393AA8&amp;resid=3D93D1C53B393AA8%21126&amp;authkey=AGQ5fCG9SS1iOSw&amp;em=2&amp;wdAr=1.3333333333333333&amp;wdEaa=1" width="610px" height="481px" frameborder="0">FJ - Lección:13</a></li>
+                                                                                <li><a id="fj14-ppt" href="https://onedrive.live.com/embed?cid=3D93D1C53B393AA8&amp;resid=3D93D1C53B393AA8%21127&amp;authkey=ADAIPU6zmhYQcWE&amp;em=2&amp;wdAr=1.3333333333333333&amp;wdEaa=1" width="610px" height="481px" frameborder="0">FJ - Lección:14</a></li>
+                                                                                <li><a id="fj15-ppt" href="https://onedrive.live.com/embed?cid=3D93D1C53B393AA8&amp;resid=3D93D1C53B393AA8%21136&amp;authkey=ABHmA17OJFy5neE&amp;em=2&amp;wdAr=1.3333333333333333&amp;wdEaa=1" width="610px" height="481px" frameborder="0">FJ - Lección:15</a></li>
+                                                                                <li><a id="fj16-ppt" href="https://onedrive.live.com/embed?cid=3D93D1C53B393AA8&amp;resid=3D93D1C53B393AA8%21128&amp;authkey=AHYJhq_KSXCRbec&amp;em=2&amp;wdAr=1.3333333333333333&amp;wdEaa=1" width="610px" height="481px" frameborder="0">FJ - Lección:16</a></li>
+                                                                                <li><a id="fj17-ppt" href="https://onedrive.live.com/embed?cid=3D93D1C53B393AA8&amp;resid=3D93D1C53B393AA8%21129&amp;authkey=AKXPbcW8fmuJc4Q&amp;em=2&amp;wdAr=1.3333333333333333&amp;wdEaa=1" width="610px" height="481px" frameborder="0">FJ - Lección:17</a></li>
+                                                                                <li><a id="fj18-ppt" href="https://onedrive.live.com/embed?cid=3D93D1C53B393AA8&amp;resid=3D93D1C53B393AA8%21133&amp;authkey=AABmJP_5m8bEI6g&amp;em=2&amp;wdAr=1.3333333333333333&amp;wdEaa=1" width="610px" height="481px" frameborder="0">FJ - Lección:18</a></li>
+                                                                                <li><a id="fj19-ppt" href="https://onedrive.live.com/embed?cid=3D93D1C53B393AA8&amp;resid=3D93D1C53B393AA8%21130&amp;authkey=AOvQ-N4eaiCU2f4&amp;em=2&amp;wdAr=1.3333333333333333&amp;wdEaa=1" width="610px" height="481px" frameborder="0">FJ - Lección:19</a></li>
+                                                                                <li><a id="fj20-ppt" href="https://onedrive.live.com/embed?cid=3D93D1C53B393AA8&amp;resid=3D93D1C53B393AA8%21131&amp;authkey=ADUOGVe2TXRlADo&amp;em=2&amp;wdAr=1.3333333333333333&amp;wdEaa=1" width="610px" height="481px" frameborder="0">FJ - Lección:20</a></li>
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="panel ">
+                                                                    <div class="">
+                                                                        <div class="col-xs-8 col-sm-9 col-md-9 col-lg-9">
+                                                                            <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion-2" href="#collapseThree-20" class="collapsed"> <i class="fa fa-fw fa-plus-circle txt-color-green"></i> <i class="fa fa-fw fa-minus-circle txt-color-red"></i>Apocalipsis</a></h4>
+                                                                        </div>
+                                                                        <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3 estudio-img">
+                                                                            <div class="row">
+                                                                                <img src="../images/estudios/es-apocalipsis.PNG" alt="" style="width: 60%"/>
+                                                                            </div>                                 
+                                                                        </div>                                                                        
+                                                                    </div>
+                                                                    <div id="collapseThree-20" class="panel-collapse collapse">
+                                                                        <div class="panel-body">
+                                                                            <ul id="estudiosppt">
+                                                                                <li><a id="ap1-ppt" href="https://onedrive.live.com/embed?cid=3D93D1C53B393AA8&amp;resid=3D93D1C53B393AA8%21155&amp;authkey=ABpzZvB1ZsobEh8&amp;em=2&amp;wdAr=1.7777777777777777&amp;wdEaa=1" width="610px" height="367px" frameborder="0" >Apocalipsis - Lección:1</a></li>
+                                                                                <li><a id="ap2-ppt" href="https://onedrive.live.com/embed?cid=3D93D1C53B393AA8&amp;resid=3D93D1C53B393AA8%21154&amp;authkey=AJ7t5Da0N83a5Ho&amp;em=2&amp;wdAr=1.7777777777777777&amp;wdEaa=1" width="610px" height="367px" frameborder="0" >Apocalipsis - Lección:2</a></li>
+                                                                                <li><a id="ap3-ppt" href="https://onedrive.live.com/embed?cid=3D93D1C53B393AA8&amp;resid=3D93D1C53B393AA8%21153&amp;authkey=ABR3R0ATtRpq_eQ&amp;em=2&amp;wdAr=1.7777777777777777&amp;wdEaa=1" width="610px" height="367px" frameborder="0" >Apocalipsis - Lección:3</a></li>
+                                                                                <li><a id="ap4-ppt" href="https://onedrive.live.com/embed?cid=3D93D1C53B393AA8&amp;resid=3D93D1C53B393AA8%21157&amp;authkey=AGZdY_sIxhg-noo&amp;em=2&amp;wdAr=1.7777777777777777&amp;wdEaa=1" width="610px" height="367px" frameborder="0" >Apocalipsis - Lección:4</a></li>
+                                                                                <li><a id="ap5-ppt" href="https://onedrive.live.com/embed?cid=3D93D1C53B393AA8&amp;resid=3D93D1C53B393AA8%21156&amp;authkey=AEb2NZNmXdX4urY&amp;em=2&amp;wdAr=1.7777777777777777&amp;wdEaa=1" width="610px" height="367px" frameborder="0" >Apocalipsis - Lección:5</a></li>
+                                                                                <li><a id="ap6-ppt" href="https://onedrive.live.com/embed?cid=3D93D1C53B393AA8&amp;resid=3D93D1C53B393AA8%21158&amp;authkey=AKB1Izu_ri7c3as&amp;em=2&amp;wdAr=1.7777777777777777&amp;wdEaa=1" width="610px" height="367px" frameborder="0">Apocalipsis - Lección:6</a></li>
+                                                                                <li><a id="ap7-ppt" href="https://onedrive.live.com/embed?cid=3D93D1C53B393AA8&amp;resid=3D93D1C53B393AA8%21159&amp;authkey=AL3oeFD1RaFaQKI&amp;em=2&amp;wdAr=1.7777777777777777&amp;wdEaa=1" width="610px" height="367px" frameborder="0">Apocalipsis - Lección:7</a></li>
+                                                                                <li><a id="ap8-ppt" href="https://onedrive.live.com/embed?cid=3D93D1C53B393AA8&amp;resid=3D93D1C53B393AA8%21160&amp;authkey=AGs0A0AKrby1hfs&amp;em=2&amp;wdAr=1.7777777777777777&amp;wdEaa=1" width="610px" height="367px" frameborder="0" >Apocalipsis - Lección:8</a></li>
+                                                                                <li><a id="ap9-ppt" href="https://onedrive.live.com/embed?cid=3D93D1C53B393AA8&amp;resid=3D93D1C53B393AA8%21161&amp;authkey=APbfrAcziYostXw&amp;em=2&amp;wdAr=1.7777777777777777&amp;wdEaa=1" width="610px" height="367px" frameborder="0" >Apocalipsis - Lección:9</a></li>
+                                                                                <li><a id="ap10-ppt" href="https://onedrive.live.com/embed?cid=3D93D1C53B393AA8&amp;resid=3D93D1C53B393AA8%21163&amp;authkey=ACf4OhfbU6Jd2Hc&amp;em=2&amp;wdAr=1.7777777777777777&amp;wdEaa=1" width="610px" height="367px" frameborder="0">Apocalipsis - Lección:10</a></li>
+                                                                                <li><a id="ap11-ppt" href="https://onedrive.live.com/embed?cid=3D93D1C53B393AA8&amp;resid=3D93D1C53B393AA8%21162&amp;authkey=AL-KnQ5zfPNnjQs&amp;em=2&amp;wdAr=1.7777777777777777&amp;wdEaa=1" width="610px" height="367px" frameborder="0">Apocalipsis - Lección:11</a></li>
+                                                                                <li><a id="ap12-ppt" href="https://onedrive.live.com/embed?cid=3D93D1C53B393AA8&amp;resid=3D93D1C53B393AA8%21164&amp;authkey=AJlh_YRVhC_Ba1g&amp;em=2&amp;wdAr=1.7777777777777777&amp;wdEaa=1" width="610px" height="367px" frameborder="0">Apocalipsis - Lección:12</a></li>
+                                                                                <li><a id="ap13-ppt" href="https://onedrive.live.com/embed?cid=3D93D1C53B393AA8&amp;resid=3D93D1C53B393AA8%21165&amp;authkey=AF4VBDVUJSVWNFg&amp;em=2&amp;wdAr=1.7777777777777777&amp;wdEaa=1" width="610px" height="367px" frameborder="0">Apocalipsis - Lección:13</a></li>
+                                                                                <li><a id="ap14-ppt" href="https://onedrive.live.com/embed?cid=3D93D1C53B393AA8&amp;resid=3D93D1C53B393AA8%21168&amp;authkey=AJu7lRFp0sJrrXs&amp;em=2&amp;wdAr=1.7777777777777777&amp;wdEaa=1" width="610px" height="367px" frameborder="0">Apocalipsis - Lección:14</a></li>
+                                                                                <li><a id="ap15-ppt" href="https://onedrive.live.com/embed?cid=3D93D1C53B393AA8&amp;resid=3D93D1C53B393AA8%21166&amp;authkey=AFn0AVMZXysg3Y4&amp;em=2&amp;wdAr=1.7777777777777777&amp;wdEaa=1" width="610px" height="367px" frameborder="0">Apocalipsis - Lección:15</a></li>
+                                                                                <li><a id="ap16-ppt" href="https://onedrive.live.com/embed?cid=3D93D1C53B393AA8&amp;resid=3D93D1C53B393AA8%21167&amp;authkey=AG3hNzX9pvz-6Bg&amp;em=2&amp;wdAr=1.7777777777777777&amp;wdEaa=1" width="610px" height="367px" frameborder="0" >Apocalipsis - Lección:16</a></li>
+                                                                                <li><a id="ap17-ppt" href="https://onedrive.live.com/embed?cid=3D93D1C53B393AA8&amp;resid=3D93D1C53B393AA8%21169&amp;authkey=ACcGotuzXqYDe30&amp;em=2&amp;wdAr=1.7777777777777777&amp;wdEaa=1" width="610px" height="367px" frameborder="0">Apocalipsis - Lección:17</a></li>
+                                                                                <li><a id="ap18-ppt" href="https://onedrive.live.com/embed?cid=3D93D1C53B393AA8&amp;resid=3D93D1C53B393AA8%21172&amp;authkey=AHona1E6VXd53TM&amp;em=2&amp;wdAr=1.7777777777777777&amp;wdEaa=1" width="610px" height="367px" frameborder="0" >Apocalipsis - Lección:18</a></li>
+                                                                                <li><a id="ap19-ppt" href="https://onedrive.live.com/embed?cid=3D93D1C53B393AA8&amp;resid=3D93D1C53B393AA8%21170&amp;authkey=AN_RF2jmAGcMs-k&amp;em=2&amp;wdAr=1.7777777777777777&amp;wdEaa=1" width="610px" height="367px" frameborder="0">Apocalipsis - Lección:19</a></li>
+                                                                                <li><a id="ap20-ppt" href="https://onedrive.live.com/embed?cid=3D93D1C53B393AA8&amp;resid=3D93D1C53B393AA8%21171&amp;authkey=AIo39OBX0M-yNpU&amp;em=2&amp;wdAr=1.7777777777777777&amp;wdEaa=1" width="610px" height="367px" frameborder="0">Apocalipsis - Lección:20</a></li>
+                                                                                <li><a id="ap21-ppt" href="https://onedrive.live.com/embed?cid=3D93D1C53B393AA8&amp;resid=3D93D1C53B393AA8%21173&amp;authkey=AEamnDHYGRIPtVE&amp;em=2&amp;wdAr=1.7777777777777777&amp;wdEaa=1" width="610px" height="367px" frameborder="0" >Apocalipsis - Lección:21</a></li>
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="panel">
+                                                                    <div class="panel-heading">
+                                                                        <div class="col-xs-8 col-sm-9 col-md-9 col-lg-9">
+                                                                            <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion-2" href="#collapseThree-23" class="collapsed"> <i class="fa fa-fw fa-plus-circle txt-color-green"></i> <i class="fa fa-fw fa-minus-circle txt-color-red"></i> Daniel </a></h4>        
+                                                                        </div>
+                                                                        <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3 estudio-img">
+                                                                            <div class="row">
+                                                                                <img src="../images/estudios/es-daniel.PNG" alt="" style="width: 60%"/>
+                                                                            </div>                                 
+                                                                        </div>                                                                       
+                                                                    </div>
+                                                                    <div id="collapseThree-23" class="panel-collapse collapse">
+                                                                        <div class="panel-body">
+                                                                            <ul id="estudiosppt">
+                                                                                <li><a id="dani1-ppt" href="" >Daniel - Lección:1</a></li>
+                                                                                <li><a id="dani2-ppt" href="" >Daniel - Lección:2</a></li>
+                                                                                <li><a id="dani3-ppt" href="" >Daniel - Lección:3</a></li>
+                                                                                <li><a id="dani4-ppt" href="" >Daniel - Lección:4</a></li>
+                                                                                <li><a id="dani5-ppt" href="" >Daniel - Lección:5</a></li>
+                                                                                <li><a id="dani6-ppt" href="" >Daniel - Lección:6</a></li>
+                                                                                <li><a id="dani7-ppt" href="" >Daniel - Lección:7</a></li>
+                                                                                <li><a id="dani8-ppt" href="" >Daniel - Lección:8</a></li>
+                                                                                <li><a id="dani9-ppt" href="" >Daniel - Lección:9</a></li>
+                                                                                <li><a id="dani10-ppt" href="" >Daniel - Lección:10</a></li>
+                                                                                <li><a id="dani11-ppt" href="" >Daniel - Lección:11</a></li>
+                                                                                <li><a id="dani12-ppt" href="" >Daniel - Lección:12</a></li>
+                                                                                <li><a id="dani13-ppt" href="" >Daniel - Lección:13</a></li>
+                                                                                <li><a id="dani14-ppt" href="" >Daniel - Lección:14</a></li>
+                                                                                <li><a id="dani15-ppt" href="" >Daniel - Lección:15</a></li>
+                                                                                <li><a id="dani16-ppt" href="" >Daniel - Lección:16</a></li>
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="panel ">
+                                                                    <div class="">
+                                                                        <div class="col-xs-8 col-sm-9 col-md-9 col-lg-9">
+                                                                            <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion-2" href="#collapseThree-21" class="collapsed"> <i class="fa fa-fw fa-plus-circle txt-color-green"></i> <i class="fa fa-fw fa-minus-circle txt-color-red"></i>Esperanza Para La Familia</a></h4>
+                                                                        </div>
+                                                                        <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3 estudio-img">
+                                                                            <div class="row">
+                                                                                <img src="../images/estudios/es-familia-ppt.PNG" alt="" style="width: 60%"/>
+                                                                            </div>                                 
+                                                                        </div>                                                                        
+                                                                    </div>
+                                                                    <div id="collapseThree-21" class="panel-collapse collapse">
+                                                                        <div class="panel-body">
+                                                                            <ul id="estudiosppt">
+                                                                                <li><a id="ef1-ppt" href="https://onedrive.live.com/embed?cid=3D93D1C53B393AA8&amp;resid=3D93D1C53B393AA8%21141&amp;authkey=AOFceOjvEGbLS2I&amp;em=2&amp;wdAr=1.6&amp;wdEaa=1" width="610px" height="405px" frameborder="0">EF - Lección:1</a></li>
+                                                                                <li><a id="ef2-ppt" href="https://onedrive.live.com/embed?cid=3D93D1C53B393AA8&amp;resid=3D93D1C53B393AA8%21139&amp;authkey=AKGZby171lWBWzE&amp;em=2&amp;wdAr=1.6&amp;wdEaa=1" width="610px" height="405px" frameborder="0">EF - Lección:2</a></li>
+                                                                                <li><a id="ef3-ppt" href="https://onedrive.live.com/embed?cid=3D93D1C53B393AA8&amp;resid=3D93D1C53B393AA8%21140&amp;authkey=AE6j98PzSKORIs8&amp;em=2&amp;wdAr=1.6&amp;wdEaa=1" width="610px" height="405px" frameborder="0">EF - Lección:3</a></li>
+                                                                                <li><a id="ef4-ppt" href="https://onedrive.live.com/embed?cid=3D93D1C53B393AA8&amp;resid=3D93D1C53B393AA8%21142&amp;authkey=AACoxuOH3iaZSTk&amp;em=2&amp;wdAr=1.6&amp;wdEaa=1" width="610px" height="405px" frameborder="0">EF - Lección:4</a></li>
+                                                                                <li><a id="ef5-ppt" href="https://onedrive.live.com/embed?cid=3D93D1C53B393AA8&amp;resid=3D93D1C53B393AA8%21143&amp;authkey=AHQ4l3yhhs43ehk&amp;em=2&amp;wdAr=1.6&amp;wdEaa=1" width="610px" height="405px" frameborder="0">EF - Lección:5</a></li>
+                                                                                <li><a id="ef6-ppt" href="https://onedrive.live.com/embed?cid=3D93D1C53B393AA8&amp;resid=3D93D1C53B393AA8%21144&amp;authkey=AALgh5tOJeVkoTk&amp;em=2&amp;wdAr=1.6&amp;wdEaa=1" width="610px" height="405px" frameborder="0">EF - Lección:6</a></li>
+                                                                                <li><a id="ef7-ppt" href="https://onedrive.live.com/embed?resid=3D93D1C53B393AA8%21145&amp;authkey=%21AFKSseMTyIcckJA&amp;em=2&amp;wdAr=1.6&amp;wdEaa=1" width="610px" height="405px" frameborder="0">EF - Lección:7</a></li>
+                                                                                <li><a id="ef8-ppt" href="https://onedrive.live.com/embed?cid=3D93D1C53B393AA8&amp;resid=3D93D1C53B393AA8%21146&amp;authkey=APZpzdh7kMxttco&amp;em=2&amp;wdAr=1.6&amp;wdEaa=1" width="610px" height="405px" frameborder="0">EF - Lección:8</a></li>
+                                                                                <li><a id="ef9-ppt" href="https://onedrive.live.com/embed?cid=3D93D1C53B393AA8&amp;resid=3D93D1C53B393AA8%21147&amp;authkey=APPhubuIJilie0Y&amp;em=2&amp;wdAr=1.6&amp;wdEaa=1" width="610px" height="405px" frameborder="0">EF - Lección:9</a></li>
+                                                                                <li><a id="ef10-ppt" href="https://onedrive.live.com/embed?cid=3D93D1C53B393AA8&amp;resid=3D93D1C53B393AA8%21148&amp;authkey=AOXtqsWg-TzPR14&amp;em=2&amp;wdAr=1.6&amp;wdEaa=1" width="610px" height="405px" frameborder="0" >EF - Lección:10</a></li>
+                                                                                <li><a id="ef11-ppt" href="https://onedrive.live.com/embed?cid=3D93D1C53B393AA8&amp;resid=3D93D1C53B393AA8%21150&amp;authkey=ABGi3674TfBO2qs&amp;em=2&amp;wdAr=1.6&amp;wdEaa=1" width="610px" height="405px" frameborder="0">EF - Lección:11</a></li>
+                                                                                <li><a id="ef12-ppt" href="https://onedrive.live.com/embed?cid=3D93D1C53B393AA8&amp;resid=3D93D1C53B393AA8%21149&amp;authkey=AGqBDA8WWZaPE54&amp;em=2&amp;wdAr=1.6&amp;wdEaa=1" width="610px" height="405px" frameborder="0">EF - Lección:12</a></li>
+                                                                                <li><a id="ef13-ppt" href="https://onedrive.live.com/embed?cid=3D93D1C53B393AA8&amp;resid=3D93D1C53B393AA8%21151&amp;authkey=ABrO2fl1faIO96s&amp;em=2&amp;wdAr=1.6&amp;wdEaa=1" width="610px" height="405px" frameborder="0">EF - Lección:13</a></li>
+                                                                                <li><a id="ef14-ppt" href="https://onedrive.live.com/embed?cid=3D93D1C53B393AA8&amp;resid=3D93D1C53B393AA8%21152&amp;authkey=AOkVaiSQFHd3TCA&amp;em=2&amp;wdAr=1.6&amp;wdEaa=1" width="610px" height="405px" frameborder="0">EF - Lección:14</a></li>
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="jarviswidget jarviswidget-color-darken"  data-widget-editbutton="true">                                 
+                                        <header>
+                                            <span class="widget-icon"> <i class="fa fa-book"></i> </span>
+                                            <h2>Biblia</h2>
+                                        </header>
+                                        <div>
+                                            <div class="jarviswidget-editbox">
+                                            </div>
+                                            <div class="widget-body no-padding">
+                                                <iframe src="Biblia.php" width="100%" height="486px" style="margin-bottom: -6px;"></iframe>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>
+                                <article class="col-xs-12 col-sm-7 col-md-7 col-lg-7" style="margin-bottom: 30px">
+                                    <div class="jarviswidget jarviswidget-color-darken"  data-widget-editbutton="true">
+                                        <header>
+                                            <span class="widget-icon"> <i class="fa fa-book"></i> </span>
+                                            <h2>Materialen en PPT</h2>
+                                        </header>
+                                        <div>
+                                            <div class="jarviswidget-editbox">
+                                            </div>
+                                            <div class="widget-body no-padding" style="background-image: url('../images/estudios/FJ-PPT.PNG');background-size: 100% 100%;height: 60vh" >
+                                                <!--<iframe id="myframe" name="myframe" src="https://drive.google.com/file/d/15s6EFXtu8lSPtblLQ5YwkG16bggd2XgZ/view?usp=sharing" width="100%" style="height: 100vh"></iframe>-->
+                                                <!--<iframe id="myframe" name="myframe" src="" frameborder="0" width="100%" style="height: 100vh"></iframe>-->
+                                                <iframe id="estuppt" src="" width="100%" height="100%" frameborder="0" scrolling="yes" style="margin-bottom: -6px;"></iframe>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>
+                                
+                        </div>
                         </section>
                     </div>
                     <!-- END MAIN PANEL -->
@@ -720,14 +796,14 @@ if ($_SESSION["Usuario"] !== null) {
             <script data-pace-options='{ "restartOnRequestAfter": true }' src="js/plugin/pace/pace.min.js"></script>
 
             <!-- Link to Google CDN's jQuery + jQueryUI; fall back to local -->
-            <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
             <script>
                 if (!window.jQuery) {
                     document.write('<script src="js/libs/jquery-2.1.1.min.js"><\/script>');
                 }
             </script>
 
-            <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+            <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
             <script>
                 if (!window.jQuery.ui) {
                     document.write('<script src="js/libs/jquery-ui-1.10.3.min.js"><\/script>');

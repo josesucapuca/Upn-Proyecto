@@ -13,7 +13,7 @@ $accion = (isset($_GET['accion'])) ? $_GET['accion'] : 'leer';
 //Las acciones de los bontones
 switch ($accion) {
     case 'agregar':
-        $sentenciaSQL = $pdo->prepare("call RegistrarDiarioDevocional (:id_Persona,:Resumen_Personal,:Aplicacion_Diaria,:title,:color,:Meta,:Pedido_Oracion)");
+        $sentenciaSQL = $pdo->prepare("call RegistrarDiarioDevocional (:id_Persona,:Resumen_Personal,:Aplicacion_Diaria,:title,:color,:Meta,:Pedido_Oracion,:pedido_contestado)");
         $respuesta = $sentenciaSQL->execute(array(
             "id_Persona" => $_POST['id_Persona'],
             "Resumen_Personal" => $_POST['Resumen_Personal'],
@@ -21,7 +21,8 @@ switch ($accion) {
             "title" => $_POST['title'],
             "color" => $_POST['color'],
             "Meta" => $_POST['Meta'],
-            "Pedido_Oracion" => $_POST['Pedido_Oracion']
+            "Pedido_Oracion" => $_POST['Pedido_Oracion'],
+            "pedido_contestado" => $_POST['pedido_contestado']
         ));
         echo json_encode($respuesta);
 //        echo 'agregar';

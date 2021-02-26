@@ -1,86 +1,102 @@
 $(document).ready(function () {
 
-//    Mision();
-    $("#sel_mision").change(function (){
-       var id_Mision = $("#sel_mision").val();
-            Distrito(id_Mision); 
+Mision();
+    $("#sel_mision").change(function () {
+        var id_Mision = $("#sel_mision").val();
+        Distrito(id_Mision);
     });
-     $("#sel_distrito").change(function (){
-       var id_Distrito = $("#sel_distrito").val();
-            Iglesia(id_Distrito);
+    $("#sel_distrito").change(function () {
+        var id_Distrito = $("#sel_distrito").val();
+        Iglesia(id_Distrito);
     });
 
 });
 
 function Mision() {
-//    alert("entro commbito :D");
     $.ajax({
         type: "POST",
         url: '../Controlador/Logueo.php',
-        data: {opc: "ListarMision2"},
+        data: {opc: "ListarMision"},
         success: function (response)
         {
-//            alert(response);
             var data = JSON.parse(response);
-            var cadena = "";
+            var mision = $("#sel_mision").val();
+            var cadena = "<option value=''>Seleccionar</option>";
             if (data.length > 0) {
                 for (var i = 0; i < data.length; i++) {
-                    cadena += "<option value='" + data[i][0] + "'>" + data[i][1] + "</option>";
+                    if(mision===data[i].id_Mision){
+                         cadena += "<option value='" + data[i].id_Mision + "' selected='selected'>" + data[i].No_Mision + "</option>";
+                    }else{
+                         cadena += "<option value='" + data[i].id_Mision + "'>" + data[i].No_Mision + "</option>";
+                    }
+                   // alert(data[i].id_Mision);
                 }
-                $("#sel_mision").html(cadena);
-            var id_Mision = $("#sel_mision").val();
-            Distrito(id_Mision);
+                $("#sel_mision").empty();
+                $("#sel_mision").append(cadena);
+                var id_Mision = $("#sel_mision").val();
+                Distrito(id_Mision);
             } else {
                 cadena += "<option value=''>No hay datos</option>";
-                $("#sel_mision").html(cadena);
+                $("#sel_mision").empty();
+                $("#sel_mision").append(cadena);
             }
         }
     });
 }
 function Distrito(id_Mision) {
-//    alert("entro commbito :D");
     $.ajax({
         type: "POST",
         url: '../Controlador/Logueo.php',
-        data: {opc: "ListarDistrito2",id_Mision:id_Mision},
+        data: {opc: "ListarDistrito", id_Mision: id_Mision},
         success: function (response)
         {
-//            alert(response);
             var data = JSON.parse(response);
-            var cadena = "";
+            var distri = $("#sel_distrito").val();
+            var cadena = "<option value=''>Seleccionar</option>";
             if (data.length > 0) {
-                for (var i = 0; i < data.length; i++) {                   
-                    cadena += "<option value='" + data[i][0] + "'>" + data[i][1] + "</option>";
+                for (var i = 0; i < data.length; i++) {
+                    if(distri===data[i].id_Distrito){
+                        cadena += "<option value='" + data[i].id_Distrito + "' selected='selected'>" + data[i].No_Distrito + "</option>";
+                    }else{
+                        cadena += "<option value='" + data[i].id_Distrito + "'>" + data[i].No_Distrito + "</option>";
+                    }
                 }
-                $("#sel_distrito").html(cadena);
-            var id_Distrito = $("#sel_distrito").val();
-            Iglesia(id_Distrito);
+                $("#sel_distrito").empty();
+                $("#sel_distrito").append(cadena);
+                var id_Distrito = $("#sel_distrito").val();
+                Iglesia(id_Distrito);
             } else {
                 cadena += "<option value=''>No hay datos</option>";
-                $("#sel_distrito").html(cadena);
+                $("#sel_distrito").empty();
+                $("#sel_distrito").append(cadena);
             }
         }
     });
 }
 function Iglesia(id_Distrito) {
-//    alert("entro commbito :D");
     $.ajax({
         type: "POST",
         url: '../Controlador/Logueo.php',
-        data: {opc: "ListarIglesia2", id_Distrito:id_Distrito},
+        data: {opc: "ListarIglesia", id_Distrito: id_Distrito},
         success: function (response)
         {
-//            alert(response);
             var data = JSON.parse(response);
-            var cadena = "";
+            var igle = $("#sel_iglesia").val();
+            var cadena = "<option value=''>Seleccionar</option>";
             if (data.length > 0) {
                 for (var i = 0; i < data.length; i++) {
-                    cadena += "<option value='" + data[i][0] + "'>" + data[i][1] + "</option>";
+                    if(igle===data[i].id_Iglesia){
+                         cadena += "<option value='" + data[i].id_Iglesia + "' selected='selected'>" + data[i].Nombre_Iglesia + "</option>";
+                    }else{
+                         cadena += "<option value='" + data[i].id_Iglesia + "'>" + data[i].Nombre_Iglesia + "</option>";
+                    }
                 }
-                $("#sel_iglesia").html(cadena);
+                $("#sel_iglesia").empty();
+                $("#sel_iglesia").append(cadena);
             } else {
                 cadena += "<option value=''>No hay datos</option>";
-                $("#sel_iglesia").html(cadena);
+                $("#sel_iglesia").empty();
+                $("#sel_iglesia").append(cadena);
             }
         }
     });
@@ -159,9 +175,9 @@ function CompararContra() {
 
 //ACTUALIZAR DATOS
 function ActualizarDatos() {
-    alert("entro a actualizar Datos c: x3");
-    var No_Persona = $("#edinombre").val();
-    var AP_Persona = $("#ediape").val();
+   // alert("entro a actualizar Datos c: x3");
+    var No_Persona = $("#edinombre").val().toUpperCase();
+    var AP_Persona = $("#ediape").val().toUpperCase();
     var Edad_Persona = $("#ediedad").val();
     var Se_Persona = $("#cbosexo").val();
     var Es_Civil_Persona = $("#cbocivil").val();
@@ -171,12 +187,12 @@ function ActualizarDatos() {
     var correo_Persona = $("#edicorreo").val();
     var id_Iglesia = $("#sel_iglesia").val();
     var id_Persona = $("#id_Persona").val();
-    alert("Datos:" + No_Persona + AP_Persona + Edad_Persona + Se_Persona+Es_Civil_Persona+Ti_Persona+dire_Persona+tele_Persona+correo_Persona+id_Iglesia+id_Persona);
+   // alert("Datos:" + No_Persona + AP_Persona + Edad_Persona + Se_Persona+Es_Civil_Persona+Ti_Persona+dire_Persona+tele_Persona+correo_Persona+id_Iglesia+id_Persona);
     if (No_Persona.length > 0 & AP_Persona.length > 0 & Edad_Persona.length > 0 &
             Se_Persona.length > 0 & Es_Civil_Persona.length > 0 & Ti_Persona.length > 0 &
             dire_Persona.length > 0 & tele_Persona.length > 0 & correo_Persona.length > 0 &
             id_Iglesia.length > 0 & id_Persona.length > 0 ) {
-        if (campos.nombre && campos.apellido && campos.direccion && campos.edad && campos.correo && campos.telefono) {
+     //   if (campos.nombre && campos.apellido && campos.direccion && campos.edad && campos.correo && campos.telefono) {
             $.ajax({
                 type: "POST",
                 url: '../Controlador/Logueo.php',
@@ -196,7 +212,7 @@ function ActualizarDatos() {
                 },
                 success: function (response)
                 {
-                    alert(response);
+                   // alert(response);
                     var validar = 1;
                     if (response == validar) {
                         Swal.fire({
@@ -213,12 +229,14 @@ function ActualizarDatos() {
                     }
                 }
             }); 
-        }else {
-            $("#resultado").html("<div class='formulario__mensaje' id='formulario__mensaje'>\n\
-<p><i class='fas fa-exclamation-triangle'></i> <b>Error:</b> Por favor rellena el formulario correctamente. </p></div>");
-            document.getElementById('formulario__mensaje').classList.add('formulario__mensaje-activo');
         }
-        }else {
+        //else {
+          //  $("#resultado").html("<div class='formulario__mensaje' id='formulario__mensaje'>\n\
+//<p><i class='fas fa-exclamation-triangle'></i> <b>Error:</b> Por favor rellena el formulario correctamente. </p></div>");
+      //      document.getElementById('formulario__mensaje').classList.add('formulario__mensaje-activo');
+       // }
+       // }
+        else {
             $("#resultado").html("<div class='formulario__mensaje' id='formulario__mensaje'>\n\
 <p><i class='fas fa-exclamation-triangle'></i> <b>Error:</b> Por favor rellena el formulario correctamente. </p></div>");
             document.getElementById('formulario__mensaje').classList.add('formulario__mensaje-activo');

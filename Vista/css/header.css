@@ -3,7 +3,13 @@
     ALIGN-ITEMS: center;
     min-height: 60px !important;
 }
-
+.ReavivaDiv{
+    width: calc(100%/7);
+    float: left;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
 a {
     color: #3fa1f8;
     text-decoration: none;
@@ -48,7 +54,6 @@ a:focus, a:hover {
 .bod{
     display: flex;
     flex-direction: column;
-    height: 100vh;
     background: #0000005e;
 }
 .contop{
@@ -59,6 +64,9 @@ a:focus, a:hover {
 }
 .panelm-green{
     background-color: #356e35 !important;
+}
+.panelm-whiteb{
+    background-color: #ffffffb5 !important;
 }
 .titMusic{
     font-weight: 600;
@@ -77,7 +85,8 @@ a:focus, a:hover {
     background-color: #00000085 !important;
 }
 .panelm-white{
-    background-color: #aea8a885 !important
+    background-color: #ffffff3b !important;
+    border-color: #ffffffb5 !important;
 }
 .panelm{
     background-color: #fff0;
@@ -98,16 +107,16 @@ a:focus, a:hover {
 }
 
 #panHeadEsp :hover,#panHeadEsp  :focus {
-    color: #356e35 !important;
+    color: black !important;
 }
 #panHeadEsBi :hover,#panHeadEsBi  :focus {
-    color: #a90329 !important;
+    color: black !important;
 }
 #panHeadCamEva :hover,#panHeadCamEva  :focus {
-    color: #cfcfcf !important;
+    color: black !important;
 }
 #panHeadEsSab :hover,#panHeadEsSab  :focus {
-    color: #c79121 !important;
+    color: black !important;
 }
 .price-features{
     background: none;
@@ -119,7 +128,7 @@ a:focus, a:hover {
     display: grid;
     align-items: center;
     justify-content: center;
-    border-bottom: 5px solid transparent;
+    border-bottom: 15px solid transparent;
 }
 .titop{
     font-size: 25px !important;
@@ -340,5 +349,63 @@ a{
 @media (max-width:991px){
     #tithim{
         justify-content: center;
+    }
+}
+@media (min-width: 769px) and (max-width:992px){
+    .ReaColmd{
+        width: calc(100%/3);
+        float: left;
+        height: 100%;
+        align-items: center;
+        border-style: solid;
+        border-width: 0px 1px 1px 0px;
+        border-color: #bcbfbe;
+    }
+    .Reactual{
+        background: #4f7500;
+        border-radius: 0px 0px 10px 10px;
+        color:white;
+        width: 100%;
+    }
+}
+@media (min-width: 1200px){
+    .ReaCollg{
+        width: calc(100%/7);
+        float: left;
+        height: 100%;
+        align-items: center;
+        border-style: solid;
+        border-width: 0px 1px 0px 0px;
+        border-color: #bcbfbe;
+
+    }
+    .Reactual{
+        background: #4f7500;
+        border-radius: 0px 0px 10px 0px;
+        color:white;
+    }
+}
+@media (max-width: 768px){
+    .ReaColsm{
+        width: 100%;
+        float: left;
+        height: 100%;
+        align-items: center;
+        border-style: solid;
+        border-width: 0px 0px 2px 0px;
+        border-color: #bcbfbe;
+    }
+    .Reactual{
+        background: #4f7500;
+        border-radius: 0px 0px 10px 10px;
+        color:white;
+    }
+}
+@media only screen and (min-width: 0) and (max-width: 679px){
+    .jarviswidget header h2 {
+        width: 200px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
     }
 }

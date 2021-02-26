@@ -2,7 +2,7 @@
 session_start();
 if ($_SESSION["Usuario"] !== null) {
     ?><!DOCTYPE html>
-    <html lang="es" style="background-image: url('img/pattern/tileable_wood_texture.png')">
+    <html lang="es" style="background-image: url('../images/fond1.png');background-size: 100% auto;">
         <head>
             <!--<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">-->
             <title>ceoadventista.org</title>
@@ -62,10 +62,21 @@ if ($_SESSION["Usuario"] !== null) {
                 .texto{
                     color: white;
                 }
+                .abs-center {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    /*min-height: 16vh;*/
+                }
+                .colin-xs-7-7{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
             </style>
         </head>
-        <body class="conta bod">
-            <input id="PersonaUsuario" type="hidden" value="<?php echo $_SESSION["Persona"] ?>">
+        <body class="conta bod" style="background: url('../images/fondo_Principal.png');background-size: 100% auto;">
+            <input id="PersonaUsuario" type="hidden" value="<?php echo utf8_encode($_SESSION["Persona"]) ?>">
             <div class="row" style=" margin-left: 0px;margin-right: 0px;height: 100%;">
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="margin-left: 0px;margin-right: 0px;padding-left: 0px;padding-right: 0px;height: 90%;">
                     <!-- HEADER -->
@@ -75,46 +86,36 @@ if ($_SESSION["Usuario"] !== null) {
                             <span id="logo"> <img class="imglog" src="../images/img_logo/adventist-es--white.png" alt="SmartAdmin" > </span>
                         </div>
                         <div class="pull-right">
+
                             <!-- Top menu profile link : this shows only when top menu is active -->
                             <ul id="mobile-profile-img" class="header-dropdown-list padding-5">
-                                <li class="LiReporte" style="display: none">
-                                    <a id="Reporte" href="Trabajando.php" class="btn btn-primary" style="font-size: 13px;text-align: center;align-items: center;"> 
-                                        <i class="fa fa-bar-chart-o"></i>
-                                    </a>
-                                </li>
+                                
                                 <li class="">
                                     <a href="#" class="btn btn-circle btn-primary"  data-toggle="dropdown" style="font-size: 15px;text-align: center;align-items: center;padding-top: 2px;"> 
                                         <i class="fa fa-sort-desc"></i>
                                     </a>
                                     <ul class="dropdown-menu pull-right">
-                                        <li>
-                                            <a href="javascript:void(0);" class="padding-10 padding-top-0 padding-bottom-0"><i class="fa fa-cog"></i> <u>C</u>onfiguración</a>
-                                        </li>
-                                        <li class="divider"></li>
+                                        
                                         <li>
                                             <a href="Perfil.php" class="padding-10 padding-top-0 padding-bottom-0"> <i class="fa fa-user"></i> <u>P</u>erfil</a>
                                         </li>
-                                        <li class="divider"></li>
-
+                                        
                                         <li class="divider"></li>
                                         <li>
                                             <a href="javascript:void(0);" class="padding-10 padding-top-0 padding-bottom-0" data-action="launchFullscreen"><i class="fa fa-arrows-alt"></i> <u>P</u>antalla <u>C</u>ompleta</a>
                                         </li>
                                         <li class="divider"></li>
                                         <li>
-                                            <a href="../CerrarSesion.php" class="padding-10 padding-top-5 padding-bottom-5" data-action="userLogout"  data-logout-msg="¿Estás seguro de salir de sesión?"><i class="fa fa-sign-out fa-lg"></i> <strong><u>C</u>errar Sesión</strong></a>
+                                            <a href="../CerrarSesion.php" class="padding-10 padding-top-5 padding-bottom-5" data-action="userLogout"  data-logout-msg="Estas Seguro de Salir de Sesión"><i class="fa fa-sign-out fa-lg"></i> <strong><u>C</u>errar Sesión</strong></a>
                                         </li>
                                     </ul>
                                 </li>
                             </ul>
+
                             <!-- logout button -->
                             <div id="" class="transparent pull-right">
                                 <ul id="" class="header-dropdown-list ">
-                                    <li class="LiReporte2" style="display: none">
-                                        <a id="Reporte2" href="Trabajando.php" class="btn1 btn-primary1" style="font-size: 13px;text-align: center;align-items: center;"> 
-                                            <i class="fa fa-bar-chart-o"></i>
-                                        </a>
-                                    </li>
+                                   
                                     <li class="volver" >
                                         <a id="volver" href="Principal.php" class="btn1 btn-primary1" style="font-size: 13px;text-align: center;align-items: center;"> 
                                             <i class="fa fa-home "></i> Inicio
@@ -125,22 +126,17 @@ if ($_SESSION["Usuario"] !== null) {
                                             <i class="fa fa-sort-desc"></i>
                                         </a>
                                         <ul class="dropdown-menu pull-right">
-                                            <li>
-                                                <a href="Configuracion.php" class="padding-10 padding-top-0 padding-bottom-0"><i class="fa fa-cog"></i> <u>C</u>onfiguración</a>
-                                            </li>
-                                            <li class="divider"></li>
+                                            
                                             <li>
                                                 <a href="Perfil.php" class="padding-10 padding-top-0 padding-bottom-0"> <i class="fa fa-user"></i> <u>P</u>erfil</a>
                                             </li>
-                                            <li class="divider"></li>
-
                                             <li class="divider"></li>
                                             <li>
                                                 <a href="javascript:void(0);" class="padding-10 padding-top-0 padding-bottom-0" data-action="launchFullscreen"><i class="fa fa-arrows-alt"></i> <u>P</u>antalla <u>C</u>ompleta</a>
                                             </li>
                                             <li class="divider"></li>
                                             <li>
-                                                <a href="../CerrarSesion.php" class="padding-10 padding-top-5 padding-bottom-5" data-action="userLogout"  data-logout-msg="¿Estás seguro de salir de sesión?"><i class="fa fa-sign-out fa-lg"></i> <strong><u>C</u>errar Sesión</strong></a>
+                                                <a href="../CerrarSesion.php" class="padding-10 padding-top-5 padding-bottom-5" data-action="userLogout"  data-logout-msg="Estas Seguro de Salir de Sesión"><i class="fa fa-sign-out fa-lg"></i> <strong><u>C</u>errar Sesión</strong></a>
                                             </li>
                                         </ul>
                                     </li>
@@ -164,9 +160,9 @@ if ($_SESSION["Usuario"] !== null) {
                                     </div>
                                 </div
                                 <div class="card-body">
+                                 
                                     <form action="" class="formulario" id="formulario">
                                         <input id="id_Usuario" type="hidden" value="<?php echo $_SESSION["id_Usuario"] ?>">
-                                        <!--<div class="form-row">-->
                                         <div class=" col-xs-12 col-sm-12 col-md-12 col-lg-12 formulario__grupo " id="grupo__usuario">
                                             <div class="input-group-prepend">
                                                 <i class="fas fa-lock texto"></i> <label class="input-group-text texto ">Contraseña actual</label>
@@ -182,10 +178,8 @@ if ($_SESSION["Usuario"] !== null) {
                                         <div class=" col-xs-12 col-sm-12 col-md-12 col-lg-12 formulario__grupo" id="grupo__password">
                                             <div class="input-group-prepend">
                                                 <i class="fas fa-key texto"></i> <label class="input-group-text texto">Nueva Contraseña</label>
-                                                 <!--<span class="input-group-text"><i class="fas fa-key"></i></span>-->
                                             </div>
                                             <div class="formulario__grupo" id="grupo__password">
-                                                <!--<label for="password" class="formulario__label">Contraseña</label>-->
                                                 <div class="formulario__grupo-input">
                                                     <input type="password" class="formulario__input" name="password" id="password">
                                                     <i class="formulario__validacion-estado far fa-check-circle"></i>
@@ -197,10 +191,8 @@ if ($_SESSION["Usuario"] !== null) {
                                         <div class=" col-xs-12 col-sm-12 col-md-12 col-lg-12 formulario__grupo" id="grupo__password2">
                                             <div class="input-group-prepend">
                                                 <i class="fas fa-key texto"></i> <label class="input-group-text texto">Confirmar Contraseña</label>
-                                                <!--<span class="input-group-text"><i class="fas fa-key"></i></span>-->
                                             </div>
                                             <div class="formulario__grupo" id="grupo__password2">
-                                                <!--<label for="password2" class="formulario__label">Repetir Contraseña</label>-->
                                                 <div class="formulario__grupo-input">
                                                     <input type="password" class="formulario__input" name="password2" id="password2">
                                                     <i class="formulario__validacion-estado far fa-check-circle"></i>
@@ -210,8 +202,10 @@ if ($_SESSION["Usuario"] !== null) {
                                         </div>
                                         <div class="row"> 
                                         </div>
-                                        <!--</div>-->
+                                        
                                     </form>
+                                   
+                                   
                                     <br>
                                     <div class="card-footer">
                                         <div class="row">                                            
@@ -234,33 +228,29 @@ if ($_SESSION["Usuario"] !== null) {
                 </div>
                 <div class="row"> 
                     <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 asi">
-                        <!--<img src="../images/logo.png" width="60" height="60" >-->
                     </div>
                     <div class="col-md-8 col-xs-8 col-sm-8 col-md-8 col-lg-8 abs-center" style="margin-bottom: 40px">
                         <div class="row"><h2 style="color: white"><i class="fa fa-edit"></i> Datos Generales</h2> </div>                                                                
                     </div>
                 </div>
-                <div class="row"> 
-                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="row">
                         <div class="row">
-                            <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4 profile-pic">
-                                <img src="../images/users.png" style="width: 30%;">                                                     
+                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 profile-pic abs-center">
+                                <img src="../images/iconos/user2.png" style="width: 30%;">                                                     
                             </div>
-                            <div class="col-xs-5 col-sm-8 col-md-8 col-lg-8">
-                                <h1><?php echo $_SESSION["Persona"]; ?> <span class="semi-bold"></span>
+                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 abs-center">
+                                <h1 style="color: white"><?php echo  utf8_encode($_SESSION["Persona"]); ?> <span class="semi-bold"></span>
                                     <br>
-                                    <small style="color: white"><?php echo $_SESSION["Usuario"]; ?></small></h1>
+                                    <small style="color: white" class="abs-center"><?php echo utf8_encode($_SESSION["Usuario"]) ?></small></h1>
                                 <br>                  
                             </div>                                                 
                         </div>
-                    </div>
                 </div>
-                <!--<div class="margin-top-10">-->
                 <main>
                     <form action="" class="formulario" id="formulario">
                         <input id="id_Persona" type="hidden" value="<?php echo $_SESSION["id_Persona"] ?>">
                         <div class="formulario__grupo" id="grupo__password">
-                            <i class="fas fa-user"></i> <label for="password" class="input-group-text texto "> Contraseña:</label>
+                            <i class="fas fa-key" style="color: white"></i> <label for="password" class="input-group-text texto "> Contraseña:</label>
                             <div class="formulario__grupo-input">
                                 <input data-toggle="modal" data-target="#myModal" placeholder="Password field" type="password" class="formulario__input" value="<?php echo $_SESSION["Contra"]; ?>">
                                <!--<input type="text" class="formulario__input" name="nombre" id="edinombre" placeholder="Nombres">-->
@@ -269,50 +259,50 @@ if ($_SESSION["Usuario"] !== null) {
                             <p class="formulario__input-error">este campo no puede estar vacio.</p>
                         </div>
                         <div class="formulario__grupo" id="grupo__nombre">
-                            <i class="fas fa-user"></i> <label for="nombre" class="input-group-text texto "> Nombres:</label>
+                            <i class="fas fa-user" style="color: white"></i> <label for="nombre" class="input-group-text texto "> Nombres:</label>
                             <div class="formulario__grupo-input">
-                                <input type="text" class="formulario__input" name="nombre" id="edinombre" placeholder="Nombres" value="<?php echo $_SESSION["No_Persona"] ?>">
+                                <input type="text" class="formulario__input" name="nombre" id="edinombre" placeholder="Nombres" value="<?php echo utf8_encode($_SESSION["No_Persona"]) ?>">
                                 <i class="formulario__validacion-estado fas fa-check-circle"></i>
                             </div>
                             <p class="formulario__input-error">Colocar los nombres de manera correcta.</p>
                         </div>
                         <div class="formulario__grupo" id="grupo__apellido">
-                            <i class="fas fa-user"></i> <label for="apellido" class="input-group-text texto "> Apellidos:</label>
+                            <i class="fas fa-user" style="color: white"></i> <label for="apellido" class="input-group-text texto "> Apellidos:</label>
                             <div class="formulario__grupo-input">
-                                <input type="text" class="formulario__input" name="apellido" id="ediape" placeholder="Apellidos" value="<?php echo $_SESSION["AP_Persona"] ?>">
+                                <input type="text" class="formulario__input" name="apellido" id="ediape" placeholder="Apellidos" value="<?php echo utf8_encode($_SESSION["AP_Persona"]) ?>">
                                 <i class="formulario__validacion-estado fas fa-check-circle"></i>
                             </div>
                             <p class="formulario__input-error">Colocar los apellidos de manera correcta.</p>
                         </div>
                         <div class="formulario__grupo" id="grupo__direccion">
-                            <i class="fas fa-map-marker-alt"></i> <label for="direccion" class="input-group-text texto "> Dirección:</label>
+                            <i class="fas fa-map-marker-alt" style="color: white"></i> <label for="direccion" class="input-group-text texto "> Dirección:</label>
                             <div class="formulario__grupo-input">
-                                <input type="text" class="formulario__input" name="direccion" id="edidireccion" placeholder="Dirección" value="<?php echo $_SESSION["dire_Persona"] ?>">
+                                <input type="text" class="formulario__input" name="direccion" id="edidireccion" placeholder="Dirección" value="<?php echo utf8_encode($_SESSION["dire_Persona"]) ?>">
                                 <i class="formulario__validacion-estado fas fa-check-circle"></i>
                             </div>
                             <p class="formulario__input-error">Colocar tu dirección actual.</p>
                         </div>
                         <div class="formulario__grupo" id="grupo__telefono">
-                            <i class="fas fa-mobile-alt"></i> <label for="telefono" class="input-group-text texto "> Teléfono:</label>
+                            <i class="fas fa-mobile-alt" style="color: white"></i> <label for="telefono" class="input-group-text texto "> Teléfono:</label>
                             <div class="formulario__grupo-input">
-                                <input type="text" class="formulario__input" name="telefono" id="editelefono" placeholder="Teléfono" value="<?php echo $_SESSION["tele_Persona"] ?>">
+                                <input type="text" class="formulario__input" name="telefono" id="editelefono" placeholder="Teléfono" value="<?php echo utf8_encode($_SESSION["tele_Persona"]) ?>">
                                 <i class="formulario__validacion-estado fas fa-check-circle"></i>
                             </div>
                             <p class="formulario__input-error">El número de teléfono/celular debe ser de 7 a 9 dígitos.</p>
                         </div>
                         <div class="formulario__grupo" id="grupo__correo">
-                            <i class="fas fa-envelope-open-text"></i> <label for="correo" class="input-group-text texto "> Correo:</label>
+                            <i class="fas fa-envelope-open-text" style="color: white"></i> <label for="correo" class="input-group-text texto "> Correo:</label>
                             <div class="formulario__grupo-input">
-                                <input type="text" class="formulario__input" name="correo" id="edicorreo" placeholder="Correo" value="<?php echo $_SESSION["correo_Persona"] ?>">
+                                <input type="text" class="formulario__input" name="correo" id="edicorreo" placeholder="Correo" value="<?php echo utf8_encode($_SESSION["correo_Persona"]) ?>">
                                 <i class="formulario__validacion-estado fas fa-check-circle"></i>
                             </div>
                             <p class="formulario__input-error">El correo solo puede contener letras, números, puntos, guiones y guion bajo.</p>
                         </div>
                         <div class="formulario__grupo">
-                            <i class="fas fa-envelope-open-text"></i> <label for="cbocivil" class="input-group-text texto "> Estado Civil:</label>
+                            <i class="fas fa-paperclip" style="color: white"></i> <label for="cbocivil" class="input-group-text texto "> Estado Civil:</label>
                             <div class="formulario__grupo-input">                                              
                                 <select class="form-control" id="cbocivil" name="asunto" value="">
-                                    <option selected><?php echo $_SESSION["Es_Civil_Persona"] ?></option>
+                                    <option selected><?php echo utf8_encode($_SESSION["Es_Civil_Persona"]) ?></option>
                                     <option>Soltero</option>
                                     <option>Casado</option>
                                     <option>Viudo</option>
@@ -321,7 +311,7 @@ if ($_SESSION["Usuario"] !== null) {
                             </div>
                         </div>
                         <div class="formulario__grupo" id="grupo__edad">
-                            <i class="fas fa-calendar-alt"></i> <label for="edad" class="input-group-text texto "> Edad:</label>
+                            <i class="fas fa-calendar-alt" style="color: white"></i> <label for="edad" class="input-group-text texto "> Edad:</label>
                             <div class="formulario__grupo-input">
                                 <input type="text" class="formulario__input" name="edad" id="ediedad" placeholder="Edad" value="<?php echo $_SESSION["Edad_Persona"] ?>">
                                 <i class="formulario__validacion-estado fas fa-check-circle"></i>
@@ -329,10 +319,10 @@ if ($_SESSION["Usuario"] !== null) {
                             <p class="formulario__input-error">Ingrese una edad valida.</p>
                         </div>
                         <div class="formulario__grupo">
-                            <i class="fas fa-envelope-open-text"></i> <label for="cbotipo" class="input-group-text texto "> Tipo de Usuario:</label>
+                            <i class="fas fa-users" style="color: white"></i> <label for="cbotipo" class="input-group-text texto "> Tipo de Usuario:</label>
                             <div class="formulario__grupo-input">                                              
                                 <select class="form-control" id="cbotipo" name="state" required="" value="">
-                                    <option value="<?php echo $_SESSION["Ti_Persona"] ?>"><?php echo $_SESSION["Ti_Persona"] ?></option>
+                                    <option value="<?php echo $_SESSION["Ti_Persona"] ?>"><?php echo utf8_encode ($_SESSION["Ti_Persona"]) ?></option>
                                     <option>Líder</option>
                                     <option>Estudiante</option>
                                     <option>Miembro</option>
@@ -341,7 +331,7 @@ if ($_SESSION["Usuario"] !== null) {
                             </div>
                         </div>
                         <div class="formulario__grupo">
-                            <i class="fas fa-envelope-open-text"></i> <label for="cbosexo" class="input-group-text texto "> Género:</label>
+                            <i class="fas fa-users" style="color: white"></i> <label for="cbosexo" class="input-group-text texto "> Género:</label>
                             <div class="formulario__grupo-input">                                              
                                 <select class="form-control" id="cbosexo" name="asunto" value="">
                                     <option selected><?php echo $_SESSION["Se_Persona"] ?></option>
@@ -351,26 +341,26 @@ if ($_SESSION["Usuario"] !== null) {
                             </div>
                         </div>
                         <div class="formulario__grupo">
-                            <i class="fas fa-envelope-open-text"></i> <label for="sel_distrito" class="input-group-text texto "> Escoja su Misión:</label>
+                            <i class="fas fa-map" style="color: white"></i> <label for="sel_distrito" class="input-group-text texto "> Escoja su Misión:</label>
                             <div class="formulario__grupo-input">                                              
                                 <select class="form-control" name="state" id="sel_mision" >
-                                    <option value="0" ><?php echo $_SESSION["No_Mision"] ?></option>
+                                    <option value="<?php echo utf8_encode ($_SESSION["id_Mision"]) ?>" id="misi" ><?php echo utf8_encode($_SESSION["No_Mision"]) ?></option>
                                 </select>
                             </div>
                         </div>
                         <div class="formulario__grupo">
-                            <i class="fas fa-envelope-open-text"></i> <label for="sel_distrito" class="input-group-text texto "> Distrito Misionero:</label>
+                            <i class="fas fa-people-carry" style="color: white"></i> <label for="sel_distrito" class="input-group-text texto "> Distrito Misionero:</label>
                             <div class="formulario__grupo-input">                                              
-                                <select class="form-control" name="state" id="sel_distrito" value="">
-                                    <option><a><?php echo $_SESSION["No_Distrito"] ?></a></option>
+                                <select class="form-control" name="state" id="sel_distrito" value="" >
+                                    <option value="<?php echo utf8_encode ($_SESSION["id_Distrito"]) ?>" id="distri"><a><?php echo utf8_encode($_SESSION["No_Distrito"]) ?></a></option>
                                 </select>
                             </div>
                         </div>
                         <div class="formulario__grupo">
-                            <i class="fas fa-envelope-open-text"></i> <label for="sel_iglesia" class="input-group-text texto "> Iglesia:</label>
+                            <i class="fas fa-place-of-worship" style="color: white"></i> <label for="sel_iglesia" class="input-group-text texto "> Iglesia:</label>
                             <div class="formulario__grupo-input">                                              
-                                <select class="form-control" name="state" id="sel_iglesia" value="">
-                                    <option value="<?php echo $_SESSION["id_Iglesia"] ?>" ><?php echo $_SESSION["Nombre_Iglesia"] ?></option>
+                                <select class="form-control" name="state" id="sel_iglesia" value="" >
+                                    <option value="<?php echo utf8_encode($_SESSION["id_Iglesia"]) ?>" id="igle"><?php echo utf8_encode($_SESSION["Nombre_Iglesia"]) ?></option>
                                 </select>
                             </div>
                         </div>                                              
@@ -401,7 +391,7 @@ if ($_SESSION["Usuario"] !== null) {
     <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
     <!--FINAL DEL FORMULARIO-->           
     <!-- Cerrar sesion-->
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>          
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>          
     <script src="js/app.config.js"></script>
     <script src="js/plugin/jquery-touch/jquery.ui.touch-punch.min.js"></script>
     <script src="js/bootstrap/bootstrap.min.js"></script>

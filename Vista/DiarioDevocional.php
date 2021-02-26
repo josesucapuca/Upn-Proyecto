@@ -104,10 +104,11 @@ if ($_SESSION["Usuario"] !== null) {
                 }
                 .fc-past {
                     background-color: #F1F1F1;
-                }
+                }               
             </style>
         </head>     
         <body class="conta2 bod">
+            <!--<img src="../images/diariodevocional/adventist-symbol-circle-white.png" alt=""/>-->
             <input id="PersonaUsuario" type="hidden" value="<?php echo $_SESSION["Persona"] ?>">
             <div class="row" style=" margin-left: 0px;margin-right: 0px;height: 100%;">
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="margin-left: 0px;margin-right: 0px;padding-left: 0px;padding-right: 0px;height: 90%;">
@@ -329,7 +330,7 @@ if ($_SESSION["Usuario"] !== null) {
                                 </div>
                                 <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                                     <div class="form-group">
-                                        <textarea id="txtContestado" name="txtContestado" rows="3" class="form-control" disabled placeholder="Aún no tiene oraciones contestadas"></textarea>
+                                        <textarea id="txtContestado" name="txtContestado" rows="3" class="form-control" placeholder="Aún no tiene oraciones contestadas"></textarea>
                                     </div>
                                 </div>
                                 <div class=" col-xs-12 col-sm-12 col-md-12 col-lg-12 asi">

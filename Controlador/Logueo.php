@@ -1,5 +1,4 @@
 <?php
-
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
@@ -16,14 +15,12 @@ if ($opc === "ValidarUsuario") {
     $var = $objs->ValidarUsuario($usuario, $password);
     $arr = array();
     if (mysqli_num_rows($var) != 0) {
-        while ($row = mysqli_fetch_assoc($var)) {
-            $arr[] = $row;
+            while ($row = mysqli_fetch_assoc($var)) {
+                $arr[] = $row;
+            }
         }
-    }
     echo json_encode($arr);
 }
-
-//SESIÓN PARA PERFIL Y CAMPOS EXTRAS
 if ($opc === "CrearSesion") {
     $usuario = $_POST["a"];
     $password = $_POST["b"];
@@ -62,7 +59,6 @@ if ($opc === "SalirSesion") {
     session_destroy();
 }
 
-//LLENAR COMBOX DINÁMICOS
 if ($opc === "ListarMision") {
 
     $objs = new UsuarioDAO();
@@ -81,36 +77,30 @@ if ($opc === "ListarIglesia") {
     $var = $objs->ComboIglesia($id_Distrito);
     echo json_encode($var);
 }
-
-//REGISTRAR USUARIO Y PERSONA
 if ($opc === "RegistrarUsuario") {
-    $No_Persona = strtoupper($_POST['No_Persona']);
-    $AP_Persona = strtoupper($_POST['AP_Persona']);
-    $Edad_Persona = strtoupper($_POST['Edad_Persona']);
-    $Se_Persona = strtoupper($_POST['Se_Persona']);
-    $Es_Civil_Persona = strtoupper($_POST['Es_Civil_Persona']);
-    $Ti_Persona = strtoupper($_POST['Ti_Persona']);
-    $dire_Persona = strtoupper($_POST['dire_Persona']);
-    $tele_Persona = strtoupper($_POST['tele_Persona']);
-    $correo_Persona = strtoupper($_POST['correo_Persona']);
-    $id_Iglesia = strtoupper($_POST['id_Iglesia']);
-    $Usuario = strtoupper($_POST['Usuario']);
-    $Contra = strtoupper($_POST['Contra']);
+    $No_Persona = strtoupper( utf8_decode($_POST['No_Persona']));
+    $AP_Persona = strtoupper(utf8_decode($_POST['AP_Persona']));
+    $Edad_Persona = strtoupper(utf8_decode($_POST['Edad_Persona']));
+    $Se_Persona = strtoupper(utf8_decode($_POST['Se_Persona']));
+    $Es_Civil_Persona = strtoupper(utf8_decode($_POST['Es_Civil_Persona']));
+    $Ti_Persona = strtoupper(utf8_decode($_POST['Ti_Persona']));
+    $dire_Persona = strtoupper(utf8_decode($_POST['dire_Persona']));
+    $tele_Persona = strtoupper(utf8_decode($_POST['tele_Persona']));
+    $correo_Persona = strtoupper(utf8_decode($_POST['correo_Persona']));
+    $id_Iglesia = strtoupper(utf8_decode($_POST['id_Iglesia']));
+    $Usuario = strtoupper(utf8_decode($_POST['Usuario']));
+    $Contra = strtoupper(utf8_decode($_POST['Contra']));
 //    $id_Persona = strtoupper($_POST['id_Persona']);
     $objs = new UsuarioDAO();
     $var = $objs->RegistrarUsuario($No_Persona, $AP_Persona, $Edad_Persona, $Se_Persona, $Es_Civil_Persona, $Ti_Persona, $dire_Persona, $tele_Persona, $correo_Persona, $id_Iglesia, $Usuario, $Contra);
     echo $var;
 }
-
-//VALIDAR USUARIO EXISTENTE
 if ($opc === "ValidarUsuarioR") {
     $Usuario = strtoupper($_POST['Usuario']);
     $objs = new UsuarioDAO();
     $var = $objs->ValidarUsuarioR($Usuario);
     echo $var;
 }
-
-//VALIDAR CORREO EXISTENTE
 if ($opc === "ValidarCorreoR") {
     $correo_Persona = strtoupper($_POST['correo_Persona']);
     $objs = new UsuarioDAO();
@@ -125,7 +115,6 @@ if ($opc === "CompararContra") {
     $var = $objs->CompararContra($Contra, $id_Usuario);
     echo $var;
 }
-
 //MODIFICAR CONTRA
 if ($opc === "ModificarContra") {
     $id_Usuario = strtoupper($_POST['id_Usuario']);
@@ -134,45 +123,24 @@ if ($opc === "ModificarContra") {
     $var = $objs->ModificarContra($Contra, $id_Usuario);
     echo $var;
 }
-
 //ACTUALIZAR DATOS
 if ($opc === "ActualizarDatos") {
-    $No_Persona = strtoupper($_POST['No_Persona']);
-    $AP_Persona = strtoupper($_POST['AP_Persona']);
-    $Edad_Persona = strtoupper($_POST['Edad_Persona']);
-    $Se_Persona = strtoupper($_POST['Se_Persona']);
-    $Es_Civil_Persona = strtoupper($_POST['Es_Civil_Persona']);
-    $Ti_Persona = strtoupper($_POST['Ti_Persona']);
-    $dire_Persona = strtoupper($_POST['dire_Persona']);
-    $tele_Persona = strtoupper($_POST['tele_Persona']);
-    $correo_Persona = strtoupper($_POST['correo_Persona']);
-    $id_Iglesia = strtoupper($_POST['id_Iglesia']);  
-    $id_Persona = strtoupper($_POST['id_Persona']);
+    $No_Persona = utf8_decode($_POST['No_Persona']);
+    $AP_Persona = utf8_decode($_POST['AP_Persona']);
+    $Edad_Persona = strtoupper(utf8_decode($_POST['Edad_Persona']));
+    $Se_Persona = strtoupper(utf8_decode($_POST['Se_Persona']));
+    $Es_Civil_Persona = strtoupper(utf8_decode($_POST['Es_Civil_Persona']));
+    $Ti_Persona = strtoupper(utf8_decode($_POST['Ti_Persona']));
+    $dire_Persona = strtoupper(utf8_decode($_POST['dire_Persona']));
+    $tele_Persona = strtoupper(utf8_decode($_POST['tele_Persona']));
+    $correo_Persona = strtoupper(utf8_decode($_POST['correo_Persona']));
+    $id_Iglesia = strtoupper(utf8_decode($_POST['id_Iglesia']));  
+    $id_Persona = strtoupper(utf8_decode($_POST['id_Persona']));
     $objs = new UsuarioDAO();
     $var = $objs->ActualizarDatos($No_Persona, $AP_Persona, $Edad_Persona, $Se_Persona, $Es_Civil_Persona, $Ti_Persona, $dire_Persona, $tele_Persona, $correo_Persona, $id_Iglesia, $id_Persona);
     echo $var;
 }
-//LLENAR COMBOX DINÁMICOS
-if ($opc === "ListarMision2") {
 
-    $objs = new UsuarioDAO();
-    $var = $objs->ComboMision2();
-    echo json_encode($var);
-}
-if ($opc === "ListarDistrito2") {
-    $objs = new UsuarioDAO();
-    $id_Mision = $_POST["id_Mision"];
-    $var = $objs->ComboDistrito2($id_Mision);
-    echo json_encode($var);
-}
-if ($opc === "ListarIglesia2") {
-    $objs = new UsuarioDAO();
-    $id_Distrito = $_POST["id_Distrito"];
-    $var = $objs->ComboIglesia2($id_Distrito);
-    echo json_encode($var);
-}
-
-//RECUPERAR CONTRASEÑA
 if ($opc === "RecuperarContra") {
     $correo_Persona = strtoupper($_POST['correo_Persona']);
     $contraactual = strtoupper($_POST['Contra']);
@@ -193,21 +161,19 @@ if ($opc === "RecuperarContra") {
             //Server settings
             $mail->SMTPDebug = 0;                      // Enable verbose debug output
             $mail->isSMTP();                                            // Send using SMTP
-            //$mail->Host = 'smtp.gmail.com';                    // Set the SMTP server to send through
-            $mail->Host = 'ceoadventista.org';
+            $mail->Host = 'ceoadventista.org';                    // Set the SMTP server to send through
             $mail->SMTPAuth = true;                                   // Enable SMTP authentication
             $mail->Username = 'soporte@ceoadventista.org';                     // SMTP username
-            $mail->Password = 'Ceonexo2021';                               // SMTP password
+            $mail->Password = 'ceonexo2021';                               // SMTP password
 //           $mail->SMTPSecure = 'tls';
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
             $mail->Port = 587;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
             //Recipients
             $mail->setFrom('soporte@ceoadventista.org', 'CEO-ADVENTISTA');
-//            $mail->addAddress ('nicogarcia459@gmail.com','nico');
             $mail->addAddress($correo_Persona);     // Add a recipient
             // Content
             $mail->isHTML(true);                                  // Set email format to HTML
-            $subject = "Nueva contraseña";
+            $subject = "Nuevo Contraseña y Usuario";
             $subject = "=?UTF-8?B?" . base64_encode($subject) . "=?=";
             $mail->Subject = $subject;
             $mail->Body = 'Hola que tal, tu contraseña se restablecio <br> su contraseña nueva es: <b>' . $contraactual . '</b>'
@@ -224,14 +190,6 @@ if ($opc === "RecuperarContra") {
     }
     echo $var;
 }
-
-function utf8_converter($array) {
-    array_walk_recursive($array, function(&$item) {
-        $item = utf8_encode($item);
-    });
-    return json_encode($array);
-}
-
 
 
 //mysqli_close($conexion);

@@ -1,4 +1,4 @@
-<html>
+<html style="background-image:url('images/fondo_1.jpeg');height: 100%;background-size: 100% 100%;">
     <head>
         <title></title>
         <link rel="stylesheet" type="text/css" media="screen" href="css/fontAdventSans.css">
@@ -19,33 +19,245 @@
         <!--<link rel="stylesheet" href="css/responsive.css">-->       
         <link href="css/botones.css" rel="stylesheet" type="text/css"/>
         <style>
-            .mi{
-                text-align: left
-            }
-            @media (min-width: 576px)
-            {
-                .imgf{
-                    display: flex;
-                    justify-content: center !important;
+            .imageindex{
+                    width: 35%;
                 }
-                #titU{
-                    text-align: center !important;
+                .btn-index:hover{
+                    color: #fff;
+                    background: #214d56 !important;
+                    text-decoration: none !important;
                 }
-                .al{
-                    text-align: center !important;
+                .btn-index {
+                    background: #3e8391;
+                    color: #fff;
+                    margin: 8px;
                 }
-                .ali{
-                    text-align: center !important;
+                @media (min-width: 992px){
+                    .colin-md-7-7{
+                        width: 100%!important;
+                    }
+                    .colin-md-6-7{
+                        width: calc((100%/7)*6)!important;
+                    }
+                    .colin-md-5-7{
+                        width: calc((100%/7)*5)!important;
+                    }
+                    .colin-md-4-7{
+                        width: calc((100%/7)*4)!important;
+                    }
+                    .colin-md-3-7{
+                        width: calc((100%/7)*3)!important;
+                    }
+                    .colin-md-2-7{
+                        width: calc((100%/7)*2)!important;
+                    }
+                    .colin-md-1-7{
+                        width: calc((100%/7))!important;
+                        display: block !important;
+                    }
+                    .colini-md-1{
+                        width: calc((100%/10)*1) !important;
+                    }
+                    .colini-md-2{
+                        width: calc((100%/10)*2) !important;
+                    }
+                    .colini-md-3{
+                        width: calc((100%/10)*3) !important;
+                    }
+                    .colini-md-4{
+                        width: calc((100%/10)*4) !important;
+                    }
+                    .colini-md-5{
+                        width: calc((100%/10)*5) !important;
+                    }
+                    .colini-md-6{
+                        width: calc((100%/10)*6) !important;
+                    }
+                    .colini-md-7{
+                        width: calc((100%/10)*7) !important;
+                    }
+                    .colini-md-8{
+                        width: calc((100%/10)*8) !important;
+                    }
+                    .colini-md-9{
+                        width: calc((100%/10)*9) !important;
+                    }
+                    .colini-md-10{
+                        width: 100% !important;
+                    }
                 }
-                .mi{
-                    text-align: center !important;
+                @media (max-width:600px) {
+                    .opcpan{
+                        height: 85% !important;
+                    }
+                    .opcpan2{
+                        height: 15% !important;
+                    }
+                    .hidenin-xs{
+                        display:  none !important;
+                    }
                 }
-                .fm{
-                    text-align: left;
+                @media (max-width:414px) {
+                    .opcpan{
+                        height: 180% !important;
+                    }
+                    .opcpan2{
+                        
+                        height: 15% !important;
+                    }
+                    .hidenin-xs{
+                        display:  none !important;
+                    }
+                }
+                 @media (max-width:575px) {
+                    .opcpan{
+                        height: 170% !important;
+                    }
+                    .opcpan2{
+                        
+                        height: 15% !important;
+                    }
+                    .hidenin-xs{
+                        display:  none !important;
+                    }
+                }
+                @media (min-width:601px) and (max-width:991px) {
+                    .imageindex{
+                        width: 40%;
+                    }
+                    .hidenin-xs{
+                        display:  none !important;
+                    }
+                }
+                @media (min-width: 1200px){
+                    .colin-lg-7-7{
+                        width: 100% !important;
+                    }
+                    .colin-lg-6-7{
+                        width: calc((100%/7)*6) !important;
+                    }
+                    .colin-lg-5-7{
+                        width: calc((100%/7)*5) !important;
+                    }
+                    .colin-lg-4-7{
+                        width: calc((100%/7)*4) !important;
+                        display: block !important;
+                    }
+                    .colin-lg-3-7{
+                        width: calc((100%/7)*3) !important;
+                    }
+                    .colin-lg-2-7{
+                        width: calc((100%/7)*2)!important;
+                    }
+                    .colin-lg-1-7{
+                        width: calc((100%/7)) !important;
+                    }
+                    .colini-lg-1{
+                        width: calc((100%/10)*1) !important;
+                    }
+                    .colini-lg-2{
+                        width: calc((100%/10)*2) !important;
+                    }
+                    .colini-lg-3{
+                        width: calc((100%/10)*3) !important;
+                    }
+                    .colini-lg-4{
+                        width: calc((100%/10)*4) !important;
+                    }
+                    .colini-lg-5{
+                        width: calc((100%/10)*5) !important;
+                    }
+                    .colini-lg-6{
+                        width: calc((100%/10)*6) !important;
+                    }
+                    .colini-lg-7{
+                        width: calc((100%/10)*7) !important;
+                    }
+                    .colini-lg-8{
+                        width: calc((100%/10)*8) !important;
+                    }
+                    .colini-lg-9{
+                        width: calc((100%/10)*9) !important;
+                    }
+                    .colini-lg-10{
+                        width: 100% !important;
+                    }
+                }
+                .colin-xs-7-7{
+                    width: 100%;
+                }
+                .colin-xs-6-7{
+                    width: calc((100%/7)*6);
+                }
+                .colin-xs-5-7{
+                    width: calc((100%/7)*5);
+                }
+                .colin-xs-4-7{
+                    width: calc((100%/7)*4);
+                }
+                .colin-xs-3-7{
+                    width: calc((100%/7)*3);
+                }
+                .colin-xs-2-7{
+                    width: calc((100%/7)*2);
+                }
+                .colin-xs-1-7{
+                    width: calc((100%/7));
+                }
+                .colini-xs-1{
+                    width: calc((100%/10)*1) ;
+                }
+                .colini-xs-2{
+                    width: calc((100%/10)*2) ;
+                }
+                .colini-xs-3{
+                    width: calc((100%/10)*3) ;
+                }
+                .colini-xs-4{
+                    width: calc((100%/10)*4) ;
+                }
+                .colini-xs-5{
+                    width: calc((100%/10)*5);
+                }
+                .colini-xs-6{
+                    width: calc((100%/10)*6) ;
+                }
+                .colini-xs-7{
+                    width: calc((100%/10)*7);
+                }
+                .colini-xs-8{
+                    width: calc((100%/10)*8);
+                    display: block !important;
+                }
+                .colini-xs-9{
+                    width: calc((100%/10)*9);
+                }
+                .colini-xs-10{
+                    width: 100% !important;
                 }
 
-            }
-            @media (max-width: 576px)
+                .tamfo{
+                    width: 50%;
+                }
+                .opcpan{
+                    height: 80%;
+                }
+                .opcpan2{
+                    height: 20%;
+                }
+                .input-group-prepend span {
+                    width: auto;
+                    background-color: #ffffff;
+                    color: #2f557f;
+                    border: 0 !important;
+                }
+                .abs-center {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    /*min-height: 16vh;*/
+                }
+              @media (max-width: 576px)
             {
                 .asi{
                     display: flex;
@@ -55,30 +267,34 @@
             }
         </style>
     </head>
-    <body>
+    <body style="height: 100vh;background: none;">
         <div class="gtco-loader"></div>
         <!--<div class="card-deck">-->
-        <header id="gtco-header" class="gtco-cover" role="banner" style="background-image:url('https://algoritmo.digital/blog/wp-content/uploads/2020/01/por-que-mi-empresa-presente-mundo-digital.jpg')">
-            <div class="overlay"></div>
-            <div class="gtco-container">
-                <div class="d-flex justify-content-center h-100">
+        <div class="colin-xs-7-7 colin-md-7-7 colin-lg-7-7" style="display: flex;height: 100vh;align-items: center;justify-content: center;text-align: center;">
+            <div style="height: 100%;">
+                <div class="row opcpan " style="margin-left: 0px;margin-right: 0px;display: flex;justify-content: center;">
+                    <div style="display: flex;justify-content: center;">
+                <!--<header id="gtco-header" class="gtco-cover" role="banner" >-->
+            <!--<div class="overlay"></div>-->
+            <!--<div class="gtco-container">-->
+                <!--<div class="d-flex justify-content-center h-100">-->
                     
                     <div class="card">
                         <div class="card-header">
-                            <div class="row"> 
-                                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 asi">
-                                    <img src="images/logo.png" width="100" height="100" >
+                            <div class="row" style="display: flex;justify-content: center;padding-top: 10px;"> 
+                                <div  style="height: 80px;width: 80px;border-radius: 40px;background: #E1C918;justify-content: center;display: flex;align-items: center;">
+                                    <img src="images/adventist-symbol-png--symbol/adventist-symbol--black.png" alt="" width="100px" height="100px" >
                                 </div>
                                 <div class="col-md-8 col-xs-8 col-sm-8 col-md-8 col-lg-8 abs-center">
                                     <div class="row"><h2 style="color: white">Registro del Misionero Digital</h2> </div>                                                                
                                 </div>
                             </div>
                         </div>
-                        <div class="card-body">                       
+                        <div class="card-body" style="padding-top: 0px;padding-bottom: 10px;">                       
                             <form method="post" class="formulario" id="formulario">
                                 <div class="row"> 
                                     <div class="col-xs-4 col-sm-4 col-md-3 col-lg-3 formulario__grupo" id="grupo__nombre">
-                                        <div class="input-group form-group formulario__grupo-input">
+                                        <div class="input-group form-group formulario__grupo-input" >
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text"><i class="fas fa-user"></i></span>
                                             </div>
@@ -257,11 +473,12 @@
                                         <div class="col-xs-1 col-sm-1 col-md-2 col-lg-2">                              
                                         </div>
                                         <div class="col-xs-5 col-sm-5 col-md-3 col-lg-4">
-                                            <a href="index.php"><div class="text-center"><button class="btn login_btn btn-lg" type="button">Cancelar</button></div></a>
+                                            <a href="index.php"><div class="text-center"><button class="btn btn-index login_btn" type="button">Cancelar</button></div></a>
+                                            <!--<a href="index.php"><div class="text-center"><button class="btn login_btn btn-lg" type="button">Cancelar</button></div></a>-->
                                             <!--<a href="index.php"><input  type="button" value="Cancelar" class=" btn float-left login_btn btn-lg boton"></a>-->
                                         </div>
                                         <div class="col-xs-5 col-sm-4 col-md-5 col-lg-5 asi formulario__grupo formulario__grupo-btn-enviar">
-                                            <input  type="submit" value="Registrarse" onclick="resgitarusuario()" class="btn float-left login_btn btn-lg boton">
+                                            <div class="text-center"><input  type="submit" value="Registrarse" onclick="resgitarusuario()" class="btn btn-index login_btn"></div>
                                         </div>
                                     </div>                                                             
                                 </div>
@@ -274,57 +491,44 @@
                         </div>
                     </div>
                         <!--</div>-->
-                </div>
-            </div>
-        </header>
-        <footer id="gtco-footer" role="contentinfo">
-            <div class="gtco-container">
-                <div class="row row-pb-md">
-                    <div class="row col-xs-12 col-sm-12 col-md-4 col-lg-4" style="padding-bottom: 20px">
-                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 imgf">
-                            <div class="footer-pad" >
-                                <!--<div class="col-md-3 asi" >-->
-                                    <div id="fh5co-logo " style=""><a><img src="images/logo.png" width="160" height="160" ><span></span></a></div>
-                                <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</header>-->
+                    </div>
+                    </div>
+                <!--<footer id="gtco-footer" role="contentinfo">-->
+            <!--<div class="gtco-container">-->
+               <div class="row opcpan2" style="margin-left: 0px;margin-right: 0px;background: #2f557f61">
+                        <div class="colini-xs-5 colini-md-3 colini-lg-3" style="display: flex;align-items: center;padding-left: 15px;padding-top: 20px;justify-content: center;;">
+                            <div class="tamfo" style="display: inline-table;text-align: center;width: 50%;">
+                                <img src="images/img_logo/adventist-es--white.png" width="100%">
+                                <h5 style="color: white;font-size: 12px;font-weight: 600">UNIÓN PERUANA DEL NORTE</h5>
                             </div>
                         </div>
-                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 imgf" >
-                            <div  style="text-align: center" >
-                                <h3 style="color: white">Unión Peruana del Norte</h3>
+                        <div class="hidenin-xs colini-md-4 colini-lg-4" style="display: flex;align-items: center;justify-content: center;padding-top: 20px;">
+                            <div class="" style="display: inline-table;text-align: center;">
+                                <label style="color: white;font-size: 12px;">Asociación Peruana Central Este - Asociación Nor Pacifico del Perú</label>
+                                <label style="color: white;font-size: 12px;">Mision Centro Oeste del Peru - Misión Peruna del Norte - Misión Nor Oriental</label>
                             </div>
-                        </div> 
+                        </div>
+                        <div class="colini-xs-5 colini-md-3 colini-lg-3" style="display: flex;align-items: center;justify-content: center;padding-right: 15px;text-align: right;padding-top: 20px;">
+                            <div  style="display: flex;align-items: center;justify-content: center;">
+                                <div style="display: inline-table;text-align: right;">
+                                    <label style="font-size: 18px;">
+                                        <a href="https://www.facebook.com/adventistas.upn/" class="icoTwitter" title="Twitter" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                                        <a href="https://www.instagram.com/adventistasupn/" class="icoInstagram" title="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+                                        <a href="https://www.youtube.com/adventistasupn" class="icoYoutube" title="Youtube" target="_blank"><i class="fab fa-youtube"></i></a>
+                                        <a href="https://twitter.com/AdventistasUPN" class="icoTwitter" title="Twitter" target="_blank"><i class="fab fa-twitter"></i></a>AdventistasUPN
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-md-5 col-sm-5 col-xs-12 imgf">
-                        <!--<h4 style="color: white">MISIONES</h4>-->
-                        <ul class="" >
-                            <h4 style="color: white">CAMPOS MISIONEROS</h4>
-                            <li><a>APCE - Asociación Peruana Central Este</a></li>
-                            <li><a>MICOP - Misión Centro Oeste del Perú</a></li>
-                            <li><a>MNO - Misión Nor Oriental </a></li>
-                            <li><a>MPN - Misión Peruana del Norte</a></li>
-                            <li><a>ANOP - Asociación Nor Pacífico del Perú</a></li>
-                        </ul> 
-                    </div>
-                    <div class="clearfix visible-xs-block"></div>
-                    <div class="col-md-3 col-sm-6 col-xs-12 imgf">
-
-                        <ul class="social-network social-circle">
-                            <h4 style="color: white">Redes Sociales</h4>
-                            <li><a href="https://www.facebook.com/adventistas.upn/" class="icoTwitter" title="Twitter" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
-                            <li><a href="https://www.instagram.com/adventistasupn/" class="icoInstagram" title="Instagram" target="_blank"><i class="fab fa-instagram"></i></a></li>
-                            <li><a href="https://www.youtube.com/adventistasupn" class="icoYoutube" title="Youtube" target="_blank"><i class="fab fa-youtube"></i></a></li>
-                            <li><a href="https://twitter.com/AdventistasUPN" class="icoTwitter" title="Twitter" target="_blank"><i class="fab fa-twitter"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="row copyright">
-                    <div class="col-md-12">
-                        <p class="text-center">&copy; 2020 - v1.0 - Derechos reservados por Unión Peruana del Norte.</p>
-                        <p class="text-center">Diseñado por <a href="https://www.nexo-consultores.com/" target="_blank"> Nexo Consultores IT SAC</a></p>
-                    </div>
-                </div>
+            <!--</div>-->
+        <!--</footer>-->
+        
             </div>
-        </footer>
+            </div>
         <div class="gototop js-top">
                 <a href="#" class="js-gotop"><i class="fas fa-arrow-up"></i></a>
             </div>

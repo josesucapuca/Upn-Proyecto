@@ -21,7 +21,7 @@ function Mision() {
         success: function (response)
         {
             var data = JSON.parse(response);
-            var cadena = "<option value=''>SELECCIONAR MISIÓN</option>";
+            var cadena = "<option value=''>Seleccionar Asociación/Misión</option>";
             if (data.length > 0) {
                 for (var i = 0; i < data.length; i++) {
                    // alert(data[i].id_Mision);
@@ -45,7 +45,7 @@ function Distrito(id_Mision) {
         success: function (response)
         {
             var data = JSON.parse(response);
-            var cadena = "<option value=''>SELECCIONE UN DISTRITO</option>";
+            var cadena = "<option value=''>Seleccionar Distrito</option>";
             if (data.length > 0) {
                 for (var i = 0; i < data.length; i++) {
                     cadena += "<option value='" + data[i].id_Distrito + "'>" + data[i].No_Distrito + "</option>";
@@ -68,7 +68,7 @@ function Iglesia(id_Distrito) {
         success: function (response)
         {
             var data = JSON.parse(response);
-            var cadena = "<option value=''>SELECCIONE UNA IGLESIA</option>";
+            var cadena = "<option value=''>Seleccionar Iglesia</option>"; 
             if (data.length > 0) {
                 for (var i = 0; i < data.length; i++) {
                     cadena += "<option value='" + data[i].id_Iglesia + "'>" + data[i].Nombre_Iglesia + "</option>";
@@ -132,6 +132,7 @@ function resgitarusuario() {
                         }).then(function () {
                             window.location = "Iniciar.php";
                         });
+                        limpiar();
                     } else {
                         validarUsuarioR();
                         validarCorreoR();
@@ -193,14 +194,31 @@ function validarCorreoR() {
     });
 }
 
+//LIMPIAR CAMPOS DEL REGISTRO
+function limpiar() {
+    $('#txtnombre').val('');
+    $('#txtapellido').val('');
+    $('#txtedad').val('');
+    $('#cbosexo').val('');
+    $('#cbocivil').val('');
+    $('#cbotipo').val('');
+    $('#txtdireccion').val('');
+    $('#txttelefono').val('');
+    $('#txtcorreo').val('');
+    $('#sel_iglesia').val('');
+    $('#txtusuario').val('');
+    $('#password').val('');
+}
+
+
 //SINTAXIS DE EXPRESIONES REGEX
 const formulario = document.getElementById('formulario');
 const inputs = document.querySelectorAll('#formulario input');
 
 const expresiones = {
     usuario: /^[a-zA-Z0-9\_\-]{4,16}$/, // Letras, numeros, guion y guion_bajo
-    nombre: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
-    apellido: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, //Letras y espacios, pueden llevar acentos.
+    nombre: /^[a-zA-ZÁ-ÿ\s]{1,40}[A-Za-z0-9'\.\-\s\,]$/, // Letras y espacios, pueden llevar acentos.
+    apellido: /^[a-zA-ZÁ-ÿ\s]{1,40}[A-Za-z0-9'\.\-\s\,]$/, //Letras y espacios, pueden llevar acentos.
     direccion: /^[A-Za-z0-9'\.\-\s\,]/, //Letras ,espacios y números
     edad: /^\d{2}$/, // 7 a 14 numeros.
     password: /^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$/, //8 carateres
@@ -303,9 +321,3 @@ formulario.addEventListener('submit', (e) => {
     e.preventDefault();
 
 });
-
-
-
-
-
-
